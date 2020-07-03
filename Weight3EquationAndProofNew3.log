@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.13)  3 JUL 2020 11:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.13)  3 JUL 2020 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -394,11 +394,11 @@ Non-PDF special ignored!
 Here is how much of TeX's memory you used:
  3290 strings out of 492164
  37120 string characters out of 6129087
- 114707 words of memory out of 5000000
+ 117707 words of memory out of 5000000
  7541 multiletter control sequences out of 15000+600000
  15651 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,15n,37p,363b,281s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,15n,37p,349b,281s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2019/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
@@ -411,7 +411,7 @@ pe1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb>
-Output written on Weight3EquationAndProofNew3.pdf (5 pages, 129545 bytes).
+Output written on Weight3EquationAndProofNew3.pdf (5 pages, 129809 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream

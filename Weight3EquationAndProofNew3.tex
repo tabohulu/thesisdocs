@@ -37,13 +37,12 @@ $\bphi_3=(1~1~1)$.
 Then, the weight-3 RTZ occurs since $\bphi_2+\bphi'_2+\bphi''_2=\bzero_3$. 
 Now, we consider the weight of the vector derived by the sumation of the followings vectors.
 \begin{eqnarray*}
-(\bzero_{3i}~\bphi_1~\bphi'_2~\cdots)\cr
-(\bzero_{3j}~\bphi_2~\bphi''_2~\cdots)\cr
-(\bzero_{3k}~\bphi_3~\bphi_2~\cdots)
+(\bzero_{3(\gamma+h)}~\bphi_1~\bphi'_2~\cdots)\cr
+(\bzero_{3(\beta+h)}~\bphi_2~\bphi''_2~\cdots)\cr
+(\bzero_{3 h}~~~~~~\bphi_3~\bphi_2~\cdots)
 \end{eqnarray*}
-Where 
-$$k=h,~j=\beta+h,~i=\gamma+h$$
-Without loss of generality, we can assume that all weight-$3$ RTZ inputs begin at the $0$th position, ie $h=t=0$. This is because the case where $h>0$ or $t>0$ is just a right-shifted version of the weight-$3$ RTZ. With this assumption, we have $k=0,~j=\beta,~i=\gamma$ and we only need to consider cases where $k = 0,~i \geq k$.
+
+Without loss of generality, we can assume that all weight-$3$ RTZ inputs begin at the $0$th position, ie $h=t=0$. This is because the case where $h>0$ or $t>0$ is just a right-shifted version of the weight-$3$ RTZ. With this assumption, we we only need to consider cases where $h= 0,~\gamma \geq h$.
 To simplify calculation, we have included an addition table for all the vectors which is shown in Table \ref{tb1}
 
 \begin{table}[h!]
@@ -77,7 +76,7 @@ $\bphi_3$ & $\bphi'_2$ & $\bphi''_2$ & $\bphi_2$ & $\bphi''_1$ & $\bphi_1$ & $\b
 \label{tb1}
 \end{table}
 Furthermore, we consider 4 general cases for all possible values of $i,j,k$ where $i \geq k$ These cases are $(=~=),~(=~<),~(<~=)$ and $(<~<)$
-\paragraph{Case 0: $i=j=k$ \newline}
+\paragraph{Case 0: $\gamma=\beta=h$ \newline}
 
  For this case, the vectors to sum will be 
  \begin{align*}
@@ -109,7 +108,7 @@ and  the derived vector will be $(\bphi''_2~\bzero_{3}~\cdots)$ with a weight of
 %\end{split}
 %\end{equation}
 
-\paragraph{Case 1a: $i=k<j$ \newline}
+\paragraph{Case 1a: $\gamma=h<\beta$ \newline}
  vectors to sum:
  \begin{align*}
 (\bphi_1~\bphi'_2~\bphi'_2~\bphi'_2~\bphi'_2~\cdots)\\
@@ -118,15 +117,15 @@ and  the derived vector will be $(\bphi''_2~\bzero_{3}~\cdots)$ with a weight of
 \cline{1-2}
 (\bphi'_2~\bphi''_2~\bphi''_2~\bphi'_2~\bzero_3~\cdots)
 \end{align*}
-derived vector : $(\bphi'_2~(\bphi''_2)_{j-k-1}~\bphi'_2~\bzero_3~\cdots)$
+derived vector : $(\bphi'_2~(\bphi''_2)_{\beta-h-1}~\bphi'_2~\bzero_3~\cdots)$
 \newline
 Parity weight: \begin{equation}
 \begin{split}
-w_p=2(j-i)+2 =2j+2
+w_p=2(\beta-h)+2 =2\beta+2
 \end{split}
 \end{equation}
 
-\paragraph{Case 1b: $j=k<i$\newline}
+\paragraph{Case 1b: $\beta=h<\gamma$\newline}
  vectors to sum:
 \begin{align*}
 (\bzero_{3}~\cdots~\cdots~\bzero_{3}~\bphi_1~\bphi'_2~\cdots)\\
@@ -135,10 +134,10 @@ w_p=2(j-i)+2 =2j+2
 \cline{1-2}
 (\bphi''_1~\bphi'_2~\cdots~\bphi'_2~\bphi_3~\bzero_3~\cdots)
 \end{align*}
-derived vector : $(\bphi''_1~(\bphi_2)_{i-k-1}~\bphi_3~\bzero_3~\cdots)$\newline
+derived vector : $(\bphi''_1~(\bphi_2)_{\gamma-h-1}~\bphi_3~\bzero_3~\cdots)$\newline
 Parity weight: \begin{equation}
 \begin{split}
-w_p=2(i-k)+2=2i+2
+w_p=2(\gamma-h)+2=2\gamma+2
 \end{split}
 \end{equation}
 %========case < = ==========
@@ -175,7 +174,7 @@ w_p=2(i-k)+2=2i+2
 %\end{split}
 %\end{equation}
 \newpage
-\paragraph{Case 2a: $k<i=j$ \newline}
+\paragraph{Case 2a: $h<\gamma=\beta$ \newline}
  vectors to sum:
 \begin{align*}
 (\bzero_3\cdots~\cdots~\bzero_3~\phi_1~\phi'_2~\cdots)\\
@@ -186,11 +185,11 @@ w_p=2(i-k)+2=2i+2
 \end{align*}
 
 
-derived vector : $(\bphi_3~(\bphi_2)_{i-k-1}~\bphi_1~\bzero_3~\cdots)$
+derived vector : $(\bphi_3~(\bphi_2)_{\gamma-h-1}~\bphi_1~\bzero_3~\cdots)$
 \newline
 Parity weight: \begin{equation}
 \begin{split}
-w_p=2(i-k)+2 =2i+2
+w_p=2(\gamma-h)+2 =2\gamma+2
 \end{split}
 \end{equation}
  %=====case < <==========
@@ -270,7 +269,7 @@ w_p=2(i-k)+2 =2i+2
 %\end{equation}
 
 
-\paragraph{Case 3a: $k<i<j$ \newline}
+\paragraph{Case 3a: $h<\gamma<\beta$ \newline}
 vectors to sum:
 \begin{eqnarray*}
 (\bzero_3\cdots\cdots~\bzero_3~\phi_1~\phi'_2~\cdots~\phi'_2~\phi'_2~\phi'_2\cdots)\cr
@@ -281,17 +280,17 @@ vectors to sum:
 \end{eqnarray*}
 
 
-derived vector : $(\bphi_3~(\bphi_2)_{i-k-1}~\bphi'_1~(\bphi''_2)_{j-i-1}~\bphi'_2~\bzero_3~\cdots)$
+derived vector : $(\bphi_3~(\bphi_2)_{\gamma-h-1}~\bphi'_1~(\bphi''_2)_{\beta-\gamma-1}~\bphi'_2~\bzero_3~\cdots)$
 \newline
 Parity weight: \begin{equation}
 \begin{split}
-w_p&=2(i-k)+2+2(j-i)\\
-&=2(j-k)+2\\
-& = 2j+2
+w_p&=2(\gamma-h)+2+2(\beta-i)\\
+&=2(\beta-h)+2\\
+& = 2\beta+2
 \end{split}
 \end{equation}
 
-\paragraph{Case 3b: $k<j<i$\newline}
+\paragraph{Case 3b: $h<\beta<\gamma$\newline}
 \begin{eqnarray*}
 (\bzero_3~\cdots~\cdots~\cdots~\cdots~\cdots~\bzero_3~\phi_1~\phi'_2\cdots)\cr
 (\bzero_3~\cdots\cdots~\bzero_3~\phi_2~\phi''_2~\cdots~\phi''_2~\phi''_2~\phi''_2\cdots)\cr
@@ -302,9 +301,9 @@ w_p&=2(i-k)+2+2(j-i)\\
 derived vector : $(\bphi_3~(\bphi_2)_{j-k-1}~\bzero_3~(\bphi'_2)_{i-j-1}~\bphi_3~\bzero_3~\cdots)$\newline
 Parity weight: \begin{equation}
 \begin{split}
-w_p &=2(j-k)+1 +2(i-j)+1 \\
-&=2(i-k)+2\\
-&=2i+2
+w_p &=2(\beta-h)+1 +2(\gamma-\beta)+1 \\
+&=2(\gamma-h)+2\\
+&=2\gamma+2
 \end{split}
 \end{equation}
 
@@ -313,9 +312,9 @@ From all the above cases we can conclude that the parity weight for a weight-$3$
 w_p=
 2l+2 
 \end{equation}
-where $l=\max \{ i,j \} - k=\max \{ \gamma,\beta \}$ since $k=0$
+where $l=\max \{ \gamma,\beta \} - k=\max \{ \gamma,\beta \}$ since $k=0$
 
-Assuming that after interleaving, another weight-$3$ RTZ input is produced. Let $i',j',k',l'$ and $w'_p$ be similarly defined. Then the Hamming weight $w_H$ of the turbo codeword produced can be calculated as
+Assuming that after interleaving, another weight-$3$ RTZ input is produced. Let $\gamma',\beta',h',l'$ and $w'_p$ be similarly defined. Then the Hamming weight $w_H$ of the turbo codeword produced can be calculated as
 \begin{equation}
 w_H=
 7+2(l+l') 
