@@ -219,16 +219,16 @@ The interleaver length used in turbo coding are way greater than $N_c$ and it is
 The formula for calculating the Hamming weight ($w_H$) of the Turbo codeword produced by a weight-$2$ RTZ input occuring in both component codes is given by[SunTakeshita] 
 \begin{equation}
 \begin{split}
-w_H=&2+(2 + \frac{\Delta_c}{\tau} )w_0+ (2 + \frac{\Delta_{c'}}{\tau})w_0\\
-=&6+\Big(\frac{\Delta_c+\Delta_{c'}}{\tau}\Big)w_0,~w_0=2
+w_H=&2+(2 + \frac{\Delta_\pi}{\tau} )w_0+ (2 + \frac{\Delta_{\pi'}}{\tau})w_0\\
+=&6+\Big(\frac{\Delta_\pi+\Delta_{\pi'}}{\tau}\Big)w_0,~w_0=2
 \end{split}
 \label{eq3}
 \end{equation}
 
-For all the $\Pi$ in Table \ref{tb1}, since $\Delta c = 9=3\tau$ and $\Delta c':=(c_{a'+\alpha'}^{t'}-c_{a'}^{t'})$  we have
+For all the $\Pi$ in Table \ref{tb1}, since $\Delta \pi = 9=3\tau$ and $\Delta \pi':=(\pi^{(h'+\alpha')}_{t}-\pi^{(h')}_{t})$  we have
 \begin{equation}
 \begin{split}
-w_H=&6+\Big(3+\frac{\Delta c'}{3}\Big)w_0,~w_0=2
+w_H=&6+\Big(3+\frac{\Delta \pi'}{3}\Big)w_0,~w_0=2
 \end{split}
 \end{equation}
 
@@ -298,69 +298,29 @@ Depending on which permutation matrix is chosen from Table \ref{tb2}, Equation \
 
 In general $w_H$ for turbo codewords as a result of weight-$3$ RTZ inputs can be written as $$w_H=3 + w_p+ w'_p$$, where $w_p,w'_p$ refer to the pre-interleaving parity weight and the post-interleaving parity weight respectively. The value of $w_p$ for the pre-interleaving weight-$3$ is dependent on the elements in $\cC^t$
 
-Let $(c_{\alpha}^{t},~c_{\alpha+\beta}^{t+1},~c_{\alpha+\gamma}^{t+2})$ be the vector representing a weight-$3$ RTZ input, where 
+Let $(\pi^{(h)}_{t},~c^{(h+\beta)}_{t+1},~c^{(h+\gamma)}_{t+2})$ be the vector representing a weight-$3$ RTZ input
+%\begin{equation}
+%\begin{split}
+%c^{h}_{t}&=\alpha\tau+ t\\
+%c^{h+\beta}_{t+1}&=(\alpha+\beta)\tau+ t+1\\
+%c^{h+\gamma}_{t+2}&=(\alpha+\gamma)\tau+ t+2\\
+%\end{split}
+%\label{eq7}
+%\end{equation}
+Without loss of generality, we can assume that $h =t =0$. We then have 
 \begin{equation}
-\begin{split}
-c_{\alpha}^{t}&=\alpha\tau+ t\\
-c_{\alpha+\beta}^{t+1}&=(\alpha+\beta)\tau+ t+1\\
-c_{\alpha+\gamma}^{t+2}&=(\alpha+\gamma)\tau+ t+2\\
-\end{split}
-\label{eq7}
-\end{equation}
-if $c_{\alpha}^{t}$ is the smallest value in the vector, then
-\begin{equation}
-l=
-\begin{cases}
-\beta ,& \beta>\gamma \\
-\gamma & \beta < \gamma\\
-\end{cases}
+l=\max{(\beta,\gamma)}
 \label{eq8}
 \end{equation}
 And 
 \begin{equation}
 w_p=
-\begin{cases}
-2\beta+2,& i \geq k, ~\beta>\gamma \\
-2\beta & i < k, ~\beta>\gamma\\
-2\gamma+2,& i \geq k,~ \beta<\gamma \\
-2\gamma & i < k, ~\beta<\gamma\\
-\end{cases}
+2(\max{(\beta,\gamma)})+2
 \label{eq9}
 \end{equation}
-where $i=\lfloor\frac{c_*^2}{3}\rfloor$, $k=\lfloor\frac{c_*^0}{3}\rfloor$ and * is the element position in $\cC^t$\newline
 By deciding on the $\Pi$ we can easily calculate all values of $l$ and $w_p$
+$w'_p,\beta',\gamma' $ and $l'$ are similarly defined and are dependent on the elements in $\bbC^{t},~t=0,1,..,\tau-1$
 
-$w'_p$ on the other hand is dependent on the elements in $\bbC^{t},~t=0,1,..,\tau-1$
-Let $(c_{\alpha'}^{t'},~c_{\alpha'+\beta'}^{t'+1},~c_{\alpha'+\gamma'}^{t'+2})$ be the vector representing a weight-$3$ RTZ input, where 
-\begin{equation}
-\begin{split}
-c_{\alpha'}^{t'}&=\alpha\tau+ t'\\
-c_{\alpha'+\beta'}^{t'+1}&=(\alpha+\beta)\tau+ t'+1\\
-c_{\alpha'+\gamma'}^{t'+2}&=(\alpha+\gamma)\tau+ t'+2\\
-\end{split}
-\label{eq10}
-\end{equation}
-if $c_{\alpha'}^{t'}$ is the smallest value in the vector, then
-\begin{equation}
-l'=
-\begin{cases}
-\beta ,& \beta>\gamma \\
-\gamma & \beta < \gamma\\
-\end{cases}
-\label{eq11}
-\end{equation}
-And 
-\begin{equation}
-w'_p=
-\begin{cases}
-2\beta+2,& i' \geq k', ~\beta>\gamma \\
-2\beta & i' < k',~\beta>\gamma \\
-2\gamma+2,& i' \geq k',~\beta<\gamma  \\
-2\gamma & i' < k',~\beta<\gamma \\
-\end{cases}
-\label{eq12}
-\end{equation}
-where $i'=\lfloor\frac{c_*^2}{3}\rfloor$ ,$k'=\lfloor\frac{c_*^0}{3}\rfloor$ and * represents its position in $\bbC^t$\newline
 As an example, Table \ref{tb3} shows all the weight-$3$ RTZ inputs and the corresponding equations for calculating $w_H$
 
 \begin{table}
@@ -369,39 +329,53 @@ As an example, Table \ref{tb3} shows all the weight-$3$ RTZ inputs and the corre
  \hline
  RTZ index  & $ l$ & $w_p$& $w_H$\\
  \hline
- $(0~4~8)$ & $2$ & $6$ & $
-\begin{cases}
-11+2\beta,~\beta>\gamma \\
-11+2\gamma ,~\beta<\gamma\\
-\end{cases}$\\
+ $(0~4~8)$ & $2$ & $6$ & $11+2(\max{(\beta',\gamma')})$\\
  \hline
- $(0~5~7)$ &  $2$ & $6$ & $\begin{cases}
-11+2\beta,~\beta>\gamma \\
-11+2\gamma,~\beta<\gamma\\
-\end{cases}$\\
+ $(0~5~7)$ &  $2$ & $6$ &$11+2(\max{(\beta',\gamma')})$\\
  \hline
- $(1~3~8)$ &  $2$ & $6$ & $\begin{cases}
-11+2\beta,~\beta>\gamma \\
-11+2\gamma,~\beta<\gamma\\
-\end{cases}$\\
+ $(1~3~8) \equiv (0~2~7)$ &  $2$ & $6$ & $11+2(\max{(\beta',\gamma')})$\\
  \hline
- $(1~5~6)$ &  $2$ & $4$ & $
- \begin{cases}
-9+2\beta,~\beta>\gamma \\
-9+2\gamma,~\beta<\gamma\\
-\end{cases}$\\
+ $(1~5~6) \equiv(0~4~5)$ &  $1$ & $4$ & $9+2(\max{(\beta',\gamma')})$\\
  \hline
- $(2~3~7)$ & $2$ & $4$ & $ 
- \begin{cases}
-9+2\beta,~\beta>\gamma \\
-9+2\gamma,~\beta<\gamma\\
-\end{cases}$\\
+ $(2~3~7)\equiv(0~1~5)$ & $1$ & $4$ & $9+2(\max{(\beta',\gamma')})$\\
  \hline
- $(2~4~6)$ & $2$ & $4$ & $ 
- \begin{cases}
-9+2\beta,~\beta>\gamma \\
-9+2\gamma,~\beta<\gamma\\
-\end{cases}$\\
+ $(2~4~6)\equiv(0~2~4)$ & $1$ & $4$ & $9+2(\max{(\beta',\gamma')})$\\
+ \hline\hline
+  $(0~8~13)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+ \hline
+ $(0~4~17)$ & $5$ & $12$ & $17+2(\max{(\beta',\gamma')})$\\
+ \hline
+ $(0~13~17)$ & $5$ & $12$ & $17+2(\max{(\beta',\gamma')})$\\
+ \hline
+  $(0~7~14)$ &  $4$ & $6$ &$15+2(\max{(\beta',\gamma')})$\\
+ \hline
+  $(0~5~16)$ &  $5$ & $6$ &$17+2(\max{(\beta',\gamma')})$\\
+ \hline
+  $(0~14~16)$ &  $5$ & $6$ &$17+2(\max{(\beta',\gamma')})$\\
+ \hline
+ $(1~8~12) \equiv (0~7~11)$ &  $3$ & $8$ & $13+2(\max{(\beta',\gamma')})$\\
+ \hline
+ $(1~3~17) \equiv (0~2~16)$ &  $5$ & $12$ & $17+2(\max{(\beta',\gamma')})$\\
+ \hline
+ $(1~12~17) \equiv (0~11~16)$ & $5$ & $12$ & $17+2(\max{(\beta',\gamma')})$\\
+ \hline
+  $(1~6~14) \equiv(0~5~13)$ &  $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+ \hline
+  $(1~5~15) \equiv(0~4~14)$ &  $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+ \hline
+  $(1~14~15) \equiv(0~13~14)$ &  $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+ \hline
+ $(2~7~12)\equiv(0~5~10)$ & $3$ & $8$ & $13+2(\max{(\beta',\gamma')})$\\
+ \hline
+ $(2~3~16)\equiv(0~1~14)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+ \hline
+ $(2~12~16)\equiv(0~10~14)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+ \hline
+  $(2~6~13)\equiv(0~4~11)$ & $3$ & $8$ & $13+2(\max{(\beta',\gamma')})$\\
+ \hline
+  $(2~4~15)\equiv(0~2~13)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+ \hline
+  $(2~13~15)\equiv(0~11~13)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
  \hline
 \end{tabular}
 \caption{All unique permutation matrices of length $N_c =9$ for weight-$3$ RTZ inputs}
