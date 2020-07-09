@@ -59,7 +59,7 @@ where $\pi_{t}^{(i)} \in \{0,1,\tau-1\}$.
 \item a weight $2$ input sequence
 \begin{itemize}
 	\item polynomial: $P(x)=x^{h\tau+t}(1+x^{\alpha \tau}) = x^t(x^{h\tau}+x^{(h+\alpha)\tau})$
-	\item coset: the $h$th and $(a+\alpha)$th elements in $\bbC^t$
+	\item coset: the $h$th and $(h+\alpha)$th elements in $\bbC^t$
 \end{itemize}
 \item a weight $3$ input sequence
 \begin{itemize}
@@ -85,8 +85,8 @@ $\bPi = (0,2,1)$. Notice the row of $\bPi$ takes cyclicly.
 
 
 \section{Coset Interleaver Design For Weight-$2$ RTZ inputs}
-From the definition of Weight-$2$ RTZ inputs in the previous section, we know that the index of the ``1'' bits are in the same coset $\cC^t$ and represented by the elements $c_a^t$ and $c_{a+\alpha}^t$. After interleaving, another weight-$2$ RTZ input occurs if the ``1'' bits are mapped to the elements $c_{a'}^{t'}$ and $c_{a'+\alpha'}^{t'}$
- in $\bbC^{t'}$.
+From the definition of Weight-$2$ RTZ inputs in the previous section, we know that the index of the ``1'' bits are in the same coset $\cC^t$ and represented by the elements $\pi_t^{(h)}$ and $\pi^{(h+\alpha)}_t$. After interleaving, another weight-$2$ RTZ input occurs if the ``1'' bits are mapped to the elements $\pi_t^{(h')}$ and $\pi^{(h'+\alpha')}_t$
+ in $\bbC^{t}$.
 Therefore, to convert a weigth-$2$ RTZ input into a non-RTZ input we need a permutation matrix $\bPi$ which satisfies the condition below 
 
 \begin{equation}
@@ -154,16 +154,7 @@ We then have
 	
 	Example of the permutation matrices satisfying cut-off length $N_c = 9$ are shown in \ref{tb1}
 	
-	\begin{eqnarray}
-	\begin{bmatrix}
-	0 & 0 & 0\cr
-	1 & 1 & 1\cr
-	2 & 2 & 2
-	\end{bmatrix}
-	\label{Eq:2}
-	\end{eqnarray}
 	
-	{\bf find all such matrices.}
 \end{enumerate}
 
 
@@ -266,23 +257,13 @@ w_H=&6+\Big(3+\frac{\Delta c'}{3}\Big)w_0,~w_0=2
 
 \section{Coset Interleaver Design For Weight-$3$ RTZ inputs}
 As mentioned earlier, a weight-$3$ RTZ input is formed when the indices of the ``1'' bits each occur in different cosets.  It goes without saying that the simplest way to convert a weight-$3$ RTZ input into a non-RTZ input is to make sure that at least two of indices of the ``1'' bits occur within the same coset after interleaving.
-
-Following the pattern in the previous section for weight-$2$ RTZ inputs, we need a permutation matrix $\bPi$ for weight-$3$ RTZ events. The best permutation matrix would be one that totally gets rid of all weight-$3$ RTZ interleavers of length $N_c=9$. This is not possible for reasons that will be made clear soon. It is however possible to control the kind weight-$3$ RTZ that occurs. 
-To further explain this, we introduce the concept of layers and layer distances. We take $\cN$ and assuming that $\tau | N$, we feed the elements of $\cN$ into a $N/ \tau \times \tau$ matrix $\bN$. Furthermore we label colums $0$ to $\tau$ $k,j,i$ respectively. The layer is defined as the row where an element of $\cN$ exists. Furthermore given two element in $\bN$, the layer distance is the difference between the row indices, with the index of the first row set to $0$. It is clear that each column corresponds to a coset and therefore a weight-$3$ RTZ input occurs when the indices of the ``1'' bits each occur in different columns. When $N=N_c=9$, the number of elements in each coset is always equal to the number of cosets and therefore it is impossible to completely get rid of weight-$3$ RTZ inputs when $N=N_c$.
-
-Let $l,l'$ be the pre-interleaving layer distance and the post-interleaving layer distance.
-We know that the codeword weight of a turbo code due to weight-$3$ RTZ inputs is given by
 \begin{equation}
 w_H=
-\begin{cases}
-3+2(l+l'),& i<k ,~i'<k'\\
-7+2(l+l') & i \geq k,~i' \geq k'\\
-5+2(l+l')& i \geq k,~i'<k' ~\text{or}~i<k ~ i' \geq k'
-\end{cases}
+7+2(l+l') 
 \label{eq6}
 \end{equation}
 
-where $k',i'$ is similarly defined but with respect to $\Pi$. To increase the value of $w_H$ , we need to make $l'$ as large as possible for $N_c$ when $i'<k'$ or $i \geq k$
+
 
 Unique permutation matrices which meet this criteria are shown in Table \ref{tb2} and they are labeled from $A$ to $L$
 
@@ -390,54 +371,42 @@ As an example, Table \ref{tb3} shows all the weight-$3$ RTZ inputs and the corre
 
 \begin{table}
 \centering
-\begin{tabular}{||c | c  |c  |c  |c |} 
+\begin{tabular}{||c |c  |c  |c |} 
  \hline
- RTZ index & $i,k$ condition &$ l$ & $w_p$& $w_H$\\
+ RTZ index  & $ l$ & $w_p$& $w_H$\\
  \hline
- $(0~4~8)$ & $i>k$ & $2$ & $6$ & $
+ $(0~4~8)$ & $2$ & $6$ & $
 \begin{cases}
-11+2\beta,& i' \geq k',~\beta>\gamma \\
-11+2\gamma,& i' \geq k' ,~\beta<\gamma\\
-9+2\beta & i' < k',~\beta>\gamma\\
-9+2\gamma & i' < k',~\beta<\gamma\\
+11+2\beta,~\beta>\gamma \\
+11+2\gamma ,~\beta<\gamma\\
 \end{cases}$\\
  \hline
- $(0~5~7)$ & $i>k$ & $2$ & $6$ & $\begin{cases}
-11+2\beta,& i' \geq k',~\beta>\gamma \\
-11+2\gamma,& i' \geq k' ,~\beta<\gamma\\
-9+2\beta & i' < k',~\beta>\gamma\\
-9+2\gamma & i' < k',~\beta<\gamma\\
+ $(0~5~7)$ &  $2$ & $6$ & $\begin{cases}
+11+2\beta,~\beta>\gamma \\
+11+2\gamma,~\beta<\gamma\\
 \end{cases}$\\
  \hline
- $(1~3~8)$ & $i>k$ & $2$ & $6$ & $\begin{cases}
-11+2\beta,& i' \geq k',~\beta>\gamma \\
-11+2\gamma,& i' \geq k' ,~\beta<\gamma\\
-9+2\beta & i' < k',~\beta>\gamma\\
-9+2\gamma & i' < k',~\beta<\gamma\\
+ $(1~3~8)$ &  $2$ & $6$ & $\begin{cases}
+11+2\beta,~\beta>\gamma \\
+11+2\gamma,~\beta<\gamma\\
 \end{cases}$\\
  \hline
- $(1~5~6)$ & $i<k$ & $2$ & $4$ & $
+ $(1~5~6)$ &  $2$ & $4$ & $
  \begin{cases}
-9+2\beta,& i' \geq k',~\beta>\gamma \\
-9+2\gamma,& i' \geq k' ,~\beta<\gamma\\
-7+2\beta & i' < k',~\beta>\gamma\\
-7+2\gamma & i' < k',~\beta<\gamma\\
+9+2\beta,~\beta>\gamma \\
+9+2\gamma,~\beta<\gamma\\
 \end{cases}$\\
  \hline
- $(2~3~7)$ & $i<k$ & $2$ & $4$ & $ 
+ $(2~3~7)$ & $2$ & $4$ & $ 
  \begin{cases}
-9+2\beta,& i' \geq k',~\beta>\gamma \\
-9+2\gamma,& i' \geq k' ,~\beta<\gamma\\
-7+2\beta & i' < k',~\beta>\gamma\\
-7+2\gamma & i' < k',~\beta<\gamma\\
+9+2\beta,~\beta>\gamma \\
+9+2\gamma,~\beta<\gamma\\
 \end{cases}$\\
  \hline
- $(2~4~6)$ & $i<k$ & $2$ & $4$ & $ 
+ $(2~4~6)$ & $2$ & $4$ & $ 
  \begin{cases}
-9+2\beta,& i' \geq k',~\beta>\gamma \\
-9+2\gamma,& i' \geq k' ,~\beta<\gamma\\
-7+2\beta & i' < k',~\beta>\gamma\\
-7+2\gamma & i' < k',~\beta<\gamma\\
+9+2\beta,~\beta>\gamma \\
+9+2\gamma,~\beta<\gamma\\
 \end{cases}$\\
  \hline
 \end{tabular}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.13)  3 JUL 2020 09:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.13)  8 JUL 2020 21:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,7 +293,7 @@ Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 \c@inputfile=\count128
 Package: chapterbib 2010/09/18  v 1.17
 ))
-No file JuneProgress_29th_to_5thJuly.aux.
+(./JuneProgress_29th_to_5thJuly.aux)
 \openout1 = `JuneProgress_29th_to_5thJuly.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -311,6 +311,7 @@ LaTeX Font Info:    ... okay on input line 12.
 Package chapterbib Info: The sectionbib option changes "\chapter *" to "\sectio
 n *" in \thebibliography on input line 12.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
+
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -430,11 +431,7 @@ Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
-]
-
-LaTeX Warning: Reference `eq1' on page 2 undefined on input line 96.
-
-[2
+] [2
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
@@ -447,21 +444,7 @@ Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
-]
-
-LaTeX Warning: Reference `tb1' on page 3 undefined on input line 155.
-
-
-LaTeX Warning: Reference `tb1' on page 3 undefined on input line 173.
-
-
-LaTeX Warning: Reference `tb1' on page 3 undefined on input line 243.
-
-[3
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
+] [3
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
@@ -486,22 +469,17 @@ Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
-]
-
-LaTeX Warning: Reference `tb2' on page 4 undefined on input line 287.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `tb2' on page 4 undefined on input line 322.
-
-
-LaTeX Warning: Reference `eq6' on page 4 undefined on input line 322.
-
-[4
+] [4
 Non-PDF special ignored!
 <special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
 Non-PDF special ignored!
 <special> color pop
 Non-PDF special ignored!
@@ -509,7 +487,7 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> color pop
 ]
-Overfull \hbox (7.25438pt too wide) in paragraph at lines 358--360
+Overfull \hbox (7.25438pt too wide) in paragraph at lines 339--341
 []$\OML/cmm/m/it/10.95 w[]$ \OT1/cmr/m/n/10.95 on the other hand is de-pen-dent
  on the el-e-ments in $\U/msb/m/n/10.95 C[]\OML/cmm/m/it/10.95 ;  []t \OT1/cmr/
 m/n/10.95 = 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; ::
@@ -525,20 +503,12 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
 <special> color pop
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
-]
-
-LaTeX Warning: Reference `tb3' on page 6 undefined on input line 389.
-
-[6
+] [6
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
@@ -555,42 +525,32 @@ Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-] (./JuneProgress_29th_to_5thJuly.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+] (./JuneProgress_29th_to_5thJuly.aux) ) 
 Here is how much of TeX's memory you used:
- 3330 strings out of 492164
- 37586 string characters out of 6129087
+ 3331 strings out of 492164
+ 37646 string characters out of 6129087
  126708 words of memory out of 5000000
- 7580 multiletter control sequences out of 15000+600000
+ 7579 multiletter control sequences out of 15000+600000
  18102 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,20n,37p,876b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
-live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmib10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:
-/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2019/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msbm10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on JuneProgress_29th_to_5thJuly.pdf (7 pages, 185174 bytes).
+ 39i,20n,37p,447b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2019/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2019/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr17.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
+fb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2019
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2019/texmf-dist/fo
+nts/type1/public/rsfs/rsfs10.pfb>
+Output written on JuneProgress_29th_to_5thJuly.pdf (7 pages, 177288 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
