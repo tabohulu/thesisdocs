@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.13)  8 JUL 2020 21:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.13)  10 JUL 2020 02:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -444,11 +444,11 @@ Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
-] [3
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
+] [3
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
@@ -487,7 +487,7 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> color pop
 ]
-Overfull \hbox (7.25438pt too wide) in paragraph at lines 339--341
+Overfull \hbox (7.25438pt too wide) in paragraph at lines 333--335
 []$\OML/cmm/m/it/10.95 w[]$ \OT1/cmr/m/n/10.95 on the other hand is de-pen-dent
  on the el-e-ments in $\U/msb/m/n/10.95 C[]\OML/cmm/m/it/10.95 ;  []t \OT1/cmr/
 m/n/10.95 = 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; ::
@@ -529,11 +529,11 @@ Non-PDF special ignored!
 Here is how much of TeX's memory you used:
  3331 strings out of 492164
  37646 string characters out of 6129087
- 126708 words of memory out of 5000000
+ 125708 words of memory out of 5000000
  7579 multiletter control sequences out of 15000+600000
  18102 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,20n,37p,447b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,20n,37p,447b,278s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2019/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
@@ -550,7 +550,7 @@ xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2019
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2019/texmf-dist/fo
 nts/type1/public/rsfs/rsfs10.pfb>
-Output written on JuneProgress_29th_to_5thJuly.pdf (7 pages, 177288 bytes).
+Output written on JuneProgress_29th_to_5thJuly.pdf (7 pages, 177067 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream

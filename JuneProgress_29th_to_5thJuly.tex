@@ -85,23 +85,17 @@ $\bPi = (0,2,1)$. Notice the row of $\bPi$ takes cyclicly.
 
 
 \section{Coset Interleaver Design For Weight-$2$ RTZ inputs}
-From the definition of Weight-$2$ RTZ inputs in the previous section, we know that the index of the ``1'' bits are in the same coset $\cC^t$ and represented by the elements $\pi_t^{(h)}$ and $\pi^{(h+\alpha)}_t$. After interleaving, another weight-$2$ RTZ input occurs if the ``1'' bits are mapped to the elements $\pi_t^{(h')}$ and $\pi^{(h'+\alpha')}_t$
- in $\bbC^{t}$.
-Therefore, to convert a weigth-$2$ RTZ input into a non-RTZ input we need a permutation matrix $\bPi$ which satisfies the condition below 
+From the definition of Weight-$2$ RTZ inputs in the previous section, we know that the index of the ``1'' bits are in the same coset. Our aim is to make sure that the interleaver that we design is either able to break such weight-$2$ RTZ inputs or convert it into a large separation weight-$2$ RTZ. 
+The condition to break weight-$2$ RTZs is given as
 
 \begin{equation}
 \pi_{j}^{(i)} \neq \pi_{j}^{(i')},~|i-i'| \leq N_c
 \label{eq1}
 \end{equation}
+
 Since $\bPi$ consisting of $\tau$ elements, the maximum length of column elements consisting of values different each other is $\tau$. Thus, the cut-off interleaver length for which (\ref{eq1}) is satisfied is $N_c=\tau=3$.
+For this interleaver length, we investigate 3 different compositions of permutation matrices that can be used to achieve this condition in in \ref{eq1}
 
-
-
-
-%To answer the first question, we will do a little thought exercise. 
-
-%For interleavers with length $0>N\leq 9$, the number of elements in each coset is at most equal to the number of coset and it is possible map elements in the same coset to elements in another coset.
-%However, when $N>9$, it is not possible to prevent elements in the same coset from being mapped to the same coset since the number of elements in each coset is greater than the number of cosets. Therefore, 
 \begin{enumerate}
 	\item One cycle permutation: Each row is permutation of the sequence $(0,1,2)$. Setting the element at the first row and first column to $0$, there are exactly 4 permutation matrices that exist for cut-off length $N_c$.
 	Let
