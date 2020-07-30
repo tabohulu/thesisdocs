@@ -219,17 +219,18 @@ The interleaver length used in turbo coding are way greater than $N_c$ and it is
 The formula for calculating the Hamming weight ($w_H$) of the Turbo codeword produced by a weight-$2$ RTZ input occuring in both component codes is given by[SunTakeshita] 
 \begin{equation}
 \begin{split}
-w_H=&2+(2 + \frac{\Delta_\pi}{\tau} )w_0+ (2 + \frac{\Delta_{\pi'}}{\tau})w_0\\
-=&6+\Big(\frac{\Delta_\pi+\Delta_{\pi'}}{\tau}\Big)w_0,~w_0=2
+w_H=&2+(2 + \frac{\Delta_c}{\tau} )w_0+ (2 + \frac{\Delta_{c'}}{\tau})w_0\\
+=&6+\Big(\frac{\Delta_c+\Delta_{c'}}{\tau}\Big)w_0,~w_0=2
 \end{split}
 \label{eq3}
 \end{equation}
 
-For all the $\Pi$ in Table \ref{tb1}, since $\Delta \pi = 9=3\tau$ and $\Delta \pi':=(\pi^{(h'+\alpha')}_{t}-\pi^{(h')}_{t})$  we have
+For all the $\Pi$ in Table \ref{tb1}, since $\Delta_c = 9=3\tau$ and $\Delta_{c'}:=(c_{(h'+\alpha')}^{t}-c_{(h')}^{t})$  we have
 \begin{equation}
 \begin{split}
-w_H=&6+\Big(3+\frac{\Delta \pi'}{3}\Big)w_0,~w_0=2
+w_H=&6+\Big(3+\frac{\Delta_{c'}}{3}\Big)w_0,~w_0=2
 \end{split}
+\label{eq4}
 \end{equation}
 
 
@@ -298,7 +299,7 @@ Depending on which permutation matrix is chosen from Table \ref{tb2}, Equation \
 
 In general $w_H$ for turbo codewords as a result of weight-$3$ RTZ inputs can be written as $$w_H=3 + w_p+ w'_p$$, where $w_p,w'_p$ refer to the pre-interleaving parity weight and the post-interleaving parity weight respectively. The value of $w_p$ for the pre-interleaving weight-$3$ is dependent on the elements in $\cC^t$
 
-Let $(\pi^{(h)}_{t},~c^{(h+\beta)}_{t+1},~c^{(h+\gamma)}_{t+2})$ be the vector representing a weight-$3$ RTZ input
+Let $(c_{(h)}^{t},~c_{(h+\beta)}^{t+1},~c_{(h+\gamma)}^{t+2})$ be the vector representing a weight-$3$ RTZ input
 %\begin{equation}
 %\begin{split}
 %c^{h}_{t}&=\alpha\tau+ t\\
@@ -333,13 +334,13 @@ As an example, Table \ref{tb3} shows all the weight-$3$ RTZ inputs and the corre
  \hline
  $(0~5~7)$ &  $2$ & $6$ &$11+2(\max{(\beta',\gamma')})$\\
  \hline
- $(1~3~8) \equiv (0~2~7)$ &  $2$ & $6$ & $11+2(\max{(\beta',\gamma')})$\\
+ $(1~3~8) $ &  $2$ & $6$ & $11+2(\max{(\beta',\gamma')})$\\
  \hline
- $(1~5~6) \equiv(0~4~5)$ &  $1$ & $4$ & $9+2(\max{(\beta',\gamma')})$\\
+ $(1~5~6) $ &  $1$ & $4$ & $9+2(\max{(\beta',\gamma')})$\\
  \hline
- $(2~3~7)\equiv(0~1~5)$ & $1$ & $4$ & $9+2(\max{(\beta',\gamma')})$\\
+ $(2~3~7)$ & $1$ & $4$ & $9+2(\max{(\beta',\gamma')})$\\
  \hline
- $(2~4~6)\equiv(0~2~4)$ & $1$ & $4$ & $9+2(\max{(\beta',\gamma')})$\\
+ $(2~4~6)$ & $1$ & $4$ & $9+2(\max{(\beta',\gamma')})$\\
  \hline\hline
   $(0~8~13)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
  \hline
@@ -353,37 +354,187 @@ As an example, Table \ref{tb3} shows all the weight-$3$ RTZ inputs and the corre
  \hline
   $(0~14~16)$ &  $5$ & $6$ &$17+2(\max{(\beta',\gamma')})$\\
  \hline
- $(1~8~12) \equiv (0~7~11)$ &  $3$ & $8$ & $13+2(\max{(\beta',\gamma')})$\\
+ $(1~8~12) $ &  $3$ & $8$ & $13+2(\max{(\beta',\gamma')})$\\
  \hline
- $(1~3~17) \equiv (0~2~16)$ &  $5$ & $12$ & $17+2(\max{(\beta',\gamma')})$\\
+ $(1~3~17) $ &  $5$ & $12$ & $17+2(\max{(\beta',\gamma')})$\\
  \hline
- $(1~12~17) \equiv (0~11~16)$ & $5$ & $12$ & $17+2(\max{(\beta',\gamma')})$\\
+ $(1~12~17) $ & $5$ & $12$ & $17+2(\max{(\beta',\gamma')})$\\
  \hline
-  $(1~6~14) \equiv(0~5~13)$ &  $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+  $(1~6~14) $ &  $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
  \hline
-  $(1~5~15) \equiv(0~4~14)$ &  $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+  $(1~5~15)$ &  $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
  \hline
-  $(1~14~15) \equiv(0~13~14)$ &  $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+  $(1~14~15)$ &  $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
  \hline
- $(2~7~12)\equiv(0~5~10)$ & $3$ & $8$ & $13+2(\max{(\beta',\gamma')})$\\
+ $(2~7~12)$ & $3$ & $8$ & $13+2(\max{(\beta',\gamma')})$\\
  \hline
- $(2~3~16)\equiv(0~1~14)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+ $(2~3~16)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
  \hline
- $(2~12~16)\equiv(0~10~14)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+ $(2~12~16)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
  \hline
-  $(2~6~13)\equiv(0~4~11)$ & $3$ & $8$ & $13+2(\max{(\beta',\gamma')})$\\
+  $(2~6~13)$ & $3$ & $8$ & $13+2(\max{(\beta',\gamma')})$\\
  \hline
-  $(2~4~15)\equiv(0~2~13)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+  $(2~4~15)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
  \hline
-  $(2~13~15)\equiv(0~11~13)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
+  $(2~13~15)$ & $4$ & $10$ & $15+2(\max{(\beta',\gamma')})$\\
  \hline
 \end{tabular}
 \caption{All unique permutation matrices of length $N_c =9$ for weight-$3$ RTZ inputs}
 \label{tb3}
 \end{table}
 
-\paragraph{To Do}
-\begin{enumerate}
-\item add elements for inter-block Weight-3 RTZ inputs
-\end{enumerate}
+\section{Coset Design}
+Once the permutation matrix is decided upon, we have the necessary constraints which will help us design $\bbC^t$ with respect to weight $2$ and weight $3$ RTZ inputs.
+We settle on $$\begin{bmatrix} 0 & 0 & 0 \cr 1 & 1 & 1 \cr 2 & 2 & 2\end{bmatrix}$$ which we will refer to as $\bPi^{(0)}$. It was decided upon because in the design process, we only need to focus on only one of the cosets, say $\bbC^0$ and replicate the results for the remaining cosets. We will make use of the Almost Linear Interleaver(ALI) is the design of $\bbC^0$. 
+Since we are dealing with a single coset, the $(D,L)$ ALI interleaver equation is given by $$\pi(h)=D \cdot h + \Big\lfloor \frac{h}{A} \Big\rfloor \bmod L$$ where $A=L/C,~L=N/3$ and $C=\text{gcd}(D,L)$ Also, $D$ is the period of the interleaver.
+
+In our design, $\pi(h)$ will represent the index of the elements in $\bbC^0$ whiles the value of the element at $\pi(h)$ is $3\pi(h)$
+
+For weight-$2$ RTZ inputs, the weight can be calculated as
+$
+w_H=6+\Big(3+\frac{\Delta_{c'}}{3}\Big)w_0,~w_0=2
+$ 
+where
+$\Delta_{c'}:=(c_{(h'+\alpha')}^{t}-c_{(h')}^{t}),~\alpha' =3$. Where $h$ is the index of the element in $\bbC$
+ With respect to the ALI, $c_{(h'+3)}^{t}=3(\pi(h+3))$ and $c_{(h')}^{t}=3(\pi(h))$.
+ We therefore have 
+ \begin{equation}
+ \begin{split}
+ w_H=&6+2\Big(3+\frac{|3(\pi(h+3))- 3(\pi(h))|}{3}\Big)\\
+  w_H=&6+2\Big(3+|(\pi(h+3))- (\pi(h))|\Big)\\
+ \end{split}
+ \label{eq8}
+ \end{equation}
+ 
+ For weight $3$-RTZ inputs, the various equations are given in Table \ref{tb3}. The positions where a weight-$3$ inputs occur are know, but they are given with respect to the complete interleaver and need to be scaled down to a single coset. 
+ Let $h,~h+\beta,~h+\gamma$ be the inputs representing where the weight-$3$ RTZ inputs occur due to $\bPi^{(0)}$. Then the scaled down versions will be $h^s,~(h+\beta)^s,~(h+\gamma)^s$ and are calculated using the equation
+ $$f(x)= x \bmod 3 + 3\Big(\Big\lfloor\frac{x}{9} \Big\rfloor\Big)$$
+ 
+ We feed $h^s,~h^s+\beta^s,~h^s+\gamma^s$ into the ALI and we get $\bs=(\pi(h^s),~\pi(h^s+\beta^s),~\pi(h^s+\gamma^s))$ and 
+ 
+ $$l'=\max(\beta,\gamma)= \bs_{\max}-\bs_{\min}$$
+ 
+ For each possible value of $h,~h+\beta,~h+\gamma$, $l'$ is calculated using the above process
+
+Table \ref{4}  shows corresponding hamming weight for $\bbC$ designed using ALI(87,23)
+\begin{table}[h!]
+\centering
+\begin{tabular}{||c |c  | c |c |} 
+ \hline
+ RTZ index & $ \bs$ & $ l'$ & $w_H$\\
+ \hline
+ $(0~4~8)$ & $(0~1~2)$& $46$ & $11+2(46)=103$\\
+ \hline
+ $(0~5~7)$ & $(0~2~1)$&  $46$  &$11+2(46)=103$\\
+ \hline
+ $(1~3~8) $ & $(1~0~2)$&  $46$  & $11+2(46)=103$\\
+ \hline
+ $(1~5~6) $ & $(1~2~0)$ &  $46$  & $9+2(46)=101$\\
+ \hline
+ $(2~3~7)$ & $(2~0~1)$ & $46$  & $9+2(46)=101$\\
+ \hline
+ $(2~4~6)$ & $(2~1~0)$ & $46$  & $9+2(46)=101$\\
+ \hline\hline
+ $(0~8~13)$ & $(0~2~4)$& $46$ & $15+2(46)=107$\\
+ \hline
+ $(0~7~14)$ & $(0~1~5)$&  $28$  &$15+2(28)=71$\\
+ \hline
+ $(1~8~12) $ & $(1~3~2)$&  $46$  & $13+2(46)=105$\\
+ \hline
+ $(1~6~14) $ & $(1~0~5)$ &  $28$  & $15+2(28)=71$\\
+ \hline
+ $(2~7~12)$ & $(2~1~3)$ & $46$  & $13+2(46)=105$\\
+ \hline
+ $(2~6~13)$ & $(2~0~4)$ & $46$  & $13+2(46)=105$\\
+ \hline\hline
+ $(0~4~17)$ & $(0~1~5)$& $46$ & $17+2(28)=73$\\
+ \hline
+ $(0~5~16)$ & $(0~2~4)$&  $28$  &$17+2(46)=109$\\
+ \hline
+ $(1~3~17) $ & $(1~0~5)$&  $46$  & $17+2(28)=73$\\
+ \hline
+ $(1~5~15) $ & $(1~2~3)$ &  $28$  & $15+2(46)=107$\\
+ \hline
+ $(2~3~16)$ & $(2~0~4)$ & $46$  & $15+2(46)=107$\\
+ \hline
+ $(2~4~15)$ & $(2~1~3)$ & $46$  & $15+2(46)=107$\\
+ \hline\hline
+ $(0~13~17)$ & $(0~4~5)$& $46$ & $17+2(28)=73$\\
+ \hline
+ $(0~14~16)$ & $(0~5~4)$&  $28$  &$17+2(28)=73$\\
+ \hline
+ $(1~12~17) $ & $(1~3~5)$&  $46$  & $17+2(46)=109$\\
+ \hline
+ $(1~14~15) $ & $(1~5~3)$ &  $28$  & $15+2(46)=107$\\
+ \hline
+ $(2~12~16)$ & $(2~3~4)$ & $46$  & $15+2(64)=143$\\
+ \hline
+ $(2~13~15)$ & $(2~4~3)$ & $46$  & $15+2(64)=143$\\
+ \hline\hline
+\end{tabular}
+\caption{Hamming Weight for weight-$3$ RTZ using ALI(87,23)} and
+\label{tb4}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{||c | c|c ||} 
+ \hline
+h &  $\Delta_{c'}$ &$w_H$\\
+ \hline\hline
+ $0$ &$69$& $150$\\
+ \hline
+ $1$ & $18$ & $48$\\
+ \hline
+ $2$ & $18$ & $48$\\
+ \hline
+ $3$ & $69$ & $150$\\
+ \hline
+$4$ & $18$ & $48$\\
+ \hline\hline
+\end{tabular}
+\caption{Hamming Weight for weight-$2$ RTZ using ALI(87,23) for different values of $h$}
+\label{tb5}
+\end{table}
+
+\section{Simulation Results and Discussion}
+Simulations for the coset interleaver with $N=261$ are done using the ALI($L,D$) interleaver. The values for $D=\{28,29,...,35\}~,L=N/3 =87$ and $$\Pi =\begin{bmatrix} 0 & 0 & 0 \cr 1 & 1 & 1 \cr 2 & 2 & 2\end{bmatrix}$$
+
+The minimum weight for each interleaver with respect to weight-2 and weight 3 RTZs are shown in Table(\ref{tb6}) and the simulation results are shown in Figure()
+\begin{table}[h!]
+\centering
+\begin{tabular}{||c | c|c ||} 
+ \hline
+D &  $w_H^{(2)}$ &$w_H^{(3)}$\\
+ \hline\hline
+ $28$ &$18$& $115$\\
+ \hline
+ $29$ & $14$ & $123$\\
+ \hline
+ $30$ & $18$ & $121$\\
+ \hline
+ $31$ & $24$ & $103$\\
+ \hline
+$32$ & $30$ & $89$\\
+ \hline
+$33$ & $36$ & $75$\\
+ \hline
+$34$ & $42$ & $61$\\
+ \hline
+$35$ & $48$ & $49$\\
+ \hline\hline
+\end{tabular}
+\caption{Hamming Weight for weight-$2$ RTZ using ALI(87,23) for different values of $h$}
+\label{tb6}
+\end{table}
+As expected, the interleaver designed with ALI$(87,29)$ performs the worst, but the performance of the other interleavers does not perform as expected of the dta from Table(). Further examination of the simulation results reveals that even though the other interleavers have high Hamming weight related to weight-$2$ and weight-$3$ RTZ inputs, the minimum distance of the code seem to be bound at by RTZ inputs with higher weights, specifically those of weight-$4$. Specifically weight-$4$ input of the form $(1+x^{\tau}) +x^{(\tau^2)}(1+x^{\tau})$ is transformed into weight-$4$ input of the form $(1+x)+x^{\tau}(1+x)$ after interleaving. In the end, the Hamming weight as a result of these combinations is $$w_H=w_m+w_p+w_{p'}=4+8+2=14$$ where $w_m$ is the weight of the RTZ-input. 
+
+Specifically weight-$4$ inputs of the form $(1+x^{\tau}) +x^{\tau^2}(1+x^{\tau})$ are transformed into weight-$4$ inputs of the form $(1+x)+x^3(1+x)$ after interleaving because the start index for picking the elements for all the cosets are the same and these causes somewhat well separated pre-interleaving inputs to be bunched together post-interleaving inputs. This is shown in the graph of the input output relation of any of the interleavers.
+
+This can be remedied by making sure that the start position for the other cosets are different and this can be accomplished by shifting the elements of the cosets other than $\bbC^0$ a certain value to the left. Let $a,b$ be the factor by which the $\bbC^1$ and $\bbC^2$ are shifted. The resulting Coset interleaver will be represented as CI$(D,a,b)$. We proceed to re-design  CI$(23,0,0)$  by introducing $a=30$ and $b=7$.
+The simulation results for CI$(23,0,0)$ and CI$(23,30,7)$ are shown in Figure() as can be seen adjusting the start position of the other cosets, the error-correcting performance is greatly improved. A further investigation of the simulation results reveals that for CI$(23,30,7)$, the Hamming distance for the turbo code is again bounded by weight-$4$ RTZ inputs. A specific example is that the weight-$4$ input of the form $(1+x^{\tau})+(x^{155})(1+x^{\tau})$ is transformed into another weight-$4$ RTZ input of the form$ (1+x^{\tau})+(x^{244})(1+x^{\tau})$. Then $$w_H=w_m+w_p+w_{p'}=4+8+8=20$$. The multiplicity of such weight-$4$ RTZ inputs is extremely high. 
+
+Since we know that a weight-$4$RTZ input is just a combination of 2 weight-$2$ RTZ inputs 
+
  \end{document}
