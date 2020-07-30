@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.13)  29 JUL 2020 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.13)  30 JUL 2020 16:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -297,6 +297,9 @@ Package: chapterbib 2010/09/18  v 1.17
 
 LaTeX Warning: Label `eq8' multiply defined.
 
+
+LaTeX Warning: Label `eq9' multiply defined.
+
 )
 \openout1 = `JuneProgress_29th_to_5thJuly.aux'.
 
@@ -508,13 +511,7 @@ Non-PDF special ignored!
 <special> color pop
 ]
 
-LaTeX Warning: Reference `4' on page 6 undefined on input line 419.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Reference `tb' on page 6 undefined on input line 435.
 
 [6
 Non-PDF special ignored!
@@ -525,7 +522,17 @@ Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
 ]
+
+LaTeX Warning: Reference `tb' on page 7 undefined on input line 455.
+
+
+LaTeX Warning: Reference `tb6' on page 7 undefined on input line 466.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -537,17 +544,37 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
 <special> color pop
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
 Non-PDF special ignored!
 <special> color pop
 Non-PDF special ignored!
@@ -561,10 +588,6 @@ Non-PDF special ignored!
 <special> color pop
 Non-PDF special ignored!
 <special> color push  Black
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
 Non-PDF special ignored!
 <special> color pop
 Non-PDF special ignored!
@@ -580,13 +603,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3332 strings out of 492164
- 37646 string characters out of 6129087
- 129708 words of memory out of 5000000
- 7580 multiletter control sequences out of 15000+600000
+ 3333 strings out of 492164
+ 37654 string characters out of 6129087
+ 128708 words of memory out of 5000000
+ 7581 multiletter control sequences out of 15000+600000
  18102 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,20n,37p,837b,278s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,20n,37p,846b,278s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-di
@@ -602,7 +625,7 @@ ype1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmsy6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on JuneProgress_29th_to_5thJuly.pdf (9 pages, 189850 bytes).
+Output written on JuneProgress_29th_to_5thJuly.pdf (9 pages, 191406 bytes).
 PDF statistics:
  102 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
