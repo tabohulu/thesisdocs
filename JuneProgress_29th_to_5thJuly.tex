@@ -225,14 +225,39 @@ w_H=&2+(2 + \frac{\Delta_c}{\tau} )w_0+ (2 + \frac{\Delta_{c'}}{\tau})w_0\\
 \label{eq3}
 \end{equation}
 
-For all the $\Pi$ in Table \ref{tb1}, since $\Delta_c = 9=3\tau$ and $\Delta_{c'}:=(c_{(h'+\alpha')}^{t}-c_{(h')}^{t})$  we have
-\begin{equation}
-\begin{split}
-w_H=&6+\Big(3+\frac{\Delta_{c'}}{3}\Big)w_0,~w_0=2
-\end{split}
-\label{eq4}
-\end{equation}
+For all the $\Pi$ in Table \ref{tb1} $\Delta_c = 9=3\tau$ and $\Delta_{c'}:=(c_{(h'+\alpha')}^{t}-c_{(h')}^{t})$ . It is convinient to write $\Delta_{c'}$ in terms of $D$ 
 
+$$c_{(h'+\alpha')}^{t}=3*(D(h+\alpha)+ \lfloor \frac{h+\alpha}{A} \rfloor \bmod L)$$ and $$c_{(h')}^{t})=3*(D(h)+ \lfloor \frac{h}{A} \rfloor \bmod L)$$
+where $A=L/C),~C=gcd(L,D)$. 
+$A$ can take on $3$ different values,$L,~L/3,~3$
+if $A>3$ $\Delta_{c'}$ simplifies to $$\Delta_{c'}=3*(D(\alpha) \bmod L)$$ else $$\Delta_{c'}=3*(D(\alpha) +1\bmod L)$$ 
+
+Again due to the choice of $\Pi,~\alpha=\tau=3$, when $A>3$ we have 
+\begin{equation*}
+\begin{split}
+w_H=&6+w_0\Big(3+\frac{3*(D(\alpha) \bmod L)}{3}\Big),~w_0=2\\
+=&6+2\Big(3+(D(\alpha) \bmod L)\Big)
+\end{split}
+\end{equation*}
+
+else we have 
+\begin{equation*}
+\begin{split}
+w_H=&6+w_0\Big(3+\frac{3*(D(\alpha) +1 \bmod L)}{3}\Big),~w_0=2\\
+=&6+2\Big(3+(D(\alpha)+1 \bmod L)\Big)
+\end{split}
+\end{equation*}
+
+more accurately we have the following equation
+\begin{equation}
+w_H=
+\begin{cases}
+\min (6+2\Big(3+(D(\alpha) \bmod L)\Big),~6+2\Big(3+(L-(D(\alpha) \bmod L))\Big), ~A>3 \\
+6+2\Big(3+(D(\alpha)+1 \bmod L)\Big), ~A=3\\
+
+\end{cases}
+\label{eq9}
+\end{equation}
 
 %This means that by altering the value of $t$ and $s$, we can increase the weight of the codeword produced. With this knowledge,
 %all we need to do is to make sure that the if the input to the interleaver is a weight-$2$ RTZ inputs with a small value of $t$, it is converted to a weight-$2$ RTZ with a large value of $s$
@@ -497,6 +522,11 @@ Specifically weight-$4$ inputs of the form $(1+x^{\tau}) +x^{\tau^2}(1+x^{\tau})
 This can be remedied by making sure that the start position for the other cosets are different and this can be accomplished by shifting the elements of the cosets other than $\bbC^0$ a certain value to the left. Let $a,b$ be the factor by which the $\bbC^1$ and $\bbC^2$ are shifted.  We proceed to re-design  CI$(23,0,0)$  by introducing $s_1=30$ and $s_2=7$.
 The simulation results for CI$(261,23,0,0)$ and CI$(261,23,30,7)$ are shown in Figure() as can be seen adjusting the start position of the other cosets, the error-correcting performance is greatly improved. A further investigation of the simulation results reveals that for CI$(261,23,30,7)$, the Hamming distance for the turbo code is again bounded by weight-$4$ RTZ inputs. A specific example is that the weight-$4$ input of the form $(1+x^{\tau})+(x^{155})(1+x^{\tau})$ is transformed into another weight-$4$ RTZ input of the form$ (1+x^{\tau})+(x^{244})(1+x^{\tau})$. Then $$w_H=w_m+w_p+w_{p'}=4+8+8=20$$. The multiplicity of such weight-$4$ RTZ inputs is extremely high. 
 
-Since we know that a weight-$4$RTZ input is just a combination of 2 weight-$2$ RTZ inputs 
+\section{Weight-4 Error Events}
+The coset interleaver with parameters $D,s_1,s_2$ carefully chosen is able to effectively deal with weight-$2$ and weight-$3$ RTZ inputs. It is however unable to effectively deal with weight-$4$ RTZ inputs. The formation of weight-4 RTZ inputs is explained using Figure()
+The chosen coset pattern ensured that weight-$2$ RTZ of the form $1+x^{t\tau},~t=1,2$ would be mapped such that the i bits were mapped to different cosets. The combination of 2 such mappings gives rise to a weight-$4$ RTZ input. The pairs that are close together produce a large hamming weight and are not problematic. However, depending on the value of $D$ chosen, there is a distance $z$between the coset pairs is $\tau$ ie a weight-$4$ RTZ input of the form $(1+x^3) +x^z(1+x^3)$
+
+This characteristic is very similar to that of linear interleavers which are also unable to effectively deal with weight-4 RTZ inputs. in [New Deterministic Interleaver Designs for
+Turbo Codes] weight-4 RTZ inputs of the form $(1+x^t)x^q + (1+x^t)x^{q+\tau}$ produce another weight-4 RTZ after interleaving, where $t$ is obtained by solving the congruence equation $tD\equiv \tau \bmod N$
 
  \end{document}
