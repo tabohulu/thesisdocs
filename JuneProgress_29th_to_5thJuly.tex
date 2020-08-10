@@ -252,7 +252,7 @@ more accurately we have the following equation
 \begin{equation}
 w_H=
 \begin{cases}
-\min (6+2\Big(3+(D(\alpha) \bmod L)\Big),~6+2\Big(3+(L-(D(\alpha) \bmod L))\Big), ~A>3 \\
+\min \Bigg (6+2\Big(3+(D(\alpha) \bmod L)\Big),~6+2\Big(3+(L-(D(\alpha) \bmod L))\Big)\Bigg), ~A>3 \\
 6+2\Big(3+(D(\alpha)+1 \bmod L)\Big), ~A=3\\
 
 \end{cases}
@@ -522,11 +522,49 @@ Specifically weight-$4$ inputs of the form $(1+x^{\tau}) +x^{\tau^2}(1+x^{\tau})
 This can be remedied by making sure that the start position for the other cosets are different and this can be accomplished by shifting the elements of the cosets other than $\bbC^0$ a certain value to the left. Let $a,b$ be the factor by which the $\bbC^1$ and $\bbC^2$ are shifted.  We proceed to re-design  CI$(23,0,0)$  by introducing $s_1=30$ and $s_2=7$.
 The simulation results for CI$(261,23,0,0)$ and CI$(261,23,30,7)$ are shown in Figure() as can be seen adjusting the start position of the other cosets, the error-correcting performance is greatly improved. A further investigation of the simulation results reveals that for CI$(261,23,30,7)$, the Hamming distance for the turbo code is again bounded by weight-$4$ RTZ inputs. A specific example is that the weight-$4$ input of the form $(1+x^{\tau})+(x^{155})(1+x^{\tau})$ is transformed into another weight-$4$ RTZ input of the form$ (1+x^{\tau})+(x^{244})(1+x^{\tau})$. Then $$w_H=w_m+w_p+w_{p'}=4+8+8=20$$. The multiplicity of such weight-$4$ RTZ inputs is extremely high. 
 
-\section{Weight-4 Error Events}
+\section{Weight-4 RTZ inputs}
 The coset interleaver with parameters $D,s_1,s_2$ carefully chosen is able to effectively deal with weight-$2$ and weight-$3$ RTZ inputs. It is however unable to effectively deal with weight-$4$ RTZ inputs. The formation of weight-4 RTZ inputs is explained using Figure()
 The chosen coset pattern ensured that weight-$2$ RTZ of the form $1+x^{t\tau},~t=1,2$ would be mapped such that the i bits were mapped to different cosets. The combination of 2 such mappings gives rise to a weight-$4$ RTZ input. The pairs that are close together produce a large hamming weight and are not problematic. However, depending on the value of $D$ chosen, there is a distance $z$between the coset pairs is $\tau$ ie a weight-$4$ RTZ input of the form $(1+x^3) +x^z(1+x^3)$
 
 This characteristic is very similar to that of linear interleavers which are also unable to effectively deal with weight-4 RTZ inputs. in [New Deterministic Interleaver Designs for
 Turbo Codes] weight-4 RTZ inputs of the form $(1+x^t)x^q + (1+x^t)x^{q+\tau}$ produce another weight-4 RTZ after interleaving, where $t$ is obtained by solving the congruence equation $tD\equiv \tau \bmod N$
+
+\subsection{Dealing with weight-4 RTZ inputs}
+To deal with weight-4 RTZ inputs we need to introduce some kind of controlled irregularity into our design of the coset interleaver. This is acheived by dividing each coset $\bbC^t$ further into $\tau $ cosets and apllying a little bit of manipulation as will be explained below. The following notations will be used.
+
+\begin{enumerate}
+\item $\bbC^{tt'},~t'=0,1,..\tau-1$ be the index set of the index set $\bbC^t$. The
+ elements are written as $c^{tt'}_m,~m=0,1,...,M-1$
+
+\item $\bbC^{tt'}$ has size $M=L/\tau$
+
+\item $D_0$ is the angular shift and is the same for all $\bbC^{tt}$ and is used as a parameter in the ALI
+
+\item $D_1,~D_2$ represent to first element in $\bbC^{t1}$ and $\bbC^{t2}$ respectively.
+
+%\item $\Pi'=\begin{bmatrix}
+%	0 & 1 & 2\cr
+	%\end{bmatrix}$ is the permutation matrix
+\end{enumerate}
+Lets begin by focusing on $\bbC^{0t}$
+ For each element in $\bbC^{00}$ is calculated as $$c_m^{00}=D_0m+\lfloor \frac{m}{A} \rfloor \bmod M $$, where $$A=M/C,~C=gcd(M,D_0)$$.
+ Elements in  $\bbC^{01}$ and $\bbC^{02}$ are calculated as follows
+ $$c_m^{01}=D_0m+\lfloor \frac{m}{A} \rfloor+D_1 \bmod M $$
+ and
+ $$c_m^{02}=D_0m+\lfloor \frac{m}{A} \rfloor +D_2\bmod M $$
+ 
+ With respect to $\bbC^{1t'}$ and $\bbC^{2t'}$ we have 
+$$ c_m^{10}=c_m^{01},~c_m^{11}=c_m^{02},~c_m^{12}=c_m^{02}$$ and
+$$ c_m^{20}=c_m^{02},~c_m^{21}=c_m^{00},~c_m^{22}=c_m^{01}$$
+respectively.
+To obtain the corresponding values for $\bbC^t$, we perform the simple operation shown below
+ 
+ $$ c^{t}_l=3c^{tt'}_{m}+t'$$ where $$ m=\Big \lfloor \frac{l}{\tau} \Big \rfloor, ~t'=\bmod(l,\tau),t=0,1,...,\tau-1,~l=0,1,...,L-1$$
+ 
+ The above process introduces some chaos into $\bbC^t$ which will be useful in dealing with weight-$4$ RTZ inputs.
+ 
+ 
+ 
+
 
  \end{document}
