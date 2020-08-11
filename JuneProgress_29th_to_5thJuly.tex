@@ -559,12 +559,49 @@ $$ c_m^{20}=c_m^{02},~c_m^{21}=c_m^{00},~c_m^{22}=c_m^{01}$$
 respectively.
 To obtain the corresponding values for $\bbC^t$, we perform the simple operation shown below
  
- $$ c^{t}_l=3c^{tt'}_{m}+t'$$ where $$ m=\Big \lfloor \frac{l}{\tau} \Big \rfloor, ~t'=\bmod(l,\tau),t=0,1,...,\tau-1,~l=0,1,...,L-1$$
+ \begin{equation} 
+ c^{t}_l=3(3c^{tt'}_{m}+t')+t
+ \label{eq12}
+ \end{equation} 
+ where $$ m=\Big \lfloor \frac{l}{\tau} \Big \rfloor, ~t'=\bmod(l,\tau),t=0,1,...,\tau-1,~l=0,1,...,L-1$$
  
- The above process introduces some chaos into $\bbC^t$ which will be useful in dealing with weight-$4$ RTZ inputs.
+ After the index sets $\bbC^t$ have been determined, $s_1,s_2$ may be used to further adjust the start point of $\bbC^1$ and $\bbC^2$ respectively.
+ The above process introduces some chaos into $\bbC^t$ which will be useful in dealing with weight-$4$ RTZ inputs. The problem now is how to select the parameters $D_1,~D_2,~D_3,s_1,s_2$
  
+ \subsection{Weight-$2$ RTZ inputs Hamming Weight}
+ $w_H$ for weight-$2$ RTZ inputs is easily determined. 
+ We know that for weight-$2$ RTZ inputs $$
+w_H=6+2\Big(3+\frac{\Delta_{c'}}{3}\Big)
+$$
+where
+$\Delta_{c'}:=(c_{(l+\alpha')}^{t}-c_{(l)}^{t}),~\alpha' =3$. 
+
+ Using  (\ref{eq12}) we can determine the  value of$\Delta_{c'}$ Without loss of generality, we set $l=0$ and we have  
+ $$c_{(l)}^{t}=3(3c^{tt'}_{0}+t')+t$$
  
+ $$c_{(l+3)}^{t}=3(3c^{tt'}_{1}+t')+t$$
  
+ \begin{equation}
+ \begin{split}
+ \Delta_{c'}=& 3(3c^{tt'}_{1}+t')+t-(3(3c^{tt'}_{0}+t')+t)\\
+ =&9c^{tt'}_{1}+3t'+t-(9c^{tt'}_{0}+3t'+t)\\
+ =&9(c^{tt'}_{1}-c^{tt'}_{0})\\
+ =&9D_1
+ \end{split}
+ \end{equation}
+ 
+ Upon substitution, our Hamming weight equation becomes
+ 
+ \begin{equation}
+ \begin{split}
+w_H=&6+2\Big(3+\frac{9D_1}{3}\Big)\\
+=&6+2\Big(3+3D_1\Big)\\
+=&6+6(1+D_1)
+\end{split}
+\end{equation}
+
+\subsection{Weight-$3$ RTZ inputs Hamming Weight}
+ The choice of $\Pi$, we are able to know exactly which pre-interleaving weight-$3$ inputs will generate post-interleaved weight-$3$ RTZ inputs. Using this knowledge (\ref{eq12}) we should be able to calculate the associated hamming weight for the codeword produced by weight-$3$ RTZ inputs. Let us represent the pre-interleaving  weight-$3$ RTZ inputs by the vector $\bx=(x_0,x_1,x_2)$
 
 
  \end{document}
