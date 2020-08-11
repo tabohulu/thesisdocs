@@ -601,7 +601,16 @@ w_H=&6+2\Big(3+\frac{9D_1}{3}\Big)\\
 \end{equation}
 
 \subsection{Weight-$3$ RTZ inputs Hamming Weight}
- The choice of $\Pi$, we are able to know exactly which pre-interleaving weight-$3$ inputs will generate post-interleaved weight-$3$ RTZ inputs. Using this knowledge (\ref{eq12}) we should be able to calculate the associated hamming weight for the codeword produced by weight-$3$ RTZ inputs. Let us represent the pre-interleaving  weight-$3$ RTZ inputs by the vector $\bx=(x_0,x_1,x_2)$
+ The choice of $\Pi$, we are able to know exactly which pre-interleaving weight-$3$ inputs will generate post-interleaved weight-$3$ RTZ inputs. Using this knowledge (\ref{eq12}) we should be able to calculate the associated hamming weight for the codeword produced by weight-$3$ RTZ inputs. Let us represent the pre-interleaving  weight-$3$ RTZ inputs by the vector $\bx=(x_0,x_1,x_2)$. Also $t,l,m,t'$ in (\ref{eq12}) are calculated using the following equations
+ 
+ \begin{equation}
+ \begin{split}
+ &t=x_i \bmod 3\\
+ &l=\Big\lfloor \frac{x_i}{3} \Big\rfloor\\
+ &m=\Big\lfloor \frac{l}{3} \Big\rfloor\\
+ &t' =m \bmod 3
+ \end{split}
+ \end{equation}
 
 
  \end{document}
