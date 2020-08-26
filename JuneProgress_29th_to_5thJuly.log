@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.13)  11 AUG 2020 11:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.13)  19 AUG 2020 02:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,17 +293,7 @@ Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 \c@inputfile=\count128
 Package: chapterbib 2010/09/18  v 1.17
 ))
-(./JuneProgress_29th_to_5thJuly.aux
-
-LaTeX Warning: Label `eq9' multiply defined.
-
-
-LaTeX Warning: Label `eq8' multiply defined.
-
-
-LaTeX Warning: Label `eq9' multiply defined.
-
-)
+(./JuneProgress_29th_to_5thJuly.aux)
 \openout1 = `JuneProgress_29th_to_5thJuly.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -322,7 +312,8 @@ Package chapterbib Info: The sectionbib option changes "\chapter *" to "\sectio
 n *" in \thebibliography on input line 12.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
 
- (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
@@ -352,14 +343,145 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> color pop
 ]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 6
-1.
- (c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+\openout2 = `./Sources/Preliminaries.aux'.
+
+ (./Sources/Preliminaries.tex
+Overfull \hbox (62.26385pt too wide) in paragraph at lines 54--55
+[]\OT1/cmr/m/n/10.95 Let $\U/msb/m/n/10.95 C[] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m
+/n/10.95 f\OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cm
+m/m/it/10.95 ^^\; \OT1/cmr/m/n/10.95 6\OML/cmm/m/it/10.95 ^^\; \OT1/cmr/m/n/10.
+95 1\OML/cmm/m/it/10.95 ^^\; \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ^^\; \OT1/
+cmr/m/n/10.95 7\OML/cmm/m/it/10.95 ^^\; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95
+ ^^\; \OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ^^\; \OT1/cmr/m/n/10.95 8\OML/cmm
+/m/it/10.95 ^^\\OMS/cmsy/m/n/10.95 g \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f
+\OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 9\OML/cmm/m/it/10.
+95 ; \OT1/cmr/m/n/10.95 18\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cmm/m/
+it/10.95 ; \OT1/cmr/m/n/10.95 12\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 21\OML
+/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 6\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 
+15\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 24\OMS/cmsy/m/n/10.95 g$\OT1/cmr/m/n
+/10.95 , $\U/msb/m/n/10.95 C[] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f\OT1/c
+mr/m/n/10.95 4\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 13\OML/cmm/m/it/10.95 ; 
+\OT1/cmr/m/n/10.95 22\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 7\OML/cmm/m/it/10
+.95 ; \OT1/cmr/m/n/10.95 16\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 25\OML/cmm/
+m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 10\OM
+L/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 19\OMS/cmsy/m/n/10.95 g$
+ []
+
+[1
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+
+
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+]) [2
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+]
+\openout2 = `./Sources/PermutationMatrixDesign.aux'.
+
+ (./Sources/PermutationMatrixDesign.tex
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 7
+.
+
+(c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
- [1
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 7.
+
+
+LaTeX Warning: Reference `eq1' on page 3 undefined on input line 42.
+
+
+LaTeX Warning: Reference `eq1' on page 3 undefined on input line 43.
+
+[3
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+
+
+
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
@@ -392,72 +514,18 @@ Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
+]
+
+LaTeX Warning: Reference `tb1' on page 4 undefined on input line 95.
+
+
+LaTeX Warning: Reference `tb1' on page 4 undefined on input line 104.
+
+[4
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-] [2
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-] [3
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
@@ -480,28 +548,32 @@ Non-PDF special ignored!
 <special> color pop
 ]
 
+LaTeX Warning: Reference `tb1' on page 5 undefined on input line 174.
+
+
+LaTeX Warning: Reference `tb2' on page 5 undefined on input line 206.
+
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4
+
+LaTeX Warning: Reference `tb2' on page 5 undefined on input line 241.
+
+
+LaTeX Warning: Reference `eq6' on page 5 undefined on input line 241.
+
+
+LaTeX Warning: Reference `tb3' on page 5 undefined on input line 260.
+
+
+LaTeX Warning: Reference `tb1' on page 5 undefined on input line 322.
+
+
+LaTeX Warning: Reference `tb2' on page 5 undefined on input line 322.
+
+[5
 Non-PDF special ignored!
 <special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-] [5
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
 Non-PDF special ignored!
 <special> color pop
 Non-PDF special ignored!
@@ -525,11 +597,7 @@ Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
-]
-
-LaTeX Warning: Reference `tb' on page 7 undefined on input line 460.
-
-[7
+] [7
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
@@ -537,19 +605,16 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
-Non-PDF special ignored!
-<special> color push  Black
 Non-PDF special ignored!
 <special> color pop
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
 <special> color pop
+]) [8
 Non-PDF special ignored!
 <special> color push  Black
 Non-PDF special ignored!
@@ -559,123 +624,169 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> color pop
 ]
+\openout2 = `./Sources/CosetDesign.aux'.
 
-LaTeX Warning: Reference `tb' on page 8 undefined on input line 480.
+ (./Sources/CosetDesign.tex
 
-
-LaTeX Warning: Reference `tb6' on page 8 undefined on input line 491.
-
-[8
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-] [9
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-] [10
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-] [11
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-Non-PDF special ignored!
-<special> color push  Black
-Non-PDF special ignored!
-<special> color pop
-] (./JuneProgress_29th_to_5thJuly.aux)
-
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Reference `eq3' on page 9 undefined on input line 9.
 
 
-LaTeX Warning: There were multiply-defined labels.
+Overfull \hbox (21.66998pt too wide) detected at line 42
+\OML/cmm/m/it/10.95 w[] \OT1/cmr/m/n/10.95 = []
+ []
 
- ) 
+
+LaTeX Warning: Reference `tb3' on page 9 undefined on input line 45.
+
+[9
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+
+
+
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+]
+
+LaTeX Warning: Reference `eq9' on page 10 undefined on input line 65.
+
+
+LaTeX Warning: Reference `eq10' on page 10 undefined on input line 67.
+
+
+LaTeX Warning: Reference `eq11' on page 10 undefined on input line 69.
+
+
+LaTeX Warning: Reference `tb3' on page 10 undefined on input line 69.
+
+
+LaTeX Warning: Reference `tb' on page 10 undefined on input line 71.
+
+
+LaTeX Warning: Reference `eq9' on page 10 undefined on input line 85.
+
+
+LaTeX Warning: Reference `eq10' on page 10 undefined on input line 88.
+
+
+LaTeX Warning: Reference `eq11' on page 10 undefined on input line 90.
+
+
+LaTeX Warning: Reference `tb3' on page 10 undefined on input line 90.
+
+
+LaTeX Warning: Reference `tb3' on page 10 undefined on input line 92.
+
+[10
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+]) [11
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+]
+\openout2 = `./Sources/SimRes.aux'.
+
+ (./Sources/SimRes.tex
+
+LaTeX Warning: Reference `tb6' on page 12 undefined on input line 4.
+
+
+LaTeX Warning: Reference `tb4' on page 12 undefined on input line 31.
+
+) [12
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+
+
+
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+Non-PDF special ignored!
+<special> color push  Black
+Non-PDF special ignored!
+<special> color pop
+]
+! I can't write on file `./Source/CosetDesignW4.aux'.
+\@include ...\immediate \openout \@partaux #1.aux 
+                                                  \immediate \write \@partau...
+l.19 \include{./Source/CosetDesignW4}
+                                     
+(Press Enter to retry, or Control-Z to exit; default file extension is `.tex')
+Please type another output file name: 
+! Emergency stop.
+\@include ...\immediate \openout \@partaux #1.aux 
+                                                  \immediate \write \@partau...
+l.19 \include{./Source/CosetDesignW4}
+                                     
+End of file on the terminal!
+
+ 
 Here is how much of TeX's memory you used:
- 3334 strings out of 492164
- 37670 string characters out of 6129087
- 133708 words of memory out of 5000000
- 7582 multiletter control sequences out of 15000+600000
- 18409 words of font info for 72 fonts, out of 8000000 for 9000
+ 3345 strings out of 492164
+ 37971 string characters out of 6129087
+ 132708 words of memory out of 5000000
+ 7581 multiletter control sequences out of 15000+600000
+ 15612 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,20n,37p,833b,278s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
-live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmib10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:
-/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2019/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msbm10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on JuneProgress_29th_to_5thJuly.pdf (12 pages, 203559 bytes).
-PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 39i,20n,37p,727b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

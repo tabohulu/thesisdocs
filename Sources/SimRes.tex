@@ -1,0 +1,39 @@
+\section{Simulation Results and Discussion}
+Simulations for the coset interleaver CI$(N,D,s_1,s_2)$ interleaver are done for $s_1,s_2=0$. The values for $D=\{28,29,...,35\}~,N =261$ and $$\Pi =\begin{bmatrix} 0 & 0 & 0 \cr 1 & 1 & 1 \cr 2 & 2 & 2\end{bmatrix}$$
+
+The minimum weight for each interleaver with respect to W2RTZs, W3RTZs and  W4RTZs are shown in Table(\ref{tb6}) and the simulation results are shown in Figure()
+\begin{table}[h!]
+\centering
+\begin{tabular}{||c | c|c|c ||} 
+ \hline
+D &  $w_H^{(2)}$ &$w_H^{(3)}$ & $w_H^{(4)}$\\
+ \hline\hline
+ $28$ &$18$& $115$ & $14$\\
+ \hline
+ $29$ & $14$ & $123$ & $14$\\
+ \hline
+ $30$ & $18$ & $121$ & $14$\\
+ \hline
+ $31$ & $24$ & $103$ & $14$\\
+ \hline
+$32$ & $30$ & $89$ & $14$\\
+ \hline
+$33$ & $36$ & $75$ & $14$\\
+ \hline
+$34$ & $42$ & $61$ & $14$\\
+ \hline
+$35$ & $48$ & $49$ & $14$\\
+ \hline\hline
+\end{tabular}
+\caption{Minimum Hamming weight for weight-$2$ and weight-$3$ RTZ using CI$(N,D,s_1,s_2)$, where $s_1,s_2=0$}
+\label{tb4}
+\end{table}
+As expected, the interleaver designed with CI$(261,29)$ performs the worst, but the performance of the other interleavers does not perform as expected of the data from Table \ref{tb4}. Further examination of the simulation results reveals that even though the other interleavers have high Hamming weight related to weight-$2$ and weight-$3$ RTZ inputs, the minimum distance of the code seem to be bound at by RTZ inputs with higher weights, specifically those of weight-$4$. 
+%Specifically weight-$4$ input of the form $(1+x^{\tau}) +x^{(\tau^2)}(1+x^{\tau})$ is transformed into weight-$4$ input of the form $(1+x)+x^{\tau}(1+x)$ after interleaving. In the end, the Hamming weight as a result of these combinations is $$w_H=w_m+w_p+w_{p'}=4+8+2=14$$ where $w_m$ is the weight of the RTZ-input. 
+
+%Specifically weight-$4$ inputs of the form $(1+x^{\tau}) +x^{\tau^2}(1+x^{\tau})$ are transformed into weight-$4$ inputs of the form $(1+x)+x^3(1+x)$ after interleaving 
+Since the start index for picking the elements for all the cosets are the same, this causes well separated pre-interleaving inputs to be bunched together post-interleaving. This is shown in the graph of the input output relation of any of the interleavers.
+
+This can be remedied by making sure that the start position for the other cosets are different and this can be accomplished by shifting the elements of the cosets other than $\bbC^0$ a certain value to the left. Let $a,b$ be the factor by which the $\bbC^1$ and $\bbC^2$ are shifted.  We proceed to re-design  CI$(23,0,0)$  by introducing $s_1=30$ and $s_2=7$.
+The simulation results for CI$(261,23,0,0)$ and CI$(261,23,30,7)$ are shown in Figure() as can be seen adjusting the start position of the other cosets, the error-correcting performance is greatly improved but the Hamming distance for the turbo code is again bounded by weight-$4$ RTZ inputs. A specific example is that the weight-$4$ input of the form $(1+x^{\tau})+(x^{155})(1+x^{\tau})$ is transformed into another weight-$4$ RTZ input of the form$ (1+x^{\tau})+(x^{244})(1+x^{\tau})$. Then $$w_H=w_m+w_p+w_{p'}=4+8+8=20$$. This means that with this with this design, the condition $\Delta_{c'1} \neq \Delta_{c1}$ and $\Delta_{c'2} \neq \Delta_{c2}$ was not met.
+In the next section, we attempt an an extra step to the coset redesign in order increase the value of $w^{(4)}_H$

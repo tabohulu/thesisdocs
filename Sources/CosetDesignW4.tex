@@ -1,0 +1,90 @@
+\section{Coset Design for W4RTZs}
+The coset interleaver with parameters $D,s_1,s_2$ carefully chosen is able to effectively deal with W2RTZs and W3RTZs. It is however unable to effectively deal with weight-$4$ RTZ inputs. The composition of all the cosets is the same and this brings about regularity characteristic in the overall interleaver. This regularity whiles desirable makes it difficult for W4RTZ to be effectively broken by the interleaver. To understand how the current coset design affects W4RTZs, we need to see the inner workings of the coset as it relates to the permutation matrix.
+
+\subsection{Inner workings of coset design}
+When using $\Pi^{(0)}$, there cosecutive elements are taken from each coset one coset at a time. We can therefore further divide each coset into 3 inner cosets, placing the consecutive elements in different cosets. These inner cosets when focusing on $\bbC^{0}$ are represented by $\bbC^{0t'},~t'=\{0,1,2\}$. The elements in $\bbC^{0}$ can be written as $3(\pi(h))+0,~h=\{0,1,\cdots,L-1\}$, where $\pi(h)$ is given by (\ref{eq3}). To see how the elements are placed in $\bbC^{0t'}$, we rewrite (\ref{eq3}) as 
+\begin{equation}
+\pi(h)=D(3m+t')+\lfloor\frac{3m+t'}{A} mod L,~m=\{0,1,\cdots,M-1\} \rfloor
+\end{equation}
+
+% and the elements in $\bbC^{0t'}$ can be written as $3\Big(3j+t'\Big)+0,~j=\{0,1,\cdots,M-1\}$
+
+\subsection{Dealing with weight-4 RTZ inputs}
+To deal with weight-4 RTZ inputs we need to introduce some kind of controlled irregularity into our design of the coset interleaver. This is acheived by dividing each coset $\bbC^t$ further into $\tau $ cosets and applying a little bit of manipulation as will be explained below. Lets begin by focusing on $\bbC^{0t}$. The following notations will be used.
+
+\begin{enumerate}
+
+\item $D_0$ is the angular shift and is the same for all $\bbC^{tt'}$ and is used as a parameter in the ALI
+
+\item $D_1,~D_2$ represent to first element in $\bbC^{01}$ and $\bbC^{02}$ respectively.
+
+%\item $\Pi'=\begin{bmatrix}
+%	0 & 1 & 2\cr
+	%\end{bmatrix}$ is the permutation matrix
+\end{enumerate}
+
+ For each element in $\bbC^{00}$ is calculated as $$c_m^{00}=D_0m+\lfloor \frac{m}{A} \rfloor \bmod M $$, where $$A=M/C,~C=gcd(M,D_0)$$.
+ Elements in  $\bbC^{01}$ and $\bbC^{02}$ are calculated as follows
+ $$c_m^{01}=D_0m+\lfloor \frac{m}{A} \rfloor+D_1 \bmod M $$
+ and
+ $$c_m^{02}=D_0m+\lfloor \frac{m}{A} \rfloor +D_2\bmod M $$
+ 
+ With respect to $\bbC^{1t'}$ and $\bbC^{2t'}$ we have 
+$$ c_m^{10}=c_m^{01},~c_m^{11}=c_m^{02},~c_m^{12}=c_m^{00}$$ and
+$$ c_m^{20}=c_m^{02},~c_m^{21}=c_m^{00},~c_m^{22}=c_m^{01}$$
+respectively.
+To obtain the corresponding values for $\bbC^t$, we perform the simple operation shown below
+ 
+ \begin{equation} 
+ c^{t}_h=3(3c^{tt'}_{m}+t')+t
+ \label{eq12}
+ \end{equation} 
+ where $$ m=\Big \lfloor \frac{h}{\tau} \Big \rfloor, ~t'=\bmod(m,\tau),t=0,1,...,\tau-1,~h=0,1,...,C-1$$
+ 
+ After the index sets $\bbC^t$ have been determined, $s_1,s_2$ may be used to further adjust the start point of $\bbC^1$ and $\bbC^2$ respectively.
+ The above process introduces some chaos into $\bbC^t$ which will be useful in dealing with weight-$4$ RTZ inputs. The problem now is how to select the parameters $D_1,~D_2,~D_3,s_1,s_2$
+ 
+ \subsection{Weight-$2$ RTZ inputs Hamming Weight}
+ $w_H$ for weight-$2$ RTZ inputs is easily determined. 
+ Using  (\ref{eq12}) we can determine the  value of$\Delta_{c'}$. Without loss of generality, we set $h=0$ and we have  
+ $$c_{(h)}^{t}=3(3c^{tt'}_{0}+t')+t$$
+ 
+ $$c_{(h+3)}^{t}=3(3c^{tt'}_{1}+t')+t$$
+ 
+ \begin{equation}
+ \begin{split}
+ \Delta_{c'}=& 3(3c^{tt'}_{1}+t')+t-(3(3c^{tt'}_{0}+t')+t)\\
+ =&9c^{tt'}_{1}+3t'+t-(9c^{tt'}_{0}+3t'+t)\\
+ =&9(c^{tt'}_{1}-c^{tt'}_{0})\\
+ =&9D_0
+ \end{split}
+ \end{equation}
+ 
+ Upon substitution, our Hamming weight equation becomes
+ 
+ \begin{equation}
+ \begin{split}
+w_H^{(2)}=&6+2\Big(3+\frac{9D_0}{3}\Big)\\
+=&6+2\Big(3+3D_0\Big)\\
+=&6+6(1+D_0)
+\end{split}
+\end{equation}
+
+\subsection{Weight-$3$ RTZ inputs Hamming Weight}
+ The choice of $\Pi$, we are able to know exactly which pre-interleaving weight-$3$ inputs will generate post-interleaved weight-$3$ RTZ inputs. 
+ %Using this knowledge (\ref{eq12}) we should be able to calculate the associated Hamming weight for the codeword produced by weight-$3$ RTZ inputs. 
+ Let us represent the pre-interleaving  weight-$3$ RTZ inputs by the vector $\bx=(x_0,x_1,x_2)$. Also $t,l,m,t'$ in (\ref{eq12}) are calculated using the following equations
+ 
+ \begin{equation}
+ \begin{split}
+ &t_i=x_i \bmod 3\\
+ &h_i=\Big\lfloor \frac{x_i}{3} \Big\rfloor\\
+ &m_i=\Big\lfloor \frac{h_i}{3} \Big\rfloor\\
+ &t'_i =m_i \bmod 3
+ \end{split}
+ \end{equation}
+
+In calculating the corresponding hamming weight for the weight-$3$ RTZ we only need the $3c^{tt'}_{m}+t'$ portion of \ref{eq12} and the corresponding vector $\by$ as a result of feeding $\bx$ into it is given by
+ $$\by=\Big((3c^{t_{0}t'_{0}}_{m_{0}}+t'_0,~3c^{t_{1}t'_{1}}_{m_{1}}+t'_1,~3c^{t_{2}t'_{2}}_{m_{2}}+t'_{2}) -\min(3c^{t_{0}t'_{0}}_{m_{0}}+t'_0,~3c^{t_{1}t'_{1}}_{m_{1}}+t'_1,~3c^{t_{2}t'_{2}}_{m_{2}}+t'_{2})\Big)$$
+ 
+ and $l'=\max(\beta,\gamma)= y_{\max}$

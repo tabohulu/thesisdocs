@@ -1,0 +1,44 @@
+\section{RTZ Inputs}
+in this section we talk a little bit more about the types of  RTZ inputs and introduce their polynomial and coset definitions. Finally we talk about how certain RTZ inputs may be dealt with after interleaving.
+
+\subsection{Types of RTZ inputs}
+Regardless of the component code used in turbo coding, the RTZ inputs can be grouped into two basic forms. These are \textit{base RTZ inputs} and \textit{compound RTZ inputs}. Base RTZ inputs are dependent on the component code and cannot be broken down into 2 or more RTZ inputs. Compound RTZ inputs as the name implies are formed from 2 or more base RTZ inputs and therefore can be broken down into base RTZ input form.
+
+For the $5/7$ component code, its base RTZ inputs are weight-$2$ RTZ inputs  (W2RTZs) and weight-$3$ RTZ inputs (W3RTZs). Every RTZ input with a weight higher than 3 is a compound RTZ input.
+
+The permutation matrix that generates the set $\cN$ is given by 
+
+$$\Pi'=\begin{bmatrix} 0 & 1 & 2 \end{bmatrix}$$ 
+
+where $\Pi$ was used repeatedly untill all elements in $\cC^t$ are picked. From $\Pi$ we can derive the defintions for W2RTZs and W3RTZs as well as ways to break up such RTZs
+
+\subsection{W2RTZs : Definitions and Breaking them}
+Given below is the definition of W2RTZs in terms of polynomials and cosets.
+\begin{itemize}
+	\item polynomial: $P(x)=x^{h\tau+t}(1+x^{\alpha \tau}) = x^t(x^{h\tau}+x^{(h+\alpha)\tau})$
+	\item coset: the $h$th and $(h+\alpha)$th elements in $\cC^t$
+\end{itemize}
+%where $\alpha=1,2,\cdot,N-\alpha-h$
+
+From the coset definition, it is easy to see that W2RTZs can be broken if after interleaving,  the $h$th and $(h+\alpha)$th elements in $\cC^t$ are mapped to different cosets.
+%, which translates to the columns of $Pi$ (which generates $\bbN$) having different elements.
+
+\subsection{W3RTZs : Definitions and Breaking them}
+Given below is the definition of W3RTZs in terms of polynomials and cosets.
+\begin{itemize}
+	\item polynomial: $Q(x) =x^{h\tau+t}(1+x^{\beta \tau +1}+x^{\gamma \tau +2})=x^{h\tau+t}+x^{(h+\beta) \tau +t+1}+x^{(h+\gamma) \tau +t+2}$. 
+	Notice that $h \leq \beta$ is not a necessary condition.
+	\item coset: the $h$th element in $\cC^{t}$, $(h+\beta)$th element in $\cC^{[t+1]_\tau}$, and $(h+\gamma)$th element in $\cC^{[t+2]_\tau}$.
+\end{itemize}
+
+Again, from the coset definition, we see that the easiest way to break up W3RTZs is to make sure that after interleaving, a minimum of 2 elements are mapped into the same coset.
+
+\subsection{W4RTZs : Definitions and Breaking them}
+Given below is the definition of W4RTZs in terms of polynomials and cosets.
+\begin{itemize}
+	\item polynomial: $P(x)=x^{h\tau+t}(1+x^{\alpha \tau}) + x^{h'\tau+(t+i)}(1+x^{\alpha' \tau})= x^t(x^{h\tau}+x^{(h+\alpha)\tau}) + x^{t+i}(x^{h'\tau}+x^{(h'+\alpha')\tau})$
+	\item coset: the $h$th and $(h+\alpha)$th elements in $\cC^t$ and  the $h'$th and $(h'+\alpha')$th elements in $\cC^{[t+i]_\tau}$ 
+\end{itemize}
+where $i=0,1,2$
+
+There is not much that can be done to break up W4RTZs using just $\Pi$. However careful selection of $\Pi$ conbined with coset design can be used to effectively break up W4RTZs

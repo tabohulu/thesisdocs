@@ -1,0 +1,95 @@
+\section{Coset Design}
+Once the permutation matrix is decided upon, we have the necessary constraints which will help us design $\bbC^t$ with respect to W2RTZs, W3RTZ and W4RTZs.
+We will make use of the Almost Linear Interleaver(ALI) is the design of $\bbC^0$. 
+The interleaving equation for the ALI(L,D) Interleaver is given by $$\pi(h)=D \cdot h + \Big\lfloor \frac{h}{A} \Big\rfloor \bmod L$$ where $A=L/C$ and $C=\text{gcd}(D,L)$ Also, $D$ is the period of the interleaver and $h=0,1,...,L-1$.
+The value of a coset element at position $h$ will be $3\pi(h)+t$. The resulting coset interleaver will be reffered to by the notation CI(N,D)
+
+\subsection{Coset Design for W2RTZs}
+$w_H^{(2)}$ is calculated using (\ref{eq3})
+ It is convinient to write $\Delta_{c'}$ in terms of $D$ 
+
+$$c_{(h'+\alpha')}^{t}=3*(D(h+\alpha)+ \lfloor \frac{h+\alpha}{A} \rfloor \bmod L)$$ and $$c_{(h')}^{t})=3*(D(h)+ \lfloor \frac{h}{A} \rfloor \bmod L)$$
+where $A=L/C,~C=\text{gcd}(L,D)$. 
+$A$ can take on $3$ different values,$L,~L/3,~3$.
+if $A=L,~L/3$ $\Delta_{c'}$ simplifies to $$\Delta_{c'}=3*(D(\alpha) \bmod L)$$ else $$\Delta_{c'}=3*(D(\alpha) +1\bmod L)$$ 
+
+Again due to the choice of $\Pi,~\alpha=\tau=3$, when $A=L,~A=L/3$ we have 
+\begin{equation*}
+\begin{split}
+w^{(2)}_H=&6+2\Big(3+\frac{3*(D(\alpha) \bmod L)}{3}\Big)\\
+=&6+2\Big(3+(D(\alpha) \bmod L)\Big)
+\end{split}
+\end{equation*}
+
+else we have 
+\begin{equation*}
+\begin{split}
+w^{(2)}_H=&6+w_0\Big(3+\frac{3*(D(\alpha) +1 \bmod L)}{3}\Big),~w_0=2\\
+=&6+2\Big(3+(D(\alpha)+1 \bmod L)\Big)
+\end{split}
+\end{equation*}
+
+Combining all the equations gives us 
+\begin{equation}
+w^{(2)}_H=
+\begin{cases}
+\min \Bigg (6+2\Big(3+(D(\alpha) \bmod L)\Big),~6+2\Big(3+(L-(D(\alpha) \bmod L))\Big)\Bigg), ~A=L,~\text{or}~A=L/3 \\
+6+2\Big(3+(D(\alpha)+1 \bmod L)\Big), ~A=3\\
+
+\end{cases}
+\label{eq9}
+\end{equation}
+
+ \subsection{Coset Design for W3RTZs}
+ For weight $3$-RTZ inputs, the various equations are given in Table \ref{tb3}. The positions where a weight-$3$ inputs occur are know, but they are given with respect to the complete interleaver and need to be scaled down to a single coset. 
+ Let $h,~h+\beta,~h+\gamma$ be the inputs representing where the weight-$3$ RTZ inputs occur due to $\bPi^{(0)}$. Then the scaled down versions will be $h^{(0)},~(h+\beta)^{(0)},~(h+\gamma)^{(0)}$ and are calculated using the equation
+ \begin{equation}
+ f(x)= x \bmod 3 + 3\Big(\Big\lfloor\frac{x}{9} \Big\rfloor\Big)
+ \label{eq9}
+ \end{equation}
+ 
+ We feed $h^{(0)},~(h+\beta)^{(0)},~(h+\gamma)^{(0)}$ into the ALI and we get \begin{equation}
+ \bs=(\pi(h^{(0)}),~\pi((h+\beta)^{(0)}),~\pi((h+\gamma)^{(0)}))-\min(\pi(h^{(0)}),~\pi((h+\beta)^{(0)}),~\pi((h+\gamma)^{(0)}))
+ \label{eq10}
+ \end{equation}
+  and 
+ 
+ \begin{equation}
+ l'=\max(\beta,\gamma)= \bs_{\max}-\bs_{\min}=\bs_{\max}
+ \label{eq11}
+ \end{equation}
+ 
+ Below is a summary of the steps involved in determining the Hamming weight for all weight-$3$ RTZ associated with $\Pi^{(0)}$ 
+ \begin{enumerate}
+ \item convert  $h,~h+\beta,~h+\gamma$ into $h^{(0)},~(h+\beta)^{(0)},~(h+\gamma)^{(0)}$ using (\ref{eq9})
+ 
+ \item input the indices into the ALI equation to obtain $\bs using (\ref{eq10})$
+ 
+ \item find the value of $l'$ and  Hamming weight using (\ref{eq11}) and corresponding equation in Table \ref{tb3}
+ 
+ \item repeat above steps for all RTZ-inputs in Table \ref{tb} and their shifted versions, where each shift is a multiple of $\tau^2$
+ 
+\item Finally, the least Hamming weight value associated with weight-$3$ RTZ inputs is selected.
+ \end{enumerate}
+ 
+ \subsection{Coset Design Extension to other Cosets}
+ If we assume that the start position for all the cosets is the same, then the above calculations with respect to the weight-$3$ RTZ inputs are sufficient, however if we desire to adjust the start position for each coset a slight change in notation will be needed. 
+ 
+ First off we adjust the notation for a Coset interleaver from CI$(N,D)$ to CI$(N,D,s_1,s_2)$ where $s_1,~s_2$ indicate the start position for $\bbC^1,~\bbC^2$ respectively. It is worth noting that the value of $D$ used in the ALI(L,D) is the same for all the cosets, just that $\bbC^1,~\bbC^2$ are shifted by  $s_1,~s_2$ respective positions to the right.
+ 
+ This means that values of $h^{(0)},~(h+\beta)^{(0)},~(h+\gamma)^{(0)}$ need to be adjusted by $0,~s_1,~s_2$ respectively. This statement is made assuming that $h^{(0)},~(h+\beta)^{(0)},~(h+\gamma)^{(0)}$ are in $\bbC^0,\bbC^1,\bbC^2$ respectively.
+ 
+  Below is a summary of the steps involved in determining the Hamming weight for all weight-$3$ RTZ associated with $\Pi^{(0)}$ when $s_1,s_2>0$
+ \begin{enumerate}
+ \item convert  $h,~h+\beta,~h+\gamma$ into $h^{(0)},~(h+\beta)^{(0)},~(h+\gamma)^{(0)}$ using (\ref{eq9})
+ 
+ \item input the indices $h^{(0)},~(h+\beta)^{(0)}+s_1,~(h+\gamma)^{(0)}+s_2$
+ into the ALI equation to obtain $\bs$ using (\ref{eq10})
+ 
+ \item find the value of $l'$ and  Hamming weight using (\ref{eq11}) and corresponding equation in Table \ref{tb3}
+ 
+ \item repeat above steps for all RTZ-inputs in Table \ref{tb3} and their shifted versions, where each shift is a multiple of $\tau^2$
+ 
+\item Finally, the least Hamming weight value associated with weight-$3$ RTZ inputs is selected.
+ \end{enumerate}
+ 

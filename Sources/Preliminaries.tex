@@ -1,0 +1,65 @@
+
+
+\section{Preliminaries}
+This section outlines the definitions and notations that will be used. An example is also given at the end to better clarify the use of the notations.
+\subsection{Definitions and Notations}
+\begin{enumerate}
+\item RTZ (Return-To-Zero) input :- A RTZ input is a binary input which causes a RSC encoder's final state to be return to zero after it has exited the zero state.
+
+\item $\tau$ :- cycle length of the RSC encoder. For the $5/7$ RSC encoder $\tau = 3$
+
+\item $N$ :- Interleaver length. 
+
+\item $\cN$:- Integer set of $\{0,1,\cdots,N-1\}$
+
+\item $\bbN$: Indexed set  of $\{0,1,\cdots,N-1\}$ in the natural order.
+
+\item We assume that $N/\tau=L$ and $N/\tau^2 = M$
+
+\item $\cC$ and $\bbC$are defined in a similar manner. 
+%where $\cC$, $\bbC$ have their values taken from $\{0,1,\cdots,C-1\}$ and $\cM$, $\bbM$ have their values taken from $\{0,1,\cdots,M-1\}$
+
+\item $\cC^{t}:=\left\{c+t\right\}_{c \in \cC}$ and $\bbC^t$ is the indexed set with the elements of $\cC^t$ where  $t=(0,1,...,\tau-1)$. $\cC^{tt'}$ and $\bbC^{tt'}$ are also defined in a similar manner.
+\item Permutation matrix 
+\begin{equation*}
+\bPi = \begin{bmatrix}
+\bpi^0\cr
+\bpi^1\cr
+\vdots\cr
+\bpi^{K-1}
+\end{bmatrix}
+= \begin{bmatrix}
+\bpi_0 , \bpi_1,\cdots,\bpi_{\tau-1}
+\end{bmatrix}
+= \begin{bmatrix}
+\pi_{t}^{(i)}
+\end{bmatrix}_{i=0,~t=0}^{K-1,~\tau -1}
+\end{equation*}
+where $\pi_{t}^{(i)} \in \{0,1,\tau-1\}$. 
+
+\item For the row vector $\bpi^{(i)}$, let $\mathscr{S}^e[\bpi^{(i)}]$ be the left-hand cycle shift of $\bpi^{(i)}$ and $\mathscr{S}^e[\bpi_t]$ be the up cycle shift of $\bpi_t$
+\item We assume that the permutation matrix operation outputs the elements in $\bbC^t$ in the order which $t$ appers in $\bpi^k$. 
+\item Our goal is to find the best $\bPi$ and $\bbC^t$, $t = 0,1,\cdots,\tau-1$. 
+\end{enumerate}
+
+\subsection{Example}
+Lets assume we have a turbo code using the $5/7$ RSC encoder as its component code ($\tau=3$) and an interleaver length of $N=27$. We have the following values
+\begin{enumerate}
+\item $C=9$ and $M=3$. Also $\cN=\{0,1,\cdots,26\}$
+
+\item $\cC^0=\{0,\tau,\cdots,(L-1)\tau\} = \{0,3,\cdots,24\}$, $\cC^1=\cC^0+1$ and $\cC^2=\cC^0+2$
+
+\item $\cC^{00}=\{0,\tau,\cdots,(M-1)\tau\} = \{0,3,6\}$, $\cC^{01}=\cC^{00}+1$ and $\cC^{02}=\cC^{00}+2$
+
+\item Let $\bbC^0=\{0, 3\tau, 6\tau, 1\tau, 4\tau, 7\tau, 2\tau, 5\tau, 8\tau \} = \{0, 9, 18, 3,12, 21, 6, 15, 24 \} $, $\bbC^1=\{4, 13, 22, 7, 16, 25, 1, 10, 19 \}$ and $\bbC^2=\{ 23, 8, 17, 26, 2, 11, 20, 5, 14\} $ and $\bPi=\begin{bmatrix}0 & 0 & 0\cr2 & 2 & 2\cr1 & 1 & 1\end{bmatrix}$
+
+\item \begin{equation}
+\begin{split}
+\bbN=&\{c^0_0,c^0_1,c_2^0 ,c^2_0,c^2_1,c_2^2 ,c^1_0,c^1_1,c^1_2,\cdots, c^1_6,c^1_7,c^1_8\}\\
+ =& \{0,9,18, 23,8,17,4,13,22 ,3,12,21,26,2,11,7,16,25,6,15,24,20,5,14,1,10,19\}
+ \end{split}
+ \end{equation}
+
+\end{enumerate}
+$\bbN$ represents the interleaved sequence. From this example, we can see that the column index of $i$ in $\pi^{(i)}$ represents the coset it belongs to before interleaving and the value $\pi_{j}^{(i)}$ specifies the coset after interleaving. Also notice that the rows of $\bPi$ are taken cyclicly untill all elements of $\bbC^t$ are placed in $\bbN$.
+
