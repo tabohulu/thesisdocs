@@ -1,11 +1,12 @@
 \section{Coset Design for W4RTZs}
-The coset interleaver with parameters $D,s_1,s_2$ carefully chosen is able to effectively deal with W2RTZs and W3RTZs. It is however unable to effectively deal with weight-$4$ RTZ inputs. The composition of all the cosets is the same and this brings about regularity characteristic in the overall interleaver. This regularity whiles desirable makes it difficult for W4RTZ to be effectively broken by the interleaver. To understand how the current coset design affects W4RTZs, we need to see the inner workings of the coset as it relates to the permutation matrix.
+The coset interleaver with parameters $D,s_1,s_2$ carefully chosen is able to effectively deal with W2RTZs and W3RTZs. It is however unable to effectively deal with weight-$4$ RTZ inputs. The composition of all the cosets is the same and this brings about regularity characteristic in the overall interleaver. This regularity whiles desirable makes it difficult for W4RTZ to be effectively broken by the interleaver. 
+%To understand how the current coset design affects W4RTZs, we need to see the inner workings of the coset as it relates to the permutation matrix.
 
-\subsection{Inner workings of coset design}
-When using $\Pi^{(0)}$, there cosecutive elements are taken from each coset one coset at a time. We can therefore further divide each coset into 3 inner cosets, placing the consecutive elements in different cosets. These inner cosets when focusing on $\bbC^{0}$ are represented by $\bbC^{0t'},~t'=\{0,1,2\}$. The elements in $\bbC^{0}$ can be written as $3(\pi(h))+0,~h=\{0,1,\cdots,L-1\}$, where $\pi(h)$ is given by (\ref{eq3}). To see how the elements are placed in $\bbC^{0t'}$, we rewrite (\ref{eq3}) as 
-\begin{equation}
-\pi(h)=D(3m+t')+\lfloor\frac{3m+t'}{A} mod L,~m=\{0,1,\cdots,M-1\} \rfloor
-\end{equation}
+%\subsection{Inner workings of coset design}(Working on it)
+%When using $\Pi^{(0)}$, there cosecutive elements are taken from each coset one coset at a time. We can therefore further divide each coset into 3 inner cosets, placing the consecutive elements in different cosets. These inner cosets when focusing on $\bbC^{0}$ are represented by $\bbC^{0t'},~t'=\{0,1,2\}$. The elements in $\bbC^{0}$ can be written as $3(\pi(h))+0,~h=\{0,1,\cdots,L-1\}$, where $\pi(h)$ is given by (\ref{eq3}). To see how the elements are placed in $\bbC^{0t'}$, we rewrite (\ref{eq3}) as 
+%\begin{equation}
+%\pi(h)=D(3m+t')+\lfloor\frac{3m+t'}{A}\rfloor \bmod L,~m=\{0,1,\cdots,M-1\} \rfloor
+%\end{equation}
 
 % and the elements in $\bbC^{0t'}$ can be written as $3\Big(3j+t'\Big)+0,~j=\{0,1,\cdots,M-1\}$
 

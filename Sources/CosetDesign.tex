@@ -1,8 +1,18 @@
 \section{Coset Design}
 Once the permutation matrix is decided upon, we have the necessary constraints which will help us design $\bbC^t$ with respect to W2RTZs, W3RTZ and W4RTZs.
 We will make use of the Almost Linear Interleaver(ALI) is the design of $\bbC^0$. 
-The interleaving equation for the ALI(L,D) Interleaver is given by $$\pi(h)=D \cdot h + \Big\lfloor \frac{h}{A} \Big\rfloor \bmod L$$ where $A=L/C$ and $C=\text{gcd}(D,L)$ Also, $D$ is the period of the interleaver and $h=0,1,...,L-1$.
+The interleaving equation for the ALI(L,D) Interleaver is given by 
+$$
+\pi(h)=D \cdot h + \Big\lfloor \frac{h}{A} \Big\rfloor \bmod L
+$$ 
+where $A=L/C$ and $C=\text{gcd}(D,L)$ Also, $D$ is the period of the interleaver and $h=0,1,...,L-1$.
+We may also rewrite $\pi(h)$ as 
+\begin{equation}
+D(3m+t')+\lfloor\frac{(3m+t')}{A}\rfloor \bmod L
+\end{equation}
+where $m=\lfloor \frac{h}{3} \rfloor,~t'=h \bmod \tau$. 
 The value of a coset element at position $h$ will be $3\pi(h)+t$. The resulting coset interleaver will be reffered to by the notation CI(N,D)
+
 
 \subsection{Coset Design for W2RTZs}
 $w_H^{(2)}$ is calculated using (\ref{eq3})
@@ -10,22 +20,42 @@ $w_H^{(2)}$ is calculated using (\ref{eq3})
 
 $$c_{(h'+\alpha')}^{t}=3*(D(h+\alpha)+ \lfloor \frac{h+\alpha}{A} \rfloor \bmod L)$$ and $$c_{(h')}^{t})=3*(D(h)+ \lfloor \frac{h}{A} \rfloor \bmod L)$$
 where $A=L/C,~C=\text{gcd}(L,D)$. 
-$A$ can take on $3$ different values,$L,~L/3,~3$.
-if $A=L,~L/3$ $\Delta_{c'}$ simplifies to $$\Delta_{c'}=3*(D(\alpha) \bmod L)$$ else $$\Delta_{c'}=3*(D(\alpha) +1\bmod L)$$ 
 
-Again due to the choice of $\Pi,~\alpha=\tau=3$, when $A=L,~A=L/3$ we have 
+We knoow that $\alpha=3$ without loss of generality, we can set $h=0$. 
+$A$ can take on $3$ different values,$L,~L/3,~3$.
+
+if $A=L,~L/3$ $\Delta_{c'}$ simplifies to 
+\begin{equation}
+\begin{split}
+\Delta_{c'}=&3(D(\alpha) \bmod L)\\
+=&3(3(Dm \bmod M) + Dt'  \bmod L),~m=1,~t'=0\\
+\end{split}
+\end{equation}
+
+From the above equation, we see that the separation between the $m$th and $m+1$th element is $\min(D \bmod M, M-(D \bmod M))$, which means tha difference beween the $h$th and $(h+\alpha)$th element is also $3\cdot \min(D \bmod M, M-(D \bmod M))$
+Feeding this into \ref{eq3} we get
+
 \begin{equation*}
 \begin{split}
-w^{(2)}_H=&6+2\Big(3+\frac{3*(D(\alpha) \bmod L)}{3}\Big)\\
-=&6+2\Big(3+(D(\alpha) \bmod L)\Big)
+w^{(2)}_H=&6+2\Big(3+\frac{3(3(\min(D \bmod M, ~M-(D \bmod M))))}{3}\Big)\\
+=&6+2\Big(3+3(\min(D \bmod M,~M-(D \bmod M)))\Big)\\
+=&6+6(1+\min(D \bmod M,~M-(D \bmod M)))
 \end{split}
 \end{equation*}
 
-else we have 
+For the case where $A=3$
+ \begin{equation}
+ \begin{split}
+ \Delta_{c'}=&3(D(\alpha) +1\bmod L)\\
+ =&3(3(Dm \bmod M) + Dt' +1 \bmod L),~m=1,~t'=0\\
+ \end{split}
+ \end{equation}
+ Again, we can see that the difference between the $m$th and $m+1$th element is $\min(D \bmod M, M-(D \bmod M))$, whiles the difference between the $h$th and the $(h+\alpha)$th element is $3 \cdot(\min(D \bmod M, M-(D \bmod M)))+1$
+Substituting into (\ref{eq3}) ,we have
 \begin{equation*}
 \begin{split}
-w^{(2)}_H=&6+w_0\Big(3+\frac{3*(D(\alpha) +1 \bmod L)}{3}\Big),~w_0=2\\
-=&6+2\Big(3+(D(\alpha)+1 \bmod L)\Big)
+w^{(2)}_H=&6+2\Big(3+\frac{3(3(\min(D \bmod M, ~M-(D \bmod M))))+1}{3}\Big)\\
+=&6+2\Big(3+3(\min(D \bmod M,~M-(D \bmod M)))+1\Big)\\
 \end{split}
 \end{equation*}
 
@@ -33,9 +63,8 @@ Combining all the equations gives us
 \begin{equation}
 w^{(2)}_H=
 \begin{cases}
-\min \Bigg (6+2\Big(3+(D(\alpha) \bmod L)\Big),~6+2\Big(3+(L-(D(\alpha) \bmod L))\Big)\Bigg), ~A=L,~\text{or}~A=L/3 \\
-6+2\Big(3+(D(\alpha)+1 \bmod L)\Big), ~A=3\\
-
+6+6(1+\min(D \bmod M,~M-(D \bmod M))), ~A=L,~\text{or}~A=L/3 \\
+6+2\Big(3+3(\min(D \bmod M,~M-(D \bmod M)))+1\Big), ~A=3\\
 \end{cases}
 \label{eq9}
 \end{equation}
