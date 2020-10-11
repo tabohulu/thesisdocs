@@ -11,7 +11,7 @@ The coset interleaver with parameters $D,s_1,s_2$ carefully chosen is able to ef
 % and the elements in $\bbC^{0t'}$ can be written as $3\Big(3j+t'\Big)+0,~j=\{0,1,\cdots,M-1\}$
 
 \subsection{Dealing with weight-4 RTZ inputs}
-To deal with weight-4 RTZ inputs we need to introduce some kind of controlled irregularity into our design of the coset interleaver. This is acheived by dividing each coset $\bbC^t$ further into $\tau $ cosets and applying a little bit of manipulation as will be explained below. Lets begin by focusing on $\bbC^{0t}$. The following notations will be used.
+To deal with weight-4 RTZ inputs we need to introduce some kind of controlled irregularity into our design of the coset interleaver. This is acheived by performing coset design at the inner coset $\bbC^{tt'}$. Lets begin by focusing on $\bbC^{0t}$. The following notations will be used.
 
 \begin{enumerate}
 
@@ -43,49 +43,45 @@ To obtain the corresponding values for $\bbC^t$, we perform the simple operation
  where $$ m=\Big \lfloor \frac{h}{\tau} \Big \rfloor, ~t'=\bmod(m,\tau),t=0,1,...,\tau-1,~h=0,1,...,C-1$$
  
  After the index sets $\bbC^t$ have been determined, $s_1,s_2$ may be used to further adjust the start point of $\bbC^1$ and $\bbC^2$ respectively.
- The above process introduces some chaos into $\bbC^t$ which will be useful in dealing with weight-$4$ RTZ inputs. The problem now is how to select the parameters $D_1,~D_2,~D_3,s_1,s_2$
+ The above process introduces some chaos into $\bbC^t$ which will be useful in dealing with weight-$4$ RTZ inputs. We show how to calculate the respective Hamming weights with respect to the changed design.
+ 
  
  \subsection{Weight-$2$ RTZ inputs Hamming Weight}
- $w_H$ for weight-$2$ RTZ inputs is easily determined. 
- Using  (\ref{eq12}) we can determine the  value of$\Delta_{c'}$. Without loss of generality, we set $h=0$ and we have  
- $$c_{(h)}^{t}=3(3c^{tt'}_{0}+t')+t$$
+ $w_H$ for weight-$2$ RTZ inputs is easily determined. For all $\bbC^{tt'}$ the separation between each element is the same and for simplicity sake we will use $\bbC^{00}$ to rewrite \ref{eq3}
  
- $$c_{(h+3)}^{t}=3(3c^{tt'}_{1}+t')+t$$
+ we know that $$c_m^{00}=D_0m+\lfloor \frac{m}{A} \rfloor \bmod M $$
+  From $\bPi^{(0)}$ we can deduce that W2RTZs in both component codes corresponds to the $m$ and $m+1$ elements being picked and the difference between the $m$th and $(m+1)$th element is either $D \bmod M$ or $M- (D \bmod M)$. In terms of the $h$th and $(h+\alpha)$th element in $\bbC^{0}, \Delta_{c'}=3\cdot\min{(D \bmod M, M- (D \bmod M))}$
+
  
- \begin{equation}
- \begin{split}
- \Delta_{c'}=& 3(3c^{tt'}_{1}+t')+t-(3(3c^{tt'}_{0}+t')+t)\\
- =&9c^{tt'}_{1}+3t'+t-(9c^{tt'}_{0}+3t'+t)\\
- =&9(c^{tt'}_{1}-c^{tt'}_{0})\\
- =&9D_0
- \end{split}
- \end{equation}
  
  Upon substitution, our Hamming weight equation becomes
  
  \begin{equation}
  \begin{split}
-w_H^{(2)}=&6+2\Big(3+\frac{9D_0}{3}\Big)\\
-=&6+2\Big(3+3D_0\Big)\\
-=&6+6(1+D_0)
+w_H^{(2)}=&6+2\Big(3+\frac{3(3\cdot \min{(D \bmod M, M- (D \bmod M))})}{3}\Big)\\
+=&6+2\Big(3+3\cdot\min{(D \bmod M, M- (D \bmod M))}\Big)\\
+=&6+6(1+\min{(D \bmod M, M- (D \bmod M))})
 \end{split}
 \end{equation}
 
 \subsection{Weight-$3$ RTZ inputs Hamming Weight}
- The choice of $\Pi$, we are able to know exactly which pre-interleaving weight-$3$ inputs will generate post-interleaved weight-$3$ RTZ inputs. 
+ From the choice of $\bPi^{(0)}$, we are able to know the W3RTZs which potentially cause low-weight turbo codes. 
  %Using this knowledge (\ref{eq12}) we should be able to calculate the associated Hamming weight for the codeword produced by weight-$3$ RTZ inputs. 
- Let us represent the pre-interleaving  weight-$3$ RTZ inputs by the vector $\bx=(x_0,x_1,x_2)$. Also $t,l,m,t'$ in (\ref{eq12}) are calculated using the following equations
+ Let us represent the pre-interleaving  weight-$3$ RTZ inputs by the vector $\bn=(n_0,n_1,n_2),~\bn \in \cN$. Also $t,l,m,t'$ in (\ref{eq12}) are calculated using the following equations
  
  \begin{equation}
  \begin{split}
- &t_i=x_i \bmod 3\\
- &h_i=\Big\lfloor \frac{x_i}{3} \Big\rfloor\\
+ &t_i=n_i \bmod 3\\
+ &h_i=\Big\lfloor \frac{n_i}{3} \Big\rfloor\\
  &m_i=\Big\lfloor \frac{h_i}{3} \Big\rfloor\\
- &t'_i =m_i \bmod 3
+ &t'_i =h_i \bmod 3
  \end{split}
  \end{equation}
 
-In calculating the corresponding hamming weight for the weight-$3$ RTZ we only need the $3c^{tt'}_{m}+t'$ portion of \ref{eq12} and the corresponding vector $\by$ as a result of feeding $\bx$ into it is given by
- $$\by=\Big((3c^{t_{0}t'_{0}}_{m_{0}}+t'_0,~3c^{t_{1}t'_{1}}_{m_{1}}+t'_1,~3c^{t_{2}t'_{2}}_{m_{2}}+t'_{2}) -\min(3c^{t_{0}t'_{0}}_{m_{0}}+t'_0,~3c^{t_{1}t'_{1}}_{m_{1}}+t'_1,~3c^{t_{2}t'_{2}}_{m_{2}}+t'_{2})\Big)$$
+In calculating the corresponding hamming weight for the weight-$3$ RTZ we only need the $3c^{tt'}_{m}+t'$ portion of \ref{eq12} and the corresponding vector $\by$ as a result of feeding $\bn$ into it is given by
+ $$\b=\Big((3c^{t_{0}t'_{0}}_{m_{0}}+t'_0,~3c^{t_{1}t'_{1}}_{m_{1}}+t'_1,~3c^{t_{2}t'_{2}}_{m_{2}}+t'_{2}) -\min(3c^{t_{0}t'_{0}}_{m_{0}}+t'_0,~3c^{t_{1}t'_{1}}_{m_{1}}+t'_1,~3c^{t_{2}t'_{2}}_{m_{2}}+t'_{2})\Big)$$
  
  and $l'=\max(\beta,\gamma)= y_{\max}$
+ 
+ \subsection{Weight-$4$ RTZ Inputs Hamming Weight}
+ $\bbN$

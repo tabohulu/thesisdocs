@@ -1,16 +1,11 @@
 \section{Coset Design}
-Once the permutation matrix is decided upon, we have the necessary constraints which will help us design $\bbC^t$ with respect to W2RTZs, W3RTZ and W4RTZs.
+Once the permutation matrix is decided upon, we have the necessary constraints which will help us design $\bbC^t$ with respect to base RTZs (W2RTZs, W3RTZ)  .
 We will make use of the Almost Linear Interleaver(ALI) is the design of $\bbC^0$. 
 The interleaving equation for the ALI(L,D) Interleaver is given by 
 $$
 \pi(h)=D \cdot h + \Big\lfloor \frac{h}{A} \Big\rfloor \bmod L
 $$ 
-where $A=L/C$ and $C=\text{gcd}(D,L)$ Also, $D$ is the period of the interleaver and $h=0,1,...,L-1$.
-We may also rewrite $\pi(h)$ as 
-\begin{equation}
-D(3m+t')+\lfloor\frac{(3m+t')}{A}\rfloor \bmod L
-\end{equation}
-where $m=\lfloor \frac{h}{3} \rfloor,~t'=h \bmod \tau$. 
+where $A=L/C$ and $C=\text{gcd}(D,L)$ Also, $D$ is the period of the interleaver and $h=0,1,...,L-1$. 
 The value of a coset element at position $h$ will be $3\pi(h)+t$. The resulting coset interleaver will be reffered to by the notation CI(N,D)
 
 
@@ -20,42 +15,39 @@ $w_H^{(2)}$ is calculated using (\ref{eq3})
 
 $$c_{(h'+\alpha')}^{t}=3*(D(h+\alpha)+ \lfloor \frac{h+\alpha}{A} \rfloor \bmod L)$$ and $$c_{(h')}^{t})=3*(D(h)+ \lfloor \frac{h}{A} \rfloor \bmod L)$$
 where $A=L/C,~C=\text{gcd}(L,D)$. 
-
-We knoow that $\alpha=3$ without loss of generality, we can set $h=0$. 
+For the chosen permutation matrix $\bPi^{(0)}$, we know that W2RTZs occur after 2 repititions and therefore we can set $\alpha =3$ and without loss of generality, we can also set $h=0$. 
 $A$ can take on $3$ different values,$L,~L/3,~3$.
 
 if $A=L,~L/3$ $\Delta_{c'}$ simplifies to 
 \begin{equation}
 \begin{split}
-\Delta_{c'}=&3(D(\alpha) \bmod L)\\
-=&3(3(Dm \bmod M) + Dt'  \bmod L),~m=1,~t'=0\\
+\Delta_{c'}=&3\Bigg(\min{\Big(D(\alpha) \bmod L,~ L-(D(\alpha) \bmod L)\Big)\Bigg)}\\
+=&3\Bigg(\min{\Big(3D \bmod L,~ L-(3D \bmod L)\Big)\Bigg)}\\
 \end{split}
 \end{equation}
 
-From the above equation, we see that the separation between the $m$th and $m+1$th element is $\min(D \bmod M, M-(D \bmod M))$, which means tha difference beween the $h$th and $(h+\alpha)$th element is also $3\cdot \min(D \bmod M, M-(D \bmod M))$
 Feeding this into \ref{eq3} we get
 
 \begin{equation*}
 \begin{split}
-w^{(2)}_H=&6+2\Big(3+\frac{3(3(\min(D \bmod M, ~M-(D \bmod M))))}{3}\Big)\\
-=&6+2\Big(3+3(\min(D \bmod M,~M-(D \bmod M)))\Big)\\
-=&6+6(1+\min(D \bmod M,~M-(D \bmod M)))
+w^{(2)}_H=&6+2\Bigg(3+\frac{3\Big(\min{\Big(3D \bmod L,~ L-(3D \bmod L)\Big)\Big)}}{3}\Bigg)\\
+=&6+2\Big(3+\min{\Big(3D \bmod L,~ L-(3D \bmod L)\Big)}\Big)
 \end{split}
 \end{equation*}
 
 For the case where $A=3$
  \begin{equation}
  \begin{split}
- \Delta_{c'}=&3(D(\alpha) +1\bmod L)\\
- =&3(3(Dm \bmod M) + Dt' +1 \bmod L),~m=1,~t'=0\\
- \end{split}
+\Delta_{c'}=&3\Bigg(\min{\Big(D(\alpha)+1 \bmod L,~ L-(D(\alpha)+1 \bmod L)\Big)\Bigg)}\\
+=&3\Bigg(\min{\Big(3D +1 \bmod L,~ L-(3D+1 \bmod L)\Big)\Bigg)}\\
+\end{split}
  \end{equation}
- Again, we can see that the difference between the $m$th and $m+1$th element is $\min(D \bmod M, M-(D \bmod M))$, whiles the difference between the $h$th and the $(h+\alpha)$th element is $3 \cdot(\min(D \bmod M, M-(D \bmod M)))+1$
+ 
 Substituting into (\ref{eq3}) ,we have
 \begin{equation*}
 \begin{split}
-w^{(2)}_H=&6+2\Big(3+\frac{3(3(\min(D \bmod M, ~M-(D \bmod M))))+1}{3}\Big)\\
-=&6+2\Big(3+3(\min(D \bmod M,~M-(D \bmod M)))+1\Big)\\
+w^{(2)}_H=&6+2\Big(3+\frac{3\Bigg(\min{\Big(3D+1 \bmod L,~ L-(3D+1 \bmod L)\Big)\Bigg)}}{3}\Big)\\
+=&6+2\Big(3+\min{\Big(3D+1 \bmod L,~ L-(3D+1 \bmod L)\Big)}\Big)
 \end{split}
 \end{equation*}
 
@@ -63,14 +55,18 @@ Combining all the equations gives us
 \begin{equation}
 w^{(2)}_H=
 \begin{cases}
-6+6(1+\min(D \bmod M,~M-(D \bmod M))), ~A=L,~\text{or}~A=L/3 \\
-6+2\Big(3+3(\min(D \bmod M,~M-(D \bmod M)))+1\Big), ~A=3\\
+6+2\Big(3+\min{\Big(3D \bmod L,~ L-(3D \bmod L)\Big)\Bigg)}\Big),~A=L/3 ~\text{or}~A=L\\
+6+2\Big(3+\min{\Big(3D+1 \bmod L,~ L-(3D+1 \bmod L)\Big)}\Big), ~A=3\\
 \end{cases}
 \label{eq9}
 \end{equation}
 
  \subsection{Coset Design for W3RTZs}
- For weight $3$-RTZ inputs, the various equations are given in Table \ref{tb3}. The positions where a weight-$3$ inputs occur are know, but they are given with respect to the complete interleaver and need to be scaled down to a single coset. 
+ Unlike the W2RTZs, W3RTZs exist for the first and second repititions of $\bPi^{(0)}$. These RTZs can potentially reduce the $d_{\text{min}}$ value of the turbo code and coset design is carried out to prevent that.
+ 
+ The W3RTZs as well as the various equations to calculate the resultant codeword weight are given in Table \ref{tb3}. 
+ Since the design for $\bbC^0$ is applied to the other cosets we should be able to calculate the minimum value for $w_H^{(3)}$ with respect to Table \ref{tb3} whiles focusing on $\bbC^0$ only.
+ The positions within 2 repititions of $\bPi^{(0)}$ where a weight-$3$ inputs occur are given with respect to the complete interleaver and need to be scaled down to $\bbC^0$
  Let $h,~h+\beta,~h+\gamma$ be the inputs representing where the weight-$3$ RTZ inputs occur due to $\bPi^{(0)}$. Then the scaled down versions will be $h^{(0)},~(h+\beta)^{(0)},~(h+\gamma)^{(0)}$ and are calculated using the equation
  \begin{equation}
  f(x)= x \bmod 3 + 3\Big(\Big\lfloor\frac{x}{9} \Big\rfloor\Big)
@@ -88,6 +84,8 @@ w^{(2)}_H=
  \label{eq11}
  \end{equation}
  
+ When all $l'$ values for the $W3RTZs$ in Table \ref{tb3} are calculated, we take note of the ones that give the least value of $w_H^{(3)}$. Then for every shifted version of that $W3RTZ$ we calculate  $w_H^{(3)}$ and select the minimum value from all calculated $w_H^{(3)}$ to get the true minimum value.
+ 
  Below is a summary of the steps involved in determining the Hamming weight for all weight-$3$ RTZ associated with $\Pi^{(0)}$ 
  \begin{enumerate}
  \item convert  $h,~h+\beta,~h+\gamma$ into $h^{(0)},~(h+\beta)^{(0)},~(h+\gamma)^{(0)}$ using (\ref{eq9})
@@ -96,13 +94,13 @@ w^{(2)}_H=
  
  \item find the value of $l'$ and  Hamming weight using (\ref{eq11}) and corresponding equation in Table \ref{tb3}
  
- \item repeat above steps for all RTZ-inputs in Table \ref{tb} and their shifted versions, where each shift is a multiple of $\tau^2$
+ \item repeat above steps for all shifted versions of the W3RTZ that produced the least value of $w_H^{(3)}$, where each shift is a multiple of $\tau^2$
  
-\item Finally, the least Hamming weight value associated with weight-$3$ RTZ inputs is selected.
+\item Finally, the least Hamming weight value associated with the shifted version of the W3RTZ input(s) is selected.
  \end{enumerate}
  
- \subsection{Coset Design Extension to other Cosets}
- If we assume that the start position for all the cosets is the same, then the above calculations with respect to the weight-$3$ RTZ inputs are sufficient, however if we desire to adjust the start position for each coset a slight change in notation will be needed. 
+ 
+ If we assume that the start position for all the cosets is the same, then the above calculations with respect to the weight-$3$ RTZ inputs are sufficient, however if we desire to apply a shift factor to all cosets but $\bbC^{(0)}$ , a slight change in notation will be needed. 
  
  First off we adjust the notation for a Coset interleaver from CI$(N,D)$ to CI$(N,D,s_1,s_2)$ where $s_1,~s_2$ indicate the start position for $\bbC^1,~\bbC^2$ respectively. It is worth noting that the value of $D$ used in the ALI(L,D) is the same for all the cosets, just that $\bbC^1,~\bbC^2$ are shifted by  $s_1,~s_2$ respective positions to the right.
  
@@ -117,8 +115,8 @@ w^{(2)}_H=
  
  \item find the value of $l'$ and  Hamming weight using (\ref{eq11}) and corresponding equation in Table \ref{tb3}
  
- \item repeat above steps for all RTZ-inputs in Table \ref{tb3} and their shifted versions, where each shift is a multiple of $\tau^2$
+ \item repeat above steps for all shifted versions of the W3RTZ that produced the least value of $w_H^{(3)}$, where each shift is a multiple of $\tau^2$
  
-\item Finally, the least Hamming weight value associated with weight-$3$ RTZ inputs is selected.
+\item Finally, the least Hamming weight value associated with the shifted version of the W3RTZ input(s) is selected.
  \end{enumerate}
  

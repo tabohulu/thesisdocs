@@ -1,34 +1,5 @@
 \section{Permutation Matrix Design}
-In this section, we define weight-$2$ RTZ inputs (W2RTZs) and weight-$3$ RTZ inputs (W3RTZs) in terms of polynomial and coset representation. Then outline the procedure for selecting a good permutation matrix $\bPi$ with respect to W2RTZs and W3RTZs.
-\subsection{RTZ Input Definitions}
-\begin{enumerate}
-\item a W2RTZ
-\begin{itemize}
-	\item polynomial: $P(x)=x^{h\tau+t}(1+x^{\alpha \tau}) = x^t(x^{h\tau}+x^{(h+\alpha)\tau})$
-	\item coset: the $h$th and $(h+\alpha)$th elements in $\bbC^t$
-\end{itemize}
-\item a W3RTZ
-\begin{itemize}
-	\item polynomial: $Q(x) =x^{h\tau+t}(1+x^{\beta \tau +1}+x^{\gamma \tau +2})=x^{h\tau+t}+x^{(h+\beta) \tau +t+1}+x^{(h+\gamma) \tau +t+2}$. 
-	Notice that $h \leq \beta$ is not a necessary condition.
-	\item coset: the $h$th element in $\bbC^{t}$, $(h+\beta)$th element in $\bbC^{[t+1]_\tau}$, and $(h+\gamma)$th element in $\bbC^{[t+2]_\tau}$.
-\end{itemize}
-\end{enumerate}
-
-%\section{Representation of interleaver}
-%If the mapping relationship between elements in $\bx$ and $\by$ are read column wise as shown below
-
-%$$  
-% \begin{bmatrix}
-%0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
-%0 & 5 & 1 & 6 & 2 & 7 & 3 & 8 & 4 \\
-%\end{bmatrix}
-%$$
-%the interleaver is represented by $\bbN=\{0,5,1,6,2,7,3,8,4\}$.
-
-%Let $\bbC^0=\{0,6,3\}$, $\bbC^1=\{1,7,4\}$, and $\bbC^2=\{5,2,8\}$. Then, the permutation matrix of $\bbN$ is
-%$\bPi = (0,2,1)$. Notice the row of $\bPi$ takes cyclicly.
-
+In this section, we outline the procedure for selecting a good permutation matrix $\bPi$ with respect to W2RTZs and W3RTZs.
 
 \subsection{Permutation Matrix selection for W2RTZs}
 From the definition of Weight-$2$ RTZ inputs in the previous section, we know that the index of the ``1'' bits are in the same coset. Our aim is to make sure that the permutation matrix we select enbles the interleaver that we design to either break such weight-$2$ RTZ inputs or convert it into a large separation weight-$2$ RTZ. 
@@ -39,7 +10,7 @@ The condition to break weight-$2$ RTZs is given as
 \label{eq1}
 \end{equation}
 
-Since $\bPi$ consisting of $\tau$ elements, the maximum length of column elements consisting of values different each other is $\tau$. Thus, the cut-off interleaver length for which (\ref{eq1}) is satisfied is $N_c^2=\tau^2=9$.
+Since $\bPi$ consisting of $\tau$ elements, the maximum length of column elements consisting of values different from each other is $\tau$. Thus, the cut-off interleaver length for which (\ref{eq1}) is satisfied is $N_c^2=\tau^2=9$.
 For this interleaver length, we investigate 3 different compositions of permutation matrices that can be used to achieve this condition in in \ref{eq1}
 
 \begin{enumerate}
@@ -324,16 +295,30 @@ W2RTZs and W3RTZs. This part is simple as the only thing that we need to do is t
 Moving foward we will use the permutation matrix $$\bPi^{(0)}=\begin{bmatrix} 0 & 0 & 0 \cr 1 & 1 & 1 \cr 2 & 2 & 2\end{bmatrix}$$ in all our considerations. It was chosen because in the design process, we only need to focus on only one of the cosets, say $\bbC^0$ and replicate the results for the remaining cosets.
 
 \subsection{Higher Weight RTZ inputs}
-Higher weight RTZ inputs are made up of some combination of W2RTZs and/or W3RTZs. For example a W4RTZ is a combination of $2$ W2RTZs, a W5RTZ is composed of a W2RTZ and a W3RTZ, whiles a W6RTZ is made up of either $3$W2RTZs or $2$W3RTZs. As the weight of the RTZ inputs increase, it becomes difficult to find Permutation Matrices which can effectively get rid of these Higher Weight RTZ inputs. But with the the structure of the Permutation Matrix, we know exactly where these Higher Weight RTZ inputs occur.
-With that settled, we need to comeup with a formula to find the Hamming weight for these Higher Weight RTZ inputs and we only consider up to W4RTZs. From [SunTakeshita] we deduce that Hamming weight for a Turbo code produced as a result of a W4RTZ is given by
-
+Higher weight RTZ inputs are made up of some combination of W2RTZs and/or W3RTZs.
+Let the weight of the higher weight RTZ be represented by $w$. If $w \bmod 2 =0$, then the RTZ is made up of $w/2$ W2RTZs. If $w \bmod 2 =1$, then the RTZ is made up of $\lfloor w/2 \rfloor -1 $ W2RTZs and a single W3RTZ
+As the weight of the RTZ inputs increases beyond the largest base RTZ, the Permutation Matrices cannot be designed to effectively get rid of these Higher Weight RTZ inputs. However, with the the structure of the Permutation Matrix, we know exactly where these Higher Weight RTZ inputs occur.
+In addition to the hamming weight for W2RTZs and W3RTZs, we will consider the hamming weight for W4RTZs and W5RTZs in our design of good interleavers. From [SunTakeshita] we deduce that Hamming weight for a Turbo code produced as a result of an even weight RTZ is given by
+\begin{equation}
+w_H^{(\text{even})}=6m+2\Big(\frac{\sum_{i=1}^{m}\Delta_{c_i}+\sum_{i=1}^{m}\Delta_{c'_i}}{\tau}\Big)
+\end{equation}
+where $m=w/2$
+whiles that for an odd weight RTZ is given by 
+\begin{equation}
+\begin{split}
+w_H^{(\text{odd})}&=6m+2\Big(\frac{\sum_{i=1}^{m}\Delta_{c_i}+\sum_{i=1}^{m}\Delta_{c'_i}}{\tau}\Big)+7+2(l+l')\\
+&=7+6m+2\Bigg(l+l'+\Big(\frac{\sum_{i=1}^{m}\Delta_{c_i}+\sum_{i=1}^{m}\Delta_{c'_i}}{\tau}\Big)\Bigg)
+\end{split}
+\end{equation}
+where $m=\lfloor w/2 \rfloor-1$
+For W4RTZs we have
 \begin{equation}
 w_H^{(4)}=12+2\Big(\frac{\Delta_{c1}+\Delta_{c2}+\Delta_{c'1}+\Delta_{c'2}}{\tau}\Big)
 \end{equation}
 
-Due to the structure of $\bPi^{(0)}$ we can see that anytime $\Delta_{c1}=\Delta_{c2} =3$ a W4RTZ is produced and the above equation simplifies to 
+and for W5RTZs we have 
 \begin{equation}
-w_H^{(4)}=12+2\Big(2+\frac{\Delta_{c'1}+\Delta_{c'2}}{\tau}\Big)
+w_H^{(5)}=13+2\Bigg(l+l'+\Big(\frac{\Delta_{c_1}+\Delta_{c'_1}}{\tau}\Big)\Bigg)
 \end{equation}
 
-In our design of $\bbC^t$, we need to ensure that $\Delta_{c'1} \neq \Delta_{c1}$ and $\Delta_{c'2} \neq \Delta_{c2}$
+These equations will be used as secondary checks to confirm the minimum distance of the turbo code with our designed interleaver
