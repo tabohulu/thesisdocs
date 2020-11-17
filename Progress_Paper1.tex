@@ -1,0 +1,89 @@
+\documentclass[11pt, oneside, dvipdfmx]{book}
+\newcommand{\folder}{/usr/local/share/texmf}
+%\newcommand{\folder}{/home/hanchenggao/Documents/texmf}
+\input{\folder/hfiles/ebook}
+\usepackage {graphicx}[dvips]
+%\usepackage {graphics}
+%\setCJKmainfont{SimSun}
+\title{
+A Novel Low-Complexity Method for Revealing The Structure of The Message Inputs of the Distance Spectrum For Recursive Systematic Convolutional Codes }
+\author{Kwame Ackah Bohulu}
+\date{\today}
+\begin{document}
+
+\maketitle
+\include{./PaperSources/Abstract}
+\include{./PaperSources/Introduction}
+\include{./PaperSources/RSCReview}
+\include{./PaperSources/TransferFunction}
+\include{./PaperSources/NovelMethod}
+\include{./PaperSources/RTZGeneralization}
+
+
+
+%\section{Upper Bound Comparison of both methods}
+%\label{sec5}
+
+%In order to confirm the validity of the proposed method, we compared the bit error rate (BER) upper bound the RSCC to results obtained through computer simulations. 
+
+%There are a number of equations used to calculate the upper bound for the BER of a CC and these equations also apply to RSCC. For the case where the code is BPSK modulated and soft Viterbi decoding algorithm is used, the probability of bit error $P_b$ can be calculated using the equation below [3].
+
+%\begin{equation}
+%P_b \leq \frac{1}{k} \sum_{d=d_{\text{free}}}^{d_{\text{max}}} u(d) Q\Bigg( \sqrt{\frac{2dE_c}{N_0}}\Bigg)
+%\label{eq5}
+%\end{equation}
+%where $u(d)=\sum_{w=1}^{\infty} w~ a(d,w)$,  $E_c/N_0$ is the Signal to Noise ratio for the transmitted codeword, $d_{\text{max}}$ is the largest value of $d$ used in the estimation of $P_b$ and $d_{\text{free}}$ is the free distance of the code. This equation require the knowledge of the distance spectrum of the RSCC and using the method described in the previous section,we obtain the partial distance spectrum for all input messages $b(x)$ of length $K=64$ which produce low-weight parity bits
+
+%$h(x)$ where $w_H(\textbf{h})=2 ~\text{and} ~ w_H(\textbf{h})=4$.  We then use those terms with $d_{\text{max}}=8$ to calculate the probability of bit error using (\ref{eq5}). 
+
+%For the simulation results we set $K=64$ and use a $5/7$ RSC encoder with tail-biting structure to encode the input messages. The codeword are BPSK modulated and transmitted over the AWGN channel. The soft Viterbi algorithm is used for the decoding and detection operation.
+
+%\begin{figure}[h]
+%\centering
+%		\includegraphics[width=0.45\textwidth]{paperg2.png}
+%		\caption{Simulation and Upper Bounds for $5/7$ RSCC}
+%		\label{fig3}
+%		\end{figure}
+		
+%		The simulation results are compared with the upper bound in Figure \ref{fig3}. 
+%	We deduce that it is possible to estimate the performance of the RSC code by the upper bound obtained using our novel method. The difference between the upper bound and the simulation results is $1.3730 \times 10^{-4}, 2.9960 \times 10^{-5},2.2800 \times 10^{-6}, 1.5668^{-7}$ for $E_b/N_0$ (dB) values of $4,5,6~\text{and}~7$ respectively. 
+%We observe that for $E_b/N_o$ value of  $6$ dB, the upper bound is x dB away from the simulation results whiles it is y dB from the simulation results at an $E_b/N_o$ value of  $6$ dB
+
+\section{Conclusion}
+\label{sec6}
+
+In this paper, we presented a method for listing input message which produce codewords with low-weight parity bit sequences for a for a given $(n,k)$ RSCC. Compared to the Transfer function method, it has low complexity and provides more information about distance spectrum of the RSCC. Using a specially configured finite state machine, we can obtain a partial distance spectrum which we use to calculate an upper bound for the RSCC.  
+
+
+\begin{thebibliography}{99}
+\bibitem{ref1}  C. Berrou, A. Glavieux and P. Thitimajshima, 
+''Near Shannon limit error-correcting coding and
+decoding: Turbo codes'', Proc. Intern. Conf. Communications (ICC), Geneva, 
+Switzerland, pp. 1064-
+1070, May 1993.
+\bibitem{ref2} John G. Proakis, Masoud Salehi. ``Digital Communications'', 
+Fifth Edition,Chapter 8, McGraw-Hill.
+\bibitem{ref3} Todd K. Moon. ``Error Correcting Codes'',Chapter 12, John Wiley \& Sons.
+\bibitem{ref4}Alain Glavieux, ``Channel Coding in Communication Networks'',\\ Chapter 3, John Wiley \& Son. 
+\bibitem{ref5} Jing Sun, Oscar Y. Takeshita ''Interleavers for Turbo Codes Using 
+Permutation Polynomials over Integer Rings'', IEEE Trans. Inform. Theory, vol. 51, 
+pp. 101 - 119  Jan. 2005.
+\bibitem{ref6} C. Berrou, Y. Saouter, C. Douillard, S. Kerouédan, and M. Jézéquel ``Designing Good Permutations for Turbo Codes: Towards a Single Model'',IEEE Communications Society 2004,pp.341-345
+
+\end{thebibliography}
+%\include{./Sources/Preliminaries}
+%\include{./Sources/RTZInputs}
+%\include{./Sources/PermutationMatrixDesign}
+%\include{./Sources/CosetDesign}
+%\include{./Sources/SimRes}
+%\include{./Sources/CosetDesignW4}
+
+%\begin{enumerate}
+%\item Calculating weight for W4RTZs
+%\item Calculating weight for W5RTZs
+
+%\tem Search for good interleavers
+%\item Simulation results comparison with QPP
+%\end{enumerate}
+
+\end{document}

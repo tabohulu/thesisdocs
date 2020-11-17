@@ -27,16 +27,32 @@ $h\tau+t<h'\tau+t'<(h' + \alpha')\tau+t'<(h + \alpha)\tau+t$, the above equation
 
 First we will derive the Hamming weight equation for all the various classes of W4RTZs with respect to the convolutional code and then with respect to the turbo code.
 
+Before we begin the proof, the following notations will be used
+
+\begin{enumerate}
+\item Let 
+$$\bphi_1=(0~0~1),~\bphi'_1=(0~1~0),~\bphi''_1=(1~0~0)$$ \\
+$$\bphi_2=(0~1~1),~\bphi'_2=(1~1~0),~\bphi''_2=(1~0~1)$$ \\
+$$\bphi_3=(1~1~1)$$.
+
+\item For a W2RTZ, the parity vector $\bv_p=(\bphi_1~ (\bphi'_2)_{\alpha-1}~ \bphi_3)$
+\end{enumerate} 
+
 \begin{theorem}[Type1 W4RTZ]
 
-For a W4RTZ such that $h\tau+t<(h + \alpha)\tau+t<h'\tau+t'<(h' + \alpha')\tau+t'$, the Hammming weight of the convolutional code $w_p=2(\alpha +\alpha')+4$
+For a W4RTZ such that $h\tau+t<(h + \alpha)\tau+t<h'\tau+t'<(h' + \alpha')\tau+t'$, the parity weight of the convolutional code is $w_p=2(\alpha +\alpha')+4$
 \end{theorem}
 \begin{proof}
-We split the W4RTZ into 3 parts. The separation between $(h + \alpha)\tau+t$ and $h\tau+t$ is
-$$h\tau +\alpha\tau + t -h\tau - t=\alpha\tau$$ and the associated weight is $$2\alpha +2$$
-The separation between $(h' + \alpha')\tau+t'$ and $h'\tau+t'$ is
-$$h'\tau +\alpha'\tau + t' -h'\tau - t'=\alpha'\tau$$ and the associated weight is $$2\alpha' +2$$
-Since the seperation between $(h + \alpha)\tau+t$ and $h\tau+t$ as well as $(h' + \alpha')\tau+t'$ and $h'\tau+t'$ are multiples of $\tau$, it means that the weight between $h'\tau+t'$ and $(h + \alpha)\tau+t$ is 0. The total parityweight is then
+For the above stated case, we have the following parity vector summation.
+\begin{eqnarray*}
+(\bphi_1~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~ \bphi_3~\cdots ~\bzero_3~\bzero_3~\bzero_3~\cdots~\bzero_3~\bzero_3~
+\cdots~\bzero_3)\cr
++(\bzero_3~\bzero_3~\bzero_3~\cdots~\bzero_3~\bzero_3~\cdots~\bphi_1~ \bphi'_2~ \bphi'_2~\cdots~\bphi'_2~ \bphi_3~\cdots~\bzero_3)\cr
+\cline{1-2}
+(\bphi_1~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~ \bphi_3~\cdots~\bphi_1~ \bphi'_2~ \bphi'_2~\cdots~\bphi'_2~ \bphi_3~\cdots~\bzero_3)
+\end{eqnarray*}
+
+The derived parity vector is then $(\bphi_1~ (\bphi'_2)_{\alpha-1}~ \bphi_3~\cdots~\bphi_1~ (\bphi'_2)_{\alpha'-1}~ \bphi_3)$ and the weight for the derived parity vector is calculated as 
 \begin{equation}
 \begin{split}
 w_p=&2(\alpha)+2+2(\alpha')+2\\
@@ -46,57 +62,138 @@ w_p=&2(\alpha)+2+2(\alpha')+2\\
 \end{proof}
 
 \begin{theorem}[Type2 W4RTZ]
-For a W4RTZ such that $h\tau+t<h'\tau+t'<(h' + \alpha')\tau+t'<(h + \alpha)\tau+t$, the Hammming weight of the convolutional code $w_p=2\alpha$
+For a W4RTZ such that $h\tau+t<h'\tau+t'<(h' + \alpha')\tau+t'<(h + \alpha)\tau+t,~
+t'\neq t$, the parity weight of the convolutional code is $w_p=2\alpha$
 \end{theorem}
 \begin{proof}
-The separation between $h'\tau+t'$ and $h\tau+t$ is
-$$(h'-h)\tau + (t'-t)$$ and the associated weight is $$2(h'-h) +(t'-t)$$
-
-The separation between $(h + \alpha)\tau+t$ and $(h' + \alpha')\tau+t'$ is
-$$(h-h')\tau+(\alpha-\alpha')\tau + (t -t')$$ and the associated weight is $$2(h-h')+2(\alpha - \alpha') +(t-t') +1$$
-
-Since the seperation between 
-$h'\tau+t'$ and $h\tau+t$ as well as 
-$(h + \alpha)\tau+t$ and $(h' + \alpha')\tau+t'$ 
-are not multiples of $\tau$, it means that the weight between 
-$h'\tau+t'$ and $(h' + \alpha')\tau+t'$ is non-zero. 
-
-The separation between $h'\tau+t'$ and $(h' + \alpha')\tau+t'$ is $$\alpha'\tau$$ and the associated weight is $$2\alpha' -1$$
-The total parity weight is then
-\begin{equation}
+For the above case, there are 3 possible vector summations as shown below
+\begin{eqnarray}
+(\bphi_1~ \bphi'_2~\cdots~\bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~\bphi_3)\cr
++(\bzero_3~~\bzero_3~\cdots~\bzero_3~\bphi_3~\bphi_2~\cdots~\bphi_2~\bphi''_1~\bzero_3
+~\cdots~\bzero_3~\bzero_3)\cr
+\cline{1-2}
+(\bphi_1~ \bphi'_2~\cdots~\bphi'_2~\bphi_1~\bphi''_2~\cdots~\bphi''_2~\bphi'_1~\bphi'_2~
+\cdots ~\bphi'_2~\bphi_3)
+\label{2-1}
+\end{eqnarray}
+for \ref{2-1} the derived parity vector is $$(\bphi_1~ (\bphi'_2)_{(h'-h)}~\bphi_1~(\bphi''_2)_{(\alpha'-1)}~\bphi_1~(\bphi'_2)_{((h-h')+(\alpha-\alpha')-2)}~\bphi_3)$$
+with a corresponding weight of 
+\begin{equation*}
 \begin{split}
-w_p=&2(h'-h) +(t'-t) + 2(h-h')+2(\alpha - \alpha') +(t-t') +1 +2\alpha' -1\\
-=&2(\alpha - \alpha' + \alpha') \\
-=&2\alpha 
+w_p&=2(h'-h)+1+2(\alpha'-1)+1+2((h-h')+(\alpha-\alpha')-2)+4\\
+&=2(h'-h)+1+2\alpha'-1+2(h-h')+2(\alpha-\alpha')\\
+&=2(\alpha'-\alpha'+\alpha)\\
+&=2\alpha
 \end{split}
+\end{equation*}
+\begin{eqnarray}
+(\bphi_1~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~\bphi'_2~ \bphi_3)\cr
++(\bzero_3~~\bzero_3~\cdots~\bzero_3~\bphi_2~\bphi''_2~\cdots~\bphi''_2~
+\bphi'_2~\bzero_3~\cdots~\bzero_3
+~\bzero_3)\cr
+\cline{1-2}
+(\bphi_1~ \bphi'_2~\cdots~ \bphi'_2~\bphi''_2~\bphi_2~\cdots~\bphi_2~\bzero_3~\bphi'_2~\cdots~\bphi'_2 \bphi_3)
+\label{2-2}
+\end{eqnarray}
+For \ref{2-2} The derived parity vector is $$
+(\bphi_1~(\bphi'_2)_{(h'-h)}~\bphi''_2~(\bphi_2)_{(\alpha-1)}~\bzero_3~(\bphi'_2)_{((h-h')+(\alpha-\alpha')-2)}~\bphi_3)
+$$
+And the parity weight is 
+\begin{equation*}
+\begin{split}
+w_p&=2(h'-h)+1+2(\alpha'-1)+2+2((h-h')+(\alpha-\alpha')-2)+3\\
+&=2(h'-h)+1+2\alpha'-2+2+2(h-h')+2(\alpha-\alpha')-1\\
+&=2(\alpha'-\alpha'+\alpha)\\
+&=2\alpha
+\end{split}
+\end{equation*}
+
+\begin{eqnarray}
+(\bphi_1~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~ \bphi_3)\cr
++(\bzero_3~~\bzero_3~\bphi_1~ \bphi'_2~\cdots~\bphi'_2~ \bphi_3~\bzero_3
+~\bzero_3)\cr
+\cline{1-2}
+(\bphi_1~ \bphi'_2~\bphi_3~\bzero_3~\cdots~\bzero_3~\bphi_1~\bphi'_2~ \bphi_3)
+\label{2-3}
+\end{eqnarray}
+
+For \ref{2-3}, $t=t'$ and the derived vector as well as the parity weight is the same as that of the Type1 W4RTZ.
+Therefore for Type2 W4RTZ the parity weight is given by
+\begin{equation}
+w_p=2\alpha 
 \end{equation}
 \end{proof}
 
 \begin{theorem}[Type3 W4RTZ]
-For a W4RTZ such that $h\tau+t<h'\tau+t'<(h + \alpha)\tau+t<(h' + \alpha')\tau+t'$, the Hammming weight of the convolutional code $w_p=2(\alpha' -1+(h'-h)+(t'-t))$
+For a W4RTZ such that $h\tau+t<h'\tau+t'<(h + \alpha)\tau+t<(h' + \alpha')\tau+t',~
+t'\neq t$, the parity weight of the convolutional code is $w_p=2(\alpha' +(h'-h) +(t'-t)-1)$
 \end{theorem}
 \begin{proof}
-The separation between $h'\tau+t'$ and $h\tau+t$ is
-$$(h'-h)\tau + (t'-t)$$ and the associated weight is $$2(h'-h) +(t'-t)$$
+Again for the above case, there are 3 possible vector summations as shown below
+\begin{eqnarray}
+(\bphi_1~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~
+ \bphi_3~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
++(\bzero_3~\bzero_3~\cdots~\bzero_3~\bphi_3~\bphi_2~\cdots~\bphi_2~\bphi_2
+~\bphi_2\cdots~\bphi_2~\bphi''_1)\cr
+\cline{1-2}
+(\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi_1~\bphi''_2~\cdots~\bphi''_2~\bphi''_1
+~\bphi_2\cdots~\bphi_2~\bphi''_1)
+\label{3-1}
+\end{eqnarray}
 
-The separation between $(h' + \alpha')\tau+t'$ and $(h + \alpha)\tau+t$ is
-$$(h'-h)\tau+(\alpha'-\alpha)\tau + (t' -t)$$ and the associated weight is $$2(h'-h)+2(\alpha' - \alpha) +(t'-t)$$
-
-Since the seperation between 
-$h'\tau+t'$ and $h\tau+t$ as well as 
-$(h' + \alpha')\tau+t'$ and $(h + \alpha)\tau+t$ 
-are not multiples of $\tau$, it means that the weight between 
-$(h' + \alpha')\tau+t'$ and $(h + \alpha)\tau+t$ is non-zero. 
-
-The separation between $(h' + \alpha')\tau+t'$ and $(h + \alpha)\tau+t$ is 
-$$(h-h')\tau +\alpha\tau +(t-t')$$ 
-and the associated weight is $$2(h-h')+2\alpha -2$$
-The total parity weight is then
-\begin{equation}
+For \ref{3-1} the derived parity vector is $$
+(\bphi_1~(\bphi'_2)_{(h'-h)}~\bphi_1~(\bphi''_2)_{(h-h'+\alpha)-2}~\bphi''_1~(\bphi_2)_{((h'-h)+(\alpha'-\alpha))}~\bphi''_1)
+$$
+with a weight of 
+\begin{equation*}
 \begin{split}
-w_p=&2(h'-h) +(t'-t) + 2(h-h')+2\alpha -2 +2(h'-h) +2(\alpha' -\alpha)+(t'-t) \\
-=&2(\alpha' +(h'-h) +(t'-t)-1)
+w_p&=2(h'-h)+1+2(h-h'+\alpha-2)+2+2((h'-h)+(\alpha'-\alpha))+1\\
+&=2(h'-h)+2(\alpha-\alpha+\alpha')+1-1\\
+&=2((h'-h)+\alpha')
 \end{split}
+\end{equation*}
+
+\begin{eqnarray}
+(\bphi_1~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~
+ \bphi_3~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
+(\bzero_3~\bzero_3~\cdots~\bzero_3~\bphi_2~\bphi''_2~\cdots~\bphi''_2~\bphi''_2
+~\bphi''_2\cdots~\bphi''_2~\bphi'_2)\cr
+\cline{1-2}
+(\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi''_2~\bphi_2~\cdots~\bphi_2~\bphi'_1
+~\bphi''_2\cdots~\bphi''_2~\bphi'_2)
+\label{3-2}
+\end{eqnarray}
+
+For \ref{3-2} the derived parity vector is $$
+(\bphi_1~(\bphi'_2)_{(h'-h)}~\bphi''_2~(\bphi_2)_{(h-h'+\alpha)-2}~\bphi'_1~(\bphi''_2)_{((h'-h)+(\alpha'-\alpha))}~\bphi'_2)
+$$
+with a weight of 
+\begin{equation*}
+\begin{split}
+w_p&=2(h'-h)+1+2(h-h'+\alpha-2)+3+2((h'-h)+(\alpha'-\alpha))+2\\
+&=2(h'-h)+2(\alpha-\alpha+\alpha')+2\\
+&=2((h'-h)+\alpha'+1)
+\end{split}
+\end{equation*}
+
+
+\begin{eqnarray}
+(\bphi_1~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~
+ \bphi_3~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
+(\bzero_3~\bzero_3~\cdots~\bzero_3~\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi'_2
+~\bphi'_2\cdots~\bphi'_2~\bphi_3)\cr
+\cline{1-2}
+\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi_3~\bzero_3~\cdots~\bzero_3~\bphi_1
+~\bphi'_2\cdots~\bphi'_2~\bphi_3)
+\label{3-3}
+\end{eqnarray}
+
+For \ref{3-3}, $t=t'$ and the derived vector as well as the parity weight is the same as that of the Type1 W4RTZ.
+
+The parity weight equations for \ref{3-1} and \ref{3-2} are different but without loss of generality we can assuming  that $t'>t,~t=0$ we see that \ref{3-1} corresponds to the case where $t'-t=1$ whiles \ref{3-2} corresponds to the case where$t'-t=2$
+Therefore for Type3 W4RTZ the parity weight is given by
+\begin{equation}
+w_p=2(\alpha' +(h'-h) +(t'-t)-1)
 \end{equation}
 \end{proof}
 
