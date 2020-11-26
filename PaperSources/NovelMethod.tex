@@ -1,31 +1,27 @@
-\section{Novel Method for Finding the Distance Spectrum }
+\section{Input-Structure Distance Spectrum }
 \label{sec4}
-As mentioned earlier, our interest is to determine if a given input message $\textbf{b}$ is an RTZ input. In this section, we present a novel low-complexity method for determining just that and all that is required is the knowledge of the feedback connection of the RSC code $G(D)$.  
-According to\cite{ref6}, every RTZ input is a multiple of $g(x)$. Also, the transfer function is used to enumerate that paths that diverge from and return to the initial state of the trellis, ie the path taken by RTZ inputs. With the combination of the above knowledege, it is possible to develop a method to not only determine which RTZ inputs produce low-weight parity sequences, but the structure of such RTZ inputs as well. 
+The regular distance spectrum is an insufficient tool where it relates to interleaver design. In this section, we present a novel method that generates what we refered to as the input-structure distance spectrum. It is the distance spectrum with the structure of the RTZ inputs revealed making it a very useful tool for interleaver design.
+
 For convinience sake we will switch to polynomial representation, where $g(x)$ and $f(x)$ represent the feedback and feedforward connections of the RSC code respectively. Also $b(x)$ and $h(x)$ are the polynomial representations of the input message and its corresponding parity-bit sequence respectively.
 
-Simply put, $b(x)$ is an RTZ input if 
+This method is simple and relies of the fact that a message input $b(x)$ is an RTZ input if 
 \begin{equation}
 b(x) \bmod g(x) =0
 \label{eq1}
 \end{equation}
 
-For an RTZ that meets that criteria $h(x)$ is accurately calculated as
+Which means that we may rewrite $b(x)$ as $b(x)=a(x)g(x)$, where $a(x)$ is the polynomial representation of any binary vector or arbitrary length.
+
+$h(x)$ is simply calculated as 
 \begin{equation}
-h(x) =\frac{b(x)}{g(x)}f(x)
+h(x) =a(x)f(x)
 \label{eq2}
 \end{equation}
 
-Our method for finding the distance spectrum for a given RSC code is outlined below
-\begin{enumerate}
-\item Initialize an array $\bb(x)$ with the initial elements set to $1+x$ and $1$. Also initialize 2 empty arrays $\br(x),~\bh(x)$ which will be used to store the RTZ inputs and their corresponding $h(x)$ respectively.
-\item \label{step2} For each element in $\bb(x)$ if the condition in \ref{eq1} is met, save the polynomial in $\br(x)$. If there is a need, find $h(x)$ using \ref{eq2} and save it in $\bh(x)$
-\item \label{step3} All elements that meet the condition in \ref{eq1} are then deleted from $\bb(x)$ and the remaining elements are duplicated which doubles the size of the array. The polynomial length is either extended or maintained by adding an extra ``0'' or ``1'' to the binary representation of the polynomial.
-\item Repeat steps \ref{step2} and \ref{step3} untill the binary representation of the elements in $\br(x)$ has length $M$
-\end{enumerate}
- To reduce the time required to use this method, we an extra criteria where in step \ref{step3} we either delete elements in $\bb(x)$ with a weigth >$w$ or codeword weight of $d$ or both.
- For $M=16$ we find all $b(x) ~\text{and}~ h(x)$ for which $w_H(\textbf{h})=2 ~\text{and} ~ w_H(\textbf{h})=4$. The results are shown in Table \ref{tab1} and \ref{tab2} respectively . For $w_H(\textbf{h})=4$, only the first 10 results are shown.
- Also \ref{tab3} shows all $b(x)$ and $h(x)$ that produce a codeword weight $w_H \leq 8$ for $M=32$.
+With the above equations, finding the input-structure distance spectrum for an input message of length $N$ is as simple as using (\ref{eq1}) or  (\ref{eq2}) (or both ) for all values of $a(x),~x^0\in a(x), a(x) \in GF(2^N)$. The condition $x^0\in a(x)$ ensures that there is no repitition of $b(x)$ or $h(x)$
+
+ For $N=16$ we find all $b(x) ~\text{and}~ h(x)$ for which $w_H(\textbf{h})=2 ~\text{and} ~ w_H(\textbf{h})=4$. The results are shown in Table \ref{tab1} and \ref{tab2} respectively . For $w_H(\textbf{h})=4$, only the first 10 results are shown.
+ Also \ref{tab3} shows all $b(x)$ and $h(x)$ that produce a codeword weight $w_H(\bc) \leq 8$ for $N=32$.
 
 
  
@@ -57,7 +53,7 @@ Our method for finding the distance spectrum for a given RSC code is outlined be
  \hline
  $w_H(\textbf{b})$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
  \hline\hline
- 2 &  $1+x^3$ & $1+x+x^2+x^4$\\ 
+ 2 &  $1+x^3$ & $1+x+x^2+x^3$\\ 
  \hline 
   & $1+x^2+x^4$ &  $1+x+x^3+x^4$ \\
    3 &  $1+x^4+x^5$ & $1+x+x^2+x^5$ \\
@@ -76,11 +72,11 @@ Our method for finding the distance spectrum for a given RSC code is outlined be
 \end{table*}
 
 \begin{table*}[h!]
- \caption{All $b(x)$ which produce codewords with weight $w_H \leq 8$ for $M=32$}
+ \caption{All $b(x)$ which produce codewords with weight $w_H(\bc) \leq 8$ for $M=32$}
 \centering
  \begin{tabular}{c c c} 
  \hline
- $w_H(\textbf{b})$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
+ $w_H(\textbf{c})$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
  \hline\hline
  5 &  $1+x+x^2$ & $1+x^2$\\ 
  \hline 
