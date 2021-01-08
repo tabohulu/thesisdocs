@@ -1,0 +1,65 @@
+\documentclass[11pt, oneside, dvipdfmx]{book}
+\newcommand{\folder}{/usr/local/share/texmf}
+%\newcommand{\folder}{/home/hanchenggao/Documents/texmf}
+\input{\folder/hfiles/ebook}
+%\usepackage[ruled,vlined]{algorithm2e}
+\usepackage {graphicx}[dvips]
+%\usepackage {graphics}
+%\setCJKmainfont{SimSun}
+\title{
+Proving the Parity Weight Equation for RTZ Inputs Via Polynomials}
+\author{Kwame Ackah Bohulu}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Parity Weight Equation for W2RTZs given the 5/7 RSC code}
+\begin{theorem}
+The parity weight equation for the 5/7 RSC code's W2RTZ is given by
+\begin{equation}
+w_p^{(2)} = 2\alpha+2
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+In polynomial for, the parity-bit sequence $h(x)$ for any RSC code is given by 
+\begin{equation}
+h(x)=f(x)g^{-1}(x)b(x)
+\label{eq1}
+\end{equation}
+where $f(x)=1+x^2$ and $b(x)$ is the message input and if it is an RTZ input and it can be written as
+$$b(x)=a(x)g(x)$$
+
+We then have
+\begin{equation}
+\begin{split}
+h(x)=&f(x)g^{-1}(x)a(x)g(x)\\
+=&f(x)a(x)
+\end{split}
+\label{eq2}
+\end{equation}
+Specifically, if it is a W2RTZ input for the 5/7 RSC code, $b(x)$ has the general for 
+$$b(x)=1+x^{3\alpha}$$.
+Given $g(x)$ and $b(x)$, it is possible to find $a(x)$ in its general form as it relates to W2RTZs simply by dividing $b(x)$ by $g(x)=1+x+x^2$
+Then, we have 
+\begin{equation}
+\begin{split}
+a(x)=&x^{3\alpha-2}+x^{3\alpha-3}+x^{3\alpha-5}+x^{3\alpha-6}+\cdots\\
+=&\sum_{\alpha=1}^{i}x^{3(\alpha-1)+1}+x^{3(\alpha-1)}
+\end{split}
+\label{eq3}
+\end{equation}
+
+Fixing (\ref{eq3}) into (\ref{eq2}) we have
+\begin{equation}
+\begin{split}
+h(x)=&f(x)\Big[\sum_{\alpha=1}^{i}x^{3(\alpha-1)+1}+x^{3(\alpha-1)} \Big]\\
+=&1+x^2\Big[\sum_{\alpha=1}^{i}x^{3(\alpha-1)+1}+x^{3(\alpha-1)} \Big]\\
+=&\sum_{\alpha=1}^{i}x^{3(\alpha-1)+1}+x^{3(\alpha-1)} + \sum_{\alpha=1}^{i}x^{3\alpha}+x^{3\alpha-1}
+\end{split}
+\end{equation}
+\end{proof}
+\end{document}

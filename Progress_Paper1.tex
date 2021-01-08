@@ -1,13 +1,16 @@
 \documentclass[11pt, oneside, dvipdfmx]{book}
+
 \newcommand{\folder}{/usr/local/share/texmf}
 %\newcommand{\folder}{/home/hanchenggao/Documents/texmf}
 \input{\folder/hfiles/ebook}
+\renewcommand{\thesubsubsection}{\Alph{subsubsection}.}
+\setcounter{secnumdepth}{3}
 %\usepackage[ruled,vlined]{algorithm2e}
 \usepackage {graphicx}[dvips]
 %\usepackage {graphics}
 %\setCJKmainfont{SimSun}
 \title{
-A Novel Method for Obtaining the Structure and Corresponding Parity Weight Equations for the RTZ Inputs of RSC Codes: A First Step Towards Interleaver Design}
+A Novel Method for Obtaining the Structure of RTZ Inputs and their Corresponding Parity-Check Sequences: A First Step Towards Interleaver Design}
 \author{Kwame Ackah Bohulu}
 \date{\today}
 \begin{document}
@@ -19,7 +22,8 @@ A Novel Method for Obtaining the Structure and Corresponding Parity Weight Equat
 \include{./PaperSources/RSCReview}
 %\include{./PaperSources/TransferFunction}
 \include{./PaperSources/NovelMethod}
-\include{./PaperSources/RTZGeneralization}
+\include{./PaperSources/SimulationResults}
+%\include{./PaperSources/RTZGeneralization}
 
 
 

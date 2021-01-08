@@ -1,47 +1,47 @@
 \section{Generalization of RTZ inputs and Their Corresponding Parity-Weight Equations}
 With our method described in the previous section, we are able to not only determine the distance spectrum of the RSC code, but we have information with regards to the structure of the RTZ inputs. In this section, provide general information with regards to the type of RTZ inputs present in a RSC code. Then, we go a step further and provide a general representation (in polynomial form) of the RTZ inputs grouped by their weight. Finally we derive equations for calculating the parity weight for these RTZ inputs. The generalization as well as the derived equations will be very useful when it comes to designing interleavers for turbo codes.
 
-\subsection{Preliminaries}
-To aid in our proofs the following have been defined with respect to the impulse response of the $5/7$ RSC code.
-Let 
-\begin{eqnarray}
-&\bphi_1=(0~0~1)&,~\bphi'_1=(0~1~0),~\bphi''_1=(1~0~0)\\
-&\bphi_2=(0~1~1)&,~\bphi'_2=(1~1~0),~\bphi''_2=(1~0~1)\\
-&\bphi_7=(1~1~1)&
-\end{eqnarray}
+%\subsection{Preliminaries}
+%To aid in our proofs the following have been defined with respect to the impulse response of the $5/7$ RSC code.
+%Let 
+%\begin{eqnarray}
+%&\bphi_1=(0~0~1)&,~\bphi_2=(0~1~0),~\bphi_4=(1~0~0)\\
+%&\bphi_3=(0~1~1)&,~\bphi_6=(1~1~0),~\bphi_5=(1~0~1)\\
+%&\bphi_7=(1~1~1)&
+%\end{eqnarray}
 
-To simplify calculation, we have included an addition table for all the vectors which is shown in Table \ref{tb6-1}
+%To simplify calculation, we have included an addition table for all the vectors which is shown in Table \ref{tb6-1}
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{c || c  | c  | c  | c  | c  | c  | c } 
- $$ & $\bphi_1$ & $\bphi'_1$ & $\bphi''_1$ & $\bphi_2$ & $\bphi'_2$ & $\bphi''_2$ & $\bphi_7$ \\
-   \hline\hline
-   %row1
-$\bphi_1$ & $\bzero_3$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-   \hline
-      %row2
-$\bphi'_1$ & $\bphi_2$ & $\bzero_3$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-   \hline
-      %row3
-$\bphi''_1$ & $\bphi''_2$ & $\bphi'_2$ & $\bzero_3$ & $-$ & $-$ & $-$ & $-$ \\
-   \hline
-      %row4
-$\bphi_2$ & $\bphi'_1$ & $\bphi_1$ & $\bphi_7$ & $\bzero_3$ & $-$ & $-$ & $-$ \\
-   \hline
-      %row5
-$\bphi'_2$ & $\bphi_7$ & $\bphi''_1$ & $\bphi'_1$ & $\bphi''_2$ & $\bzero_3$ & $-$ & $-$ \\
-   \hline
-      %row6
-$\bphi''_2$ & $\bphi''_1$ & $\bphi_7$ & $\bphi_1$ & $\bphi'_2$ & $\bphi_2$ & $\bzero_3$ & $-$ \\
-   \hline
-      %row7
-$\bphi_7$ & $\bphi'_2$ & $\bphi''_2$ & $\bphi_2$ & $\bphi''_1$ & $\bphi_1$ & $\bphi'_1$ & $\bzero_3$ \\
-   \hline
-  \end{tabular}
-\caption{Truth Table}
-\label{tb6-1}
-\end{table}
+%\begin{table}[h!]
+%\centering
+%\begin{tabular}{c || c  | c  | c  | c  | c  | c  | c } 
+ %$$ & $\bphi_1$ & $\bphi_2$ & $\bphi_4$ & $\bphi_3$ & $\bphi_6$ & $\bphi_5$ & $\bphi_7$ \\
+   %\hline\hline
+  % %row1
+%$\bphi_1$ & $\bphi_0$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+%   \hline
+   %   %row2
+%$\bphi_2$ & $\bphi_3$ & $\bphi_0$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+  % \hline
+  %    %row3
+%$\bphi_4$ & $\bphi_5$ & $\bphi_6$ & $\bphi_0$ & $-$ & $-$ & $-$ & $-$ \\
+%   \hline
+  %    %row4
+%$\bphi_3$ & $\bphi_2$ & $\bphi_1$ & $\bphi_7$ & $\bphi_0$ & $-$ & $-$ & $-$ \\
+%   \hline
+%      %row5
+%$\bphi_6$ & $\bphi_7$ & $\bphi_4$ & $\bphi_2$ & $\bphi_5$ & $\bphi_0$ & $-$ & $-$ \\
+%   \hline
+%      %row6
+%$\bphi_5$ & $\bphi_4$ & $\bphi_7$ & $\bphi_1$ & $\bphi_6$ & $\bphi_3$ & $\bphi_0$ & $-$ \\
+%   \hline
+%      %row7
+%$\bphi_7$ & $\bphi_6$ & $\bphi_5$ & $\bphi_3$ & $\bphi_4$ & $\bphi_1$ & $\bphi_2$ & $\bphi_0$ \\
+%   \hline
+%  \end{tabular}
+%\caption{Truth Table}
+%\label{tb6-1}
+%\end{table}
 
 \subsection{Types of RTZ inputs}
 Regardless of the component code used in turbo coding, the RTZ inputs can be grouped into two basic forms. We shall refer to them as \textit{base RTZ inputs} and \textit{compound RTZ inputs}. The number of base RTZ inputs depends on the component code and cannot be broken down into 2 or more RTZ inputs. Compound RTZ inputs as the name implies, are formed from 2 or more base RTZ inputs and therefore can be broken down into base RTZ input form.
@@ -79,10 +79,10 @@ For any value of $\alpha,~P(x) \bmod g(x) = 0$ is always true. This proves that 
 \paragraph{Using the impulse response}
 If we write $P(x)$ in binary for we have a summation of vectors that take the form
 \begin{eqnarray*}
-(\bzero_3~\bphi_1~(\bphi'_2)_{\alpha-1}~\bphi'_2~\cdots~\bphi'_2)\cr
-(\bzero_3~~(\bzero_3)_{\alpha}~~\bphi_1~\bphi'_2~\cdots~\bphi'_2)
+(\bphi_0~\bphi_1~(\bphi_6)_{\alpha-1}~\bphi_6~\cdots~\bphi_6)\cr
+(\bphi_0~~(\bphi_0)_{\alpha}~~\bphi_1~\bphi_6~\cdots~\bphi_6)
 \end{eqnarray*}
-Regardless of the value of $\alpha$ we realize that there is an infinite summation of $\bphi_2+\bphi_2=\bzero_3$ after the second $1$ bit leading to a low-weight codeword, proving again that that $P(x)$ is a RTZ input which has weight $2$ or a W2RTZ.
+Regardless of the value of $\alpha$ we realize that there is an infinite summation of $\bphi_3+\bphi_3=\bphi_0$ after the second $1$ bit leading to a low-weight codeword, proving again that that $P(x)$ is a RTZ input which has weight $2$ or a W2RTZ.
 
 This ends the proof.
 \end{proof}
@@ -116,11 +116,11 @@ For any value of $\beta~\text{and}~\gamma,~Q(x) \bmod g(x) = 0$ is always true. 
 \paragraph{Using the impulse response}
 If we write $Q(x)$ in binary for we have a summation of vectors that take the form
 \begin{eqnarray*}
-(\bzero_{3(\gamma+h)}~\bphi_1~\bphi'_2~\cdots)\cr
-(\bzero_{3(\beta+h)}~\bphi_2~\bphi''_2~\cdots)\cr
-(\bzero_{3 h}~~~~~~\bphi_7~\bphi_2~\cdots)
+(\bzero_{3(\gamma+h)}~\bphi_1~\bphi_6~\cdots)\cr
+(\bzero_{3(\beta+h)}~\bphi_3~\bphi_5~\cdots)\cr
+(\bzero_{3 h}~~~~~~\bphi_7~\bphi_3~\cdots)
 \end{eqnarray*}
-Regardless of the value of $\beta$ and $\gamma$ we realize that there is an infinite summation of $\bphi_2+\bphi_2=\bzero_3$ after the third $1$ bit leading to a low-weight codeword, proving again that that $Q(x)$ is a RTZ input which has weight $3$ ie a W3RTZ.
+Regardless of the value of $\beta$ and $\gamma$ we realize that there is an infinite summation of $\bphi_3+\bphi_3=\bphi_0$ after the third $1$ bit leading to a low-weight codeword, proving again that that $Q(x)$ is a RTZ input which has weight $3$ ie a W3RTZ.
 
 This ends the proof.
 
@@ -185,15 +185,15 @@ w^{(2)}_{p}=2\alpha+2
 \begin{proof}
 For W2RTZ we consider the summation of the vectors below
 \begin{eqnarray*}
-(\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi'_2~\bphi'_2~\bphi'_2~\bphi'_2\cdots~\bphi'_2)\cr
-+(\bzero_3~\bzero_3~\cdots~\bzero_3~\bphi_1~\bphi'_2~\bphi'_2~\bphi'_2~\cdots~\bphi'_2)\cr
+(\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_6~\bphi_6~\bphi_6~\bphi_6\cdots~\bphi_6)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_1~\bphi_6~\bphi_6~\bphi_6~\cdots~\bphi_6)\cr
 \cline{1-2}
-(\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi'_3~\bzero_3~\bzero_3~\bzero_3~\cdots~\bzero_3)
+(\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi'_3~\bphi_0~\bphi_0~\bphi_0~\cdots~\bphi_0)
 \end{eqnarray*}
 
 The derived vector will be 
 \begin{equation*}
-(\bphi_1~(\bphi'_2)_{\alpha-1}~\bphi_7)
+(\bphi_1~(\bphi_6)_{\alpha-1}~\bphi_7)
 \end{equation*}
 
 The parity weight $w_p^{(2)}$ is given by 
@@ -224,9 +224,9 @@ With reference to the impulse response of the 5/7  RSC encoder,
 
 Now, we consider the weight of the vector derived by the sumation of the followings vectors.
 \begin{eqnarray*}
-(\bzero_{3(\gamma+h)}~\bphi_1~\bphi'_2~\cdots)\cr
-(\bzero_{3(\beta+h)}~\bphi_2~\bphi''_2~\cdots)\cr
-(\bzero_{3 h}~~~~~~\bphi_7~\bphi_2~\cdots)
+(\bzero_{3(\gamma+h)}~\bphi_1~\bphi_6~\cdots)\cr
+(\bzero_{3(\beta+h)}~\bphi_3~\bphi_5~\cdots)\cr
+(\bzero_{3 h}~~~~~~\bphi_7~\bphi_3~\cdots)
 \end{eqnarray*}
 
 Without loss of generality, we can assume that all weight-$3$ RTZ inputs begin at the $0$th position, ie $h=t=0$. This is because the case where $h>0$ or $t>0$ is just a right-shifted version of the weight-$3$ RTZ. With this assumption, we we only need to consider cases where $h= 0,~\gamma \geq h$.
@@ -236,27 +236,27 @@ Furthermore, we consider 4 general cases for all possible values of $i,j,k$ wher
 
  For this case, the vectors to sum will be 
  \begin{align*}
-(\bphi_1~\bphi'_2~\cdots)\\
-(\bphi_2~\bphi''_2~\cdots)\\
-(\bphi_7~\bphi_2~\cdots)\\
+(\bphi_1~\bphi_6~\cdots)\\
+(\bphi_3~\bphi_5~\cdots)\\
+(\bphi_7~\bphi_3~\cdots)\\
 \cline{1-2}
-(\bphi''_2~\bzero_{3}~\cdots)
+(\bphi_5~\bzero_{3}~\cdots)
 \end{align*}
  
-and  the derived vector will be $(\bphi''_2~\bzero_{3}~\cdots)$ with a weight of $w_p=2$
+and  the derived vector will be $(\bphi_5~\bzero_{3}~\cdots)$ with a weight of $w_p=2$
  
  %========case =  < ===========
  
  %\paragraph{Case 1a: $i=j<k$\newline}
  %vector to sum:
  %\begin{align*}
- %(\bzero_{3}~\cdots~\bzero_{3}~\bphi_1~\bphi'_2~\cdots~\bphi_2'~\bphi_2'~\bphi_2'~\cdots)\\
-% (\bzero_{3}~\cdots~\bzero_{3}~\bphi_2~\bphi''_2~\cdots~\bphi''_2~\bphi''_2\bphi''_2~\cdots)\\
-%+(\bzero_{3}~~\cdots~\cdots~\cdots~\cdots~\bzero_{3}~\bphi_7~\bphi_2~\cdots)\\
+ %(\bzero_{3}~\cdots~\bzero_{3}~\bphi_1~\bphi_6~\cdots~\bphi_3'~\bphi_3'~\bphi_3'~\cdots)\\
+% (\bzero_{3}~\cdots~\bzero_{3}~\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_5\bphi_5~\cdots)\\
+%+(\bzero_{3}~~\cdots~\cdots~\cdots~\cdots~\bzero_{3}~\bphi_7~\bphi_3~\cdots)\\
 %\cline{1-2}
-%(\bzero_{3}~\cdots~\bzero_{3}~\bphi'_1~\bphi_2~\cdots~\bphi_2~\bphi''_1~\bzero_3~\cdots)
+%(\bzero_{3}~\cdots~\bzero_{3}~\bphi_2~\bphi_3~\cdots~\bphi_3~\bphi_4~\bphi_0~\cdots)
 %\end{align*}
-%derived vector : $(\bzero_{3j}~\bphi'_1~(\bphi_2)_{k-j-1}~\bphi''_1~\bzero_3~\cdots)$
+%derived vector : $(\bzero_{3j}~\bphi_2~(\bphi_3)_{k-j-1}~\bphi_4~\bphi_0~\cdots)$
 %\newline
 %Parity weight: \begin{equation}
 %\begin{split}
@@ -267,13 +267,13 @@ and  the derived vector will be $(\bphi''_2~\bzero_{3}~\cdots)$ with a weight of
 \paragraph{Case 1a: $\gamma=h<\beta$ \newline}
  vectors to sum:
  \begin{align*}
-(\bphi_1~\bphi'_2~\bphi'_2~\bphi'_2~\bphi'_2~\cdots)\\
-(\bzero_{3}~\cdots~\bzero_{3}~\bphi_2~\bphi''_2~\cdots)\\
-+(\bphi_7~\bphi_2~\bphi_2~\bphi_2~\bphi_2~\cdots)\\
+(\bphi_1~\bphi_6~\bphi_6~\bphi_6~\bphi_6~\cdots)\\
+(\bzero_{3}~\cdots~\bzero_{3}~\bphi_3~\bphi_5~\cdots)\\
++(\bphi_7~\bphi_3~\bphi_3~\bphi_3~\bphi_3~\cdots)\\
 \cline{1-2}
-(\bphi'_2~\bphi''_2~\bphi''_2~\bphi'_2~\bzero_3~\cdots)
+(\bphi_6~\bphi_5~\bphi_5~\bphi_6~\bphi_0~\cdots)
 \end{align*}
-derived vector : $(\bphi'_2~(\bphi''_2)_{\beta-h-1}~\bphi'_2~\bzero_3~\cdots)$
+derived vector : $(\bphi_6~(\bphi_5)_{\beta-h-1}~\bphi_6~\bphi_0~\cdots)$
 \newline
 Parity weight: \begin{equation}
 \begin{split}
@@ -284,13 +284,13 @@ w_p=2(\beta-h)+2 =2\beta+2
 \paragraph{Case 1b: $\beta=h<\gamma$\newline}
  vectors to sum:
 \begin{align*}
-(\bzero_{3}~\cdots~\cdots~\bzero_{3}~\bphi_1~\bphi'_2~\cdots)\\
-(\bphi_2~\bphi''_2~\cdots~\bphi''_2~\bphi''_2\bphi''_2~\cdots)\\
-+(\bphi_7~\bphi_2~\cdots~\bphi_2~\bphi_2~\bphi_2~\cdots)\\
+(\bzero_{3}~\cdots~\cdots~\bzero_{3}~\bphi_1~\bphi_6~\cdots)\\
+(\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_5\bphi_5~\cdots)\\
++(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_3~\bphi_3~\cdots)\\
 \cline{1-2}
-(\bphi''_1~\bphi'_2~\cdots~\bphi'_2~\bphi_7~\bzero_3~\cdots)
+(\bphi_4~\bphi_6~\cdots~\bphi_6~\bphi_7~\bphi_0~\cdots)
 \end{align*}
-derived vector : $(\bphi''_1~(\bphi_2)_{\gamma-h-1}~\bphi_7~\bzero_3~\cdots)$\newline
+derived vector : $(\bphi_4~(\bphi_3)_{\gamma-h-1}~\bphi_7~\bphi_0~\cdots)$\newline
 Parity weight: \begin{equation}
 \begin{split}
 w_p=2(\gamma-h)+2=2\gamma+2
@@ -301,15 +301,15 @@ w_p=2(\gamma-h)+2=2\gamma+2
 \paragraph{Case 2a: $h<\gamma=\beta$ \newline}
  vectors to sum:
 \begin{align*}
-(\bzero_3\cdots~\cdots~\bzero_3~\phi_1~\phi'_2~\cdots)\\
-(\bzero_3\cdots~\cdots~\bzero_3~\phi_2~\phi''_2~\cdots)\\
+(\bphi_0\cdots~\cdots~\bphi_0~\phi_1~\phi'_2~\cdots)\\
+(\bphi_0\cdots~\cdots~\bphi_0~\phi_2~\phi''_2~\cdots)\\
 +(\phi_3~\phi_2~\cdots~\phi_2~\phi_2~\phi_2~\cdots)\\
 \cline{1-2}
-(\bphi_7~\bphi_2~\cdots~\bphi_2~\bphi_1~\bzero_3~\cdots)
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_1~\bphi_0~\cdots)
 \end{align*}
 
 
-derived vector : $(\bphi_7~(\bphi_2)_{\gamma-h-1}~\bphi_1~\bzero_3~\cdots)$
+derived vector : $(\bphi_7~(\bphi_3)_{\gamma-h-1}~\bphi_1~\bphi_0~\cdots)$
 \newline
 Parity weight: \begin{equation}
 \begin{split}
@@ -320,15 +320,15 @@ w_p=2(\gamma-h)+2 =2\gamma+2
 \paragraph{Case 3a: $h<\gamma<\beta$ \newline}
 vectors to sum:
 \begin{eqnarray*}
-(\bzero_3\cdots\cdots~\bzero_3~\phi_1~\phi'_2~\cdots~\phi'_2~\phi'_2~\phi'_2\cdots)\cr
-(\bzero_3\cdots~\cdots~\cdots~\cdots~\cdots~\bzero_3~\phi_2~\phi''_2\cdots)\cr
+(\bphi_0\cdots\cdots~\bphi_0~\phi_1~\phi'_2~\cdots~\phi'_2~\phi'_2~\phi'_2\cdots)\cr
+(\bphi_0\cdots~\cdots~\cdots~\cdots~\cdots~\bphi_0~\phi_2~\phi''_2\cdots)\cr
 +(\phi_3~\phi_2~\cdots~\phi_2~\phi_2~\phi_2~\cdots~\phi_2~\phi_2~\phi_2\cdots)\cr
 \cline{1-2}
-(\bphi_7~\bphi_2\cdots~\bphi_2~\bphi'_1~\bphi''_2\cdots~\bphi''_2~\bphi'_2~\bzero_3\cdots)
+(\bphi_7~\bphi_3\cdots~\bphi_3~\bphi_2~\bphi_5\cdots~\bphi_5~\bphi_6~\bphi_0\cdots)
 \end{eqnarray*}
 
 
-derived vector : $(\bphi_7~(\bphi_2)_{\gamma-h-1}~\bphi'_1~(\bphi''_2)_{\beta-\gamma-1}~\bphi'_2~\bzero_3~\cdots)$
+derived vector : $(\bphi_7~(\bphi_3)_{\gamma-h-1}~\bphi_2~(\bphi_5)_{\beta-\gamma-1}~\bphi_6~\bphi_0~\cdots)$
 \newline
 Parity weight: \begin{equation}
 \begin{split}
@@ -340,13 +340,13 @@ w_p&=2(\gamma-h)+2+2(\beta-i)\\
 
 \paragraph{Case 3b: $h<\beta<\gamma$\newline}
 \begin{eqnarray*}
-(\bzero_3~\cdots~\cdots~\cdots~\cdots~\cdots~\bzero_3~\phi_1~\phi'_2\cdots)\cr
-(\bzero_3~\cdots\cdots~\bzero_3~\phi_2~\phi''_2~\cdots~\phi''_2~\phi''_2~\phi''_2\cdots)\cr
+(\bphi_0~\cdots~\cdots~\cdots~\cdots~\cdots~\bphi_0~\phi_1~\phi'_2\cdots)\cr
+(\bphi_0~\cdots\cdots~\bphi_0~\phi_2~\phi''_2~\cdots~\phi''_2~\phi''_2~\phi''_2\cdots)\cr
 +(\phi_3~\phi_2~\cdots~\phi_2~\phi_2~\phi_2~\cdots~\phi_2~\phi_2~\phi_2\cdots)\cr
 \cline{1-2}
-(\bphi_7~\bphi_2\cdots~\bphi_2~\bzero_3~\bphi'_2\cdots~\bphi'_2~\bphi_7~\bzero_3\cdots)
+(\bphi_7~\bphi_3\cdots~\bphi_3~\bphi_0~\bphi_6\cdots~\bphi_6~\bphi_7~\bphi_0\cdots)
 \end{eqnarray*}
-derived vector : $(\bphi_7~(\bphi_2)_{j-k-1}~\bzero_3~(\bphi'_2)_{i-j-1}~\bphi_7~\bzero_3~\cdots)$\newline
+derived vector : $(\bphi_7~(\bphi_3)_{j-k-1}~\bphi_0~(\bphi_6)_{i-j-1}~\bphi_7~\bphi_0~\cdots)$\newline
 Parity weight: \begin{equation}
 \begin{split}
 w_p &=2(\beta-h)+1 +2(\gamma-\beta)+1 \\
@@ -382,19 +382,19 @@ w_p^{(4)} =
 
 \begin{proof}
 For all the proofs, we will rely on the parity vector for W2RTZs, which is given by
-$$(\bphi_1~ (\bphi'_2)_{\alpha-1}~ \bphi_7)$$
+$$(\bphi_1~ (\bphi_6)_{\alpha-1}~ \bphi_7)$$
 \paragraph{Case 1: $h\tau+t<(h + \alpha)\tau+t<h'\tau+t'<(h' + \alpha')\tau+t'$\newline}
 
 For this case, we have the following parity vector summation.
 \begin{eqnarray*}
-(\bphi_1~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~ \bphi_7~\cdots ~\bzero_3~\bzero_3~\bzero_3~\cdots~\bzero_3~\bzero_3~
-\cdots~\bzero_3)\cr
-+(\bzero_3~\bzero_3~\bzero_3~\cdots~\bzero_3~\bzero_3~\cdots~\bphi_1~ \bphi'_2~ \bphi'_2~\cdots~\bphi'_2~ \bphi_7~\cdots~\bzero_3)\cr
+(\bphi_1~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~ \bphi_7~\cdots ~\bphi_0~\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_0~
+\cdots~\bphi_0)\cr
++(\bphi_0~\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_0~\cdots~\bphi_1~ \bphi_6~ \bphi_6~\cdots~\bphi_6~ \bphi_7~\cdots~\bphi_0)\cr
 \cline{1-2}
-(\bphi_1~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~ \bphi_7~\cdots~\bphi_1~ \bphi'_2~ \bphi'_2~\cdots~\bphi'_2~ \bphi_7~\cdots~\bzero_3)
+(\bphi_1~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~ \bphi_7~\cdots~\bphi_1~ \bphi_6~ \bphi_6~\cdots~\bphi_6~ \bphi_7~\cdots~\bphi_0)
 \end{eqnarray*}
 
-The derived parity vector is then $(\bphi_1~ (\bphi'_2)_{\alpha-1}~ \bphi_7~\cdots~\bphi_1~ (\bphi'_2)_{\alpha'-1}~ \bphi_7)$ and the weight for the derived parity vector is calculated as 
+The derived parity vector is then $(\bphi_1~ (\bphi_6)_{\alpha-1}~ \bphi_7~\cdots~\bphi_1~ (\bphi_6)_{\alpha'-1}~ \bphi_7)$ and the weight for the derived parity vector is calculated as 
 \begin{equation}
 \begin{split}
 w_p=&2(\alpha)+2+2(\alpha')+2\\
@@ -409,15 +409,15 @@ For the above case, there are 3 possible vector summations as shown below
 
 \paragraph{Case 2a\newline}
 \begin{eqnarray}
-(\bphi_1~ \bphi'_2~\cdots~\bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~\bphi_7)\cr
-+(\bzero_3~~\bzero_3~\cdots~\bzero_3~\bphi_7~\bphi_2~\cdots~\bphi_2~\bphi''_1~\bzero_3
-~\cdots~\bzero_3~\bzero_3)\cr
+(\bphi_1~ \bphi_6~\cdots~\bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~\bphi_7)\cr
++(\bphi_0~~\bphi_0~\cdots~\bphi_0~\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_4~\bphi_0
+~\cdots~\bphi_0~\bphi_0)\cr
 \cline{1-2}
-(\bphi_1~ \bphi'_2~\cdots~\bphi'_2~\bphi_1~\bphi''_2~\cdots~\bphi''_2~\bphi'_1~\bphi'_2~
-\cdots ~\bphi'_2~\bphi_7)
+(\bphi_1~ \bphi_6~\cdots~\bphi_6~\bphi_1~\bphi_5~\cdots~\bphi_5~\bphi_2~\bphi_6~
+\cdots ~\bphi_6~\bphi_7)
 \label{2-1}
 \end{eqnarray}
-for Case 2a, the derived parity vector is $$(\bphi_1~ (\bphi'_2)_{(h'-h)}~\bphi_1~(\bphi''_2)_{(\alpha'-1)}~\bphi_1~(\bphi'_2)_{((h-h')+(\alpha-\alpha')-2)}~\bphi_7)$$
+for Case 2a, the derived parity vector is $$(\bphi_1~ (\bphi_6)_{(h'-h)}~\bphi_1~(\bphi_5)_{(\alpha'-1)}~\bphi_1~(\bphi_6)_{((h-h')+(\alpha-\alpha')-2)}~\bphi_7)$$
 with a corresponding weight of 
 \begin{equation*}
 \begin{split}
@@ -430,16 +430,16 @@ w_p&=2(h'-h)+1+2(\alpha'-1)+1+2((h-h')+(\alpha-\alpha')-2)+4\\
 
 \paragraph{Case 2b \newline}
 \begin{eqnarray}
-(\bphi_1~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~\bphi'_2~ \bphi_7)\cr
-+(\bzero_3~~\bzero_3~\cdots~\bzero_3~\bphi_2~\bphi''_2~\cdots~\bphi''_2~
-\bphi'_2~\bzero_3~\cdots~\bzero_3
-~\bzero_3)\cr
+(\bphi_1~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~\bphi_6~ \bphi_7)\cr
++(\bphi_0~~\bphi_0~\cdots~\bphi_0~\bphi_3~\bphi_5~\cdots~\bphi_5~
+\bphi_6~\bphi_0~\cdots~\bphi_0
+~\bphi_0)\cr
 \cline{1-2}
-(\bphi_1~ \bphi'_2~\cdots~ \bphi'_2~\bphi''_2~\bphi_2~\cdots~\bphi_2~\bzero_3~\bphi'_2~\cdots~\bphi'_2 \bphi_7)
+(\bphi_1~ \bphi_6~\cdots~ \bphi_6~\bphi_5~\bphi_3~\cdots~\bphi_3~\bphi_0~\bphi_6~\cdots~\bphi_6 \bphi_7)
 \label{2-2}
 \end{eqnarray}
 For Case 2b, the derived parity vector is $$
-(\bphi_1~(\bphi'_2)_{(h'-h)}~\bphi''_2~(\bphi_2)_{(\alpha-1)}~\bzero_3~(\bphi'_2)_{((h-h')+(\alpha-\alpha')-2)}~\bphi_7)
+(\bphi_1~(\bphi_6)_{(h'-h)}~\bphi_5~(\bphi_3)_{(\alpha-1)}~\bphi_0~(\bphi_6)_{((h-h')+(\alpha-\alpha')-2)}~\bphi_7)
 $$
 And the parity weight is 
 \begin{equation*}
@@ -453,11 +453,11 @@ w_p&=2(h'-h)+1+2(\alpha'-1)+2+2((h-h')+(\alpha-\alpha')-2)+3\\
 
 \paragraph{Case 2c \newline}
 \begin{eqnarray}
-(\bphi_1~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~ \bphi_7)\cr
-+(\bzero_3~~\bzero_3~\bphi_1~ \bphi'_2~\cdots~\bphi'_2~ \bphi_7~\bzero_3
-~\bzero_3)\cr
+(\bphi_1~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~ \bphi_7)\cr
++(\bphi_0~~\bphi_0~\bphi_1~ \bphi_6~\cdots~\bphi_6~ \bphi_7~\bphi_0
+~\bphi_0)\cr
 \cline{1-2}
-(\bphi_1~ \bphi'_2~\bphi_7~\bzero_3~\cdots~\bzero_3~\bphi_1~\bphi'_2~ \bphi_7)
+(\bphi_1~ \bphi_6~\bphi_7~\bphi_0~\cdots~\bphi_0~\bphi_1~\bphi_6~ \bphi_7)
 \label{2-3}
 \end{eqnarray}
 
@@ -473,18 +473,18 @@ Similarly, there are 3 possible vector summations as shown below
 
 \paragraph{Case 3a \newline}
 \begin{eqnarray}
-(\bphi_1~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~
- \bphi_7~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
-+(\bzero_3~\bzero_3~\cdots~\bzero_3~\bphi_7~\bphi_2~\cdots~\bphi_2~\bphi_2
-~\bphi_2\cdots~\bphi_2~\bphi''_1)\cr
+(\bphi_1~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~
+ \bphi_7~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_3
+~\bphi_3\cdots~\bphi_3~\bphi_4)\cr
 \cline{1-2}
-(\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi_1~\bphi''_2~\cdots~\bphi''_2~\bphi''_1
-~\bphi_2\cdots~\bphi_2~\bphi''_1)
+(\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_1~\bphi_5~\cdots~\bphi_5~\bphi_4
+~\bphi_3\cdots~\bphi_3~\bphi_4)
 \label{3-1}
 \end{eqnarray}
 
 For Case 3a the derived parity vector is $$
-(\bphi_1~(\bphi'_2)_{(h'-h)}~\bphi_1~(\bphi''_2)_{(h-h'+\alpha)-2}~\bphi''_1~(\bphi_2)_{((h'-h)+(\alpha'-\alpha))}~\bphi''_1)
+(\bphi_1~(\bphi_6)_{(h'-h)}~\bphi_1~(\bphi_5)_{(h-h'+\alpha)-2}~\bphi_4~(\bphi_3)_{((h'-h)+(\alpha'-\alpha))}~\bphi_4)
 $$
 with a weight of 
 \begin{equation*}
@@ -497,18 +497,18 @@ w_p&=2(h'-h)+1+2(h-h'+\alpha-2)+2+2((h'-h)+(\alpha'-\alpha))+1\\
 
 \paragraph{Case 3b \newline}
 \begin{eqnarray}
-(\bphi_1~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~
- \bphi_7~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
-(\bzero_3~\bzero_3~\cdots~\bzero_3~\bphi_2~\bphi''_2~\cdots~\bphi''_2~\bphi''_2
-~\bphi''_2\cdots~\bphi''_2~\bphi'_2)\cr
+(\bphi_1~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~
+ \bphi_7~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
+(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_5
+~\bphi_5\cdots~\bphi_5~\bphi_6)\cr
 \cline{1-2}
-(\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi''_2~\bphi_2~\cdots~\bphi_2~\bphi'_1
-~\bphi''_2\cdots~\bphi''_2~\bphi'_2)
+(\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_5~\bphi_3~\cdots~\bphi_3~\bphi_2
+~\bphi_5\cdots~\bphi_5~\bphi_6)
 \label{3-2}
 \end{eqnarray}
 
 For Case 3b the derived parity vector is $$
-(\bphi_1~(\bphi'_2)_{(h'-h)}~\bphi''_2~(\bphi_2)_{(h-h'+\alpha)-2}~\bphi'_1~(\bphi''_2)_{((h'-h)+(\alpha'-\alpha))}~\bphi'_2)
+(\bphi_1~(\bphi_6)_{(h'-h)}~\bphi_5~(\bphi_3)_{(h-h'+\alpha)-2}~\bphi_2~(\bphi_5)_{((h'-h)+(\alpha'-\alpha))}~\bphi_6)
 $$
 with a weight of 
 \begin{equation*}
@@ -521,13 +521,13 @@ w_p&=2(h'-h)+1+2(h-h'+\alpha-2)+3+2((h'-h)+(\alpha'-\alpha))+2\\
 
 \paragraph{Case 3c \newline}
 \begin{eqnarray}
-(\bphi_1~ \bphi'_2~\cdots~ \bphi'_2~ \bphi'_2~ \bphi'_2~\cdots~ \bphi'_2~
- \bphi_7~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
-(\bzero_3~\bzero_3~\cdots~\bzero_3~\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi'_2
-~\bphi'_2\cdots~\bphi'_2~\bphi_7)\cr
+(\bphi_1~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~
+ \bphi_7~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
+(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_6
+~\bphi_6\cdots~\bphi_6~\bphi_7)\cr
 \cline{1-2}
-\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi_7~\bzero_3~\cdots~\bzero_3~\bphi_1
-~\bphi'_2\cdots~\bphi'_2~\bphi_7)
+\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_7~\bphi_0~\cdots~\bphi_0~\bphi_1
+~\bphi_6\cdots~\bphi_6~\bphi_7)
 \label{3-3}
 \end{eqnarray}
 
@@ -582,15 +582,15 @@ For the case where $h'\tau+t'<(h'+\gamma')\tau+(t'+2)<h\tau+t<(h'+\beta')\tau+(t
 There are 3 possible vector summation for this W3RTZ case is
 \paragraph{Case2b-a1 \newline}
 \begin{eqnarray*}
-(\bphi'_2~\bphi''_2~\cdots~\bphi''_2~\bphi''_2~\bphi''_2~\cdots~\bphi''_2~\bphi'_2
-~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
-+(\bzero_3~\bzero_3~\cdots~\bzero_3~\bphi_7~\bphi_2~\cdots~\bphi_2~\bphi_2
-~\bphi_2~\cdots~\bphi_2~\bphi''_1)\cr
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6
+~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_3
+~\bphi_3~\cdots~\bphi_3~\bphi_4)\cr
 \cline{1-2}
-(\bphi'_2~\bphi''_2~\cdots~\bphi''_2~\bphi'_1~\bphi'_2~\cdots~\bphi'_2~\bphi''_2
-~\bphi_2~\cdots~\bphi_2~\bphi''_1)
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_2~\bphi_6~\cdots~\bphi_6~\bphi_5
+~\bphi_3~\cdots~\bphi_3~\bphi_4)
 \end{eqnarray*}
-For Case2b-a1, the derived vector is $(\bphi'_2~(\bphi''_2)_{(h-h'+\gamma'-1)}~\bphi'_1~(\bphi'_2)_{(h-h'+\beta'-1)}~\bphi''_2~(\bphi_2)_{(h-h')+(\alpha-\beta')-1}~\bphi''_1)$\newline
+For Case2b-a1, the derived vector is $(\bphi_6~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_2~(\bphi_6)_{(h-h'+\beta'-1)}~\bphi_5~(\bphi_3)_{(h-h')+(\alpha-\beta')-1}~\bphi_4)$\newline
 and the parity weight is
 \begin{equation*}
 \begin{split}
@@ -601,14 +601,14 @@ w_p^{(5)}&=2\gamma'+2(h-h')-2\gamma'-2+2+2(h'-h)+2\beta'-2+3+2(h-h')+2\alpha-2\b
 
 \paragraph{Case2b-b1 \newline}
 \begin{eqnarray*}
-(\bphi'_2~\bphi''_2~\cdots~\bphi''_2~\bphi''_2~\bphi''_2~\cdots~\bphi''_2~\bphi'_2
-~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
-+(\bzero_3~\bzero_3~\cdots~\bzero_3~\bphi_2~\bphi''_2~\cdots~\bphi''_2~\bphi''_2\bphi''_2~\cdots~\bphi''_2~\bphi'_2)\cr
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6
+~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_5\bphi_5~\cdots~\bphi_5~\bphi_6)\cr
 \cline{1-2}
-(\bphi'_2~\bphi''_2~\cdots~\bphi''_2~\bphi'_2~\bzero_3~\cdots~\bzero_3~\bphi_2\bphi''_2~\cdots~\bphi''_2~\bphi'_2)
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_6~\bphi_0~\cdots~\bphi_0~\bphi_3\bphi_5~\cdots~\bphi_5~\bphi_6)
 \end{eqnarray*}
 
-For Case2b-b1, the derived vector is $(\bphi'_2~(\bphi''_2)_{(h-h'+\gamma'-1)}~\bphi'_2~(\bzero_3)_{(h-h'+\beta'-1)}~\bphi_2~(\bphi''_2)_{(h-h')+(\alpha-\beta')-1}~\bphi'_2)$\newline
+For Case2b-b1, the derived vector is $(\bphi_6~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_6~(\bphi_0)_{(h-h'+\beta'-1)}~\bphi_3~(\bphi_5)_{(h-h')+(\alpha-\beta')-1}~\bphi_6)$\newline
 and the parity weight is
 \begin{equation*}
 \begin{split}
@@ -619,16 +619,16 @@ w_p^{(5)}&=2\gamma'+2(h-h')-2\gamma'-2+2+0(h'-h)+0\beta'-0+4+2(h-h')+2\alpha-2\b
 
 \paragraph{Case2b-c1 \newline}
 \begin{eqnarray*}
-(\bphi'_2~\bphi''_2~\cdots~\bphi''_2~\bphi''_2~\bphi''_2~\cdots~\bphi''_2~\bphi'_2
-~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
-+(\bzero_3~\bzero_3~\cdots~\bzero_3~\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi'_2
-~\bphi'_2~\cdots~\bphi'_2~\bphi_7)\cr
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6
+~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_6
+~\bphi_6~\cdots~\bphi_6~\bphi_7)\cr
 \cline{1-2}
-(\bphi'_2~\bphi''_2~\cdots~\bphi''_2~\bphi''_1~\bphi_2~\cdots~\bphi_2~\bzero_3
-~\bphi'_2~\cdots~\bphi'_2~\bphi_7)
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_4~\bphi_3~\cdots~\bphi_3~\bphi_0
+~\bphi_6~\cdots~\bphi_6~\bphi_7)
 \end{eqnarray*}
 
-For Case2b-c1, the derived vector is $(\bphi'_2~(\bphi''_2)_{(h-h'+\gamma'-1)}~\bphi''_1~(\bphi_2)_{(h-h'+\beta'-1)}~\bzero_3~(\bphi'_2)_{(h-h')+(\alpha-\beta')-1}~\bphi_7)$\newline
+For Case2b-c1, the derived vector is $(\bphi_6~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_4~(\bphi_3)_{(h-h'+\beta'-1)}~\bphi_0~(\bphi_6)_{(h-h')+(\alpha-\beta')-1}~\bphi_7)$\newline
 and the parity weight is
 \begin{equation*}
 \begin{split}
@@ -642,16 +642,16 @@ w_p^{(5)}&=2\gamma'+2(h-h')-2\gamma'-2+2+2(h'-h)+2\beta'-2+1+2(h-h')+2\alpha-2\b
 There are 3 possible vector summation for this W3RTZ case is
 \paragraph{Case2b-a2 \newline}
 \begin{eqnarray*}
-(\bphi_7~\bphi_2~\cdots~\bphi_2~\bphi'_1~\bphi''_2~\cdots
-~\bphi''_2~\bphi''_2~\cdots~\bphi''_2~\bphi'_2~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
-+(\bzero_3~\bzero_3~\cdots~\bzero_3~\bzero_3~\bzero_3~\cdots
-~\bphi_7~\bphi_2~\cdots~\bphi_2~\bphi_2~\bphi_2~\cdots~\bphi_2~\bphi''_1)\cr
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_0~\bphi_0~\cdots
+~\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_3~\bphi_3~\cdots~\bphi_3~\bphi_4)\cr
 \cline{1-2}
-(\bphi_7~\bphi_2~\cdots~\bphi_2~\bphi'_1~\bphi''_2~\cdots
-~\bphi'_1~\bphi'_2~\cdots~\bphi'_2~\bphi''_2~\bphi_2
-~\cdots~\bphi_2~\bphi''_1)
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_2~\bphi_6~\cdots~\bphi_6~\bphi_5~\bphi_3
+~\cdots~\bphi_3~\bphi_4)
 \end{eqnarray*}
-For Case2b-a, the derived vector is $(\bphi_7~(\bphi''_2)_{(h-h'+\gamma'-1)}~\bphi'_1~(\bphi'_2)_{(h-h'+\beta'-1)}~\bphi''_2~(\bphi_2)_{(h-h')+(\alpha-\beta')-1}~\bphi''_1)$\newline
+For Case2b-a, the derived vector is $(\bphi_7~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_2~(\bphi_6)_{(h-h'+\beta'-1)}~\bphi_5~(\bphi_3)_{(h-h')+(\alpha-\beta')-1}~\bphi_4)$\newline
 and the parity weight is
 \begin{equation*}
 \begin{split}
@@ -662,16 +662,16 @@ w_p^{(5)}&=2\gamma'+2(h-h')-2\gamma'-2+2+2(h'-h)+2\beta'-2+3+2(h-h')+2\alpha-2\b
 
 \paragraph{Case2b-b2 \newline}
 \begin{eqnarray*}
-(\bphi_7~\bphi_2~\cdots~\bphi_2~\bphi'_1~\bphi''_2~\cdots
-~\bphi''_2~\bphi''_2~\cdots~\bphi''_2~\bphi'_2~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
-+(\bzero_3~\bzero_3~\cdots~\bzero_3~\bzero_3~\bzero_3~\cdots
-~\bphi_2~\bphi''_2~\cdots~\bphi''_2~\bphi''_2~\bphi''_2~\cdots~\bphi''_2~\bphi'_2)\cr
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_0~\bphi_0~\cdots
+~\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6)\cr
 \cline{1-2}
-(\bphi_7~\bphi_2~\cdots~\bphi_2~\bphi'_1~\bphi''_2~\cdots
-~\bphi'_2~\bzero_3~\cdots~\bzero_3~\bphi_2~\bphi''_2~\cdots~\bphi''_2~\bphi'_2)
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_6~\bphi_0~\cdots~\bphi_0~\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_6)
 \end{eqnarray*}
 
-For Case2b-b2, the derived vector is $(\bphi'_2~(\bphi''_2)_{(h-h'+\gamma'-1)}~\bphi'_2~(\bzero_3)_{(h-h'+\beta'-1)}~\bphi_2~(\bphi''_2)_{(h-h')+(\alpha-\beta')-1}~\bphi'_2)$\newline
+For Case2b-b2, the derived vector is $(\bphi_6~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_6~(\bphi_0)_{(h-h'+\beta'-1)}~\bphi_3~(\bphi_5)_{(h-h')+(\alpha-\beta')-1}~\bphi_6)$\newline
 and the parity weight is
 \begin{equation*}
 \begin{split}
@@ -682,19 +682,19 @@ w_p^{(5)}&=2\gamma'+2(h-h')-2\gamma'-2+2+0(h'-h)+0\beta'-0+4+2(h-h')+2\alpha-2\b
 
 \paragraph{Case2b-c2 \newline}
 \begin{eqnarray*}
-(\bphi_7~\bphi_2~\cdots~\bphi_2~\bphi'_1~\bphi''_2~\cdots
-~\bphi''_2~\bphi''_2~\cdots~\bphi''_2~\bphi'_2~\bzero_3~\cdots~\bzero_3~\bzero_3)\cr
-+(\bzero_3~\bzero_3~\cdots~\bzero_3~\bzero_3~\bzero_3~\cdots
-~\bphi_1~\bphi'_2~\cdots~\bphi'_2~\bphi'_2~\bphi'_2~\cdots~\bphi'_2~\bphi_7)\cr
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_0~\bphi_0~\cdots
+~\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_6~\bphi_6~\cdots~\bphi_6~\bphi_7)\cr
 \cline{1-2}
-(\bphi_7~\bphi_2~\cdots~
-\bphi_2~\bphi'_1~\bphi''_2~\cdots
-~\bphi''_1~\bphi_2~\cdots
-~\bphi_2~\bzero_3~\bphi'_2~\cdots
-~\bphi'_2~\bphi_7)
+(\bphi_7~\bphi_3~\cdots~
+\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_4~\bphi_3~\cdots
+~\bphi_3~\bphi_0~\bphi_6~\cdots
+~\bphi_6~\bphi_7)
 \end{eqnarray*}
 
-For Case2b-c2, the derived vector is $(\bphi'_2~(\bphi''_2)_{(h-h'+\gamma'-1)}~\bphi''_1~(\bphi_2)_{(h-h'+\beta'-1)}~\bzero_3~(\bphi'_2)_{(h-h')+(\alpha-\beta')-1}~\bphi_7)$\newline
+For Case2b-c2, the derived vector is $(\bphi_6~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_4~(\bphi_3)_{(h-h'+\beta'-1)}~\bphi_0~(\bphi_6)_{(h-h')+(\alpha-\beta')-1}~\bphi_7)$\newline
 and the parity weight is
 \begin{equation*}
 \begin{split}
