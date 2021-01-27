@@ -1,0 +1,710 @@
+\section{Generalization of RTZ inputs and Their Corresponding Parity-Weight Equations}
+With our method described in the previous section, we are able to not only determine the distance spectrum of the RSC code, but we have information with regards to the structure of the RTZ inputs. In this section, provide general information with regards to the type of RTZ inputs present in a RSC code. Then, we go a step further and provide a general representation (in polynomial form) of the RTZ inputs grouped by their weight. Finally we derive equations for calculating the parity weight for these RTZ inputs. The generalization as well as the derived equations will be very useful when it comes to designing interleavers for turbo codes.
+
+%\subsection{Preliminaries}
+%To aid in our proofs the following have been defined with respect to the impulse response of the $5/7$ RSC code.
+%Let 
+%\begin{eqnarray}
+%&\bphi_1=(0~0~1)&,~\bphi_2=(0~1~0),~\bphi_4=(1~0~0)\\
+%&\bphi_3=(0~1~1)&,~\bphi_6=(1~1~0),~\bphi_5=(1~0~1)\\
+%&\bphi_7=(1~1~1)&
+%\end{eqnarray}
+
+%To simplify calculation, we have included an addition table for all the vectors which is shown in Table \ref{tb6-1}
+
+%\begin{table}[h!]
+%\centering
+%\begin{tabular}{c || c  | c  | c  | c  | c  | c  | c } 
+ %$$ & $\bphi_1$ & $\bphi_2$ & $\bphi_4$ & $\bphi_3$ & $\bphi_6$ & $\bphi_5$ & $\bphi_7$ \\
+   %\hline\hline
+  % %row1
+%$\bphi_1$ & $\bphi_0$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+%   \hline
+   %   %row2
+%$\bphi_2$ & $\bphi_3$ & $\bphi_0$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+  % \hline
+  %    %row3
+%$\bphi_4$ & $\bphi_5$ & $\bphi_6$ & $\bphi_0$ & $-$ & $-$ & $-$ & $-$ \\
+%   \hline
+  %    %row4
+%$\bphi_3$ & $\bphi_2$ & $\bphi_1$ & $\bphi_7$ & $\bphi_0$ & $-$ & $-$ & $-$ \\
+%   \hline
+%      %row5
+%$\bphi_6$ & $\bphi_7$ & $\bphi_4$ & $\bphi_2$ & $\bphi_5$ & $\bphi_0$ & $-$ & $-$ \\
+%   \hline
+%      %row6
+%$\bphi_5$ & $\bphi_4$ & $\bphi_7$ & $\bphi_1$ & $\bphi_6$ & $\bphi_3$ & $\bphi_0$ & $-$ \\
+%   \hline
+%      %row7
+%$\bphi_7$ & $\bphi_6$ & $\bphi_5$ & $\bphi_3$ & $\bphi_4$ & $\bphi_1$ & $\bphi_2$ & $\bphi_0$ \\
+%   \hline
+%  \end{tabular}
+%\caption{Truth Table}
+%\label{tb6-1}
+%\end{table}
+
+\subsection{Types of RTZ inputs}
+Regardless of the component code used in turbo coding, the RTZ inputs can be grouped into two basic forms. We shall refer to them as \textit{base RTZ inputs} and \textit{compound RTZ inputs}. The number of base RTZ inputs depends on the component code and cannot be broken down into 2 or more RTZ inputs. Compound RTZ inputs as the name implies, are formed from 2 or more base RTZ inputs and therefore can be broken down into base RTZ input form.
+
+For the $5/7$ component code, its base RTZ inputs are weight-$2$ RTZ inputs  (W2RTZs) and weight-$3$ RTZ inputs (W3RTZs). Every RTZ input with a weight higher than 3 is a compound RTZ input. In general for RTZs with weight $w$ greater than 3, if $w \bmod 2=0$, then the RTZ is made up of $w/2$ W2RTZs. On the other hand, if $w \bmod 2=1$, then the RTZ is made up of $\lfloor w/2 \rfloor -1$ W2RTZs and 1 W3RTZ.
+
+%The impulse response of the RSC encoder is the output of the encoder when the input is $\brho=(1 0 0 0 0 ...)$. The impulse response can be used to calculate the weight of any input sequence of weight $w$ in general. This is done by noting that any input sequence of weight $w$ is just a summation of $w$ $\brho$'s, where the consequetive $w-1$ $\brho$'s have leading zeros. 
+%For the 5/7 RSC encoder, the impulse response is given by $$(1 1 1 0 1 1 0 1 1 0 ...)$$
+%The permutation matrix that generates the set $\cN$ is given by 
+
+%$$\Pi'=\begin{bmatrix} 0 & 1 & 2 \end{bmatrix}$$ 
+%where $\Pi$ was used repeatedly untill all elements in $\cC^t$ are picked. From $\Pi$ we can derive the defintions for W2RTZs and W3RTZs as well as ways to break up such RTZs
+\subsection{General Form of RTZ Inputs}
+In literature for turbo codes, it has been shown as the weight of the inputs increases, it has less effect on the bound of the BER[reference needed]. For this reason, for any RSC, we will provide a generalization for at most the first 4 distinct (by weight) RTZ inputs in the distance spectrum. These generalizations are obtained from using our novel method to list all the RTZ inputs up to weight $w$ that generate a codeword with weight $\leq d$ and taking note of the pattern that exists. The examples shown here are done with respect to the $5/7$ RSC and the at the end of the section shows the generalization for a few other RSC codes.
+
+\subsubsection{General Form of W2RTZs}
+A W2RTZ has the general form
+\begin{equation}
+\begin{split}
+P(x)&=x^{h\tau+t}(1+x^{\alpha \tau})\\
+& = x^t(x^{h\tau}+x^{(h+\alpha)\tau})
+\end{split}
+\end{equation}
+where
+$$h=0,1,2,...,\Big\lfloor \frac{M}{\tau} \Big\rfloor-1,~
+ \alpha=1,2,...,\Big\lfloor \frac{M}{\tau} \Big\rfloor-h,~
+ t=(0,1,...,\tau-1)$$
+
+\begin{proof}
+The proof will be to show that any polynomial of this form is an RTZ input. This can be done either by dividing $P(x)$ by $g(x)$ or by using the impulse response
+\paragraph{division by g(x)}
+Without loss of generality, we can assume that $h=t=0$ and $P(x) = 1+x^{\alpha \tau}$.
+For any value of $\alpha,~P(x) \bmod g(x) = 0$ is always true. This proves that $P(x)$ is a RTZ input which has weight $2$.
+
+\paragraph{Using the impulse response}
+If we write $P(x)$ in binary for we have a summation of vectors that take the form
+\begin{eqnarray*}
+(\bphi_0~\bphi_1~(\bphi_6)_{\alpha-1}~\bphi_6~\cdots~\bphi_6)\cr
+(\bphi_0~~(\bphi_0)_{\alpha}~~\bphi_1~\bphi_6~\cdots~\bphi_6)
+\end{eqnarray*}
+Regardless of the value of $\alpha$ we realize that there is an infinite summation of $\bphi_3+\bphi_3=\bphi_0$ after the second $1$ bit leading to a low-weight codeword, proving again that that $P(x)$ is a RTZ input which has weight $2$ or a W2RTZ.
+
+This ends the proof.
+\end{proof}
+
+\subsubsection{General Form of W3RTZs}
+A W3RTZ has the general form
+\begin{equation}
+\begin{split}
+Q(x) &=x^{h\tau+t}(1+x^{\beta \tau +1}+x^{\gamma \tau +2})\\
+&=x^{h\tau+t}+x^{(h+\beta) \tau +t+1}+x^{(h+\gamma) \tau +t+2}. 
+\end{split}
+\end{equation}
+where
+\begin{equation*}
+\begin{split}
+&h=0,1,2,...,\Big \lfloor \frac{M}{\tau} \Big\rfloor-1,~
+\beta=0,1,2,...,\Big \lfloor \frac{M}{\tau} \Big\rfloor-1\\
+&\gamma=0,1,2,...,\Big \lfloor \frac{M}{\tau} \Big\rfloor-1,~
+ t=(0,1,...,\tau-1)
+ \end{split}
+ \end{equation*}
+Notice that $h \leq \beta$ or $h \leq \gamma$ is not a necessary condition.
+	
+\begin{proof}
+Similarly we prove that $Q(x)$ is a RTZ input either dividing $Q(x)$ by $g(x)$ or utilizing the impulse response. 
+\paragraph{division by g(x)}
+Without loss of generality, we can assume that $h=t=0$ and 
+$Q(x) = 1+x^{\beta \tau +1}+x^{\gamma \tau +2}$.
+For any value of $\beta~\text{and}~\gamma,~Q(x) \bmod g(x) = 0$ is always true. This proves that $Q(x)$ is a RTZ input which has weight $3$.
+
+\paragraph{Using the impulse response}
+If we write $Q(x)$ in binary for we have a summation of vectors that take the form
+\begin{eqnarray*}
+(\bzero_{3(\gamma+h)}~\bphi_1~\bphi_6~\cdots)\cr
+(\bzero_{3(\beta+h)}~\bphi_3~\bphi_5~\cdots)\cr
+(\bzero_{3 h}~~~~~~\bphi_7~\bphi_3~\cdots)
+\end{eqnarray*}
+Regardless of the value of $\beta$ and $\gamma$ we realize that there is an infinite summation of $\bphi_3+\bphi_3=\bphi_0$ after the third $1$ bit leading to a low-weight codeword, proving again that that $Q(x)$ is a RTZ input which has weight $3$ ie a W3RTZ.
+
+This ends the proof.
+
+\end{proof}.
+
+\subsubsection{General Form of W4RTZs}
+A W4RTZ has the general form
+ \begin{equation}
+ \begin{split}
+  R(x)&=x^{h\tau+t}(1+x^{\alpha_1 \tau}) + x^{h'\tau+t'}(1+x^{\alpha_2 \tau})\\
+  &= x^t(x^{h\tau}+x^{(h+\alpha_1)\tau}) + x^{t'}(x^{h'\tau}+x^{(h'+\alpha_2)\tau})
+ \end{split}
+ \end{equation}
+	
+where 
+\begin{equation*}
+\begin{split}
+&h,~h'=0,1,2,...,\Big\lfloor \frac{M}{\tau} \Big\rfloor-1,~
+ \alpha=1,2,...,\Big\lfloor \frac{M}{\tau} \Big\rfloor-h\\
+& \alpha'=1,2,...,\Big\lfloor \frac{M}{\tau} \Big\rfloor-h',~
+t,~t' \in\{0,1,..\tau-1\},h\tau+t \neq h'\tau+t'
+\end{split}
+\end{equation*}
+
+It is obvious that the W4RTZ representation is valid since it is a combination of 2 W2RTZs
+
+\subsubsection{W5RTZs : Definitions and Breaking them}
+A W5RTZ has the general form
+\begin{equation}
+\begin{split}
+ S(x)&=x^{h\tau+t}(1+x^{\alpha \tau}) 
+	+
+	x^{h'\tau+t'}(1+x^{\beta \tau +1}+x^{\gamma \tau +2})\\
+	&= 
+	x^t(x^{h\tau}+x^{(h+\alpha)\tau}) 
+	+x^{h'\tau+t'}+x^{(h'+\beta) \tau +t'+1}+x^{(h'+\gamma) \tau +t'+2}
+	\end{split}
+	\end{equation}
+	
+where \begin{equation*}
+\begin{split}
+&h,~h'=0,1,2,...,\Big\lfloor \frac{M}{\tau} \Big\rfloor-1
+,~\alpha'=1,2,...,\Big\lfloor \frac{M}{\tau} \Big\rfloor-h'\\
+&\beta=0,1,2,...,\Big\lfloor \frac{M}{\tau} \Big\rfloor-1
+,~\gamma=0,1,2,...,\Big\lfloor \frac{M}{\tau} \Big\rfloor-1\\
+&t,~t' \in\{0,1,..\tau-1\},h\tau+t \neq h'\tau+t'
+\end{split}
+\end{equation*}
+
+Again, it is obvious that the W4RTZ representation is valid since it is a combination of a W2RTZ and a W3RTZ.
+
+\subsection{Parity Weight Equations for RTZ Inputs}
+Once the general form of an RTZ input is know, we can calculate the parity weight of the codeword generated. In this section, we derive the equations for calculating the parity weight for the parity-bit sequences generated by those RTZ Inputs.
+
+\subsubsection{Parity Weight Equations for W2RTZs}
+The parity weight for a W2RTZ  $w^{(2)}_{p}$ is given by
+\begin{equation}
+w^{(2)}_{p}=2\alpha+2
+\label{RTZinputs-1}
+\end{equation}
+
+\begin{proof}
+For W2RTZ we consider the summation of the vectors below
+\begin{eqnarray*}
+(\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_6~\bphi_6~\bphi_6~\bphi_6\cdots~\bphi_6)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_1~\bphi_6~\bphi_6~\bphi_6~\cdots~\bphi_6)\cr
+\cline{1-2}
+(\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi'_3~\bphi_0~\bphi_0~\bphi_0~\cdots~\bphi_0)
+\end{eqnarray*}
+
+The derived vector will be 
+\begin{equation*}
+(\bphi_1~(\bphi_6)_{\alpha-1}~\bphi_7)
+\end{equation*}
+
+The parity weight $w_p^{(2)}$ is given by 
+\begin{equation*}
+\begin{split}
+w_p^{(2)}&=2(\alpha-1)+4\\
+&=2\alpha+2
+\end{split}
+\end{equation*}
+
+This ends the proof.
+\end{proof}
+
+\subsubsection{Hamming Weight for W3RTZ Turbo Codewords }
+The parity weight for a W3RTZ  $w^{(3)}_{p}$ is given by
+\begin{equation}
+2l+2
+\label{RTZInputs-2}
+\end{equation}
+where $l=\max(\beta,\gamma)$
+%=============proof begins=====================
+\begin{proof}
+$ $\newline
+The polynomial representation of a weight-$3$ RTZ input is given by $$Q(x) =x^{h\tau+t}(1+x^{\beta \tau +1}+x^{\gamma \tau +2})$$
+With reference to the impulse response of the 5/7  RSC encoder, 
+
+
+
+Now, we consider the weight of the vector derived by the sumation of the followings vectors.
+\begin{eqnarray*}
+(\bzero_{3(\gamma+h)}~\bphi_1~\bphi_6~\cdots)\cr
+(\bzero_{3(\beta+h)}~\bphi_3~\bphi_5~\cdots)\cr
+(\bzero_{3 h}~~~~~~\bphi_7~\bphi_3~\cdots)
+\end{eqnarray*}
+
+Without loss of generality, we can assume that all weight-$3$ RTZ inputs begin at the $0$th position, ie $h=t=0$. This is because the case where $h>0$ or $t>0$ is just a right-shifted version of the weight-$3$ RTZ. With this assumption, we we only need to consider cases where $h= 0,~\gamma \geq h$.
+
+Furthermore, we consider 4 general cases for all possible values of $i,j,k$ where $i \geq k$ These cases are $(=~=),~(=~<),~(<~=)$ and $(<~<)$
+\paragraph{Case 0: $\gamma=\beta=h$ \newline}
+
+ For this case, the vectors to sum will be 
+ \begin{align*}
+(\bphi_1~\bphi_6~\cdots)\\
+(\bphi_3~\bphi_5~\cdots)\\
+(\bphi_7~\bphi_3~\cdots)\\
+\cline{1-2}
+(\bphi_5~\bzero_{3}~\cdots)
+\end{align*}
+ 
+and  the derived vector will be $(\bphi_5~\bzero_{3}~\cdots)$ with a weight of $w_p=2$
+ 
+ %========case =  < ===========
+ 
+ %\paragraph{Case 1a: $i=j<k$\newline}
+ %vector to sum:
+ %\begin{align*}
+ %(\bzero_{3}~\cdots~\bzero_{3}~\bphi_1~\bphi_6~\cdots~\bphi_3'~\bphi_3'~\bphi_3'~\cdots)\\
+% (\bzero_{3}~\cdots~\bzero_{3}~\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_5\bphi_5~\cdots)\\
+%+(\bzero_{3}~~\cdots~\cdots~\cdots~\cdots~\bzero_{3}~\bphi_7~\bphi_3~\cdots)\\
+%\cline{1-2}
+%(\bzero_{3}~\cdots~\bzero_{3}~\bphi_2~\bphi_3~\cdots~\bphi_3~\bphi_4~\bphi_0~\cdots)
+%\end{align*}
+%derived vector : $(\bzero_{3j}~\bphi_2~(\bphi_3)_{k-j-1}~\bphi_4~\bphi_0~\cdots)$
+%\newline
+%Parity weight: \begin{equation}
+%\begin{split}
+%w_p=2(k-j)
+%\end{split}
+%\end{equation}
+
+\paragraph{Case 1a: $\gamma=h<\beta$ \newline}
+ vectors to sum:
+ \begin{align*}
+(\bphi_1~\bphi_6~\bphi_6~\bphi_6~\bphi_6~\cdots)\\
+(\bzero_{3}~\cdots~\bzero_{3}~\bphi_3~\bphi_5~\cdots)\\
++(\bphi_7~\bphi_3~\bphi_3~\bphi_3~\bphi_3~\cdots)\\
+\cline{1-2}
+(\bphi_6~\bphi_5~\bphi_5~\bphi_6~\bphi_0~\cdots)
+\end{align*}
+derived vector : $(\bphi_6~(\bphi_5)_{\beta-h-1}~\bphi_6~\bphi_0~\cdots)$
+\newline
+Parity weight: \begin{equation}
+\begin{split}
+w_p=2(\beta-h)+2 =2\beta+2
+\end{split}
+\end{equation}
+
+\paragraph{Case 1b: $\beta=h<\gamma$\newline}
+ vectors to sum:
+\begin{align*}
+(\bzero_{3}~\cdots~\cdots~\bzero_{3}~\bphi_1~\bphi_6~\cdots)\\
+(\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_5\bphi_5~\cdots)\\
++(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_3~\bphi_3~\cdots)\\
+\cline{1-2}
+(\bphi_4~\bphi_6~\cdots~\bphi_6~\bphi_7~\bphi_0~\cdots)
+\end{align*}
+derived vector : $(\bphi_4~(\bphi_3)_{\gamma-h-1}~\bphi_7~\bphi_0~\cdots)$\newline
+Parity weight: \begin{equation}
+\begin{split}
+w_p=2(\gamma-h)+2=2\gamma+2
+\end{split}
+\end{equation}
+
+\newpage
+\paragraph{Case 2a: $h<\gamma=\beta$ \newline}
+ vectors to sum:
+\begin{align*}
+(\bphi_0\cdots~\cdots~\bphi_0~\phi_1~\phi'_2~\cdots)\\
+(\bphi_0\cdots~\cdots~\bphi_0~\phi_2~\phi''_2~\cdots)\\
++(\phi_3~\phi_2~\cdots~\phi_2~\phi_2~\phi_2~\cdots)\\
+\cline{1-2}
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_1~\bphi_0~\cdots)
+\end{align*}
+
+
+derived vector : $(\bphi_7~(\bphi_3)_{\gamma-h-1}~\bphi_1~\bphi_0~\cdots)$
+\newline
+Parity weight: \begin{equation}
+\begin{split}
+w_p=2(\gamma-h)+2 =2\gamma+2
+\end{split}
+\end{equation}
+ 
+\paragraph{Case 3a: $h<\gamma<\beta$ \newline}
+vectors to sum:
+\begin{eqnarray*}
+(\bphi_0\cdots\cdots~\bphi_0~\phi_1~\phi'_2~\cdots~\phi'_2~\phi'_2~\phi'_2\cdots)\cr
+(\bphi_0\cdots~\cdots~\cdots~\cdots~\cdots~\bphi_0~\phi_2~\phi''_2\cdots)\cr
++(\phi_3~\phi_2~\cdots~\phi_2~\phi_2~\phi_2~\cdots~\phi_2~\phi_2~\phi_2\cdots)\cr
+\cline{1-2}
+(\bphi_7~\bphi_3\cdots~\bphi_3~\bphi_2~\bphi_5\cdots~\bphi_5~\bphi_6~\bphi_0\cdots)
+\end{eqnarray*}
+
+
+derived vector : $(\bphi_7~(\bphi_3)_{\gamma-h-1}~\bphi_2~(\bphi_5)_{\beta-\gamma-1}~\bphi_6~\bphi_0~\cdots)$
+\newline
+Parity weight: \begin{equation}
+\begin{split}
+w_p&=2(\gamma-h)+2+2(\beta-i)\\
+&=2(\beta-h)+2\\
+& = 2\beta+2
+\end{split}
+\end{equation}
+
+\paragraph{Case 3b: $h<\beta<\gamma$\newline}
+\begin{eqnarray*}
+(\bphi_0~\cdots~\cdots~\cdots~\cdots~\cdots~\bphi_0~\phi_1~\phi'_2\cdots)\cr
+(\bphi_0~\cdots\cdots~\bphi_0~\phi_2~\phi''_2~\cdots~\phi''_2~\phi''_2~\phi''_2\cdots)\cr
++(\phi_3~\phi_2~\cdots~\phi_2~\phi_2~\phi_2~\cdots~\phi_2~\phi_2~\phi_2\cdots)\cr
+\cline{1-2}
+(\bphi_7~\bphi_3\cdots~\bphi_3~\bphi_0~\bphi_6\cdots~\bphi_6~\bphi_7~\bphi_0\cdots)
+\end{eqnarray*}
+derived vector : $(\bphi_7~(\bphi_3)_{j-k-1}~\bphi_0~(\bphi_6)_{i-j-1}~\bphi_7~\bphi_0~\cdots)$\newline
+Parity weight: \begin{equation}
+\begin{split}
+w_p &=2(\beta-h)+1 +2(\gamma-\beta)+1 \\
+&=2(\gamma-h)+2\\
+&=2\gamma+2
+\end{split}
+\end{equation}
+
+From all the above cases we can conclude that the parity weight for a weight-$3$ RTZ sequence may be calculated as
+\begin{equation}
+w_p^{(3)}=
+2l+2 
+\end{equation}
+where $l=\max( \gamma,\beta )$
+
+This ends the proof
+\end{proof}
+%==============proof end==================
+\subsubsection{Hamming weight for W4RTZ Turbo Codewords}
+The parity weight for a W4RTZ  $w^{(4)}_{p}$ is given by
+
+\begin{equation}
+w_p^{(4)} =
+\begin{cases}
+2(\alpha+\alpha')+4, & \text{if}\ h\tau+t<(h+\alpha)\tau+t< h'\tau+t'<(h'+\alpha')\tau+t' \\
+2(\alpha), & \text{if}\ h\tau+t< h'\tau+t'<(h'+\alpha')\tau+t'<(h+\alpha)\tau+t,~t\neq t' \\
+2(\alpha' +(h'-h) +(t'-t)-1), & \text{if}\ h\tau+t< h'\tau+t'<(h+\alpha)\tau+t<(h'+\alpha')\tau+t' ,~t\neq t'
+    \end{cases}
+\label{RTZInputs-3}
+\end{equation}
+
+
+
+\begin{proof}
+For all the proofs, we will rely on the parity vector for W2RTZs, which is given by
+$$(\bphi_1~ (\bphi_6)_{\alpha-1}~ \bphi_7)$$
+\paragraph{Case 1: $h\tau+t<(h + \alpha)\tau+t<h'\tau+t'<(h' + \alpha')\tau+t'$\newline}
+
+For this case, we have the following parity vector summation.
+\begin{eqnarray*}
+(\bphi_1~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~ \bphi_7~\cdots ~\bphi_0~\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_0~
+\cdots~\bphi_0)\cr
++(\bphi_0~\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_0~\cdots~\bphi_1~ \bphi_6~ \bphi_6~\cdots~\bphi_6~ \bphi_7~\cdots~\bphi_0)\cr
+\cline{1-2}
+(\bphi_1~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~ \bphi_7~\cdots~\bphi_1~ \bphi_6~ \bphi_6~\cdots~\bphi_6~ \bphi_7~\cdots~\bphi_0)
+\end{eqnarray*}
+
+The derived parity vector is then $(\bphi_1~ (\bphi_6)_{\alpha-1}~ \bphi_7~\cdots~\bphi_1~ (\bphi_6)_{\alpha'-1}~ \bphi_7)$ and the weight for the derived parity vector is calculated as 
+\begin{equation}
+\begin{split}
+w_p=&2(\alpha)+2+2(\alpha')+2\\
+=&2(\alpha + \alpha')+4
+\end{split}
+\end{equation}
+
+\paragraph{Case 2: $h\tau+t<h'\tau+t'<(h' + \alpha')\tau+t'<(h + \alpha)\tau+t,~
+t'\neq t$\newline}
+
+For the above case, there are 3 possible vector summations as shown below
+
+\paragraph{Case 2a\newline}
+\begin{eqnarray}
+(\bphi_1~ \bphi_6~\cdots~\bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~\bphi_7)\cr
++(\bphi_0~~\bphi_0~\cdots~\bphi_0~\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_4~\bphi_0
+~\cdots~\bphi_0~\bphi_0)\cr
+\cline{1-2}
+(\bphi_1~ \bphi_6~\cdots~\bphi_6~\bphi_1~\bphi_5~\cdots~\bphi_5~\bphi_2~\bphi_6~
+\cdots ~\bphi_6~\bphi_7)
+\label{2-1}
+\end{eqnarray}
+for Case 2a, the derived parity vector is $$(\bphi_1~ (\bphi_6)_{(h'-h)}~\bphi_1~(\bphi_5)_{(\alpha'-1)}~\bphi_1~(\bphi_6)_{((h-h')+(\alpha-\alpha')-2)}~\bphi_7)$$
+with a corresponding weight of 
+\begin{equation*}
+\begin{split}
+w_p&=2(h'-h)+1+2(\alpha'-1)+1+2((h-h')+(\alpha-\alpha')-2)+4\\
+&=2(h'-h)+1+2\alpha'-1+2(h-h')+2(\alpha-\alpha')\\
+&=2(\alpha'-\alpha'+\alpha)\\
+&=2\alpha
+\end{split}
+\end{equation*}
+
+\paragraph{Case 2b \newline}
+\begin{eqnarray}
+(\bphi_1~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~\bphi_6~ \bphi_7)\cr
++(\bphi_0~~\bphi_0~\cdots~\bphi_0~\bphi_3~\bphi_5~\cdots~\bphi_5~
+\bphi_6~\bphi_0~\cdots~\bphi_0
+~\bphi_0)\cr
+\cline{1-2}
+(\bphi_1~ \bphi_6~\cdots~ \bphi_6~\bphi_5~\bphi_3~\cdots~\bphi_3~\bphi_0~\bphi_6~\cdots~\bphi_6 \bphi_7)
+\label{2-2}
+\end{eqnarray}
+For Case 2b, the derived parity vector is $$
+(\bphi_1~(\bphi_6)_{(h'-h)}~\bphi_5~(\bphi_3)_{(\alpha-1)}~\bphi_0~(\bphi_6)_{((h-h')+(\alpha-\alpha')-2)}~\bphi_7)
+$$
+And the parity weight is 
+\begin{equation*}
+\begin{split}
+w_p&=2(h'-h)+1+2(\alpha'-1)+2+2((h-h')+(\alpha-\alpha')-2)+3\\
+&=2(h'-h)+1+2\alpha'-2+2+2(h-h')+2(\alpha-\alpha')-1\\
+&=2(\alpha'-\alpha'+\alpha)\\
+&=2\alpha
+\end{split}
+\end{equation*}
+
+\paragraph{Case 2c \newline}
+\begin{eqnarray}
+(\bphi_1~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~ \bphi_7)\cr
++(\bphi_0~~\bphi_0~\bphi_1~ \bphi_6~\cdots~\bphi_6~ \bphi_7~\bphi_0
+~\bphi_0)\cr
+\cline{1-2}
+(\bphi_1~ \bphi_6~\bphi_7~\bphi_0~\cdots~\bphi_0~\bphi_1~\bphi_6~ \bphi_7)
+\label{2-3}
+\end{eqnarray}
+
+For Case 2c, $t=t'$ and the derived vector as well as the parity weight is the same as that of the Type1 W4RTZ.
+Therefore for Case 2, the parity weight is given by
+\begin{equation}
+w_p=2\alpha 
+\end{equation}
+
+\paragraph{Case 3: $h\tau+t<h'\tau+t'<(h + \alpha)\tau+t<(h' + \alpha')\tau+t',~
+t'\neq t $ \newline}
+Similarly, there are 3 possible vector summations as shown below
+
+\paragraph{Case 3a \newline}
+\begin{eqnarray}
+(\bphi_1~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~
+ \bphi_7~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_3
+~\bphi_3\cdots~\bphi_3~\bphi_4)\cr
+\cline{1-2}
+(\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_1~\bphi_5~\cdots~\bphi_5~\bphi_4
+~\bphi_3\cdots~\bphi_3~\bphi_4)
+\label{3-1}
+\end{eqnarray}
+
+For Case 3a the derived parity vector is $$
+(\bphi_1~(\bphi_6)_{(h'-h)}~\bphi_1~(\bphi_5)_{(h-h'+\alpha)-2}~\bphi_4~(\bphi_3)_{((h'-h)+(\alpha'-\alpha))}~\bphi_4)
+$$
+with a weight of 
+\begin{equation*}
+\begin{split}
+w_p&=2(h'-h)+1+2(h-h'+\alpha-2)+2+2((h'-h)+(\alpha'-\alpha))+1\\
+&=2(h'-h)+2(\alpha-\alpha+\alpha')+1-1\\
+&=2((h'-h)+\alpha')
+\end{split}
+\end{equation*}
+
+\paragraph{Case 3b \newline}
+\begin{eqnarray}
+(\bphi_1~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~
+ \bphi_7~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
+(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_5
+~\bphi_5\cdots~\bphi_5~\bphi_6)\cr
+\cline{1-2}
+(\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_5~\bphi_3~\cdots~\bphi_3~\bphi_2
+~\bphi_5\cdots~\bphi_5~\bphi_6)
+\label{3-2}
+\end{eqnarray}
+
+For Case 3b the derived parity vector is $$
+(\bphi_1~(\bphi_6)_{(h'-h)}~\bphi_5~(\bphi_3)_{(h-h'+\alpha)-2}~\bphi_2~(\bphi_5)_{((h'-h)+(\alpha'-\alpha))}~\bphi_6)
+$$
+with a weight of 
+\begin{equation*}
+\begin{split}
+w_p&=2(h'-h)+1+2(h-h'+\alpha-2)+3+2((h'-h)+(\alpha'-\alpha))+2\\
+&=2(h'-h)+2(\alpha-\alpha+\alpha')+2\\
+&=2((h'-h)+\alpha'+1)
+\end{split}
+\end{equation*}
+
+\paragraph{Case 3c \newline}
+\begin{eqnarray}
+(\bphi_1~ \bphi_6~\cdots~ \bphi_6~ \bphi_6~ \bphi_6~\cdots~ \bphi_6~
+ \bphi_7~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
+(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_6
+~\bphi_6\cdots~\bphi_6~\bphi_7)\cr
+\cline{1-2}
+\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_7~\bphi_0~\cdots~\bphi_0~\bphi_1
+~\bphi_6\cdots~\bphi_6~\bphi_7)
+\label{3-3}
+\end{eqnarray}
+
+For Case 3c, $t=t'$ and the derived vector as well as the parity weight is the same as that of the Type1 W4RTZ.
+
+The parity weight equations for cases 3a and 3b are different but without loss of generality if we assume that $t'>t,~t=0$ we see that case 2a corresponds to the case where $t'-t=1$ whiles case 2b corresponds to the case where$t'-t=2$
+Therefore for Case 3 the parity weight is given by
+\begin{equation}
+w_p^{(4)}=2(\alpha' +(h'-h) +(t'-t)-1)
+\end{equation}
+
+This ends the proof
+\end{proof}
+
+不完全
+\subsubsection{Hamming weight for W5RTZ Turbo Codewords (Proof is incomplete)}
+\begin{proof}
+We represent each possible W5RTZ pattern by $*$ and $\cdot$, where $*$ is used to represent the W3RTZ portion of the W5RTZ and $\cdot$ is used to represent the W2RTZ part of the W5RTZ. Once the W5RTZ pattern is determined, we consider actual W5RTZ cases which fit this pattern and then determine the parity weight. Without loss of generality as well as for simplicity sake, if the first element of the W5RTZ is part of the W3RTZ portion, we assume that $h'=t'=0$, whiles if it is part of the W2RTZ we assume $h=t=0$.
+
+\paragraph{Case1: $(*~ *~ *~ \cdot~\cdot )$\newline}
+The valid W5RTZ cases are shown below
+\begin{eqnarray}
+ &h'\tau+t'<(h'+\beta')\tau+(t'+1)<(h'+\gamma')\tau+(t'+2)<h\tau+t<(h+\alpha)\tau+t\\
+ &h'\tau+t'<(h'+\gamma')\tau+(t'+2)<(h'+\beta')\tau+(t'+1)<h\tau+t<(h+\alpha)\tau+t
+ \end{eqnarray}
+Since the W2RTZ and the W3RTZ do not overlap, it is obvious that the 
+parity weight is
+\begin{equation*}
+\begin{split}
+w_p^{(5)}&=2(l)+2+2(\alpha)+2\\
+&=2(l+\alpha')+4
+\end{split}
+\end{equation*}
+
+\paragraph{Case2: $(*~*~\cdot~*~\cdot)$  \newline}
+The valid W5RTZ cases are 
+\begin{eqnarray}
+&h'\tau+t'<(h'+\beta')\tau+(t'+1)<h\tau+t<(h'+\gamma')\tau+(t'+2)<(h+\alpha)\tau+t (case2a)\\
+&h'\tau+t'<(h'+\gamma')\tau+(t'+2)<h\tau+t<(h'+\beta')\tau+(t'+1)<(h+\alpha)\tau+t (case2b)
+\end{eqnarray}
+For the case where $h'\tau+t'<(h'+\beta')\tau+(t'+1)<h\tau+t<(h'+\gamma')\tau+(t'+2)<(h+\alpha)\tau+t$, the W3RTZ cases that are valid are W3-Case1b and W3-Case 3b.
+%========enter proof
+
+For the case where $h'\tau+t'<(h'+\gamma')\tau+(t'+2)<h\tau+t<(h'+\beta')\tau+(t'+1)<(h+\alpha)\tau+t$, the W3RTZ cases that are valid are W3-Case1a and W3-Case 3a.
+
+\paragraph{Case2a : W3-Case1b \newline}
+
+\paragraph{Case2a : W3-Case3b \newline}
+
+
+\paragraph{Case2b : W3-Case1a \newline}
+There are 3 possible vector summation for this W3RTZ case is
+\paragraph{Case2b-a1 \newline}
+\begin{eqnarray*}
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6
+~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_3
+~\bphi_3~\cdots~\bphi_3~\bphi_4)\cr
+\cline{1-2}
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_2~\bphi_6~\cdots~\bphi_6~\bphi_5
+~\bphi_3~\cdots~\bphi_3~\bphi_4)
+\end{eqnarray*}
+For Case2b-a1, the derived vector is $(\bphi_6~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_2~(\bphi_6)_{(h-h'+\beta'-1)}~\bphi_5~(\bphi_3)_{(h-h')+(\alpha-\beta')-1}~\bphi_4)$\newline
+and the parity weight is
+\begin{equation*}
+\begin{split}
+w_p^{(5)}&=2\gamma'+2(h-h')-2\gamma'-2+2+2(h'-h)+2\beta'-2+3+2(h-h')+2\alpha-2\beta-2+1\\
+&=2(h-h')+2(\alpha)
+\end{split}
+\end{equation*}
+
+\paragraph{Case2b-b1 \newline}
+\begin{eqnarray*}
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6
+~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_5\bphi_5~\cdots~\bphi_5~\bphi_6)\cr
+\cline{1-2}
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_6~\bphi_0~\cdots~\bphi_0~\bphi_3\bphi_5~\cdots~\bphi_5~\bphi_6)
+\end{eqnarray*}
+
+For Case2b-b1, the derived vector is $(\bphi_6~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_6~(\bphi_0)_{(h-h'+\beta'-1)}~\bphi_3~(\bphi_5)_{(h-h')+(\alpha-\beta')-1}~\bphi_6)$\newline
+and the parity weight is
+\begin{equation*}
+\begin{split}
+w_p^{(5)}&=2\gamma'+2(h-h')-2\gamma'-2+2+0(h'-h)+0\beta'-0+4+2(h-h')+2\alpha-2\beta-2+2\\
+&=4(h-h'+1)+2(\alpha-\beta')
+\end{split}
+\end{equation*}
+
+\paragraph{Case2b-c1 \newline}
+\begin{eqnarray*}
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6
+~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_6
+~\bphi_6~\cdots~\bphi_6~\bphi_7)\cr
+\cline{1-2}
+(\bphi_6~\bphi_5~\cdots~\bphi_5~\bphi_4~\bphi_3~\cdots~\bphi_3~\bphi_0
+~\bphi_6~\cdots~\bphi_6~\bphi_7)
+\end{eqnarray*}
+
+For Case2b-c1, the derived vector is $(\bphi_6~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_4~(\bphi_3)_{(h-h'+\beta'-1)}~\bphi_0~(\bphi_6)_{(h-h')+(\alpha-\beta')-1}~\bphi_7)$\newline
+and the parity weight is
+\begin{equation*}
+\begin{split}
+w_p^{(5)}&=2\gamma'+2(h-h')-2\gamma'-2+2+2(h'-h)+2\beta'-2+1+2(h-h')+2\alpha-2\beta-2+3\\
+&=2(h-h')+2(\alpha)
+\end{split}
+\end{equation*}
+
+%=====case2b:W3-case3a
+\paragraph{Case2b : W3-Case3a \newline}
+There are 3 possible vector summation for this W3RTZ case is
+\paragraph{Case2b-a2 \newline}
+\begin{eqnarray*}
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_0~\bphi_0~\cdots
+~\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_3~\bphi_3~\cdots~\bphi_3~\bphi_4)\cr
+\cline{1-2}
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_2~\bphi_6~\cdots~\bphi_6~\bphi_5~\bphi_3
+~\cdots~\bphi_3~\bphi_4)
+\end{eqnarray*}
+For Case2b-a, the derived vector is $(\bphi_7~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_2~(\bphi_6)_{(h-h'+\beta'-1)}~\bphi_5~(\bphi_3)_{(h-h')+(\alpha-\beta')-1}~\bphi_4)$\newline
+and the parity weight is
+\begin{equation*}
+\begin{split}
+w_p^{(5)}&=2\gamma'+2(h-h')-2\gamma'-2+2+2(h'-h)+2\beta'-2+3+2(h-h')+2\alpha-2\beta-2+1\\
+&=2(h-h')+2(\alpha)
+\end{split}
+\end{equation*}
+
+\paragraph{Case2b-b2 \newline}
+\begin{eqnarray*}
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_0~\bphi_0~\cdots
+~\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6)\cr
+\cline{1-2}
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_6~\bphi_0~\cdots~\bphi_0~\bphi_3~\bphi_5~\cdots~\bphi_5~\bphi_6)
+\end{eqnarray*}
+
+For Case2b-b2, the derived vector is $(\bphi_6~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_6~(\bphi_0)_{(h-h'+\beta'-1)}~\bphi_3~(\bphi_5)_{(h-h')+(\alpha-\beta')-1}~\bphi_6)$\newline
+and the parity weight is
+\begin{equation*}
+\begin{split}
+w_p^{(5)}&=2\gamma'+2(h-h')-2\gamma'-2+2+0(h'-h)+0\beta'-0+4+2(h-h')+2\alpha-2\beta-2+2\\
+&=4(h-h'+1)+2(\alpha-\beta')
+\end{split}
+\end{equation*}
+
+\paragraph{Case2b-c2 \newline}
+\begin{eqnarray*}
+(\bphi_7~\bphi_3~\cdots~\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_5~\bphi_5~\cdots~\bphi_5~\bphi_6~\bphi_0~\cdots~\bphi_0~\bphi_0)\cr
++(\bphi_0~\bphi_0~\cdots~\bphi_0~\bphi_0~\bphi_0~\cdots
+~\bphi_1~\bphi_6~\cdots~\bphi_6~\bphi_6~\bphi_6~\cdots~\bphi_6~\bphi_7)\cr
+\cline{1-2}
+(\bphi_7~\bphi_3~\cdots~
+\bphi_3~\bphi_2~\bphi_5~\cdots
+~\bphi_4~\bphi_3~\cdots
+~\bphi_3~\bphi_0~\bphi_6~\cdots
+~\bphi_6~\bphi_7)
+\end{eqnarray*}
+
+For Case2b-c2, the derived vector is $(\bphi_6~(\bphi_5)_{(h-h'+\gamma'-1)}~\bphi_4~(\bphi_3)_{(h-h'+\beta'-1)}~\bphi_0~(\bphi_6)_{(h-h')+(\alpha-\beta')-1}~\bphi_7)$\newline
+and the parity weight is
+\begin{equation*}
+\begin{split}
+w_p^{(5)}&=2\gamma'+2(h-h')-2\gamma'-2+2+2(h'-h)+2\beta'-2+1+2(h-h')+2\alpha-2\beta-2+3\\
+&=2(h-h')+2(\alpha)
+\end{split}
+\end{equation*}
+
+
+
+
+
+\end{proof}

@@ -1,0 +1,36 @@
+\subsection{Low-weight Codewords}
+%(quarantine)%The distance spectrum derived via the transfer function method is an insufficient tool when it comes to to interleaver design. In this section, we present a novel method that generates what we refered to as the structured distance spectrum, which is the distance spectrum with the structure of the RTZ inputs as well as the corresponding parity-check sequence revealed, therefore making it a very useful tool for interleaver design.
+
+%(quarantine)%For an RSC code, the Hamming weight of the codeword $w_H(\bc)$ is the sum of the weights of the parity bit sequence and message input. 
+In polynomial notation, the parity-check sequence can be expressed as 
+\begin{equation}
+h(x) =f(x)\cdot g^{-1}(x)\cdot b(x)
+\label{novelEq0}
+\end{equation}
+If we consider large frame sizes, the presence of $g^{-1}(x)$ means that within $h(x)$ is a particular sequence of bits that is repeated a large number of times. This results in a large parity weight with high probability, leading to a codeword with a high weight. The only time this is not the case is when
+\begin{equation}
+b(x) \bmod g(x) \equiv 0
+\label{novelEq1}
+\end{equation}
+This results in a relatively low-weight parity bit sequence, which might produce a low-weight codeword. Any $b(x)$ that meets the condition in (\ref{novelEq1}) can be written as 
+\begin{equation}
+b(x) =a(x)g(x)
+\label{novelEq2}
+\end{equation}
+where $a(x)$ is a monic polynomial with the coefficient of the lowest term not equal to $0$.
+By fixing $b(x)$ from (\ref{novelEq2}) into (\ref{novelEq0}), we have 
+\begin{equation}
+\begin{split}
+h(x)&=f(x)\cdot g^{-1}(x)\cdot a(x)g(x)\\
+&=a(x)f(x)
+\end{split}
+\label{novelEq3}
+\end{equation}
+%(quarantine)%Using both (\ref{novelEq2})  and (\ref{novelEq3}), we wish to list all low-weight codewords for a given RSC code.A low-weight codeword is any codeword which satisfies the condition, $w_H(\bc) \leq d_{\text{max}}$. This list is known as the \textit{partial structured distance spectrum}. To generate the partial structured distance spectrum, we take note of a few things. 
+From (\ref{novelEq2})  and (\ref{novelEq3}), we observe that $a(x)$ is a common factor in both equations and if we are able to solve for $a(x)$ via either of the equations, the remaining equation can be solved. To solve for $a(x)$ requires that in either equation, it should be the only unknown variable. At first glance, it might seem that $g(x)$ and $f(x)$ are the only known variables because they are dependent on the RSC code in question. However, if we remember that the weight of $h(x)$ and $b(x)$ is directly proportional to the number of terms it has, then we are on our way to obtain our second known variable. What is left is to determine the valid power values for the polynomial  terms, depending on the weight of $h(x)$ or $b(x)$.
+
+Revisiting (\ref{novelEq3}), once $f(x)$ is given, our goal is to find $a(x)$ that results in a low-weight $h(x)$. The this end, we consider the roots of $f(x)$ denoted by $\beta_i,~ 0 \leq i < 2^{\text{order(f(x))}}$. Then it is obvious that $h(\beta_i)=0$~ for all $i$ and we can reformulate our goal as to find weight-$w$ polynomials ($h(x)$) which take all values of $\beta_i$ as its roots. Similarly, we attempt to find weight-$w$ polynomials ($b(x)$) whose roots are the same as $g(x)$
+%, we see that $h(x)$ is divisible by both $f(x)$ and $a(x)$ and therefore their roots are also the roots of $h(x)$. However, because the value of $a(x)$ is variable, we will use the root of $f(x)$ when determining  the valid power values for the polynomial  terms of $h(x)$ for a given weight value. Similarly, $b(x)$ is also divisible by $a(x)$ and $g(x)$ (\ref{novelEq2}), but we utilise the roots of $g(x)$ when determining the valid power values for the polynomial  terms of  $b(x)$ for a given weight value.  
+%Having determined the values of $h(x)$ or $b(x)$ for a fixed Hamming weight value and RSC code, we can now generate the partial-structured distance spectrum for that RSC code. Beginning with (\ref{novelEq2}), we  solve for $a(x)$ for a predetermined number of valid values of $b(x)$ and then use $a(x)$ in (\ref{novelEq3}) to obtain the corresponding value of $h(x)$. 
+
+%Because there is no guarantee that low-weight message inputs always map to low-weight parity-check sequences, we repeat the same operation to obtain $a(x)$ via (\ref{novelEq3}) for a predetermined number of valid values of $h(x)$ and then use $a(x)$ in (\ref{novelEq2}) to obtain the corresponding value of $b(x)$. From the lists obtained from both operations, we can then generate the partial-structured distance spectrum by selecting $h(x)$ and $b(x)$ values $\st w_H(\bc) \leq d_{\text{max}},~d_{\text{max}}=d_{\text{free}}+3$.
