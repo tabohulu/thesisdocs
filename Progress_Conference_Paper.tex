@@ -1,19 +1,20 @@
 %\documentclass[conference,letterpaper]{IEEEtran}
 \documentclass[journal,draftcls,onecolumn,12pt,twoside]{IEEEtran}
-\newcommand{\folder}{/usr/local/share/texmf}
+\newcommand{\folder}{/home/bohulu/Documents/texmf}
 %\newcommand{\folder}{/home/hanchenggao/Documents/texmf}
 \input{\folder/hfiles/epaper}
 %\renewcommand{\thesubsubsection}{\Alph{subsubsection}.}
 %\setcounter{secnumdepth}{3}
 %\usepackage[ruled,vlined]{algorithm2e}
-\usepackage {graphicx}[dvips]
+\usepackage {graphics}
+\usepackage{caption}
 %\usepackage {graphics}
 %\setCJKmainfont{SimSun}
 \begin{document}
 \title{
-A Novel Method for Obtaining the Structure of RTZ Inputs and their Corresponding Parity-Check Sequences: A First Step Towards Interleaver Design}
+A Novel Method for Obtaining the Pattern of Low-Weight Codewords of Recursive Systematic Convolutional Codes}
 \author{%
-  \IEEEauthorblockN{Bohulu~Kwame~Ackah~and~Chenggao~Han}
+  \IEEEauthorblockN{Bohulu~Kwame~Ackah~and~Chenggao~Han\\}
   \IEEEauthorblockA{Graduate School of Informatics and Engineering,\\
    The University of Electro-Communications,\\
     1-5-1 Chofugaoka, Chofu-shi, Tokyo, 182--8585, Japan\\
@@ -27,22 +28,24 @@ A Novel Method for Obtaining the Structure of RTZ Inputs and their Corresponding
 
 \maketitle
 \begin{abstract}
-Knowledge of the distance spectrum, as well as the structure of the message inputs that make up the distance spectrum for a specific recursive systematic convolutional (RSC) code is vital to the design of Turbo Code interleavers. Even though the distance spectrum of an RSC code can be obtained by calculating its transfer function, it does not provide any information about the structure of the message inputs. %and the complexity involved in calculating the transfer function increases with the number of states of the RSC code.
+%Knowledge of the distance spectrum, as well as the structure of the message inputs that make up the distance spectrum for a specific recursive systematic convolutional (RSC) code is vital to the design of Turbo Code interleavers. Even though the distance spectrum of an RSC code can be obtained by calculating its transfer function, it does not provide any information about the structure of the message inputs. %and the complexity involved in calculating the transfer function increases with the number of states of the RSC code.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this paper,we present a novel low-complexity method for determining the distance spectrum of any RSC code that has the added benefit of revealing the structure of the Return-To-Zero (RTZ) inputs that make up the distance spectrum as well as their corresponding parity-check sequences. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-We then go a step further and present a method  for deriving a general polynomial representation for both RTZ inputs and parity-check sequences with a Hamming weight of up to $4$ for any RSC code.
- %%%%%%%%%%%%%%%%%%%%%%
- 
- Combining these two methods, we list the partial distance spectrum for selected RSC codes up to a cut-off weight $d_{\text{max}}$ and compare the simulation results to the bounds obtained via our novel method and the transfer function method.
+In this paper,we present a novel low-complexity method for determining the distance spectrum of any RSC code that has the added benefit of revealing the pattern of the low-weight codewords. 
+Using our method, we list the partial distance spectrum for selected RSC codes up to a cut-off weight $d_{\text{max}}$ and compare the simulation results to the bounds obtained via our novel method and the transfer function method. 
 \end{abstract}
+\newpage
 \input{./ConfSources/Introduction}
+\newpage
 \input{./ConfSources/Preliminaries}
+\newpage
 \input{./ConfSources/RSCReview}
+\newpage
 %\input{./PaperSources/TransferFunction}
 \input{./ConfSources/NovelMethod}
+\newpage
 \input{./ConfSources/SimulationResults}
+\newpage
 \input{./ConfSources/Conclusion}
 \newpage
 \input{./ConfSources/References}

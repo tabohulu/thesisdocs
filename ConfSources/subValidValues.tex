@@ -1,38 +1,25 @@
-\subsection{Finding Valid Values of $h(x)$ and $b(x)$ for a fixed Hamming weight and RSC code\newline}
-We have established that the relationship between the roots of $f(x)$ and $h(x)$, as well as the relationship between the roots of $g(x)$ and $b(x)$. Depending on the characteristic make-up of $f(x)$ , we can easily determine the structure of $h(x)$ for its different weight values. The same logic applies to determining the structure of $b(x)$ for its different weight values from $g(x)$. 
-We therefore, present a method for determining valid values of $h(x)$ and $b(x)$ for a given RSC code when the weight values $w_H(\bh),~w_H(\bb) \leq 3$. We state here that there is no RTZ input of weight 1, because it goes against the definition of RTZ inputs. Consequently, there also cannot be a corresponding parity-check sequence of weight 1 and we can ignore those cases. 
-The characteristic make-up of both $f(x)$ and $g(x)$ can be grouped into the four cases below. 
-\begin{enumerate}
-\item Single primitive polynomial.
-\item Prime but not a primitive polynomial.
-\item Made up of repeated polynomial roots.
-%\item Made up of unique repeated polynomial roots.
-\end{enumerate}
-Because there is no difference between the general structure of $h(x)$ and $b(x)$ once the Hamming weight is fixed, we will focus on only $g(x)$ and $b(x)$ (\ref{novelEq3}) in the discussion that follows.
-\subsubsection{Solution for $w_H(\bb) =2$}
-For this weight case, we can write $b(x)$ as $b(x)=1+x^a$ without any loss of generality. Thus we wish to find the possible values of $a$ satisfying $$\beta^{ia}+1=0$$
-for all $\beta^i,~1 \leq i \leq 2^{m}-1$ in GF$(2^{m}),~m=\text{order}(g(x))$
+\subsection{Solution for $w_H(h(x)) =2$}
+For this weight case, we can write $h(x)$ as $h(x)=1+x^a$ without any loss of generality. 
+%Thus we wish to find the possible values of $a$ satisfying $$\beta^{ia}+1=0$$ for all $\beta^i,~1 \leq i \leq 2^{m}-1$ in GF$(2^{m}),~m=\text{order}(g(x))$
 \paragraph{ Case1: $g(x)$ is a single primitive polynomial}
-Since $g(x)$ is a prime polynomial, it has a primitive element $\beta^i$ as its root, which means, $\beta^i$ is also a root of $b(x)=1+x^a$. Setting $i=1$ without loss of generality and substituting $\beta$ into the equation, we have 
+Since $f(x)$ is a prime polynomial, it has a primitive element $\beta$ as its root, which means, $\beta$ is also a root of $h(x)=1+x^a$. Substituting $\beta$ into the equation, we have 
 \begin{equation}
 \begin{split}
 1+\beta^{a}=&0\\
 \beta^a=&1
 \end{split}
 \end{equation}
-For any primitive polynomial that generates the extended field GF$(2^m),~\beta^{2^{m}-1}=1$, 
-which means any valid of $a$ should satisfy the condition below.
-$$2^{m}-1~|~a$$
-
+It is obvious that $a$ is related to the order of $\beta$ and for any primitive polynomial that generates the extended field GF$(2^m)$, its order is $2^{m}-1$. This means that any valid value of $a$ should satisfy the condition below.
+$$a \bmod 2^{m}-1 \equiv 0$$
 \begin{example}
-$g(x)=1+x+x^2$.\newline $g(x)$ generates the field GF$(2^2)$ where $\beta^{3}=1$. The valid values of $a$ are $a=\{3,6,9,\cdots \}$. The corresponding values for $a(x)$ and $b(x)$ are shown in the table below for the first four valid values of $a$.
+$f(x)=1+x+x^2$.\newline $f(x)$ generates the field GF$(2^2)$ where the order of $\beta$ is $3$. The valid values of $a$ are $a=\{3,6,9,\cdots \}$. The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab2} for the first four valid values of $a$.
 
- \begin{table*}[h]
- \caption{$g(x)=1+x+x^2$}
+ \begin{table*}[h!]
+ \caption{$f(x)=1+x+x^2$}
 \centering
  \begin{tabular}{c c c} 
- \hline
- $a(x)$ & $b(x)$ \\ [0.5ex] 
+%\hline
+ $a(x)$ & $h(x)$ \\ [0.5ex] 
  \hline\hline
 $1+x$
  & $1+x^{3}$ \\
@@ -51,42 +38,40 @@ $1+x+x^3+x^4+x^6+x^{7}+x^9+x^{10}$
  \label{novelTab2}
 \end{table*}
 \end{example}
-
-\begin{example}$g(x)=1+x+x^4$\newline
-$g(x)$ can be used to generate the extended field GF$(2^4)$. In this field, $\beta^{15}=1$. The valid values of $a$ are $a=\{15,30,45,\cdots \}$. The corresponding values for $a(x)$ and $b(x)$ are shown in the table below for the first two valid values of $a$.
-
- \begin{table*}[h]
- \caption{$23/35$ RSC Code, $f(x)=1+x+x^4$}
-\centering
-\begin{tabular}{p{4cm} | c} 
- \hline
- $a(x)$ & $b(x)$  \\ [0.5ex] 
- \hline\hline
-$1+x^2+x^3+x^5+x^7+x^8+x^{11}$ 
-& $1+x^{15}$ \\ 
-\hline
-$1+x^2+x^3+x^5+x^7+x^8+x^{11}+x^{15}+x^{16}+x^{17}+x^{18}+x^{20}+x^{22}+x^{23}+x^{26}$ 
-&$1+x^{30}$\\
- \end{tabular}
- \label{novelTab5}
-\end{table*}
-
-\end{example}
-\paragraph{ Case2: $g(x)$ is prime polynomial but not primitive \newline}
-Similar to the case for primitive polynomials, there is a value $j < 2^m-1$ such that 
-$$\beta^j=1,~j~|~2^{m}-1 $$. Therefore, any valid value of $a$ should satisfy the condition below.
-$$j~|~a$$
+%============================
+%\begin{example}$g(x)=1+x+x^4$\newline
+%$g(x)$ can be used to generate the extended field GF$(2^4)$. In this field, $\beta^{15}=1$. The valid values of $a$ are $a=\{15,30,45,\cdots \}$. The corresponding values for $a(x)$ and $b(x)$ are shown in the table below for the first two valid values of $a$.
+% \begin{table*}[h]
+ %\caption{$23/35$ RSC Code, $f(x)=1+x+x^4$}
+%\centering
+%\begin{tabular}{p{4cm} | c} 
+% \hline
+ %$a(x)$ & $b(x)$  \\ [0.5ex] 
+ %\hline\hline
+%$1+x^2+x^3+x^5+x^7+x^8+x^{11}$ 
+%& $1+x^{15}$ \\ 
+%\hline
+%$1+x^2+x^3+x^5+x^7+x^8+x^{11}+x^{15}+x^{16}+x^{17}+x^{18}+x^{20}+x^{22}+x^{23}+x^{26}$ 
+%&$1+x^{30}$\\
+ %\end{tabular}
+ %\label{novelTab5}
+%\end{table*}
+%\end{example}
+%=====================
+\paragraph{Case2}$f(x)$ is prime polynomial but not primitive \newline
+Similar to the case for primitive polynomials, we need to find the order of $\beta$. For fields generated by prime polynomials, there is a value $j < 2^m-1$ such that 
+$$\beta^j=1,~j~|~2^{m}-1 $$ where $j$ is the order. Therefore, any valid value of $a$ should satisfy the condition below.
+$$ a \bmod j \equiv 0$$
 
 \begin{example}
-$g(x)=1+x+x^2+x^3+x^4$\newline
-$g(x)$ can be used used to generate GF$(2^4)$ and in the field it generates, $\beta^{5}=1$. Therefore, the valid values of $a$ are $a=\{5,10,15,\cdots\}$. The corresponding values for $b(x)$ and $a(x)$ are shown in the table below for the first four valid values of $a$.
-
-\begin{table*}[h]
- \caption{$f(x)=1+x+x^2+x^3+x^4$}
+$f(x)=1+x+x^2+x^3+x^4$\newline
+$f(x)$ can be used used to generate GF$(2^4)$ and in the field it generates, the order of $\beta$ is $5$. Therefore, the valid values of $a$ are $a=\{5,10,15,\cdots\}$. The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab3} for the first four valid values of $a$.
+\begin{table*}[h!]
+\caption{$f(x)=1+x+x^2+x^3+x^4$}
 \centering
- \begin{tabular}{c c} 
+\begin{tabular}{c c} 
  \hline
- $a(x)$ & $b(x)$  \\ [0.5ex] 
+ $a(x)$ & $h(x)$  \\ [0.5ex] 
  \hline\hline
 $1+x$ &$1+x^5$\\ 
 $1+x+x^5+x^6$ &$1+x^{10}$  \\
@@ -101,25 +86,23 @@ $1+x+x^5+x^6+x^{10}+x^{11}+x^{15}+x^{16}$ &$1+x^{20}$
 %Given the above condition we have, $r(x)=(r^{o_p}_p(x))^k$, where $r^{o_p}_p(x)$ represents the prime polynomial $r(x)$ can be factorised into and $k$ is the number of times it is repeated. $r^{o_p}_p(x)$ has $\beta$ as its roots and we need to find $d \st \beta^j=1$ in the (extended) field it generates. Because $\beta^{kj}=1$ in the same (extended) field , the valid values for $a$ should satisfy the condition below:
 %$$kj ~| ~a$$
 
-\paragraph{Case3: $r(x)$ is made up of repeated polynomial roots. \newline}
-We may write $r(x)$ as $$r(x)=\prod_{k=1}^{K}r_k(x)$$ The $kth$ polynomial is prime and has a value $d_k \st \beta^{j_k}=1$. Because each value of $j_k$ is unique, valid values of $a$ should satisfy the condition below. 
-
-$$ \bigcap_{k=1}^{K} \{j_k~| a\}$$
-For the special case where $g(x)$ has equal repeated roots, the above condition simplifies to 
-$$kj ~| ~a$$
+\paragraph{Case3}$f(x)$ is made up of repeated polynomial roots. \newline
+We may write $f(x)$ as $$f(x)=\prod_{k=1}^{K}f_k(x)$$ The $kth$ polynomial is prime and its order is $j_k ,~j_k \leq 2^m-1$. Because each value of $j_k$ is unique, valid values of $a$ should satisfy the condition below. 
+$$ \{a \bmod  \prod_{k=1}^{K} j_k \equiv 0\}$$
+For the special case where $f(x)$ has equal repeated roots, the above condition simplifies to 
+$$a \bmod jK \equiv 0$$
 
 \begin{example}
-$g(x)=1+x^2$\newline
-$g(x)$ can be written as $$f(x)=(1+x)^2,~k=2$$ $1+x$ is prime in $GF(2)$ and $\beta^{1}=1$. Since $k=2$, we have $\beta^{k}=\beta^{2}=1$. $h(x)=1+x^a$ and valid values of $a=\{2,4,6,\cdots \}$.
-The corresponding values for $a(x)$ and $b(x)$ are shown in the table below for the first four valid values of $a$
-
- \begin{table*}[h]
+$f(x)=1+x^2$\newline
+$f(x)$ can be written as $$f(x)=(1+x)^2,~K=2$$ $1+x$ is prime in $GF(2)$ and in this field the order of $\beta$ is $1$. Since $f(x)$ is made up of equal repeated polynomial and $K=2$, the valid values of $a=\{2,4,6,\cdots \}$.
+The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab1} for the first four valid values of $a$.
+\begin{table*}[h!]
  \caption{$f(x)=1+x^2$}
  \centering
 \begin{tabular}{c c } 
 \hline
  $a(x)$ & $b(x)$ \\ [0.5ex] 
- \hline\hline
+\hline\hline
 $1$ & $1+x^2$\\ 
 $1+x^2$ & $1+x^4$ \\
 $1+x^2+x^4$ & $1+x^6$\\
@@ -130,238 +113,85 @@ $1+x^2+x^4+x^6$ & $1+x^8$
 \end{example}
 
 %==========
-\begin{example}
-$g(x)=1+x^4$\newline $g(x)$ is made up of equal repeated polynomial roots and can be written as $$g(x)=(1+x)^4,~k=4$$. $1+x$ is prime in $GF(2)$ and $\beta^{1}=1$. Since $k=4$, we have $\beta^{k}=\beta^{4}=1$. $b(x)=1+x^b$ and the valid values of $a=\{4,8,12,\cdots \}$.
-The corresponding values for $a(x),~b(x)$ and $h(x)$ are shown in the table below for the first four valid values of $a$
+%\begin{example}
+%$g(x)=1+x^4$\newline $g(x)$ is made up of equal repeated polynomial roots and can be written as $$g(x)=(1+x)^4,~k=4$$. $1+x$ is prime in $GF(2)$ and $\beta^{1}=1$. Since $k=4$, we have $\beta^{k}=\beta^{4}=1$. $b(x)=1+x^b$ and the valid values of $a=\{4,8,12,\cdots \}$.
+%The corresponding values for $a(x),~b(x)$ and $h(x)$ are shown in the table below for the first four valid values of $a$
 
-\begin{table*}[h]
-\caption{$g(x)=1+x^4$}
-\centering
- \begin{tabular}{c c c} 
- \hline
-$a(x)$ & $h(x)$ \\ [0.5ex] 
-\hline\hline
-$1$ &  $1+x^4$\\ 
-$1+x^4$ & $1+x^8$ \\
-$1+x^4+x^8$ & $1+x^{12}$ \\
-$1+x^4+x^8+x^{12}$ & $1+x^{16}$ 
-\end{tabular}
-\label{novelTab4}
-\end{table*}
-\end{example}
+%\begin{table*}[h]
+%\caption{$g(x)=1+x^4$}
+%\centering
+ %\begin{tabular}{c c c} 
+ %\hline
+%$a(x)$ & $h(x)$ \\ [0.5ex] 
+%\hline\hline
+%$1$ &  $1+x^4$\\ 
+%$1+x^4$ & $1+x^8$ \\
+%$1+x^4+x^8$ & $1+x^{12}$ \\
+%$1+x^4+x^8+x^{12}$ & $1+x^{16}$ 
+%\end{tabular}
+%\label{novelTab4}
+%\end{table*}
+%\end{example}
 
 %========
-\begin{example}
-$g(x)=1+x^2+x^3+x^4$\newline
-$g(x)$ can be written as $$g(x)=(1+x)(1+x+x^3),~K=2$$
- $1+x$ is prime in $GF(2^1)$ and $\beta^{1}=1$. $1+x+x^3$ is prime in $GF(2^3)$ and $\beta^{7}=1$. $b(x)=1+x^b$ and consequently, the valid values of $a$ that meet the condition $$ \bigcap_{k=1}^{K} \{j_k~| a\}$$ are $a=\{7,14,21,\cdots \}$.
-The corresponding values for $a(x)$ and $b(x)$ are shown in the table below for the first four valid values of $a$
-
-\begin{table*}[h]
-\caption{$g(x)=1+x^2+x^3+x^4$}
-\centering
- \begin{tabular}{p{4cm}| p{4cm}} 
- \hline
- $a(x)$ & $b(x)$  \\ [0.5ex] 
- \hline\hline
-$1+x^2+x^3$ & $1+x^7$ \\ 
-\hline
-$1+x^2+x^3+x^7+x^9+x^{10}$ &  $1+x^{14}$ \\
-\hline
-$1+x^2+x^3+x^7+x^{9}+x^{10}+x^{14}+x^{16}+x^{17}$ & $1+x^{21}$ 
-\\
-\hline
-$1+x^2+x^3+x^7+x^{9}+x^{10}+x^{14}+x^{16}+x^{17}+x^{21}+x^{23}+x^{24}$ & $1+x^{28}$
- \end{tabular}
- \label{novelTab6}
-\end{table*}
-\end{example}
-%=========Examples===============%
-
-\newpage
-
 %\begin{example}
-%$5/7$ RSC Code $f(x)=1+x^2,~g(x) = 1+x+x^2$\newline
-%$f(x)$ is a match for Case3, i.e. it is made up of equal repeated polynomial roots. It can be written as $$f(x)=(1+x)^2,~k=2$$ $1+x$ is prime in $GF(2)$ and $\beta^{1}=1$. Since $k=2$, we have $\beta^{k}=\beta^{2}=1$. $h(x)=1+x^a$ and valid values of $a=\{2,4,6,\cdots \}$.
-%The corresponding values for $a(x),~b(x)$ and $h(x)$ are shown in the table below for the first four valid values of $a$
-
-% \begin{table*}[h]
-% \caption{$5/7$ RSC Code, $f(x)=1+x^2$}
-%\centering
- %\begin{tabular}{c c c} 
- %\hline
-% $a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
-% \hline\hline
-%$1$ & $1+x+x^2$ & $1+x^2$ \\ 
-%$1+x^2$ & $1+x+x^3+x^4$ & $1+x^{4}$  \\
-%$1+x^2+x^4$ & $1+x+x^3+x^5+x^6$ & $1+x^{6}$  \\
-%$1+x^2+x^4+x^6$ & $1+x+x^3+x^5+x^7+x^8$ & $1+x^{8}$  
- %\end{tabular}
-% \label{novelTab1}
-%\end{table*}
-
-%$g(x)$ is a match for Case1, i.e. it is a primitive polynomial for GF$(2^2)$. In this extended field, $\beta^{3}=1$. $b(x)=1+x^b$ and the valid values of $b$ are $b=\{3,6,9,\cdots \}$. The corresponding values for $a(x),~b(x)$ and $h(x)$ are shown in the table below for the first four valid values of $b$.
-
- %\begin{table*}[h]
- %\caption{$5/7$ RSC Code, $g(x)=1+x+x^2$}
-%\centering
- %\begin{tabular}{c c c} 
- %\hline
- %$a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
- %\hline\hline
-%$1+x$ & $1+x^{3}$ &$1+x+x^2+x^3$\\
-%\hline
-%$1+x+x^3+x^4$ & $1+x^{6}$ &$1+x+x^2+x^4+x^5+x^6$ \\
-%\hline
-%$1+x+x^3+x^4+x^6+x^{7}$ &  $1+x^{9}$ %&$1+x+x^2+x^4+x^5+x^7+x^8+x^9$\\
-%\hline
-%$1+x+x^3+x^4+x^6+x^{7}+x^9+x^{10}$ &  $1+x^{12}$ %&$1+x+x^2+x^4+x^5+x^7+x^8+x^{10}+x^{11}+x^{12}$\\
-% \end{tabular}
- %\label{novelTab2}
-%\end{table*}
+%$g(x)=1+x^2+x^3+x^4$\newline
+%$g(x)$ can be written as $$g(x)=(1+x)(1+x+x^3),~K=2$$
+ %$1+x$ is prime in $GF(2^1)$ and $\beta^{1}=1$. $1+x+x^3$ is prime in $GF(2^3)$ and $\beta^{7}=1$. $b(x)=1+x^b$ and consequently, the valid values of $a$ that meet the condition $$ \bigcap_{k=1}^{K} \{j_k~| a\}$$ are $a=\{7,14,21,\cdots \}$.
+%The corresponding values for $a(x)$ and $b(x)$ are shown in Table \ref{novelTab6} for the first four valid values of $a$
 %\end{example}
 
 
-%=======37/21 RSC=========%
-%\begin{example}
-%$37/21$ RSC Code, $f(x)=1+x+x^2+x^3+x^4,~g(x)=1+x^4$\newline
-%$f(x)$ is a match for Case2, i.e. it is a prime polynomial but not primitive. It can be used to generate GF$(2^4)$ and in the field it generates, $\beta^{5}=1$. Therefore, the valid values of $a$ are $a=\{5,10,15,\cdots\}$. The corresponding values for $h(x)$ and $a(x)$ are shown in the table below for the first four valid values of $a$.
-
-% \begin{table*}[h]
-% \caption{$37/21$ RSC Code, $f(x)=1+x+x^2+x^3+x^4$}
-%\centering
-% \begin{tabular}{c c c} 
-% \hline
-% $a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
-% \hline\hline
-%$1+x$ &$1+x+x^4+x^5$ &  $1+x^5$\\ 
-%$1+x+x^5+x^6$ &$1+x+x^4+x^6+x^9+x^{10}$ & $1+x^{10}$ \\
-%$1+x+x^5+x^6+x^{10}+x^{11}$ & $1+x+x^4+x^6+x^9+x^{11}+x^{14}+x^{15}$ & $1+x^{15}$ \\
-%$1+x+x^5+x^6+x^{10}+x^{11}+x^{15}+x^{16}$ &$1+x+x^4+x^6+x^9+x^{11}+x^{14}+x^{16}+x^{19}+x^{20}$ & $1+x^{20}$ 
-% \end{tabular}
-% \label{novelTab3}
-%\end{table*}
-
-%$g(x)$ is a match for Case3, i.e. it is made up of equal repeated polynomial roots. It can be written as $$g(x)=(1+x)^4,~k=4$$ $1+x$ is prime in $GF(2)$ and $\beta^{1}=1$. Since $k=4$, we have $\beta^{k}=\beta^{4}=1$. $b(x)=1+x^b$ and valid values of $b=\{4,8,12,\cdots \}$.
-%The corresponding values for $a(x),~b(x)$ and $h(x)$ are shown in the table below for the first four valid values of $a$
-
- %\begin{table*}[h]
- %\caption{$37/21$ RSC Code, $g(x)=1+x^4$}
-%\centering
-% \begin{tabular}{c c c} 
-% \hline
- %$a(x)$ & $h(x)$ \\ [0.5ex] 
- %\hline\hline
-%$1$ &  $1+x^4$ & $1+x+x^2+x^3+x^4$\\ 
-%$1+x^4$ & $1+x^{8}$ & $1+x+x^2+x^3+x^5+x^6+x^7+x^8$ \\
-%$1+x^4+x^8$ & $1+x^{12}$ & $1+x+x^2+x^3+x^5+x^6+x^7+x^9+x^{10}+x^{11}+x^{12}$\\
-%$1+x^4+x^8+x^{12}$ & $1+x^{16}$ & $1+x+x^2+x^3+x^5+x^6+x^7+x^9+x^{10}+x^{11}+x^{13}+x^{14}+x^{15}+x^{16}$
- %\end{tabular}
- %\label{novelTab4}
-%\end{table*}
-
-%\end{example}
-%===========23/35 RSC=========%
-%\begin{example}
-%$23/35$ RSC Code, $f(x)=1+x+x^4,~g(x)=1+x^2+x^3+x^4$\newline
-%$f(x)$ is a match for Case1, i.e. it is a primitive polynomial that can be used to generate the extended field GF$(2^4)$. In this field, $\beta^{15}=1$. $h(x)=1+x^a$ and the valid values of $a$ are $a=\{15,30,45,\cdots \}$. The corresponding values for $a(x),~b(x)$ and $h(x)$ are shown in the table below for the first two valid values of $a$.
-
-% \begin{table*}[h!]
-% \caption{$23/35$ RSC Code, $f(x)=1+x+x^4$}
-%\centering
- %\begin{tabular}{p{7cm} | p{7cm} | c} 
-% \hline
-% $a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
-% \hline\hline
-%$1+x^2+x^3+x^5+x^7+x^8+x^{11}$ 
-%& $1+x+x^3+x^4+x^7+x^{11}+x^{12}+x^{13}+x^{14}+x^{15}$ 
-%&$1+x^{15}$\\ 
-%\hline
-%$1+x^2+x^3+x^5+x^7+x^8+x^{11}+x^{15}+x^{16}+x^{17}+x^{18}+x^{20}+x^{22}+x^{23}+x^{26}$ 
-%&$1+x+x^3+x^4+x^7+x^{11}+x^{12}+x^{13}+x^{14}+x^{16}+x^{18}+x^{19}+x^{22}+x^{26}+x^{27}+x^{28}+x^{29}+x^{30}$ 
-%&$1+x^{30}$\\
-% \end{tabular}
-% \label{novelTab5}
-%\end{table*}
-
-%$g(x)$ is a match for Case4, i.e. it is made up of unique repeated polynomial roots. It be written as $$g(x)=(1+x)(1+x+x^3),~K=2$$
- %$1+x$ is prime in $GF(2^1)$ and $\beta^{1}=1$. $1+x+x^3$ is prime in $GF(2^3)$ and $\beta^{7}=1$. $b(x)=1+x^b$ and consequently, the valid values of $b$ that meet the condition $$ \bigcap_{k=1}^{K} \{j_k~| b\}$$ are $b=\{7,14,21,\cdots \}$.
-%The corresponding values for $a(x),~b(x)$ and $h(x)$ are shown in the table below for the first four valid values of $b$
-
+%\hfill
+%\parbox{\linewidth}{
 %\begin{table*}[h]
-% \caption{$23/35$ RSC Code, $g(x)=1+x^2+x^3+x^4$}
+%\caption{$g(x)=1+x^2+x^3+x^4$}
 %\centering
-% \begin{tabular}{p{6cm}| c | p{8cm}} 
-% \hline
-% $a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
-% \hline\hline
-%$1+x^2+x^3$ & $1+x^7$ &$1+x+x^2+x^6+x^7$\\ 
-%\hline
-%$1+x^2+x^3+x^7+x^9+x^{10}$ &  $1+x^{14}$ &$1+x+x^2+x^6+x^8+x^9+x^{13}+x^{14}$\\
-%\hline
-%$1+x^2+x^3+x^7+x^{9}+x^{10}+x^{14}+x^{16}+x^{17}$ & $1+x^{21}$ 
-%&$1+x+x^2+x^6+x^8+x^9+x^{13}+x^{15}+x^{16}+x^{20}+x^{21}$\\
-%\hline
-%$1+x^2+x^3+x^7+x^{9}+x^{10}+x^{14}+x^{16}+x^{17}+x^{21}+x^{23}+x^{24}$ & $1+x^{28}$ &$1+x+x^2+x^6+x^8+x^9+x^{13}+x^{15}+x^{16}+x^{20}+x^{22}+x^{23}+x^{27}+x^{28}$
-% \end{tabular}
-% \label{novelTab6}
-%\end{table*}
-
-%\end{example}
-
-
-%\begin{example}
-%$f(x)=1+x^2+x^3+x^4$\newline
-%$f(x)$ is reducible and can be written as $$f(x)=(1+x)(1+x+x^3),~K=2$$
- %$1+x$ is prime in $GF(2^1)$ and $\beta^{1}=1$. $1+x+x^3$ is prime in $GF(2^3)$ and $\beta^{7}=1$ Consequently, the valid values of $a$ that meet the condition $$ \bigcap_{k=1}^{K} \{j_k~| a\}$$ are $a=\{7,14,21,\cdots \}$.
-%The corresponding values for $h(x)$ and $a(x)$ are shown in the table below for the first 4 valid values of $a$
-
-%\begin{table*}[h]
- %\caption{$f(x)=1+x^2+x^3+x^4$}
-%\centering
- %\begin{tabular}{c c} 
-% \hline
- %$a(x)$ & $h(x)$ \\ [0.5ex] 
-% \hline\hline
-%$1+x^2+x^3$ & $1+x^7$\\ 
+% \begin{tabular}{p{4cm}| c} 
+ %\hline
+ %$a(x)$ & $b(x)$  \\ [0.5ex] 
+ %\hline\hline
+%$1+x^2+x^3$ & $1+x^7$ \\ 
 %\hline
 %$1+x^2+x^3+x^7+x^9+x^{10}$ &  $1+x^{14}$ \\
 %\hline
-%$1+x^2+x^3+x^7+x^{9}+x^{10}+x^{14}+x^{16}+x^{17}$ & $1+x^{21}$ \\
+%$1+x^2+x^3+x^7+x^{9}+x^{10}+x^{14}+x^{16}+x^{17}$ & $1+x^{21}$ 
+%\\
 %\hline
-%$1+x^2+x^3+x^7+x^{9}+x^{10}+x^{14}+x^{16}+x^{17}+x^{21}+x^{23}+x^{24}$ & $1+x^{28}$ 
+%$1+x^2+x^3+x^7+x^{9}+x^{10}+x^{14}+x^{16}+x^{17}+x^{21}+x^{23}+x^{24}$ & $1+x^{28}$
 % \end{tabular}
-% \label{novelTab4}
+ %\label{novelTab6}
 %\end{table*}
+%}
+%\end{table}
 
-%\end{example}
 
-
-\subsubsection{Solution for $w_H(\bb) =3$}
-For this weight case, \newline$b(x)=1+x^u+x^v,~v\neq u$ without loss of generality. Given $g(x)$, our task is to find valid $(u,~v)$ pair values satisfying the condition 
-$$1+\beta^u+\beta^v=0$$
- If there are no values for the pair $(u,v)$, then $q(x) \st w_H(\bq) =3$ does not exist for the given $g(x)$.
+\subsection{Solution for $w_H(h(x)) =3$}
+For this weight case, $f(x)=1+x^a+x^b,~a\neq b$ without loss of generality. 
+%Given $f(x)$, our task is to find valid $(a,~b)$ pair values satisfying the condition 
+%$$1+\beta^u+\beta^v=0$$
+% If there are no values for the pair $(u,v)$, then $q(x) \st w_H(\bq) =3$ does not exist for the given $g(x)$.
 % It is worth noting that such $h(x)$ only exist iff $f(x)$ has exactly $w_H(\bh) =3$ terms. Moving forward, we assume that for all the cases, this condition holds true.
-\paragraph{ Case1} $r(x)$ is a single primitive polynomial \newline
-Because $r(x)$ is a prime polynomial, it has a primitive element $\beta$ as its root, which means\newline that $\beta$ is also a root of $q(x)=1+x^u+x^v$. Substituting $\beta$ into the equation, we have 
+\paragraph{ Case1} $f(x)$ is a single primitive polynomial \newline
+Because $f(x)$ is a prime polynomial, it has a primitive element $\beta$ as its root, which means\newline that $\beta$ is also a root of $q(x)=1+x^u+x^v$. Substituting $\beta$ into the equation, we have 
 \begin{equation}
 \begin{split}
-1+\beta^u+\beta^v=&0\\
-\beta^u+\beta^v=&1
+1+\beta^a+\beta^b=&0\\
+\beta^a+\beta^b=&1
 \end{split}
 \end{equation}
-where $u\neq v$
-By refering to the table of the extended field for GF$(2^m)$, we can find the valid $(e,f)$ pairs $\st \beta^e+\beta^f=1,~e\neq f$.  If we represent the set of $(e,f)$ pairs as 
-$\bz=\{ (e_1,f_1) ,( e_2,f_2),\cdots\} $, then any valid value for $u$ and $v$ should satisfy the condition
-$$(u,v) \equiv (e,f) \bmod 2^m-1,~(e,f)\in \bz$$ since $\beta^{2^{m}-1}=1$.
-
+By refering to the table of the extended field for GF$(2^m)$, we can find the valid $(e,f)$ pairs $\st \beta^e+\beta^f=1,~e\neq f$. If there are no values for the pair $(e,f)$, then there is no $h(x)$ such that $w_H(h(x)) =3$ for the given $f(x)$.
+ We represent the set of $(e,f)$ pairs as 
+$\bz=\{ (e_1,f_1) ,( e_2,f_2),\cdots\} $. Then any valid value $(a,~b)$ values should satisfy the condition
+$$(a,b) \equiv (e,f) \bmod 2^m-1,~(e,f)\in \bz$$ since $\beta^{2^{m}-1}=1$.
 \begin{example}
 $g(x)=1+x+x^2$ \newline
-The elements of GF$(2^2)$ are shown in Table \ref{novelTab5} and it is obvious that there is exactly 1 valid $(e,f)$ pair $\st \beta^e+\beta^f = 1$ and that is the pair $(1,2)$.
-This means that valid values of the $(u,v)$ pairs are any values $\st (u,v) \equiv (1,2) \bmod 3$.  The corresponding values for $a(x)$ and $b(x)$ are shown in the table below for the first four valid values of $(u,v)$
+The elements of GF$(2^2)$ are shown in Table \ref{novelTab7} and it is obvious that there is exactly 1 valid $(e,f)$ pair $\st \beta^e+\beta^f = 1$ and that is the pair $(1,2)$.
+This means that valid values of the $(a,b)$ pairs are any values $\st (a,b) \equiv (1,2) \bmod 3$.  The corresponding values for $a(x)$ and $h(x)$ are shown in the table below for the first four valid values of $(a,b)$.
+\end{example}
 
- \begin{table*}[h]
- \caption{Non-zero Elements of GF$(2^2)$ generated by $g(x)=1+x+x^2$}
+ \begin{table*}[h!]
+ \caption{Non-zero Elements of GF$(2^2)$ generated by $f(x)=1+x+x^2$}
 \centering
  \begin{tabular}{c c} 
  \hline
@@ -372,16 +202,17 @@ $\beta^0~=\beta^3=1$ & $1$\\
 $\beta$ & $\beta$\\
 \hline
 $\beta^2$ &  $1+\beta$\\
+\hline
  \end{tabular}
  \label{novelTab7}
 \end{table*}
 
-\begin{table*}[h]
- \caption{$g(x)=1+x+x^2$}
+\begin{table*}[h!]
+ \caption{$f(x)=1+x+x^2$}
 \centering
  \begin{tabular}{c c} 
  \hline
- $a(x)$ & $b(x)$\\ [0.5ex] 
+ $a(x)$ & $h(x)$\\ [0.5ex] 
  \hline\hline
 $1$ & $1+x+x^2$\\ 
 \hline
@@ -393,86 +224,21 @@ $1+x^2+x^3$ & $1+x+x^5$
  \end{tabular}
  \label{novelTab8}
 \end{table*}
-\end{example}
-
-\begin{example}
-$g(x) = 1+x+x^4$\newline  The elements of GF$(2^4)$ are shown in Table \ref{novelTab10} and we can see that there are seven valid $(e,f)$ pairs.
- 
- This means that the valid values of the $(u,v)$ pairs are any values $\st (u,v) \equiv (e,f) \bmod 15, (e,f) \in \bz,~\bz=\{(1,4),~(2,8) ,~(3,14) ,~(5,10) ,~(6,13) ,~(7,9) ,~(11,12))$.
- The corresponding values for $a(x)$ and $b(x)$ are shown in Table \ref{novelTab11} below for the first four valid values of $(u,v)$
- 
-  \begin{table*}[h]
- \caption{Non-zero Elements of GF$(2^4)$ generated by $g(x)=1+x+x^4$}
-\centering
- \begin{tabular}{c c} 
- \hline
- power & polynomial \\ [0.5ex] 
- \hline\hline
-$\beta^0~=\beta^{15}=1$ & $1$\\
-\hline
-$\beta$ & $\beta$\\
-\hline
-$\beta^2$ &  $\beta^2$\\
-\hline
-$\beta^3$ & $\beta^3$\\
-\hline
-$\beta^4$ &  $\beta+1$\\
-\hline
-$\beta^5$ & $\beta^2+\beta$\\
-\hline
-$\beta^6$ &  $\beta^3+\beta^2$\\
-\hline
-$\beta^7$ & $\beta^3+\beta+1$\\
-\hline
-$\beta^8$ &  $\beta^2+1$\\
-\hline
-$\beta^9$ & $\beta^3+\beta$\\
-\hline
-$\beta^{10}$ &  $\beta^2+\beta+1$\\
-\hline
-$\beta^{11}$ & $\beta^3+\beta^2+\beta$\\
-\hline
-$\beta^{12}$ &  $\beta^3+\beta^2+\beta+1$\\
-\hline
-$\beta^{13}$ & $\beta^3+\beta^2+1$\\
-\hline
-$\beta^{14}$ &  $\beta^3+1$\\
- \end{tabular}
- \label{novelTab10}
-\end{table*}
- 
- \begin{table*}[h]
- \caption{ $f(x)=1+x+x^4$}
-\centering
- \begin{tabular}{c c} 
- \hline
- $a(x)$ & $b(x)$\\ [0.5ex] 
- \hline\hline
-$1$ & $1+x+x^4$\\ 
-\hline
-$1+x+x^2+x^3+x^5$ & $1+x^7+x^9$ \\
-\hline
-$1+x+x^2+x^3+x^5+x^7+x^8$ & $1+x^{11}+x^{12}$\\
-\hline
-$1+x+x^4$ &$1+x^2+x^8$
- \end{tabular}
- \label{novelTab11}
-\end{table*}
-\end{example}
 
 \paragraph{Case2}$r(x)$ is prime but not a primitive polynomial\newline
-A prime but not primitive polynomial generates an (extended) field with $j$ elements, where $j<2^m-1$. Similar to the case where $r(x)$ is primitive, we confirm the existence of $(e,f)$ pairs $ \st \beta^e + \beta^f =1$. 
-If we represent the set of $(e,f)$ pairs as 
-$\bz=\{ (e_1,f_1) , e_2,f_2),\cdots,(e_1,f_q)\} $, then any valid value for $u$ and $v$ should satisfy the condition
-$$(u,v) \equiv (e,f) \bmod j,~(e,f)\in \bz$$ since $\beta^{j}=1$
+Similar to the case where $f(x)$ is primitive, we confirm the existence of $(e,f)$ pairs $ \st \beta^e + \beta^f =1$. If there are no values for the pair $(e,f)$, then there is no $h(x)$ such that $w_H(h(x)) =3$ for the given $f(x)$.
+We represent the set of $(e,f)$ pairs as 
+$\bz=\{ (e_1,f_1) , e_2,f_2),\cdots\} $. Then any valid value for $a$ and $b$ should satisfy the condition
+$$(a,b) \equiv (e,f) \bmod j,~(e,f)\in \bz$$ where $j$ is the order of $\beta$.
 
 \begin{example}
-$g(x)=1+x+x^2+x^3+x^4$ \newline
-From the table of the extended field generated by $g(x)$ (Table \ref{novelTab9}), we see that there are no valid $(e,~f)$ and as such $b(x) \st w_H(\bb)=3$ is non-existent.
+$f(x)=1+x+x^2+x^3+x^4$ \newline
+From the table of the extended field generated by $f(x)$ (Table \ref{novelTab9}), we see that there are no valid $(e,~f)$ and as such $h(x) \st w_H(h(x))=3$ is non-existent for $f(x)=1+x+x^2+x^3+x^4$.
 
 
- \begin{table*}[h]
- \caption{Non-zero Elements of GF$(2^4)$ generated by $f(x)=1+x+x^2+x^3+x^4$}
+\begin{table*}[h!]
+ \parbox{\linewidth}{
+\caption{Non-zero Elements of GF$(2^4)$ generated by $f(x)=1+x+x^2+x^3+x^4$}
 \centering
  \begin{tabular}{c c} 
  \hline
@@ -489,6 +255,7 @@ $\beta^3=\beta^8=\beta^{13}$ &  $\beta^3$\\
 $\beta^4=\beta^9=\beta^{14}$ &  $\beta^3+\beta^2+\beta+1$\\
  \end{tabular}
  \label{novelTab9}
+}
 \end{table*}
 
 \end{example}
@@ -501,63 +268,61 @@ $\beta^4=\beta^9=\beta^{14}$ &  $\beta^3+\beta^2+\beta+1$\\
  %should satisfy the condition
 % $$(u,v)=(ku',kv'),~(u,v) \equiv (e,f)\bmod 2^{m}-1,~(e, f) \in \bz $$.
 
-\paragraph{Case3}$g(x)$ is made up of repeated polynomial roots\newline
-We may write $g(x)$ as $$r(x)=\prod_{k=1}^{K}r_k(x)$$ 
+\paragraph{Case3}$f(x)$ is made up of repeated polynomial roots\newline
+We may write $g(x)$ as $$r(x)=\prod_{k=1}^{K}f_k(x)$$ 
 For the $kth$ polynomial, we refer to the (extended) field table and determine if there exists any $(e^{(k)},~f^{(k)})$ pairs $\st \beta^{e^{(k)}}+\beta^{f^{(k)}}=1$. If it exists for all $K$ polynomials, then the valid values for $u$ and $v$
  should satisfy the condition
 
  \begin{equation*}
  \begin{split}
- &\bigcap_{k=1}^{K} (u,v)=(ku',kv')\\
- &,~(u,v) \equiv (e^{(k)},f^{(k)})\bmod 2^{m}-1,~(e^{(k)}, f^{(k)}) \in \bz^{(k)}\\ 
+ &\bigcap_{k=1}^{K} (u,v)=(ku',kv'),~(u,v) \equiv (e^{(k)},f^{(k)})\bmod 2^{m}-1,~(e^{(k)}, f^{(k)}) \in \bz^{(k)}\\ 
  \end{split}
  \end{equation*}
- 
-A special case is when $g(x)$ has equal and repeated roots. The above condition simplifies to 
+A special case is when $f(x)$ has equal repeated roots. The above condition simplifies to 
  \begin{equation*}
  \begin{split}
- &(u,v)=(ku',kv')\\,
- &~(u,v) \equiv (e,f)\bmod 2^{m}-1,~(e, f) \in \bz \\
+ &(a,b)=(Ka',Kb'),~(a,b) \equiv (e,f)\bmod 2^{m}-1,~(e, f) \in \bz \\
  \end{split}
- \end{equation*}.
+ \end{equation*}
+ where $(a',~b')$ is the valid pair value for the single polynomial root.
  
  \begin{example}
- $g(x)=1+x^2$ \newline $g(x)$ can be written as $(1+x)^2$. $(1+x)$ is a primitive polynomial for GF$(2)$. The elements in GF$(2)$ are $1$ and $\beta$. In this field,  there are no valid $(e,f)$ pair values; therefore, $h(x) \st w_H(\bh)=3$ does not exist.
+ $f(x)=1+x^2$ \newline $f(x)$ can be written as $(1+x)^2$. $(1+x)$ is a primitive polynomial for GF$(2)$. The elements in GF$(2)$ are $1$ and $\beta$. In this field,  there are no valid $(e,f)$ pair values; therefore, $h(x)$ such that  $w_H(h(x))=3$ does not exist for $f(x)=1+x^2$.
  \end{example}
  
-  \begin{example}
- $g(x) = 1+x^4$.\newline
- After factorisation, we have $g(x)=(1+x)^4. $(1+x) is a primitive polynomial that generates the field GF$(2)$ and in this field, there are also no valid $(e,~f)$ and as such $b(x) \st w_H(\bb)=3$ is also non-existent.
- \end{example}
+  %\begin{example}
+ %$g(x) = 1+x^4$.\newline
+ %After factorisation, we have $g(x)=(1+x)^4. $(1+x) is a primitive polynomial that generates the field GF$(2)$ and in this field, there are also no valid $(e,~f)$ and as such $b(x) \st w_H(\bb)=3$ is also non-existent.
+ %\end{example}
  
-  \begin{example}
- $g(x)=1+x^2+x^3+x^4$.\newline
-  Upon factorising, we have $g(x)=(1+x)(1+x+x^3)$. Table \ref{novelTab12} shows the elements of GF$(2^3)$ generated by $(1+x+x^3)$ and we can confirm that there are three valid $(e,~f)$ pairs. However, since there are no valid $(e,~f)$ pairs in GF$(2)$, it also means that there cannot be any valid $(u,~v)$ pairs and $b(x) \st w_H(\bb)=3$ does not exist.
+  %\begin{example}
+ %$g(x)=1+x^2+x^3+x^4$.\newline
+ % Upon factorising, we have $g(x)=(1+x)(1+x+x^3)$. Table \ref{novelTab12} shows the elements of GF$(2^3)$ generated by $(1+x+x^3)$ and we can confirm that there are three valid $(e,~f)$ pairs. However, since there are no valid $(e,~f)$ pairs in GF$(2)$, it also means that there cannot be any valid $(u,~v)$ pairs and $b(x) \st w_H(\bb)=3$ does not exist.
  
- \begin{table*}[h]
- \caption{Non-zero Elements of GF$(2^3)$ generated by $1+x+x^3$}
-\centering
- \begin{tabular}{c c} 
- \hline
- power & polynomial \\ [0.5ex] 
- \hline\hline
-$\beta^0~=\beta^{7}=1$ & $1$\\
-\hline
-$\beta$ & $\beta$\\
-\hline
-$\beta^2$ &  $\beta^2$\\
-\hline
-$\beta^3$ & $\beta+1$\\
-\hline
-$\beta^4$ &  $\beta^2+\beta$\\
-\hline
-$\beta^5$ & $\beta^2+\beta+1$\\
-\hline
-$\beta^6$ &  $\beta^2+1$\\
- \end{tabular}
- \label{novelTab12}
-\end{table*}
- \end{example}
+ %\begin{table*}[h]
+ %\caption{Non-zero Elements of GF$(2^3)$ generated by $1+x+x^3$}
+%\centering
+ %\begin{tabular}{c c} 
+ %\hline
+ %power & polynomial \\ [0.5ex] 
+ %\hline\hline
+%$\beta^0~=\beta^{7}=1$ & $1$\\
+%\hline
+%$\beta$ & $\beta$\\
+%\hline
+%$\beta^2$ &  $\beta^2$\\
+%\hline
+%$\beta^3$ & $\beta+1$\\
+%\hline
+%$\beta^4$ &  $\beta^2+\beta$\\
+%\hline
+%$\beta^5$ & $\beta^2+\beta+1$\\
+%\hline
+%$\beta^6$ &  $\beta^2+1$\\
+ %\end{tabular}
+ %\label{novelTab12}
+%\end{table*}
+ %\end{example}
 
 %\begin{example}
 %$5/7$ RSC Code, $f(x)=1+x^2,~g(x)=1+x+x^2$\newline
@@ -614,7 +379,7 @@ $\beta^6$ &  $\beta^2+1$\\
  %\caption{Non-zero Elements of GF$(2^2)$ generated by $f(x)=1+x+x^2+x^3+x^4$}
 %\centering
  %\begin{tabular}{c c} 
- %\hline
+ %\hline 
  %power & polynomial \\ [0.5ex] 
  %\hline\hline
 %$\beta^0~=\beta^5=\beta^{10}=\beta^{15}=1$ & $1$\\

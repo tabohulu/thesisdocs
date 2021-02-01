@@ -1,15 +1,11 @@
-\section{Novel Method For Finding The Distance Spectrum}
-\label{sec5}
-In this section, we present our novel method for obtaining what we have named the \textit{codeword pattern distance spectrum}. Our novel method can be seen to be a combination of two different but related methods. The first method is quite simple and makes use of the fact that in the polynomial domain, RTZ inputs and their corresponding parity-check sequences share a common factor. 
-The second method shows how to obtain this common factor when the weight of the RTZ input or its parity-check sequence is fixed for a given RSC code. 
-After explaining the inner working of our novel method, we used it to obtain the partial structured distance spectrum for the $5/7,~ 37/21$ and $23/35$  RSC codes.
+\section{Novel Method to Determine the Low-Weight Parity-Check Pattern}
+\label{sec3}
+In this section, we present our novel method for obtaining what we have named the \textit{codeword pattern distance spectrum}. Compared to the transfer function method, its complexity is independent of the number of states of the RSC. It is also able to reveal the pattern of low-weight codewords. Our novel method can be seen as the combination of two different but related methods. The first method is quite simple and makes use of the fact that in the polynomial domain, RTZ inputs and their corresponding parity-check sequences share a common factor. 
+The second method shows how to obtain this common factor when the weight of the parity-check sequence is fixed for a given RSC code. 
+%After explaining the inner working of our novel method, we used it to obtain the partial codeword pattern distance spectrum for the $5/7,~ 37/21$ and $23/35$  RSC codes.
 
-Throughout this section, the symbols $\bb,~\bh$ and $\bc$ represent the input message, parity-check sequence and the codeword, respectively in vector form, while $b(x),~h(x)$ and $c(x)$ are their equivalent polynomial representations. 
-%We use the  polynomial $r(x)$ when there is no need to distinguish between $b(x)$ and $h(x)$. Also when we need to refer to $g(x)$ and $h(x)$ in general terms, we use the polynomial $q(x)$. $\br~ \text{and} ~\bq$ refer to their corresponding vector representations.
 
-Before we go into the details of our novel method, we will briefly discuss how to obtain the distance spectrum of the RSC code using its transfer function. 
 
-\input{./ConfSources/subTransferFunction}
 \input{./ConfSources/subLowweight}
 \input{./ConfSources/subValidValues}
 \input{./ConfSources/subUnionBound}
