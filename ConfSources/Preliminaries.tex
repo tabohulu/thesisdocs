@@ -3,33 +3,36 @@
 \begin{definition}{Polynomials over GF($p$) \newline}
 A polynomial $v(x)$ over GF($p$) is defined as 
 \begin{equation*}
-v(x) = \sum_{i=0}^{m} v_ix^i
+v(x) = \sum_{m=0}^{M} v_mx^m
 \end{equation*}
-where $v_i \in $ GF($p$), $v_m \neq 0$. $p$ is a prime number and $m$ is the degree of  $v(x)$. Because we are working in the binary domain, we set $p=2$.
+where $v_m \in $ GF($p$), $v_M \neq 0$. $p$ is a prime number and $M$ is the degree of  $v(x)$. Because we are working in the binary domain, we set $p=2$.
 \end{definition}
 
+\begin{definition}{Hamming weight of $v(x),~w_H(v(x))$\newline}
+Let $v(x)$ be a polynomial in GF($2$), then the Hamming weight of $v(x)$, represented by $w_H(v(x))$ is equal to the number of terms with non-zero coefficients.
+\end{definition}
 %\begin{definition}{Order of a polynomial \newline}
 %The order of the polynomial $v(x)$ is equal to the highest degree non-zero coefficient  term.
 %\end{definition}
 
 \begin{definition}{Prime Polynomial \newline}
-If $v_m=1$, then $v(x)$ is a \textit{monic} polynomial. If $v(x)$ cannot be factorised into lower degree poynomials over GF($2$), it is an \textit{irreducible} polynomial. If $v(x)$ is both monic an irreducible, it is a \textit{prime} polynomial.
+If $v_M=1$, then $v(x)$ is a \textit{monic} polynomial. If $v(x)$ cannot be factorised into lower degree poynomials over GF($2$), it is an \textit{irreducible} polynomial. If $v(x)$ is both monic an irreducible, it is a \textit{prime} polynomial.
 \end{definition}
 
 \begin{definition}{Order of an Element in GF($2^m$) \newline}
-Let $\beta^i$ represent a non-zero element in GF($2^m$, $1 \leq i \leq 2^m-1$). The smallest value of $j$ such that $(\beta^i)^j=1$ is known as the \textit{order} of $\beta^i$
+Let $\beta^m$ represent a non-zero element in GF($2^M$, $1 \leq m \leq 2^M-1$). The least positive integer value $\epsilon$ such that $(\beta^m)^{\epsilon}=1$ is known as the \textit{order} of $\beta^m$
 \end{definition}
 
 \begin{definition}{Primitive Element \newline}
-Let $\beta^i$ represent a non-zero element in GF($2^m$). If its order $j$ is such that $j=2^m-1$, then it is a primitive element.
+Let $\beta^m$ represent a non-zero element in GF($2^M$). If its order $\epsilon$ is such that $\epsilon=2^M-1$, then it is a primitive element.
 \end{definition}
 
 \begin{definition}{Primitive Polynomial \newline}
-Let $v(x)$ be a prime polynomial with degree $m$. If GF($2^m$) is constructed based on $v(x)$ and $\beta^1 = \beta$ is a primitive element, then $v(x)$ is a primitive polynomial. Alternately, if $v(x)$ does not divide $1+x^j$ for any $j<2^m-1$, then it is a primitive polynomial. 
+Let $v(x)$ be a prime polynomial with degree $M$. If GF($2^M$) is constructed based on $v(x)$ and $\beta^1 = \beta$ is a primitive element, then $v(x)$ is a primitive polynomial. Alternately, if $v(x)$ does not divide $1+x^{\epsilon}$ for any $\epsilon<2^M-1$, then it is a primitive polynomial. 
 \end{definition}
 
-\begin{definition}{ $(e,~f) \bmod 2^m-1$ \newline}
-Let $(e~f)$ represent a pair of non-zero positive integers. Then $(e,~f) \bmod 2^m-1$ is shorthand for the operation $(e \bmod 2^m-1,~f \bmod 2^m-1)$.
+\begin{definition}{ $(e,~f) \bmod 2^M-1$ \newline}
+Let $(e~f)$ represent a pair of non-zero positive integers. Then $(e,~f) \bmod 2^M-1$ is shorthand for the operation $(e \bmod 2^M-1,~f \bmod 2^M-1)$.
 \end{definition}
 
 

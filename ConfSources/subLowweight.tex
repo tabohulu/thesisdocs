@@ -1,8 +1,13 @@
-\subsection{Low-weight Components}
+\subsection{The Characteristics of Low-weight Codewords}
+Since each RSC codeword is made up of two codeword components $b(x)$ and $h(x)$, it is obvious that the weight of the codeword $c(x)$ is given by 
+\begin{equation}
+w_H(c(x))=w_H(b(x)) + w_H(h(x))
+\label{novelEq-1}
+\end{equation} 
 %(quarantine)%The distance spectrum derived via the transfer function method is an insufficient tool when it comes to to interleaver design. In this section, we present a novel method that generates what we refered to as the structured distance spectrum, which is the distance spectrum with the structure of the RTZ inputs as well as the corresponding parity-check sequence revealed, therefore making it a very useful tool for interleaver design.
 
 %(quarantine)%For an RSC code, the Hamming weight of the codeword $w_H(\bc)$ is the sum of the weights of the parity bit sequence and message input. 
-The parity-check sequence can be expressed as 
+We first consider the parity check component, which can be expressed as 
 \begin{equation}
 h(x) =f(x)\cdot g^{-1}(x)\cdot b(x)
 \label{novelEq0}
@@ -17,7 +22,7 @@ This results in a relatively low-weight parity bit sequence, which might produce
 b(x) =a(x)g(x)
 \label{novelEq2}
 \end{equation}
-where $a(x)$ is a monic polynomial with the coefficient of the lowest term not equal to $0$.
+where $a(x)$ is a monic polynomial with $a_0=1$.
 By fixing $b(x)$ from (\ref{novelEq2}) into (\ref{novelEq0}), we have 
 \begin{equation}
 \begin{split}
@@ -30,16 +35,18 @@ h(x)&=f(x)\cdot g^{-1}(x)\cdot a(x)g(x)\\
 
 %From (\ref{novelEq2})  and (\ref{novelEq3}), we observe that $a(x)$ is a common factor in both equations and if we are able to solve for $a(x)$ via either of the equations, the remaining equation can be solved. To solve for $a(x)$ requires that in either equation, it should be the only unknown variable. At first glance, it might seem that $g(x)$ and $f(x)$ are the only known variables because they are dependent on the RSC code in question. However, if we remember that the weight of $h(x)$ and $b(x)$ is directly proportional to the number of terms it has, then we are on our way to obtain our second known variable. What is left is to determine the valid power values for the polynomial  terms, depending on the weight of $h(x)$ or $b(x)$.
 
-In (\ref{novelEq3}), once $f(x)$ is given, our goal is to find $a(x)$ that results in a low-weight $h(x)$. To this end, we consider the roots of $f(x)$ 
+Thus, for a given $f(x)$ and $g(x)$, our goal is to find all $a(x)$s which generate low-weight codewords components in  (\ref{novelEq2}) and  (\ref{novelEq3}) simultaneously. 
+However, since there is essentially no difference between the general structure of $h(x)$ and $b(x)$, we restrict our our attention to the low-weight parity check patterns in  (\ref{novelEq3}) and in the following, we present a method for determining valid values of $h(x)$ when $2 \leq w_H(h(x))\leq 3$. 
+%In (\ref{novelEq3}), once $f(x)$ is given, our goal is to find $a(x)$ that results in a low-weight $h(x)$. To this end, we consider the roots of $f(x)$ 
 %If $f(x)$ is a prime polynomial or can be factorized into prime polynomials, the the roots of $f(x)$ are its primitive elem
  %denoted by $\beta_i,~ 0 \leq i < 2^{m}-1)$. Then it is obvious that $h(\beta^i)=0$~ for all $\beta^i$ that are primitive elements 
-and we can reformulate our goal as to find weight-$w$ polynomials ($h(x)$) which take all the roots of $f(x)$ as its roots. The roots of $f(x)$ depend on its characteristic make-up and once that is known, we can easily determine the structure of $h(x)$ for a given value of $w_H(h(x))$. 
-The characteristic make-up of $f(x)$ can be grouped into the three cases below. 
-\begin{enumerate}
-\item Single primitive polynomial.
-\item Prime but not a primitive polynomial.
-\item Made up of repeated polynomial roots.
-\end{enumerate}
-We present a method for determining valid values of $h(x)$ for a given RSC code when $2 \leq w_H(h(x))\leq 3$. 
+%and we can reformulate our goal as to find weight-$w$ polynomials ($h(x)$) which take all the roots of $f(x)$ as its roots. The roots of $f(x)$ depend on its characteristic make-up and once that is known, we can easily determine the structure of $h(x)$ for a given value of $w_H(h(x))$. 
+%The characteristic make-up of $f(x)$ can be grouped into the three cases below. 
+%\begin{enumerate}
+%\item Single primitive polynomial.
+%\item Prime but not a primitive polynomial.
+%\item Made up of repeated polynomial roots.
+%\end{enumerate}
 
-It is worth noting that the method to be discussed can also be used to obtain valid values of $b(x)$, because there is no difference between the general structure of $h(x)$ and $b(x)$ once the Hamming weight is fixed. 
+
+%It is worth noting that the method to be discussed can also be used to obtain valid values of $b(x)$, because there is no difference between the general structure of $h(x)$ and $b(x)$ once the Hamming weight is fixed. 
