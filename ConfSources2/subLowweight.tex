@@ -1,6 +1,5 @@
 \subsection{The Characteristics of Low-weight Codewords}
-\label{subsec:low-weight}
-Since each RSC codeword is composed of two codeword components $b(x)$ and $h(x)$, it is obvious that the weight of the codeword $c(x)$ is given by 
+Since each RSC codeword is made up of two codeword components $b(x)$ and $h(x)$, it is obvious that the weight of the codeword $c(x)$ is given by 
 \begin{equation}
 w_H(c(x))=w_H(b(x)) + w_H(h(x))
 \label{novelEq-1}
@@ -13,12 +12,12 @@ We first consider the parity check component, which can be expressed as
 h(x) =f(x)\cdot g^{-1}(x)\cdot b(x)
 \label{novelEq0}
 \end{equation}
-If we consider large frame sizes, the presence of $g^{-1}(x)$ involves a particular sequence of bits that is repeated a large number of times. This results in a large parity weight, and by extension, a relatively high-weight codeword. The only time this is not the case is when
+If we consider large frame sizes, the presence of $g^{-1}(x)$ means that within $h(x)$ is a particular sequence of bits that is repeated a large number of times. This results in a large parity weight, and by extension, a relatively high-weight codeword. The only time this is not the case is when
 \begin{equation}
 b(x) \bmod g(x) \equiv 0
 \label{novelEq1}
 \end{equation}
-Any $b(x)$ that meets the condition in (\ref{novelEq1}) can be written as 
+This results in a relatively low-weight parity bit sequence, which might produce a low-weight codeword. Any $b(x)$ that meets the condition in (\ref{novelEq1}) can be written as 
 \begin{equation}
 b(x) =a(x)g(x)
 \label{novelEq2}
@@ -36,8 +35,8 @@ h(x)&=f(x)\cdot g^{-1}(x)\cdot a(x)g(x)\\
 
 %From (\ref{novelEq2})  and (\ref{novelEq3}), we observe that $a(x)$ is a common factor in both equations and if we are able to solve for $a(x)$ via either of the equations, the remaining equation can be solved. To solve for $a(x)$ requires that in either equation, it should be the only unknown variable. At first glance, it might seem that $g(x)$ and $f(x)$ are the only known variables because they are dependent on the RSC code in question. However, if we remember that the weight of $h(x)$ and $b(x)$ is directly proportional to the number of terms it has, then we are on our way to obtain our second known variable. What is left is to determine the valid power values for the polynomial  terms, depending on the weight of $h(x)$ or $b(x)$.
 
-Thus, for a given $f(x)$ and $g(x)$, we can formulate or goal as, to find all $a(x)$s which generate low-weight codeword components in  (\ref{novelEq2}) and  (\ref{novelEq3}) simultaneously. 
-However, since there is essentially no difference between the general structure of $h(x)$ and $b(x)$, we restrict our our attention to the low-weight parity check patterns in  (\ref{novelEq3}). 
+Thus, for a given $f(x)$ and $g(x)$, our goal is to find all $a(x)$s which generate low-weight codewords components in  (\ref{novelEq2}) and  (\ref{novelEq3}) simultaneously. 
+However, since there is essentially no difference between the general structure of $h(x)$ and $b(x)$, we restrict our our attention to the low-weight parity check patterns in  (\ref{novelEq3}) and in the following, we present a method for determining valid values of $h(x)$ when $2 \leq w_H(h(x))\leq 3$. 
 %In (\ref{novelEq3}), once $f(x)$ is given, our goal is to find $a(x)$ that results in a low-weight $h(x)$. To this end, we consider the roots of $f(x)$ 
 %If $f(x)$ is a prime polynomial or can be factorized into prime polynomials, the the roots of $f(x)$ are its primitive elem
  %denoted by $\beta_i,~ 0 \leq i < 2^{m}-1)$. Then it is obvious that $h(\beta^i)=0$~ for all $\beta^i$ that are primitive elements 

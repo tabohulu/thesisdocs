@@ -11,9 +11,9 @@ From the simulation results, we observed $d_{\text{max}}=d_{\text{min}}+3$ is a 
 \begin{table}[htbp]
  \caption{Partial Codeword Component Pattern Distance Spectrum for the $5/7$ RSC code, $d_{\text{max}}=8$}
 \centering
- \begin{tabularx}{0.6\textwidth}{lXr} 
+ \begin{tabular}{c c c} 
  \hline
- $a(x)$ & $b(x)$ & $h(x)$ \\ %[0.5ex] 
+ $a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
  \hline\hline
 $1$ & $1+x+x^{2}$ & $1+x^2$\\
 \hline
@@ -45,15 +45,15 @@ $1+x+x^3+x^4$ & $1+x^6$ & $1+x+x^2+x^4+x^5+x^6$\\
 %$1+x^2+x^3+x^4$ & $1+x+x^4+x^6$ & $1+x^3+x^5+x^6$\\
 %\hline
 %$1+x^2+x^4+x^5$ & $1+x+x^3+x^7$ & $1+x^5+x^6+x^7$\\
- \end{tabularx}
+ \end{tabular}
  
  \label{novelTab13}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[h!]
  \caption{Partial Codeword Component Pattern Distance Spectrum for the $37/21$ RSC code,$d_{\text{max}}=9$}
 \centering
- \begin{tabularx}{0.45\textwidth}{lXr} 
+ \begin{tabular}{c c c} 
  \hline
  $a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
  \hline\hline
@@ -76,15 +76,15 @@ $1+x+x^5+x^6$ & $1+x+x^4+x^6+x^9+x^{10}$ & $1+x^{10}$\\
 %$1+x^3+x^4$& $1+x^3+x^7+x^8$ & $1+x+x^2+x^4+x^8$\\
 %\hline
 %$1+x^4+x^5$ & $1+x^5+x^8+x^9$ & $1+x+x^2+x^3+x^9$\\
- \end{tabularx}
+ \end{tabular}
  
  \label{novelTab14}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[h!]
  \caption{Partial Codeword Component Pattern Distance Spectrum for the $23/35$ RSC code,$d_{\text{max}}=10$}
 \centering
-\begin{tabularx}{0.45\textwidth}{XlX} 
+ \begin{tabular}{c c c} 
  \hline
  $a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
  \hline\hline
@@ -97,21 +97,21 @@ $1+x+x^2+x^3+x^5$ & $1+x^3+x^4+x^8+x^9$ & $1+x^7+x^9$\\
 $1+x+x^2+x^3+x^5+x^7+x^8$ & $1+x+x^3+x^4+x^7+x^{12}$ & $1+x^{11}+x^{12}$\\
 \hline
 $1+x^2+x^3+x^7+x^9+x^{10}$ & $1+x^{14}$ & $1+x+x^2+x^6+x^8+x^9+x^{13}+x^{14}$\\
- \end{tabularx}
+ \end{tabular}
  
  \label{novelTab15}
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \centering
 		\includegraphics[width=0.5\textwidth]{./Images/RSC_5_7_lower_weights.eps}
 		\captionof{figure}{Old Bound vs New Bound vs Simulation for 5/7 RSC Code}
 		\label{simFig1}
 		\end{figure}
 		
-Fig. \ref{simFig1} shows the simulation results for the $5/7$ RSC code as well as the lower bounds obtained using the transfer function as well as our novel method. The feedforward connection has the polynomial representation $1+x^2$ and can be factorized into 2 irreducible polynomials, which means there are no low-weight codewords with parity-check components of weight $3$. The feedback connection has the polynomial representation $1+x+x^2$, which is an irreducuble polynomial and the order $\epsilon = 3$. This means that the low-weight codewords have systematic components with weight $2$ and weight $3$. In Fig. \ref{simFig1}, we observe that there is some difference between the new (novel method) bound and the old (transfer function) bound, but they tend to converge as $E_b/N_0$ increases. This suggests that the approximation used in our novel method is sufficient for this RSC code.
+%Fig. \ref{simFig1} shows the simulation results for the $5/7$ RSC code as well as the lower bounds obtained using the transfer function as well as our novel method. The feedforward connection has the polynomial representation $1+x^2$ and can be factorized into 2 irreducible polynomials, which means there are no low-weight codewords with parity-check components of weight $3$. The feedback connection has the polynomial representation $1+x+x^2$, which is an irreducuble polynomial and the order $\epsilon = 3$. This means that the low-weight codewords have systematic components with weight $2$ and weight $3$. In Fig. \ref{simFig1}, we observe that there is some difference between the new (novel method) bound and the old (transfer function) bound, but they tend to converge as $E_b/N_0$ increases. This suggests that the approximation used in our novel method is sufficient for this RSC code.
 
-%We observe that for both Fig. \ref{simFig1} and Fig. \ref{simFig2}, there is some difference between the new (novel method) bound and the old (transfer function) bound, but they tend to converge as $E_b/N_0$ increases. This suggests that the approximation used with our novel method is sufficient for these RSC codes.
+We observe that for both Fig. \ref{simFig1} and Fig. \ref{simFig2}, there is some difference between the new (novel method) bound and the old (transfer function) bound, but they tend to converge as $E_b/N_0$ increases. This suggests that the approximation used with our novel method is sufficient for these RSC codes.
 
 %codewords generated considering $b(x),~w_H(b(x))>3$ as well as codewords which have a parity-check sequence $h(x),~w_H(h(x))>3$ do not have much effect on the BER of the code as $E_b/N_0$ increases.
 
@@ -119,22 +119,22 @@ Fig. \ref{simFig1} shows the simulation results for the $5/7$ RSC code as well a
 
 %Fig. \ref{simFig4} and Fig. \ref{simFig5} are similar to  Fig. \ref{simFig1} and Fig. \ref{simFig2}, with the only difference being that codewords generated by the RTZ inputs of weight $w_H(\bb)=4$ as well as codewords with parity-check sequences $w_H(\bh)=4$ have been added in our calculation of the new bound. The new and old bounds match up and the accuracy of our bound is greatly improved.The simulation results also agree with the bounds as they also converge with the bounds.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \centering
 		\includegraphics[width=0.5\textwidth]{./Images/RSC_37_21_lower_weights.eps}
 		\caption{Old Bound vs New Bound vs Simulation for 37/21 RSC Code}
 		\label{simFig2}
 		\end{figure}
-Fig. \ref{simFig2} shows the simulation results for the $37/21$ RSC code as well as the lower bounds obtained using the transfer function as well as our novel method. The feedforward connection has the polynomial representation $1+x+x^2+x^3+x^4$, which is an irreducible polynomial. However, we observe from Table \ref{novelTab14} that the codeword has no parity check components of weight $3$. The feedback connection has the polynomial representation $1+x^4$, which can be factorized into $4$ and there are no low-codewords with systematic components of weight $3$. In Fig. \ref{simFig2}, we observe that there is some difference between the new (novel method) bound and the old (transfer function) bound, but they tend to converge as $E_b/N_0$ increases. Again, this suggests that the approximation used in our novel method is sufficient for this RSC code.
-%In \ref{simFig3}, we observe that the old bounds and simulation results converge as the Eb/No value increases. However, there is a very distinct gap between the new bound and the old bound. Moreover, the bounds do not converge as the Eb/No increases. This suggests that the approximation used in our novel method is insufficient for this RSC code and considering  $w_H(h(x)),~w_H(b(x))=4$ might yield a more accurate bound.
+%Fig. \ref{simFig2} shows the simulation results for the $37/21$ RSC code as well as the lower bounds obtained using the transfer function as well as our novel method. The feedforward connection has the polynomial representation $1+x+x^2+x^3+x^4$, which is an irreducible polynomial. However, we observe from Table \ref{novelTab14} that the codeword has no parity check components of weight $3$. The feedback connection has the polynomial representation $1+x^4$, which can be factorized into $4$ and there are no low-codewords with systematic components of weight $3$. In Fig. \ref{simFig2}, we observe that there is some difference between the new (novel method) bound and the old (transfer function) bound, but they tend to converge as $E_b/N_0$ increases. Again, this suggests that the approximation used in our novel method is sufficient for this RSC code.
+In \ref{simFig3}, we observe that the old bounds and simulation results converge as the Eb/No value increases. However, there is a very distinct gap between the new bound and the old bound. Moreover, the bounds do not converge as the Eb/No increases. This suggests that the approximation used in our novel method is insufficient for this RSC code and considering  $w_H(h(x)),~w_H(b(x))=4$ might yield a more accurate bound.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \centering
 		\includegraphics[width=0.5\textwidth]{./Images/RSC_23_35_lower_weights.eps}
 		\caption{Old Bound vs New Bound vs Simulation for 23/35 RSC Code}
 		\label{simFig3}
 		\end{figure}
-Fig. \ref{simFig3} shows the simulation results for the $23/35$ RSC code as well as the lower bounds obtained using the transfer function as well as our novel method. The feedforward connection has the polynomial representation $1+x+x^4$, which is an irreducible polynomial. The low-weight codeword has parity check components of weight $2$ and weight $3$. However, since parity-check components yield high weight codewords, there are not included in our approximation of the lower bound, as can be observed from Table \ref{novelTab14}. The feedback connection has the polynomial representation $1+x^2+x^3+x^4$, which can be factorized into $2$ irreducible polynomials and there are no low-codewords with systematic components of weight $3$. In Fig. \ref{simFig3}, we observe that the old (transfer function) bounds and simulation results converge as the $E_b/N_0$ value increases. However, there is some difference between the new (novel method) bound and the old (transfer function) bound, even as $E_b/N_0$ increases. This suggests that the approximation used in our novel method is insufficient for this RSC code and considering  $w_H(h(x)),~w_H(b(x))=4$ might yield a more accurate bound.
+%Fig. \ref{simFig3} shows the simulation results for the $23/35$ RSC code as well as the lower bounds obtained using the transfer function as well as our novel method. The feedforward connection has the polynomial representation $1+x+x^4$, which is an irreducible polynomial. The low-weight codeword has parity check components of weight $2$ and weight $3$. However, since parity-check components yield high weight codewords, there are not included in our approximation of the lower bound, as can be observed from Table \ref{novelTab14}. The feedback connection has the polynomial representation $1+x^2+x^3+x^4$, which can be factorized into $2$ irreducible polynomials and there are no low-codewords with systematic components of weight $3$. In Fig. \ref{simFig3}, we observe that the old (transfer function) bounds and simulation results converge as the $E_b/N_0$ value increases. However, there is some difference between the new (novel method) bound and the old (transfer function) bound, even as $E_b/N_0$ increases. This suggests that the approximation used in our novel method is insufficient for this RSC code and considering  $w_H(h(x)),~w_H(b(x))=4$ might yield a more accurate bound.
 
 
 %\begin{figure}[h!]

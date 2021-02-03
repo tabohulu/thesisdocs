@@ -1,37 +1,37 @@
 \section{Preliminaries}
 \label{secPrelim}
-\begin{definition}
+\begin{definition}{Polynomials over GF($p$) \newline}
 A polynomial $v(x)$ over GF($p$) is defined as 
 \begin{equation*}
 v(x) = \sum_{m=0}^{M} v_mx^m
 \end{equation*}
-where $v_m \in $ GF($p$), $v_M \neq 0$. $p$ is a prime number and $M$ is the degree of  $v(x)$. In this paper, we consider binary RSC codes and hence, $p=2$.
+where $v_m \in $ GF($p$), $v_M \neq 0$. $p$ is a prime number and $M$ is the degree of  $v(x)$. Because we are working in the binary domain, we set $p=2$.
 \end{definition}
 
-\begin{definition}
+\begin{definition}{Hamming weight of $v(x),~w_H(v(x))$\newline}
 Let $v(x)$ be a polynomial in GF($2$), then the Hamming weight of $v(x)$, represented by $w_H(v(x))$ is equal to the number of terms with non-zero coefficients.
 \end{definition}
 %\begin{definition}{Order of a polynomial \newline}
 %The order of the polynomial $v(x)$ is equal to the highest degree non-zero coefficient  term.
 %\end{definition}
 
-\begin{definition}
-If $v_M=1$, then $v(x)$ is a \textit{monic} polynomial. If $v(x)$ cannot be factorised into lower degree poynomials over GF($2$), it is an \textit{irreducible} polynomial. If $v(x)$ is both monic an irreducible, $v(x)$ is called a \textit{prime} polynomial.
+\begin{definition}{Prime Polynomial \newline}
+If $v_M=1$, then $v(x)$ is a \textit{monic} polynomial. If $v(x)$ cannot be factorised into lower degree poynomials over GF($2$), it is an \textit{irreducible} polynomial. If $v(x)$ is both monic an irreducible, it is a \textit{prime} polynomial.
 \end{definition}
 
-\begin{definition}
-For non-zero elements  $\beta_m$ over GF($2^M$), $1 \leq m \leq 2^M-1$, the least positive integer value $\epsilon$ such that $(\beta_m)^{\epsilon}=1$ is known as the \textit{order} of $\beta_m$
+\begin{definition}{Order of an Element in GF($2^m$) \newline}
+Let $\beta^m$ represent a non-zero element in GF($2^M$, $1 \leq m \leq 2^M-1$). The least positive integer value $\epsilon$ such that $(\beta^m)^{\epsilon}=1$ is known as the \textit{order} of $\beta^m$
 \end{definition}
 
-\begin{definition}
-Over GF($2^M$), $1 \leq m \leq 2^M-1$, non-zero elements  $\beta_m$ with order $\epsilon=2^M-1$ is called a primitive element.
+\begin{definition}{Primitive Element \newline}
+Let $\beta^m$ represent a non-zero element in GF($2^M$). If its order $\epsilon$ is such that $\epsilon=2^M-1$, then it is a primitive element.
 \end{definition}
 
-\begin{definition}
+\begin{definition}{Primitive Polynomial \newline}
 Let $v(x)$ be a prime polynomial with degree $M$. If GF($2^M$) is constructed based on $v(x)$ and $\beta^1 = \beta$ is a primitive element, then $v(x)$ is a primitive polynomial. Alternately, if $v(x)$ does not divide $1+x^{\epsilon}$ for any $\epsilon<2^M-1$, then it is a primitive polynomial. 
 \end{definition}
 
-\begin{definition}
+\begin{definition}{ $(e,~f) \bmod 2^M-1$ \newline}
 Let $(e,~f)$ represent a pair of non-zero positive integers. Then $(e,~f) \bmod 2^M-1$ is shorthand for the operation $(e \bmod 2^M-1,~f \bmod 2^M-1)$.
 \end{definition}
 

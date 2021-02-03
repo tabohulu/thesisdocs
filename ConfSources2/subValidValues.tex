@@ -106,8 +106,8 @@ $1+x+x^5+x^6+x^{10}+x^{11}+x^{15}+x^{16}$ &$1+x^{20}$
 \paragraph{Case2}$f(x)$ can be factorised into multiple irreducible polynomials. \newline
 For this case, we can write $f(x)$ as $$f(x)=\prod_{k=1}^{K}f_k(x)$$ where $f_k(x)$ is an irreducible polynomial with order $\epsilon_k$. 
 For each $f_k(x)$, the valid values of  $a_k$ are such that 
-$$ \cA_k=\{a_k~ |~ a_k \bmod \epsilon_k \equiv 0\}$$ and the valid values of $a$ are such that
-$$a \in  \bigcap_{k=1}^{K} \cA_k$$
+$$a_k \bmod \epsilon_k \equiv 0$$ and the valid values of $a$ are such that
+$$a \in  \bigcap_{k=1}^{K} a_k$$
 This means that $a$ satisfies the condition
 $$ a \bmod  \prod_{k=1}^{K} \epsilon_k \equiv 0$$
 For the special case where $f(x)$ can be factorised into equal irreducible polynomials, the above condition simplifies to 
@@ -215,9 +215,9 @@ We can then reformulate our task as to find all $\beta^m$ such that
 \end{equation}
 By refering to the table of the extended field for GF$(2^m)$, we can find the valid $(\eta,~\zeta)$ pairs $\st \beta^{\eta}+\beta^{\zeta}=1$. If there are no valid $(\eta,~\zeta)$ pairs, then there is no parity check component of weight $3$ for the given $f(x)$.
  We represent the set of $(\eta,~\zeta)$ pairs as 
-$\cZ=\{ (\eta_1,~\zeta_1) ,( \eta_2,~\zeta_2),\cdots\}$. Then, any valid value $(a,~b)$ values should satisfy the condition
+$\bz=\{ (\eta_1,~\zeta_1) ,( \eta_2,~\zeta_2),\cdots\}$. Then, any valid value $(a,~b)$ values should satisfy the condition
 \begin{equation}
-(a,b) \equiv (\eta,~\zeta) \bmod \epsilon,~(\eta,~\zeta)\in \cZ
+(a,b) \equiv (\eta,~\zeta) \bmod \epsilon,~(\eta,~\zeta)\in \bz
 \end{equation}
 % since $\beta^{2^{m}-1}=1$.
 \begin{example}
@@ -306,19 +306,19 @@ $1+x^2+x^3$ & $1+x+x^5$
 
 \paragraph{Case2}$f(x)$ can be factorised into multiple irreducible polynomials. \newline
 We may write $f(x)$ as $$f(x)=\prod_{k=1}^{K}f_k(x)$$ where $f_k(x)$ is an irreducible polynomial with order $\epsilon_k$
-For each $f_k(x)$, we refer to the table of the extended field it generates and form the set $\cZ_k$, which contains all the valid $(\eta^{(k)},~\zeta^{(k)})$ pairs for that particular $f_k(x)$. If that set exists, then, for that $f_k(x)$ the following condition is met
+For each $f_k(x)$, we refer to the table of the extended field it generates and form the set $\bz_k$, which contains all the valid $(\eta^{(k)},~\zeta^{(k)})$ pairs for that particular $f_k(x)$. If that set exists, then, for that $f_k(x)$ the following condition is met
 \begin{equation}
-\cA\cB_k=\{(a_k,~b_k)~|~(a_k,~b_k) \equiv (\eta^{(k)},~\zeta^{(k)}) \bmod \epsilon_k,~(\eta^{(k)},~\zeta^{(k)})\in \cZ_k\}
+(a_k,~b_k) \equiv (\eta^{(k)},~\zeta^{(k)}) \bmod \epsilon_k,~(\eta^{(k)},~\zeta^{(k)})\in \bz_k
 \end{equation}
 and 
 \begin{equation}
-(a,~b) \in \bigcup_{k=1}^{K} \cA\cB_k
+(a,~b) \equiv \bigcup_{k=1}^{K} (\eta^{(k)},~\zeta^{(k)}) \bmod \epsilon_k,~(\eta^{(k)},~\zeta^{(k)})\in \bz_k
 \end{equation}
 
 For the special case where $f(x)$ can be factorised into equal irreducible polynomial, the above condition simplifies to 
  \begin{equation*}
  \begin{split}
- &(a,~b) \equiv (K\eta,~K\zeta) \bmod \epsilon,~(\eta,~\zeta) \in \cZ \\
+ &(a,~b) \equiv (K\eta,~K\zeta) \bmod \epsilon,~(\eta,~\zeta) \in \bz \\
  \end{split}
  \end{equation*}
  
