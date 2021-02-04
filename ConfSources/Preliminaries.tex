@@ -1,12 +1,14 @@
 \section{Preliminaries}
 \label{secPrelim}
-\begin{definition}
-A polynomial $v(x)$ over GF($p$) is defined as 
+
+A polynomial in $x$, with degree $M$ and coefficients in $\cV$ is denoted by $v(x)$, and defined as 
 \begin{equation*}
 v(x) = \sum_{m=0}^{M} v_mx^m
 \end{equation*}
-where $v_m \in $ GF($p$), $v_M \neq 0$. $p$ is a prime number and $M$ is the degree of  $v(x)$. In this paper, we consider binary RSC codes and hence, $p=2$.
-\end{definition}
+$p$ represents a prime number and a Galois field with $p$ elements $\{0,~1,~\cdots,~p-1 \}$, is denoted by GF($p$). A Galois field with $p^M$ elements $\{0,~1,\cdots~p^M-1 \}$, denoted by GF($p^M$) is called the extension field of GF($p$) and GF($p$) is called the ground field of GF($p^m$).
+
+$v(x),~v_M \neq 0$ with its coefficients taken from GF($p$) is defined over GF($p$) if the addition and multiplication of the coefficients are done modulo-p. 
+
 
 \begin{definition}
 Let $v(x)$ be a polynomial in GF($2$), then the Hamming weight of $v(x)$, represented by $w_H(v(x))$ is equal to the number of terms with non-zero coefficients.
