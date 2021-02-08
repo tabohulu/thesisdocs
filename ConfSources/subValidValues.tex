@@ -1,31 +1,26 @@
 \subsection{The Characteristic of Weight $2$ Parity Check Pattern}
-For this weight case, we can write $h(x)$ as $h(x)=1+x^a$ without any loss of generality. 
-Let $M$ be the degree of $f(x)$ and $\alpha_m, ~0 \leq m \leq M-1$, be the roots of $f(x)$ satisfying $f(\alpha_m) = 0$ for all $0 \leq m \leq M-1$. Then from (\ref{novelEq3}), we have
+For this weight case, we can write $h(x)$ as 
+\begin{equation}
+h(x)=1+x^a
+\label{eq:wt2-gen-form}
+\end{equation}
+without any loss of generality. From \eqref{eq:low-weight-parity},  it is obvious that any valid $h(x)$ should have the same roots as $f(x)$. We can then reformulate our goals as to find all $h(x)$ with roots equal to those of $f(x)$. 
+Now, we consider how to find $a$ for 2 distinct cases of $f(x)$.
+\paragraph{ Case1} $f(x)$ is a single irreducible polynomial\newline
+For this case, $f(x)$ generates GF$(2^M)$ and the roots of $f(x)$ are taken from GF$(2^M)$. Let $\beta$ be a root of $f(x)$. Substituting $\beta$ into \eqref{eq:wt2-gen-form}, we get 
 \begin{equation}
 \begin{split}
-&h(\alpha_m)=0\\
-&1+(\alpha_m)^a =0
+&h(\beta)=0\\
+&1+\beta^a =0
 \end{split}
 \label{novelEq5b}
 \end{equation}
-for all $0 \leq m \leq M-1$ and therefore, we can reformulate our goal as to find low-weight polynomials $h(x)$ which satisfy (\ref{novelEq5b}) for all roots of $f(x)$. 
-
-Now we consider the characteristics of the roots of $f(x)$ for the folowing 2 cases.
-%Thus we wish to find the possible values of $a$ satisfying $$\beta^{ia}+1=0$$ for all $\beta^i,~1 \leq i \leq 2^{m}-1$ in GF$(2^{m}),~m=\text{order}(g(x))$
-\paragraph{ Case1} $f(x)$ is a single irreducible polynomial\newline
-For this case, $f(x)$ has $M$ distinct roots and each root $\alpha_m$ can be expressed as
-\begin{equation}
-\alpha_m=\beta^{2^m},~ 0\leq m \leq M-1
-\end{equation}
-where $\beta^{2^m}$ is primitive element in GF($2^M$) with order $\epsilon,~\epsilon | 2^M-1$. 
-Now, if we consider the possible values of $a>0$ such that 
-$$(\beta^{2^m})^a=1$$
-then,
+and 
 $$a \bmod \epsilon  \equiv 0$$
-since $(\beta^{2^m})^{\epsilon}=1$
+since $(\beta)^{\epsilon}=1$
 
 \begin{example}
-$f(x)=1+x+x^2$.\newline $f(x)$ generates the field GF$(2^2)$. There are 2 distinct roots of $f(x)$, $\beta$ and $\beta^2$. The order of $\beta$ and $\beta^2$ is $\epsilon=3$, and the  valid values of $a$ are $a=\{3,6,9,\cdots \}$. The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab2} for the first four valid values of $a$.
+$f(x)=1+x+x^2$.\newline $f(x)$ generates the field GF$(2^2)$ where $\epsilon=3$, and the  valid values of $a$ are $a=\{3,6,9,\cdots \}$. The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab2} for the first four valid values of $a$.
 \begin{table}[htbp]
 %\parbox{.5\linewidth}{
  \caption{$f(x)=1+x+x^2$}
@@ -78,7 +73,7 @@ $1+x+x^3+x^4+x^6+x^{7}+x^9+x^{10}$
 
 \begin{example}
 $f(x)=1+x+x^2+x^3+x^4$\newline
-$f(x)$ can be used used to generate GF$(2^4)$. There are 4 distinct roots and $\beta,~\beta^2,~\beta^3~\text{and}~\beta^4$. The order of each root is $\epsilon=5$ and therefore, the valid values of $a$ are $a=\{5,10,15,\cdots\}$. The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab3} for the first four valid values of $a$.
+$f(x)$ can be used used to generate GF$(2^4)$ where $\epsilon=5$ and therefore, the valid values of $a$ are $a=\{5,10,15,\cdots\}$. The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab3} for the first four valid values of $a$.
 
 %}
 \begin{table}[htbp]
@@ -104,7 +99,7 @@ $1+x+x^5+x^6+x^{10}+x^{11}+x^{15}+x^{16}$ &$1+x^{20}$
 %$$kj ~| ~a$$
 
 \paragraph{Case2}$f(x)$ can be factorised into multiple irreducible polynomials. \newline
-For this case, we can write $f(x)$ as $$f(x)=\prod_{k=1}^{K}f_k(x)$$ where $f_k(x)$ is an irreducible polynomial with order $\epsilon_k$. 
+For this case, we can write $f(x)$ as $$f(x)=\prod_{k=1}^{K}f_k(x)$$ where $f_k(x)$ is an irreducible polynomial of order $M_k$ with root $\beta \in $ GF$(2^{M_k})$, $\beta^{\epsilon_k}=1$. 
 For each $f_k(x)$, the valid values of  $a_k$ are such that 
 $$ \cA_k=\{a_k~ |~ a_k \bmod \epsilon_k \equiv 0\}$$ and the valid values of $a$ are such that
 $$a \in  \bigcap_{k=1}^{K} \cA_k$$
@@ -115,7 +110,7 @@ $$a \bmod \epsilon K \equiv 0$$
 
 \begin{example}
 $f(x)=1+x^2$\newline
-$f(x)$ can be written as $$f(x)=(1+x)^2,~K=2$$ $1+x$ is prime in $GF(2)$ and has $\beta$ as its root. The order of $\beta$ is $1$. Since $f(x)$ is made up of equal repeated polynomial and $K=2$, the valid values of $a=\{2,4,6,\cdots \}$.
+$f(x)$ can be written as $$f(x)=(1+x)^2,~K=2$$ $1+x$ is prime in $GF(2)$, where $\epsilon =1$. Since $f(x)$ is made up of equal repeated polynomial and $K=2$, the valid values of $a=\{2,4,6,\cdots \}$.
 The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab1} for the first four valid values of $a$.
 \begin{table}[htbp]
 \renewcommand{\arraystretch}{1.3}
@@ -195,13 +190,13 @@ For this weight case,
 h(x)=1+x^a+x^b,~a\neq b
 \label{novelEqwt3}
 \end{equation}
-without loss of generality. We consider the characteristics of the roots of $f(x)$ for the folowing 2 cases.
+without loss of generality. Our goal remains the same as it was for weight 2 parity check patterns and we consider how to find the pair $(a,b)$ for the same 2 distinct cases of $f(x)$.
 %Given $f(x)$, our task is to find valid $(a,~b)$ pair values satisfying the condition 
 %$$1+\beta^u+\beta^v=0$$
 % If there are no values for the pair $(u,v)$, then $q(x) \st w_H(\bq) =3$ does not exist for the given $g(x)$.
 % It is worth noting that such $h(x)$ only exist iff $f(x)$ has exactly $w_H(\bh) =3$ terms. Moving forward, we assume that for all the cases, this condition holds true.
 \paragraph{ Case1} $f(x)$ is a single irreducible polynomial \newline
-If $f(x)$ is an irreducible polynomial, then it can be used to generate the extended field GF($2^M$). The non-zero elements of the extended field are represented by $\beta^m,~1 \leq m \leq 2^M-1$. Also, from the discussion in the previous section, we know that $f(x)$ has $M$ distinct roots, one of them being $\beta$. Substituting $\beta$ into (\ref{novelEqwt3}), we get 
+Let $\beta$  be a root of $f(x),~\beta \in $ GF($2^M$). Substituting $\beta$ into (\ref{novelEqwt3}), we get 
 \begin{equation}
 \begin{split}
 &h(\beta)=0\\
@@ -209,11 +204,7 @@ If $f(x)$ is an irreducible polynomial, then it can be used to generate the exte
 \end{split}
 \label{novelEqwt3-1}
 \end{equation}
-We can then reformulate our task as to find all $\beta^m$ such that 
-\begin{equation}
-\beta^{\eta}+\beta^{\zeta}=1,~\eta \neq \zeta
-\end{equation}
-By refering to the table of the extended field for GF$(2^m)$, we can find the valid $(\eta,~\zeta)$ pairs $\st \beta^{\eta}+\beta^{\zeta}=1$. If there are no valid $(\eta,~\zeta)$ pairs, then there is no parity check component of weight $3$ for the given $f(x)$.
+By refering to the table of the extended field for GF$(2^M)$, we can find the valid $(\eta,~\zeta)$ pairs $\st \beta^{\eta}+\beta^{\zeta}=1$. If there are no valid $(\eta,~\zeta)$ pairs, then there is no parity check component of weight $3$ for the given $f(x)$.
  We represent the set of $(\eta,~\zeta)$ pairs as 
 $\cZ=\{ (\eta_1,~\zeta_1) ,( \eta_2,~\zeta_2),\cdots\}$. Then, any valid value $(a,~b)$ values should satisfy the condition
 \begin{equation}
@@ -305,7 +296,7 @@ $1+x^2+x^3$ & $1+x+x^5$
 % $$(u,v)=(ku',kv'),~(u,v) \equiv (e,f)\bmod 2^{m}-1,~(e, f) \in \bz $$.
 
 \paragraph{Case2}$f(x)$ can be factorised into multiple irreducible polynomials. \newline
-We may write $f(x)$ as $$f(x)=\prod_{k=1}^{K}f_k(x)$$ where $f_k(x)$ is an irreducible polynomial with order $\epsilon_k$
+For this case, we can write $f(x)$ as $$f(x)=\prod_{k=1}^{K}f_k(x)$$ where $f_k(x)$ is an irreducible polynomial of order $M_k$ with root $\beta \in $ GF$(2^{M_k})$, $\beta^{\epsilon_k}=1$. 
 For each $f_k(x)$, we refer to the table of the extended field it generates and form the set $\cZ_k$, which contains all the valid $(\eta^{(k)},~\zeta^{(k)})$ pairs for that particular $f_k(x)$. If that set exists, then, for that $f_k(x)$ the following condition is met
 \begin{equation}
 \cA\cB_k=\{(a_k,~b_k)~|~(a_k,~b_k) \equiv (\eta^{(k)},~\zeta^{(k)}) \bmod \epsilon_k,~(\eta^{(k)},~\zeta^{(k)})\in \cZ_k\}

@@ -1,17 +1,17 @@
 \section{Union Bound of RSC Codes}
 \label{sec2}
 \subsection{A Brief Review of RSC Codes}
-$c(x)$ denotes an RSC codeword generated using the feedforward and feedback connections of shift registers, which are determined by its generator function. For a rate $1/2$ shift register, the generator function may be written as  $$\Big[1 ~\frac{f(x)}{g(x)}\Big]$$ where $1$ yields the systematic (input) part  of the output while the parity check part of the output are specified by  $f(x)$ and $g(x)$ that represent the feedforward and feedback connections of the shift registers respectively. Then, if a binary sequence $b(x)$ is fed into the shift register, $c(x)$ may be written as 
+$c(x)$ denotes an RSC codeword generated using the feedforward and feedback connections of shift registers, which are determined by its generator function. For a rate $1/2$ shift register, the generator function may be written as  $$\Big[1 ~\frac{f(x)}{g(x)}\Big]$$ where $1$ yields the systematic  component  of the codeword while the parity check component of the codeword is specified by  $f(x)$ and $g(x)$, which represent the feedforward and feedback connections of the shift registers respectively. Then, if a input sequence $b(x)$ is fed into the shift register, $c(x)$ may be written as 
 \begin{equation}
 c(x) = b(x^2)+xh(x^2)
 \label{codeword-comp}
 \end{equation}
-where $b(x)$ is called the systematic component of the codeword and
+where $b(x)$ doubles as the systematic component of the codeword and
 \begin{equation}
 h(x) =f(x)g^{-1}(x)b(x)
 \label{eq:parity-def}
 \end{equation}
- is called the parity-check component of the codeword and it is obvious that 
+denotes the parity-check component of the codeword. It is obvious that 
 \begin{equation}
 w_H(c(x))=w_H(b(x)) + w_H(h(x))
 \label{eq:cw-weight}
@@ -29,7 +29,7 @@ Any $b(x)$ that meets the condition in \eqref{eq:rtz-input} is called a \textit{
 b(x) =a(x)g(x)
 \label{eq:low-weight-msg}
 \end{equation}
-where $a(x)$ is a monic polynomial with $a_0=1$.
+where $a(x)$ is a monic polynomial, $a_0=1$.
 By fixing $b(x)$ from (\ref{eq:rtz-input}) into \eqref{eq:parity-def}, we have 
 \begin{equation}
 \begin{split}
@@ -42,8 +42,8 @@ h(x)&=f(x)\cdot g^{-1}(x)\cdot a(x)g(x)\\
 
 %From (\ref{novelEq2})  and (\ref{novelEq3}), we observe that $a(x)$ is a common factor in both equations and if we are able to solve for $a(x)$ via either of the equations, the remaining equation can be solved. To solve for $a(x)$ requires that in either equation, it should be the only unknown variable. At first glance, it might seem that $g(x)$ and $f(x)$ are the only known variables because they are dependent on the RSC code in question. However, if we remember that the weight of $h(x)$ and $b(x)$ is directly proportional to the number of terms it has, then we are on our way to obtain our second known variable. What is left is to determine the valid power values for the polynomial  terms, depending on the weight of $h(x)$ or $b(x)$.
 
-Thus, for a given $f(x)$ and $g(x)$, we can formulate or goal as, to find all $a(x)$s which generate low-weight codeword components in  \eqref{eq:low-weight-msg} and  \eqref{eq:low-weight-parity} simultaneously. 
-However, since there is essentially no difference between the general structure of $h(x)$ and $b(x)$, we restrict our attention to the low-weight parity check patterns in \eqref{eq:low-weight-parity}.
+Thus, for a given $f(x)$ and $g(x)$, we can formulate our goal as, to find all $a(x)$s which generate low-weight codeword components in  \eqref{eq:low-weight-msg} and  \eqref{eq:low-weight-parity} simultaneously. 
+
 
  %an RSC encoder which takes in $k$ bits and outputs $n$ bits at every time instance.The output bits of an RSC code are generated using the feedforward and feedback connections of shift registers determined by its generator function. The generator function may be written in polynomial notation as $\Big[1 ~\frac{f(x)}{g(x)}\Big]$, where $1$ yields the systematic (input) part  of the output while the parity check part of the output are specified by  $f(x)$ and $g(x)$ that represent the feedforward and feedback connections of the shift registers respectively. Through out this paper, $c(x),~b(x)$ and $h(x)$ represesent the RSC codeword, the systematic component of the codeword and the parity check component of the codeword, respectively in polynomial notation.
 
