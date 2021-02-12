@@ -12,7 +12,7 @@ Unfortunately, the complexity involved in deriving the transfer function increas
 Similarly $\cA_b(d)$ is the set of all $a(x)$ which yields weight-$d$ systematic component \ie, $w_H(b(x))=w_H(a(x)g(x))=d$ for $a(x) \in \cA_b(d)$
  and $\cA_c(d)$ is the set of all $a(x)$ which yields weight-$d$ codeword \ie, $w_H(c(x))=w_H(a(x)f(x))+ w_H(a(x)g(x))=d$ for $a(x) \in \cA_c(d)$.  
 
-Then, the union bound of the bit-error rate \cite{ref4} can be calculated as 
+Then, the union bound of the bit-error rate can be calculated as 
 %\begin{align}
 %P_b \leq \frac{1}{k} \sum_{d=d_{\text{free}}}^{\infty} \sum_{a(x) \in \cA_c(d)}w_H(a(x)g(x)) Q\Bigg( \sqrt{\frac{2dE_c}{N_0}}\Bigg)
 %\label{novelEq6-1}
@@ -22,7 +22,7 @@ Then, the union bound of the bit-error rate \cite{ref4} can be calculated as
 P_b \leq \frac{1}{k} \sum_{d=d_{\text{free}}}^{d_{\text{max}}} \sum_{a(x) \in \cA_c(d)}w_H(a(x)g(x)) Q\Bigg( \sqrt{\frac{2dE_c}{N_0}}\Bigg)
 \label{novelEq7}
 \end{align}
-
+which is a modified version of the equation in \cite{ref4} .
 From \eqref{eq:cw-weight}, when $w_H(b(x)), w_H(h(x)) \geq 2$, we have
 \begin{align}
 \cA_c(d) = \bigcup_{\ell = 2}^{d-2} \left\{\cA_b(\ell) \cap \cA_h(d-\ell)\right\}
