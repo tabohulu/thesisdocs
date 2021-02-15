@@ -1,4 +1,4 @@
-\subsection{ Distance Spectrum of RSC Codes and the Union Bound}
+\section{ Codeword Component Pattern List and the Union Bound }
 \label{sec4}
 %For a given RSC code, the distance spectrum provides information concerning the multiplicity of a codeword for a fixed weight and it is an effective tool to evaluate its error-correcting capability. In practice however, since higher-weight codewords have very little effect on its overall error-correcting capability, we usually use a partial distance spectrum, where the largest codeword weight value is set to $d_{\text{max}}$. 
 
@@ -8,21 +8,12 @@
 %Unfortunately, the complexity involved in deriving the transfer function increases as the number of states of the RSC code increases and other methods such as Mason's Rule \cite{ref3} have to be used. 
 
 %For a given RSC code, we have shown in \ref{subsec:low-weight} that each codeword $c(x)$ is made up of $b(x)$ and $h(x)$ which have $a(x)$ as their common factor as shown in (\ref{novelEq2}) and (\ref{novelEq3}).
+In this section, we outline our method for obtaining the list of all low weight codewords for a given RSC code.
+
  Let $\cA_h(d)$ be the set of all $a(x)$ which yields weight-$d$ parity-check component \ie, $w_H(h(x))=w_H(a(x)f(x))=d$ for $a(x) \in \cA_h(d)$. 
 Similarly $\cA_b(d)$ is the set of all $a(x)$ which yields weight-$d$ systematic component \ie, $w_H(b(x))=w_H(a(x)g(x))=d$ for $a(x) \in \cA_b(d)$
  and $\cA_c(d)$ is the set of all $a(x)$ which yields weight-$d$ codeword \ie, $w_H(c(x))=w_H(a(x)f(x))+ w_H(a(x)g(x))=d$ for $a(x) \in \cA_c(d)$.  
 
-Then, the union bound of the bit-error rate can be calculated as 
-%\begin{align}
-%P_b \leq \frac{1}{k} \sum_{d=d_{\text{free}}}^{\infty} \sum_{a(x) \in \cA_c(d)}w_H(a(x)g(x)) Q\Bigg( \sqrt{\frac{2dE_c}{N_0}}\Bigg)
-%\label{novelEq6-1}
-%\end{align}
-%However, since the high-weight codewords have minor contribution on the unioin bound, \eqref{novelEq6-1} can be further approximated by setting a limit on the maximum value of the codeword weight $d_{\text{max}}$, resulting in
-\begin{align}
-P_b \leq \frac{1}{k} \sum_{d=d_{\text{free}}}^{d_{\text{max}}} \sum_{a(x) \in \cA_c(d)}w_H(a(x)g(x)) Q\Bigg( \sqrt{\frac{2dE_c}{N_0}}\Bigg)
-\label{novelEq7}
-\end{align}
-which is a modified version of the equation in \cite{ref4} .
 From \eqref{eq:cw-weight}, when $w_H(b(x)), w_H(h(x)) \geq 2$, we have
 \begin{align}
 \cA_c(d) = \bigcup_{\ell = 2}^{d-2} \left\{\cA_b(\ell) \cap \cA_h(d-\ell)\right\}
@@ -49,10 +40,106 @@ If we set $d=8$ and  $\alpha=1$, $\cA_c'(8)$ becomes
 
 We can see that $\left\{\cA_b(4) \cap \cA_h(4)\right\}$ is not used in $\cA_c'(8)$, event though it is used in $\cA_c(8)$.
 \end{example}
+Once we obtain the set
+ \begin{equation*}
+ \bigcup_{d = d_{\text{min}}}^{d_{\text{max}}} \cA'_c(d) 
+\label{Eq:exactsetunion}
+\end{equation*}
+, we can list the low weight codeword component patterns for a given RSC code using \eqref{eq:low-weight-msg} and \eqref{eq:low-weight-parity}.  We set $d_{\text{max}}=d_{\text{min}}+3$ and  list the low weight codeword component patterns for the $5/7,~37/21$ and $23/35$ RSC codes in Tables \ref{novelTab13},  \ref{novelTab14} and \ref{novelTab15} respectively. 
 
+\begin{table}[htbp]
+ \caption{Partial Codeword Component Pattern Distance Spectrum for the $5/7$ RSC code, $d_{\text{free}}=5$}
+\centering
+ \begin{tabularx}{0.45\textwidth}{XlX} 
+ \hline
+ $a(x)$ & $b(x)$ & $h(x)$ \\ %[0.5ex] 
+ \hline\hline
+$1$ & $1+x+x^{2}$ & $1+x^2$\\
+\hline
+$1+x^2$ & $1+x+x^3+x^4$ & $1+x^{4}$\\
+\hline
+$1+x$ & $1+x^3$ & $1+x+x^2+x^3$\\
+\hline
+$1+x^2+x^4$ & $1+x+x^3+x^5+x^6$ & $1+x^{6}$\\
+\hline
+$1+x^2+x^3$ & $1+x+x^5$ & $1+x^3+x^4+x^5$\\
+\hline
+$1+x+x^2$ & $1+x^2+x^4$ & $1+x+x^3+x^4$\\
+\hline
+$1+x+x^3$ & $1+x^4+x^5$ & $1+x+x^2+x^5$\\
+\hline
+$1+x^2+x^4+x^6$ & $1+x+x^3+x^5+x^7+x^8$ & $1+x^8$\\
+\hline
+$1+x+x^3+x^4$ & $1+x^6$ & $1+x+x^2+x^4+x^5+x^6$\\
+%======extra
+%\hline
+%$1+x+x^3+x^5$ & $1+x^4+x^6+x^7$ & $1+x+x^2+x^7$\\
+%\hline
+%$1+x+x^2+x^4$ & $1+x^2+x^5+x^6$ & $1+x+x^3+x^6$\\
+%\hline
+%$1+x+x^2+x^3$ & $1+x^2+x^3+x^5$ & $1+x+x^4+x^5$\\
+%\hline
+%$1+x^2+x^3+x^5$ & $1+x+x^6+x^7$ & $1+x^3+x^4+x^7$\\
+%\hline
+%$1+x^2+x^3+x^4$ & $1+x+x^4+x^6$ & $1+x^3+x^5+x^6$\\
+%\hline
+%$1+x^2+x^4+x^5$ & $1+x+x^3+x^7$ & $1+x^5+x^6+x^7$\\
+ \end{tabularx}
+ 
+ \label{novelTab13}
+\end{table}
 
+\begin{table}[htbp]
+ \caption{Partial Codeword Component Pattern Distance Spectrum for the $37/21$ RSC code, $d_{\text{free}}=6$}
+\centering
+ \begin{tabularx}{0.45\textwidth}{XlX} 
+ \hline
+ $a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
+ \hline\hline
+$1+x$ & $1+x+x^{4}+x^5$ & $1+x^5$\\
+\hline
+$1$ & $1+x^4$ & $1+x+x^2+x^3+x^4$\\
+\hline
+$1+x+x^5+x^6$ & $1+x+x^4+x^6+x^9+x^{10}$ & $1+x^{10}$\\
+%\hline
+%$1+x+x^4+x^5$ & $1+x+x^8+x^9$ & $1+x^4+x^5+x^9$\\
+%\hline
+%$1+x^2$ & $1+x^2+x^4+x^6$ & $1+x+x^5+x^6$\\
+%\hline
+%$1+x+x^5$ & $1+x+x^4+x^9$ & $1+x^6+x^7+x^8+x^9$\\
+%\hline
+%$1+x+x^4$ & $1+x+x^5+x^8$ & $1+x^4+x^6+x^7+x^8$\\
+%\hline
+%$1+x^2+x^4$ & $1+x^2+x^6+x^8$ & $1+x+x^4+x^7+x^8$\\
+%\hline
+%$1+x^3+x^4$& $1+x^3+x^7+x^8$ & $1+x+x^2+x^4+x^8$\\
+%\hline
+%$1+x^4+x^5$ & $1+x^5+x^8+x^9$ & $1+x+x^2+x^3+x^9$\\
+ \end{tabularx}
+ 
+ \label{novelTab14}
+\end{table}
 
-
+\begin{table}[htbp]
+ \caption{Partial Codeword Component Pattern Distance Spectrum for the $23/35$ RSC code, $d_{\text{free}}=7$}
+\centering
+\begin{tabularx}{0.45\textwidth}{XlX} 
+ \hline
+ $a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
+ \hline\hline
+$1+x^2+x^3$ & $1+x^7$ & $1+x+x^2+x^6+x^7$\\
+\hline
+$1$ & $1+x^2+x^3+x^4$ & $1+x+x^{4}$\\
+\hline
+$1+x+x^2+x^3+x^5$ & $1+x^3+x^4+x^8+x^9$ & $1+x^7+x^9$\\
+\hline
+$1+x+x^2+x^3+x^5+x^7+x^8$ & $1+x+x^3+x^4+x^7+x^{12}$ & $1+x^{11}+x^{12}$\\
+\hline
+$1+x^2+x^3+x^7+x^9+x^{10}$ & $1+x^{14}$ & $1+x+x^2+x^6+x^8+x^9+x^{13}+x^{14}$\\
+ \end{tabularx}
+ 
+ \label{novelTab15}
+\end{table}
 
 %Having determined how to find valid values of $b(x)$ and $h(x)$ for Hamming weights $\leq 3$, we are now in a position to generate the codeword pattern distance spectrum for a given RSC code. We take a union bound like approach towards the generation of the codeword pattern distance spectrum. The approach is outlined below.
 %\begin{enumerate}
@@ -79,3 +166,17 @@ We can see that $\left\{\cA_b(4) \cap \cA_h(4)\right\}$ is not used in $\cA_c'(8
 %\end{equation}
  %From the simulation results, we observed $d_{\text{max}}=d_{\text{min}}+3$ is a sufficient value for obtaining the BER bounds.
 %In order to confirm the validity of our method, we use the values obtained from Tables \ref{novelTab8}, \ref{novelTab9} and \ref{novelTab10} to find the bounds for the BER of the RSC code, $P_b$.Finally, we compare the results obtained to $P_b$ found using the Transfer Function method as well as the simulation results.
+
+
+In order to validate our novel method, we can calculate the lower bound for each RSC code by modifying the union bound of the bit-error rate
+equation in \cite{ref4}, which gives us 
+%\begin{align}
+%P_b \leq \frac{1}{k} \sum_{d=d_{\text{free}}}^{\infty} \sum_{a(x) \in \cA_c(d)}w_H(a(x)g(x)) Q\Bigg( \sqrt{\frac{2dE_c}{N_0}}\Bigg)
+%\label{novelEq6-1}
+%\end{align}
+%However, since the high-weight codewords have minor contribution on the unioin bound, \eqref{novelEq6-1} can be further approximated by setting a limit on the maximum value of the codeword weight $d_{\text{max}}$, resulting in
+\begin{align}
+P_b \leq \frac{1}{k} \sum_{d=d_{\text{free}}}^{d_{\text{max}}} \sum_{a(x) \in \cA'_c(d)}w_H(a(x)g(x)) Q\Bigg( \sqrt{\frac{2dE_c}{N_0}}\Bigg)
+\label{novelEq7}
+\end{align}
+\newpage
