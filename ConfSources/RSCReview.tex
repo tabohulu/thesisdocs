@@ -1,36 +1,36 @@
 \section{Union Bound of RSC Codes}
 \label{sec2}
-\subsection{A Brief Review of RSC Codes}
-$c(x)$ denotes an RSC codeword generated using the feedforward and feedback connections of shift registers, which are determined by its generator function. For a rate $1/2$ shift register, the generator function may be written as  $$\Big[1 ~\frac{f(x)}{g(x)}\Big]$$ where $1$ yields the systematic  component  of the codeword while the parity check component of the codeword is specified by  $f(x)$ and $g(x)$, which represent the feedforward and feedback connections of the shift registers respectively. Then, if a input sequence $b(x)$ is fed into the shift register, $c(x)$ may be written as 
+The outputs of an RSC code are determined by the input bit sequence $b(x)$, the states of the shift registers and the feedforward and feedback connections of shift registers that can be represented by a generator function. 
+
+As an instance,  the generator function of a rate $1/2$ RSC code may be written as  $$\Big[1 ~\frac{f(x)}{g(x)}\Big]$$ where $1$ yields the \textit{systematic  component} (SC) $b(x)$ while the \textit{parity-check component} (PC) $h(x)$ is associated with the feedforward and feedback connections of the shift registers, specified by  $f(x)$ and $g(x)$, respectively. The outputs $c(x)$ are a mixture of SC and PC as
 \begin{equation}
 c(x) = b(x^2)+xh(x^2)
 \label{codeword-comp}
 \end{equation}
-where $b(x)$ doubles as the systematic component of the codeword and
+where 
 \begin{equation}
 h(x) =f(x)g^{-1}(x)b(x)
 \label{eq:parity-def}
 \end{equation}
-denotes the parity-check component of the codeword. It is obvious that 
+From \eqref{codeword-comp}, we have
 \begin{equation}
 w_H(c(x))=w_H(b(x)) + w_H(h(x))
 \label{eq:cw-weight}
 \end{equation}
+ and it is obvious that each low-weight codeword is a conjunction of two low-weight SC and PC.
 
-For a given RSC code, the distance spectrum provides information concerning the multiplicity of a codeword for a fixed weight and it is an effective tool to evaluate its error-correcting capability. In practice however, since higher-weight codewords have very little effect on its overall error-correcting capability, we usually use a partial distance spectrum, where the largest codeword weight value is set to $d_{\text{max}}$. 
-
-We consider the parity check component, and for large frame sizes, the presence of $g^{-1}(x)$ involves a particular sequence of bits that is repeated a large number of times. This results in a large parity weight, and by extension, a relatively high-weight codeword. The only time this is not the case is when
+Under the assumption of large frame sizes, the presence of $g^{-1}(x)$  in \eqref{eq:parity-def} may involve a particular sequence of bits that is repeated a large number of times, hence a high-weight PC. A low-weight PC occurs if and only if
 \begin{equation}
 b(x) \bmod g(x) \equiv 0
 \label{eq:rtz-input}
 \end{equation}
-Any $b(x)$ that meets the condition in \eqref{eq:rtz-input} is called a \textit{return-to-zero} (RTZ) input, and can be written as 
+and the inputs $b(x)$ which meet the condition in \eqref{eq:rtz-input} is called a \textit{return-to-zero} (RTZ) input. Thus, every RTZ input can be factorized by  
 \begin{equation}
 b(x) =a(x)g(x)
 \label{eq:low-weight-msg}
 \end{equation}
 where $a(x)$ is a monic polynomial, $a_0=1$.
-By fixing $b(x)$ from (\ref{eq:rtz-input}) into \eqref{eq:parity-def}, we have 
+Substituting (\ref{eq:low-weight-msg}) into \eqref{eq:parity-def}, we can characterize the low-weight PC as
 \begin{equation}
 \begin{split}
 h(x)&=f(x)\cdot g^{-1}(x)\cdot a(x)g(x)\\
@@ -42,13 +42,13 @@ h(x)&=f(x)\cdot g^{-1}(x)\cdot a(x)g(x)\\
 
 %From (\ref{novelEq2})  and (\ref{novelEq3}), we observe that $a(x)$ is a common factor in both equations and if we are able to solve for $a(x)$ via either of the equations, the remaining equation can be solved. To solve for $a(x)$ requires that in either equation, it should be the only unknown variable. At first glance, it might seem that $g(x)$ and $f(x)$ are the only known variables because they are dependent on the RSC code in question. However, if we remember that the weight of $h(x)$ and $b(x)$ is directly proportional to the number of terms it has, then we are on our way to obtain our second known variable. What is left is to determine the valid power values for the polynomial  terms, depending on the weight of $h(x)$ or $b(x)$.
 
-Thus, for a given $f(x)$ and $g(x)$, we can formulate our goal as, to find all $a(x)$s which generate low-weight codeword components in  \eqref{eq:low-weight-msg} and  \eqref{eq:low-weight-parity} simultaneously. 
+Finally, for a given RSC code, we can formulate our goal as, to find all $a(x)$s which satisfy  \eqref{eq:low-weight-msg} and  \eqref{eq:low-weight-parity} simultaneously. However, since there is essentially no difference between the two equations, in the next section, we oresent a method for determining the low-weight PC patterns for $2 \leq w_H(h(x)) \leq 3$
 
 
  %an RSC encoder which takes in $k$ bits and outputs $n$ bits at every time instance.The output bits of an RSC code are generated using the feedforward and feedback connections of shift registers determined by its generator function. The generator function may be written in polynomial notation as $\Big[1 ~\frac{f(x)}{g(x)}\Big]$, where $1$ yields the systematic (input) part  of the output while the parity check part of the output are specified by  $f(x)$ and $g(x)$ that represent the feedforward and feedback connections of the shift registers respectively. Through out this paper, $c(x),~b(x)$ and $h(x)$ represesent the RSC codeword, the systematic component of the codeword and the parity check component of the codeword, respectively in polynomial notation.
 
 %\input{./ConfSources/subLowweight}
-\input{./ConfSources/subUnionBound}
+%\input{./ConfSources/subUnionBound}
 %The minimum distance ($d_{\text{min}}$) of the RSC code determines its error-correcting capability. With the aid of the distance spectrum, it is possible to determine $d_{\text{min}}$ as well as its multiplicity. The most common way to find the distance spectrum is via the transfer function of the RSC code. The transfer function enumerates all the paths that diverge from and then return to the initial state \cite{ref3}, \textit{i.e.} the RTZ inputs. In other words, the distance spectrum provides information about the number of codewords of weight $d$ generated by an RTZ input of weight $w$. 
 
 %Also to obtain the distance spectrum requires an extra division operation. In the case of interleaver design for turbo codes, this method for generating the distance spectrum is not particularly useful. This is because it reveals no extra details with respect to the structure of the RTZ inputs. 

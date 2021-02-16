@@ -1,15 +1,13 @@
-\section{Novel Method to Determine the Low-Weight Parity-Check Pattern}
+\section{The patterns of the low-weight PCs}
 \label{sec3}
-In order to calculate $\cA'_c(d)$, we require the knowledge of $h(x)$ and $b(x)$ when $w_H(c(x)),~w_H(b(x))= l$. However, since there is essentially no difference between the general structure of $h(x)$ and $b(x)$, we restrict our attention to the $h(x)$, and
-%In this section, %we present our novel method for obtaining what we have named the \textit{codeword component pattern distance spectrum}. %Compared to the transfer function method, its complexity is independent of the number of states of the RSC. It is also able to reveal the pattern of low-weight codewords. 
-%Our novel method can be seen as the combination of two different but related methods. The first method is quite simple and makes use of the fact that in the polynomial domain, systematic components that are  RTZ inputs and their corresponding parity-check components share a common factor. 
-%The second method shows how to obtain this common factor when the weight of the parity check component is fixed for a given RSC code.  
-%After explaining the inner working of our novel method, we used it to obtain the partial codeword pattern distance spectrum for the $5/7,~ 37/21$ and $23/35$  RSC codes.
-%In the following, 
-we present a method for determining valid values of $h(x)$ when $2 \leq w_H(h(x))\leq 3$. 
+
+To determine the detail patterns of the low-eight PCs, we assume $f(x)$ can be factorized by $K$ minimal polynomials as 
+\begin{align}
+f(x)&=\prod_{k=0}^{K-1}f_{\beta_k}(x)
+\end{align}
+where $\beta_k$ is a root of $f_{\beta_k}(x)$ of order $\epsilon_k$.
+Then, \eqref{eq:low-weight-parity} implies that each $\beta_k$ is also a root of $h(x)$. 
 \input{./ConfSources/subValidValues}
-%\newpage
-%\input{./ConfSources/subUnionBound}
 
 
 

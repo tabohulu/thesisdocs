@@ -1,26 +1,20 @@
-\subsection{The Characteristic of Weight $2$ Parity Check Pattern}
-For this weight case, we can write $h(x)$ as 
+\subsection{The patterns of the weight-2 PCs}
+Each weight-2 PC can be written as 
 \begin{equation}
 h(x)=1+x^a
 \label{eq:wt2-gen-form}
 \end{equation}
-without any loss of generality. From \eqref{eq:low-weight-parity},  it is obvious that any valid $h(x)$ should have the same roots as $f(x)$. We can then reformulate our goals as to find all $h(x)$ with roots equal to those of $f(x)$. 
-Now, we consider how to find $a$ for 2 distinct cases of $f(x)$.
-\paragraph{ Case1} $f(x)$ is a single irreducible polynomial\newline
-For this case, $f(x)$ generates GF$(2^M)$ and the roots of $f(x)$ are taken from GF$(2^M)$. Let $\beta$ be a root of $f(x)$. Substituting $\beta$ into \eqref{eq:wt2-gen-form}, we get 
+without loss of generality. Thus, we have 
 \begin{equation}
-\begin{split}
-&h(\beta)=0\\
-&1+\beta^a =0
-\end{split}
+\beta_k^a =1
 \label{novelEq5b}
 \end{equation}
-and 
-$$a \bmod \epsilon  \equiv 0$$
-since $(\beta)^{\epsilon}=1$
 
-\begin{example}
-$f(x)=1+x+x^2$.\newline $f(x)$ generates the field GF$(2^2)$ where $\epsilon=3$, and the  valid values of $a$ are $a=\{3,6,9,\cdots \}$. The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab2} for the first four valid values of $a$.
+Starting from the simplest case $K=1$, then, it is trivial that $a$ should satisfy the condition
+$$a \bmod \epsilon_0  \equiv 0$$
+
+\begin{example}$f(x)=1+x+x^2$.\newline 
+For this case $x^2 \equiv 1+x$, and $x^3 \equiv 1 \bmod f(x)$, which means the order of the root $\beta_0$ is $\epsilon_0=3$ and $a$ should be a multiple of $3$. The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab2} for the first four valid values of $a$.
 \begin{table}[htbp]
 %\parbox{.5\linewidth}{
  \caption{$f(x)=1+x+x^2$}
@@ -46,6 +40,10 @@ $1+x+x^3+x^4+x^6+x^{7}+x^9+x^{10}$
  \label{novelTab2}
 \end{table}
 \label{ex-2}
+We may write the weight-2 PCs in general form as $h(x)=1+x^{3\ell},~\ell>1$ and the corresponding $a(x)$ is given by 
+\begin{equation*}
+a(x)=\sum_{\ell=0}^{L-1} x^{3\ell}(1+x)
+\end{equation*}
 \end{example}
 %============================
 %\begin{example}$g(x)=1+x+x^4$\newline
@@ -74,7 +72,7 @@ $1+x+x^3+x^4+x^6+x^{7}+x^9+x^{10}$
 
 \begin{example}
 $f(x)=1+x+x^2+x^3+x^4$\newline
-$f(x)$ can be used used to generate GF$(2^4)$ where $\epsilon=5$ and therefore, the valid values of $a$ are $a=\{5,10,15,\cdots\}$. The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab3} for the first four valid values of $a$.
+Since $x^4 \equiv 1+x+x^2+x^3,~x^5 \equiv 1 \bmod f(x)$ and the order of $\beta_0$ is $\epsilon_0=5$. This means that $a$ should be a multiple of $5$. The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab3} for the first four valid values of $a$.
 
 %}
 \begin{table}[htbp]
@@ -94,25 +92,96 @@ $1+x+x^5+x^6+x^{10}+x^{11}+x^{15}+x^{16}$ &$1+x^{20}$
 %}ll
 \end{table}
 \label{ex-3}
+We may write the weight-2 PCs in general form as $h(x)=1+x^{5\ell},~\ell>1$ and the corresponding $a(x)$ is given by 
+\begin{equation*}
+a(x)=\sum_{\ell=0}^{L-1} x^{5\ell}(1+x)
+\end{equation*}
 \end{example}
 
 %\paragraph{ Case3: $g(x)$ is made up of repeated polynomial roots.\newline}
 %Given the above condition we have, $r(x)=(r^{o_p}_p(x))^k$, where $r^{o_p}_p(x)$ represents the prime polynomial $r(x)$ can be factorised into and $k$ is the number of times it is repeated. $r^{o_p}_p(x)$ has $\beta$ as its roots and we need to find $d \st \beta^j=1$ in the (extended) field it generates. Because $\beta^{kj}=1$ in the same (extended) field , the valid values for $a$ should satisfy the condition below:
 %$$kj ~| ~a$$
 
-\paragraph{Case2}$f(x)$ can be factorised into multiple irreducible polynomials. \newline
-For this case, we can write $f(x)$ as $$f(x)=\prod_{k=1}^{K}f_k(x)$$ where $f_k(x)$ is an irreducible polynomial of order $M_k$ with root $\beta \in $ GF$(2^{M_k})$, $\beta^{\epsilon_k}=1$. 
+For the case of $K > 1$
+\[
+	f_{\beta_k}(x) = (x-\beta_k)\left(x-\beta_k^{2}\right)\left(x-\beta_k^{2^2}\right)\cdots\left(x-\beta_k^{2^{T_k}}\right)
+\]
+where $T_k$ is the smallest integer such that $2^{T_k} \equiv 1 \mod \epsilon_k$ 
+
+For this case, we can write $f(x)$ as $$f(x)=\prod_{k=0}^{K-1}f_k(x)$$ where $f_k(x)$ is an irreducible polynomial of order $M_k$ with root $\beta \in $ GF$(2^{M_k})$, $\beta^{\epsilon_k}=1$. 
 For each $f_k(x)$, the valid values of  $a_k$ are such that 
 $$ \cA_k=\{a_k~ |~ a_k \bmod \epsilon_k \equiv 0\}$$ and the valid values of $a$ are such that
-$$a \in  \bigcap_{k=1}^{K} \cA_k$$
+$$a \in  \bigcap_{k=0}^{K-1} \cA_k$$
 This means that $a$ satisfies the condition
-$$ a \bmod  \prod_{k=1}^{K} \epsilon_k \equiv 0$$
+$$ a \bmod  \prod_{k=0}^{K-1} \epsilon_k \equiv 0$$
 For the special case where $f(x)$ can be factorised into equal irreducible polynomials, the above condition simplifies to 
 $$a \bmod \epsilon K \equiv 0$$
 
 \begin{example}
+$f(x)=1+x^2+x^3+x^4$\newline
+$f(x)$ can be written as 
+$$f(x)=\prod_{k=0}^{1}f_k(x)$$
+where 
+$$f_0(x)=1+x,~f_1(x)=1+x+x^3$$ 
+For $f_0(x), x \equiv 1$, and $x^1 \equiv 1 \bmod f_0(x)$, which means the order of the root $\beta_0$ is $\epsilon_0=1$ and $a_0$ should be a multiple of $1$. Again, for  $f_1(x), x^3 \equiv 1+x$, and $x^7 \equiv 1 \bmod f_1(x)$, which means the order of the root $\beta_1$ is $\epsilon_1=7$ and $a_1$ should be a multiple of $7$.
+Finally, valid values of $a$ should be a multiple of the least common multiples of $a_0$ and $a_1$, which means $a$ should be a multiple of $7$.
+The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab1-a} for the first 3 valid values of $a$.
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{1.3}
+%\parbox{.3\linewidth}{
+ \caption{$f(x)=1+x^2+x^3+x^4$}
+ \centering
+\begin{tabular}{c c } 
+\hline
+ $a(x)$ & $h(x)$ \\ [0.5ex] 
+\hline\hline
+$1+x^2+x^3$ & $1+x^7$\\ 
+$1+x^2+x^3+x^7+x^9+x^{10}$ & $1+x^{14}$ \\
+$1+x^2+x^3+x^7+x^9+x^{10}+x^{14}+x^{16}+x^{17}$ & $1+x^{21}$
+\end{tabular}
+ \label{novelTab1-a}
+\end{table}
+
+We may write the weight-2 PCs in general form as $h(x)=1+x^{7\ell},~\ell>1$ and the corresponding $a(x)$ is given by 
+\begin{equation*}
+a(x)=\sum_{\ell=0}^{L-1} x^{7\ell}(1+x^2+x^3)
+\end{equation*}
+\end{example}
+
+\begin{example}
+$f(x)=1+x+x^2+x^3+x^4+x^5+x^6$\newline
+$f(x)$ can be written as 
+$$f(x)=\prod_{k=0}^{1}f_k(x)$$
+where 
+$$f_0(x)=1+x^2+x^3,~f_1(x)=1+x+x^3$$ 
+For $f_0(x), x^3 \equiv x^2+1$, and $x^7 \equiv 1 \bmod f_0(x)$, which means the order of the root $\beta_0$ is $\epsilon_0=7$ and $a_0$ should be a multiple of $7$. Again, for  $f_1(x), x^3 \equiv 1+x$, and $x^7 \equiv 1 \bmod f_1(x)$, which means the order of the root $\beta_1$ is $\epsilon_1=7$ and $a_1$ should be a multiple of $7$.
+Finally, valid values of $a$ should be a multiple of the least common multiples of $a_0$ and $a_1$, which means $a$ should be a multiple of $7$.
+The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab1-b} for the first three valid values of $a$.
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{1.3}
+%\parbox{.3\linewidth}{
+ \caption{$f(x)=1+x+x^2+x^3+x^4+x^5+x^6$}
+ \centering
+\begin{tabular}{c c } 
+\hline
+ $a(x)$ & $h(x)$ \\ [0.5ex] 
+\hline\hline
+$1+x$ & $1+x^7$\\ 
+$1+x+x^7+x^8$ & $1+x^{14}$ \\
+$1+x+x^7+x^8+x^{14}+x^{15}$ & $1+x^{21}$
+\end{tabular}
+ \label{novelTab1-b}
+\end{table}
+
+We may write the weight-2 PCs in general form as $h(x)=1+x^{7\ell},~\ell>1$ and the corresponding $a(x)$ is given by 
+\begin{equation*}
+a(x)=\sum_{\ell=0}^{L-1} x^{7\ell}(1+x)
+\end{equation*}
+\end{example}
+
+\begin{example}
 $f(x)=1+x^2$\newline
-$f(x)$ can be written as $$f(x)=(1+x)^2,~K=2$$ $1+x$ is prime in $GF(2)$, where $\epsilon =1$. Since $f(x)$ is made up of equal repeated polynomial and $K=2$, the valid values of $a=\{2,4,6,\cdots \}$.
+$f(x)$ can be written as $$f(x)=(1+x)^2$$ $1+x$ is prime in $GF(2)$, where $\epsilon =1$. Since $f(x)$ is made up of equal repeated polynomial and $K=2$, the valid values of $a=\{2,4,6,\cdots \}$.
 The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab1} for the first four valid values of $a$.
 \begin{table}[htbp]
 \renewcommand{\arraystretch}{1.3}
@@ -130,6 +199,11 @@ $1+x^2+x^4+x^6$ & $1+x^8$
 \end{tabular}
  \label{novelTab1}
 \end{table}
+
+We may write the weight-2 PCs in general form as $h(x)=1+x^{2\ell},~\ell>1$ and the corresponding $a(x)$ is given by 
+\begin{equation*}
+a(x)=\sum_{\ell=0}^{L-1} x^{2\ell}(1)
+\end{equation*}
 \end{example}
 
 %==========
@@ -186,27 +260,19 @@ $1+x^2+x^4+x^6$ & $1+x^8$
 %\end{table}
 
 
-\subsection{The Characteristic of Weight $3$ Parity Check Pattern}
-For this weight case, 
+\subsection{The patterns of the weight-3 PCs}
+Each weight-3 PC can be written as 
 \begin{equation}
 h(x)=1+x^a+x^b,~a\neq b
 \label{novelEqwt3}
 \end{equation}
-without loss of generality. Our goal remains the same as it was for weight 2 parity check patterns and we consider how to find the pair $(a,b)$ for the same 2 distinct cases of $f(x)$.
-%Given $f(x)$, our task is to find valid $(a,~b)$ pair values satisfying the condition 
-%$$1+\beta^u+\beta^v=0$$
-% If there are no values for the pair $(u,v)$, then $q(x) \st w_H(\bq) =3$ does not exist for the given $g(x)$.
-% It is worth noting that such $h(x)$ only exist iff $f(x)$ has exactly $w_H(\bh) =3$ terms. Moving forward, we assume that for all the cases, this condition holds true.
-\paragraph{ Case1} $f(x)$ is a single irreducible polynomial \newline
-Let $\beta$  be a root of $f(x),~\beta \in $ GF($2^M$). Substituting $\beta$ into (\ref{novelEqwt3}), we get 
+without loss of generality. Thus, we have 
 \begin{equation}
-\begin{split}
-&h(\beta)=0\\
-&1+\beta^a+\beta^b=0
-\end{split}
-\label{novelEqwt3-1}
+\beta_k^a+\beta_k^b= 1
+\label{novelEq5b}
 \end{equation}
-By refering to the table of the extended field for GF$(2^M)$, we can find the valid $(\eta,~\zeta)$ pairs $\st \beta^{\eta}+\beta^{\zeta}=1$. If there are no valid $(\eta,~\zeta)$ pairs, then there is no parity check component of weight $3$ for the given $f(x)$.
+
+Starting from the simplest case $K=1$, we refer to the table of the extended field for GF$(2^M)$, and we can find the valid $(\eta,~\zeta)$ pairs $\st \beta^{\eta}+\beta^{\zeta}=1$. If there are no valid $(\eta,~\zeta)$ pairs, then there is no parity check component of weight $3$ for the given $f(x)$.
  We represent the set of $(\eta,~\zeta)$ pairs as 
 $\cZ=\{ (\eta_1,~\zeta_1) ,( \eta_2,~\zeta_2),\cdots\}$. Then, any valid value $(a,~b)$ values should satisfy the condition
 \begin{equation}
