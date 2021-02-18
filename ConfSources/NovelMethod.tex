@@ -1,12 +1,35 @@
 \section{The patterns of the low-weight PCs}
 \label{sec3}
-
-To determine the detail patterns of the low-eight PCs, we assume $f(x)$ can be factorized by $K$ minimal polynomials as 
+To determine the details of the patterns of the low-weight PCs, we refer to \eqref{eq:low-weight-parity} and we consider the solution of
 \begin{align}
-f(x)&=\prod_{k=0}^{K-1}f_{\beta_k}(x)
+	h(x) \mod f(x) \equiv 0
+	\label{Eq:condition}
 \end{align}
-where $\beta_k$ is a root of $f_{\beta_k}(x)$ of order $\epsilon_k$.
-Then, \eqref{eq:low-weight-parity} implies that each $\beta_k$ is also a root of $h(x)$. 
+for $w_H(h(x))=2,3$. To this end, we assume $f(x)$ can be factorized into $K$ prime polynomials as 
+\begin{align}
+f(x)&=\prod_{k=0}^{K-1}f_k^{\gamma_k}(x)
+\end{align}
+where $\gamma_0,\gamma_1,\cdots,\gamma_{K-1}$ are positive integers and we assume $\beta_k$ is a root of $f_{\beta_k}(x)$ of order $\epsilon_k$.
+
+%and, if , $f_{\beta_k}(x)$ can be expressed as
+%\[
+%f_{\beta_k}(x) = (x-\beta_k)\left(x-\beta_k^{2}\right)\left(x-\beta_k^{2^2}%\right)\cdots\left(x-\beta_k^{2^{M_k}}\right)
+%\]
+%where $M_k$ is the smallest integer such that $2^{M_k} \equiv 1 \mod \epsilon_k$.
+
+We first consider the simplest case $K=1$, \ie, $f(x) = f_0^{\gamma_0}(x)$. Then, we can see from \eqref{eq:low-weight-parity} that each root is also a root of $h(x)$. For the case $\gamma_0 = 1$, since all $\beta_0^i$, $0 \leq i < \epsilon_0$, are distinct from each other, the condition
+\begin{align}
+	h(\beta_0^i)=0,~~~ 0 \leq i < \epsilon_0
+	\label{Eq:rootcondition}
+\end{align}
+is necessary and sufficient to fulfil \eqref{Eq:condition}. For $\gamma_0 > 1$, on the other hand, \eqref{Eq:rootcondition} is necessary but not sufficient for \eqref{Eq:condition}. For this case, although we may derive some solutions by differential equations
+\begin{align}
+\left.\frac{d^{(j)}h(x)}{d x^j}\right|_{x=\beta_0^i}=0,~~~0 \leq i < \epsilon_0,~1 \leq j < \gamma_0
+\label{Eq:differential}
+\end{align}
+we can not determine the patterns completely, since the operations on coefficients of the polynomial are done modulo-$p$. However, we can remove the ghost solutions {\bf (perhaps has accurate name)} by careful confirmation.
+
+By repeating the above discussion for the roots $\beta_k$, $0 < k < K$, and taking the intersection of the results, we can easily extend to the case $K>1$.
 \input{./ConfSources/subValidValues}
 
 

@@ -2,7 +2,7 @@
 \label{sec2}
 The outputs of an RSC code are determined by the input bit sequence $b(x)$, the states of the shift registers and the feedforward and feedback connections of shift registers that can be represented by a generator function. 
 
-As an instance,  the generator function of a rate $1/2$ RSC code may be written as  $$\Big[1 ~\frac{f(x)}{g(x)}\Big]$$ where $1$ yields the \textit{systematic  component} (SC) $b(x)$ while the \textit{parity-check component} (PC) $h(x)$ is associated with the feedforward and feedback connections of the shift registers, specified by  $f(x)$ and $g(x)$, respectively. The outputs $c(x)$ are a mixture of SC and PC as
+As an instance,  the generator function of a rate $1/2$ RSC code may be written as  $$\left[1 ~\frac{f(x)}{g(x)}\right]$$ where $1$ yields the \textit{systematic  component} (SC) $b(x)$ while the \textit{parity-check component} (PC) $h(x)$ is associated with the feedforward and feedback connections of the shift registers, specified by  $f(x)$ and $g(x)$, respectively. The outputs $c(x)$ are a mixture of SC and PC as
 \begin{equation}
 c(x) = b(x^2)+xh(x^2)
 \label{codeword-comp}
@@ -29,7 +29,6 @@ and the inputs $b(x)$ which meet the condition in \eqref{eq:rtz-input} is called
 b(x) =a(x)g(x)
 \label{eq:low-weight-msg}
 \end{equation}
-where $a(x)$ is a monic polynomial, $a_0=1$.
 Substituting (\ref{eq:low-weight-msg}) into \eqref{eq:parity-def}, we can characterize the low-weight PC as
 \begin{equation}
 \begin{split}
@@ -42,7 +41,7 @@ h(x)&=f(x)\cdot g^{-1}(x)\cdot a(x)g(x)\\
 
 %From (\ref{novelEq2})  and (\ref{novelEq3}), we observe that $a(x)$ is a common factor in both equations and if we are able to solve for $a(x)$ via either of the equations, the remaining equation can be solved. To solve for $a(x)$ requires that in either equation, it should be the only unknown variable. At first glance, it might seem that $g(x)$ and $f(x)$ are the only known variables because they are dependent on the RSC code in question. However, if we remember that the weight of $h(x)$ and $b(x)$ is directly proportional to the number of terms it has, then we are on our way to obtain our second known variable. What is left is to determine the valid power values for the polynomial  terms, depending on the weight of $h(x)$ or $b(x)$.
 
-Finally, for a given RSC code, we can formulate our goal as, to find all $a(x)$s which satisfy  \eqref{eq:low-weight-msg} and  \eqref{eq:low-weight-parity} simultaneously. However, since there is essentially no difference between the two equations, in the next section, we oresent a method for determining the low-weight PC patterns for $2 \leq w_H(h(x)) \leq 3$
+Finally, for a given RSC code, we can formulate our goal as, to find all $a(x)$s which satisfy  \eqref{eq:low-weight-msg} and  \eqref{eq:low-weight-parity} simultaneously. However, since there is essentially no difference between the two equations, in the next section, we present a method for determining the low-weight PC patterns for $2 \leq w_H(h(x)) \leq 3$
 
 
  %an RSC encoder which takes in $k$ bits and outputs $n$ bits at every time instance.The output bits of an RSC code are generated using the feedforward and feedback connections of shift registers determined by its generator function. The generator function may be written in polynomial notation as $\Big[1 ~\frac{f(x)}{g(x)}\Big]$, where $1$ yields the systematic (input) part  of the output while the parity check part of the output are specified by  $f(x)$ and $g(x)$ that represent the feedforward and feedback connections of the shift registers respectively. Through out this paper, $c(x),~b(x)$ and $h(x)$ represesent the RSC codeword, the systematic component of the codeword and the parity check component of the codeword, respectively in polynomial notation.
