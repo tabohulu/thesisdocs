@@ -45,101 +45,10 @@ Once we obtain the set
  \bigcup_{d = d_{\text{min}}}^{d_{\text{max}}} \cA'_c(d) 
 \label{Eq:exactsetunion}
 \end{equation*}
-, we can list the low weight codeword component patterns for a given RSC code using \eqref{eq:low-weight-msg} and \eqref{eq:low-weight-parity}.  We set $d_{\text{max}}=d_{\text{min}}+3$ and  list the low weight codeword component patterns for the $5/7,~37/21$ and $23/35$ RSC codes in Tables \ref{novelTab13},  \ref{novelTab14} and \ref{novelTab15} respectively. 
+, we can list the low weight codeword component patterns for a given RSC code using \eqref{eq:low-weight-msg} and \eqref{eq:low-weight-parity}. 
 
-\begin{table}[htbp]
- \caption{Partial Codeword Component Pattern Distance Spectrum for the $5/7$ RSC code, $d_{\text{free}}=5$}
-\centering
- \begin{tabularx}{0.45\textwidth}{XlX} 
- \hline
- $a(x)$ & $b(x)$ & $h(x)$ \\ %[0.5ex] 
- \hline\hline
-$1$ & $1+x+x^{2}$ & $1+x^2$\\
-\hline
-$1+x^2$ & $1+x+x^3+x^4$ & $1+x^{4}$\\
-\hline
-$1+x$ & $1+x^3$ & $1+x+x^2+x^3$\\
-\hline
-$1+x^2+x^4$ & $1+x+x^3+x^5+x^6$ & $1+x^{6}$\\
-\hline
-$1+x^2+x^3$ & $1+x+x^5$ & $1+x^3+x^4+x^5$\\
-\hline
-$1+x+x^2$ & $1+x^2+x^4$ & $1+x+x^3+x^4$\\
-\hline
-$1+x+x^3$ & $1+x^4+x^5$ & $1+x+x^2+x^5$\\
-\hline
-$1+x^2+x^4+x^6$ & $1+x+x^3+x^5+x^7+x^8$ & $1+x^8$\\
-\hline
-$1+x+x^3+x^4$ & $1+x^6$ & $1+x+x^2+x^4+x^5+x^6$\\
-%======extra
-%\hline
-%$1+x+x^3+x^5$ & $1+x^4+x^6+x^7$ & $1+x+x^2+x^7$\\
-%\hline
-%$1+x+x^2+x^4$ & $1+x^2+x^5+x^6$ & $1+x+x^3+x^6$\\
-%\hline
-%$1+x+x^2+x^3$ & $1+x^2+x^3+x^5$ & $1+x+x^4+x^5$\\
-%\hline
-%$1+x^2+x^3+x^5$ & $1+x+x^6+x^7$ & $1+x^3+x^4+x^7$\\
-%\hline
-%$1+x^2+x^3+x^4$ & $1+x+x^4+x^6$ & $1+x^3+x^5+x^6$\\
-%\hline
-%$1+x^2+x^4+x^5$ & $1+x+x^3+x^7$ & $1+x^5+x^6+x^7$\\
- \end{tabularx}
- 
- \label{novelTab13}
-\end{table}
+% We set $d_{\text{max}}=d_{\text{min}}+3$ and  list the low weight codeword component patterns for the $5/7,~37/21$ and $23/35$ RSC codes in Tables \ref{novelTab13},  \ref{novelTab14} and \ref{novelTab15} respectively. 
 
-\begin{table}[htbp]
- \caption{Partial Codeword Component Pattern Distance Spectrum for the $37/21$ RSC code, $d_{\text{free}}=6$}
-\centering
- \begin{tabularx}{0.45\textwidth}{XlX} 
- \hline
- $a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
- \hline\hline
-$1+x$ & $1+x+x^{4}+x^5$ & $1+x^5$\\
-\hline
-$1$ & $1+x^4$ & $1+x+x^2+x^3+x^4$\\
-\hline
-$1+x+x^5+x^6$ & $1+x+x^4+x^6+x^9+x^{10}$ & $1+x^{10}$\\
-%\hline
-%$1+x+x^4+x^5$ & $1+x+x^8+x^9$ & $1+x^4+x^5+x^9$\\
-%\hline
-%$1+x^2$ & $1+x^2+x^4+x^6$ & $1+x+x^5+x^6$\\
-%\hline
-%$1+x+x^5$ & $1+x+x^4+x^9$ & $1+x^6+x^7+x^8+x^9$\\
-%\hline
-%$1+x+x^4$ & $1+x+x^5+x^8$ & $1+x^4+x^6+x^7+x^8$\\
-%\hline
-%$1+x^2+x^4$ & $1+x^2+x^6+x^8$ & $1+x+x^4+x^7+x^8$\\
-%\hline
-%$1+x^3+x^4$& $1+x^3+x^7+x^8$ & $1+x+x^2+x^4+x^8$\\
-%\hline
-%$1+x^4+x^5$ & $1+x^5+x^8+x^9$ & $1+x+x^2+x^3+x^9$\\
- \end{tabularx}
- 
- \label{novelTab14}
-\end{table}
-
-\begin{table}[htbp]
- \caption{Partial Codeword Component Pattern Distance Spectrum for the $23/35$ RSC code, $d_{\text{free}}=7$}
-\centering
-\begin{tabularx}{0.45\textwidth}{XlX} 
- \hline
- $a(x)$ & $b(x)$ & $h(x)$ \\ [0.5ex] 
- \hline\hline
-$1+x^2+x^3$ & $1+x^7$ & $1+x+x^2+x^6+x^7$\\
-\hline
-$1$ & $1+x^2+x^3+x^4$ & $1+x+x^{4}$\\
-\hline
-$1+x+x^2+x^3+x^5$ & $1+x^3+x^4+x^8+x^9$ & $1+x^7+x^9$\\
-\hline
-$1+x+x^2+x^3+x^5+x^7+x^8$ & $1+x+x^3+x^4+x^7+x^{12}$ & $1+x^{11}+x^{12}$\\
-\hline
-$1+x^2+x^3+x^7+x^9+x^{10}$ & $1+x^{14}$ & $1+x+x^2+x^6+x^8+x^9+x^{13}+x^{14}$\\
- \end{tabularx}
- 
- \label{novelTab15}
-\end{table}
 
 %Having determined how to find valid values of $b(x)$ and $h(x)$ for Hamming weights $\leq 3$, we are now in a position to generate the codeword pattern distance spectrum for a given RSC code. We take a union bound like approach towards the generation of the codeword pattern distance spectrum. The approach is outlined below.
 %\begin{enumerate}
