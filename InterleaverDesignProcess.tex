@@ -1,0 +1,141 @@
+
+\documentclass[11pt, oneside, dvipdfmx]{book}
+\newcommand{\folder}{/home/bohulu/Documents/texmf}
+%\newcommand{\folder}{/home/hanchenggao/Documents/texmf}
+\input{\folder/hfiles/epaper}
+%\renewcommand{\thesubsubsection}{\Alph{subsubsection}.}
+%\setcounter{secnumdepth}{3}
+%\usepackage[ruled,vlined]{algorithm2e}
+\usepackage {graphics}
+\usepackage{caption}
+\usepackage{tabularx}
+\title{``
+Interleaver Design'' }
+\author{Kwame Ackah Bohulu}
+\date{\today}
+\begin{document}
+\maketitle
+%Determining The Structure of the low weight inputs and their corresponding parity-check sequence weight equations
+%\input{./InterleaverDesignSources/Structure}
+In order to design good interleavers for turbo codes given the RSC (component) code, the structure of the low weight codes and their corresponding parity-check sequence weights need to be known. With this it will be possible to design an interleaver to ensure that the low weight parity check weights are not mapped to other low weight parity check sequences ensuring high weight turbo codes.
+
+Using the method outlined in the previous paper, it is possible to determine the the structure and parity-check equations once the component code is known. 
+Any input $b(x)$ such that $b(x) \equiv 0 \bmod g(x)$ is a low weight input and can be written as 
+\begin{equation}
+b(x)=a(x)g(x)
+\label{eq:low-weight-input}
+\end{equation}
+where $g(x)$ is the feedback portion of its generator function. For that same $b(x)$, its corresponding parity-check sequence $h(x)$ can be written as
+\begin{equation}
+h(x)=a(x)f(x)
+\label{eq:low-weight-parity}
+\end{equation}
+where $a(x)=b(x)g^{-1}(x)$ and $f(x)$ is the feedforward portion of the generator function. It is possible to also write $h(x)$ as 
+$$h(x)=b(x)(f(x)g^{-1}(x))$$ and upon first glance, it seems like this is a more practical approach. In most cases however, $g(x)$ does not divide $h(x)$ and finding $a(x)$ via \eqref{eq:low-weight-input} and inserting that value into \eqref{eq:low-weight-parity} is a better solution.
+Using two different component codes, we outline the procedure for determining the parity-check equations for weight 2 and weight 3 message inputs.
+
+\begin{example}[5/7 RSC code, $f(x)=1+x^2,~g(x)=1+x+x^2$]
+For this RSC code, any low weight $b(x)$ of weight 2 has the general form 
+\begin{equation}
+b(x)=1+x^{3\alpha},~\alpha \geq 1
+\label{eq:5/7-weight-2}
+\end{equation}
+and 
+\begin{equation}
+\begin{split}
+a(x)&=\frac{1+x^{3\alpha}}{1+x+x^2}\\
+&=\sum_{i=0}^{\alpha-1}x^{3i}\left(1+x\right)
+\end{split}
+\label{eq:5/7-a(x)-weight2}
+\end{equation}
+Fixing \eqref{eq:5/7-a(x)-weight2} into \eqref{eq:low-weight-parity}, we have 
+\begin{equation}
+\begin{split}
+h(x)&=1+x^2\left(\sum_{i=0}^{\alpha-1}x^{3i}\left(1+x\right)\right)\\
+&=\sum_{i=0}^{\alpha-1}x^{3i}\left(1+x+x^2+x^3\right)
+\end{split}
+\label{eq:5/7-h(x)-weight2}
+\end{equation}
+As $\alpha$ increases, the length of $h(x)$ increases by $2$ and the parity-weight represented by $w_H^{(p(2))}$ can be written as $$w_H^{(p(2))}=2\alpha+2$$
+
+For a low weight $b(x)$ of weight 3, the general form is 
+\begin{equation}
+1+x^{3\beta +1}+x^{3\gamma+2},~\beta,\gamma \geq 0
+\label{eq:5/7-weight-3}
+\end{equation}
+and $a(x)$ is 
+\begin{equation}
+\begin{split}
+a(x)&=\frac{1+x^{3\beta +1}+x^{3\gamma+1}}{1+x+x^2}\\
+&=1+\sum_{i=1}^{\beta}x^{3i}\left(x^{-1}+x^{-2}\right) + \sum_{j=1}^{\gamma}x^{3j}\left(1+x^{-1}\right)
+\end{split}
+\label{eq:5/7-a(x)-weight3}
+\end{equation}
+
+Fixing \eqref{eq:5/7-a(x)-weight3} into \eqref{eq:low-weight-parity}, we have 
+\begin{equation}
+\begin{split}
+h(x)&=1+x^2\left(1+\sum_{i=1}^{\beta}x^{3i}\left(x^{-1}+x^{-2}\right) + \sum_{j=1}^{\gamma}x^{3j}\left(1+x^{-1}\right)\right)\\
+&=1+x^2+\sum_{i=1}^{\beta}x^{3i}\left(x^{-2}+x^{-1}+1+x\right) + \sum_{j=1}^{\gamma}x^{3j}\left(x^{-1}+1+x+x^2\right)
+\end{split}
+\label{eq:5/7-h(x)-weight-3}
+\end{equation}
+We observe that $h(x)$ has length 2 when $\alpha =\beta =0$ and when $\alpha,~\beta>0$, the length of $h(x)$ further increases by $2(\max(\alpha,\beta))$. Therefore
+$$w_H^{p(3)}=2\ell+2,~\ell=\max(\alpha,\beta)$$
+
+\end{example}
+
+
+
+\begin{example}[15/13 RSC code, $f(x)=1+x^2+x^3,~g(x)=1+x+x^3$]
+For this RSC code, any low weight $b(x)$ of weight 2 has the general form 
+\begin{equation}
+b(x)=1+x^{7\alpha},~\alpha \geq 1
+\label{eq:15/13-weight-2}
+\end{equation}
+and 
+\begin{equation}
+\begin{split}
+a(x)&=\frac{1+x^{7\alpha}}{1+x+x^3}\\
+&=\sum_{i=0}^{\alpha-1}x^{7i}\left(1+x+x^2+x^4\right)
+\end{split}
+\label{eq:15/13-a(x)-weight2}
+\end{equation}
+Fixing \eqref{eq:15/13-a(x)-weight2} into \eqref{eq:low-weight-parity}, we have 
+\begin{equation}
+\begin{split}
+h(x)&=1+x^2+x^3\left(\sum_{i=0}^{\alpha-1}x^{7i}\left(1+x+x^2+x^4\right)\right)\\
+&=\sum_{i=0}^{\alpha-1}x^{7i}\left(1+x+x^4+x^5+x^6+x^7\right)
+\end{split}
+\label{eq:15/13-h(x)-weight2}
+\end{equation}
+As $\alpha$ increases, the length of $h(x)$ increases by $4$ and $w_H^{(p(2))}$ can be written as $$w_H^{(p(2))}=4\alpha+2$$
+======================================
+
+For a low weight $b(x)$ of weight 3, the general form is 
+\begin{equation}
+1+x^{3\beta +1}+x^{3\gamma+2},~\beta,\gamma \geq 0
+\label{eq:5/7-weight-3}
+\end{equation}
+and $a(x)$ is 
+\begin{equation}
+\begin{split}
+a(x)&=\frac{1+x^{3\beta +1}+x^{3\gamma+1}}{1+x+x^2}\\
+&=1+\sum_{i=1}^{\beta}x^{3i}\left(x^{-1}+x^{-2}\right) + \sum_{j=1}^{\gamma}x^{3j}\left(1+x^{-1}\right)
+\end{split}
+\label{eq:5/7-a(x)-weight3}
+\end{equation}
+
+Fixing \eqref{eq:5/7-a(x)-weight3} into \eqref{eq:low-weight-parity}, we have 
+\begin{equation}
+\begin{split}
+h(x)&=1+x^2\left(1+\sum_{i=1}^{\beta}x^{3i}\left(x^{-1}+x^{-2}\right) + \sum_{j=1}^{\gamma}x^{3j}\left(1+x^{-1}\right)\right)\\
+&=1+x^2+\sum_{i=1}^{\beta}x^{3i}\left(x^{-2}+x^{-1}+1+x\right) + \sum_{j=1}^{\gamma}x^{3j}\left(x^{-1}+1+x+x^2\right)
+\end{split}
+\label{eq:5/7-h(x)-weight-3}
+\end{equation}
+We observe that $h(x)$ has length 2 when $\alpha =\beta =0$ and when $\alpha,~\beta>0$, the length of $h(x)$ further increases by $2(\max(\alpha,\beta))$. Therefore
+$$w_H^{p(3)}=2\ell+2,~\ell=\max(\alpha,\beta)$$
+
+\end{example}
+\end{document}
