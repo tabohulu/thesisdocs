@@ -56,7 +56,7 @@ h(x)&=1+x^2\left(\sum_{i=0}^{\alpha-1}x^{3i}\left(1+x\right)\right)\\
 \end{split}
 \label{eq:5/7-h(x)-weight2}
 \end{equation}
-As $\alpha$ increases, the length of $h(x)$ increases by $2$ and the parity-weight represented by $w_H^{(p(2))}$ can be written as $$w_H^{(p(2))}=2\alpha+2$$
+As $\alpha$ increases, the length of $h(x)$ increases by $2$ and the parity-weight represented by $w_H^{p}(h(x))$ can be written as $$w_H^{p}(h(x))=2\alpha+2$$
 
 For a low weight $b(x)$ of weight 3, the general form is 
 \begin{equation}
@@ -81,7 +81,7 @@ h(x)&=1+x^2\left(1+\sum_{i=1}^{\beta}x^{3i}\left(x^{-1}+x^{-2}\right) + \sum_{j=
 \label{eq:5/7-h(x)-weight-3}
 \end{equation}
 We observe that $h(x)$ has length 2 when $\alpha =\beta =0$ and when $\alpha,~\beta>0$, the length of $h(x)$ further increases by $2(\max(\alpha,\beta))$. Therefore
-$$w_H^{p(3)}=2\ell+2,~\ell=\max(\alpha,\beta)$$
+$$w_H^{p}(h(x))=2\ell+2,~\ell=\max(\alpha,\beta)$$
 
 \end{example}
 
@@ -109,33 +109,74 @@ h(x)&=1+x^2+x^3\left(\sum_{i=0}^{\alpha-1}x^{7i}\left(1+x+x^2+x^4\right)\right)\
 \end{split}
 \label{eq:15/13-h(x)-weight2}
 \end{equation}
-As $\alpha$ increases, the length of $h(x)$ increases by $4$ and $w_H^{(p(2))}$ can be written as $$w_H^{(p(2))}=4\alpha+2$$
+As $\alpha$ increases, the length of $h(x)$ increases by $4$ and $w_H^{p}(h(x))$ can be written as $$w_H^{p}(h(x))=4\alpha+2$$
 ======================================
 
-For a low weight $b(x)$ of weight 3, the general form is 
+For the case where $w_H(\b(x))=3$, there are 3 different polynomials and the general form is
+\begin{align}
+&1+x^{7\beta +1}+x^{7\gamma+3},~\beta,\gamma \geq 0
+\label{eq:15/13-weight-3a}
+\end{align}
+
+\begin{align}
+&1+x^{7\beta +2}+x^{7\gamma+6},~\beta,\gamma \geq 0
+\label{eq:15/13-weight-3b}
+\end{align}
+
+\begin{align}
+&1+x^{7\beta +4}+x^{7\gamma+5},~\beta,\gamma \geq 0
+\label{eq:15/13-weight-3c}
+\end{align}
+
+
+and the corresponding $a(x)$ are
 \begin{equation}
-1+x^{3\beta +1}+x^{3\gamma+2},~\beta,\gamma \geq 0
-\label{eq:5/7-weight-3}
-\end{equation}
-and $a(x)$ is 
-\begin{equation}
-\begin{split}
-a(x)&=\frac{1+x^{3\beta +1}+x^{3\gamma+1}}{1+x+x^2}\\
-&=1+\sum_{i=1}^{\beta}x^{3i}\left(x^{-1}+x^{-2}\right) + \sum_{j=1}^{\gamma}x^{3j}\left(1+x^{-1}\right)
-\end{split}
-\label{eq:5/7-a(x)-weight3}
+a(x)=1+\sum_{i=1}^{\beta}x^{7i}\left(x^{-6}+x^{-5}+x^{-4}+x^{-2}\right) + \sum_{j=1}^{\gamma}x^{7j}\left(x^{-4}+x^{-3}+x^{-2}+1\right)
+\label{eq:15/13-a(x)-weight3a}
 \end{equation}
 
-Fixing \eqref{eq:5/7-a(x)-weight3} into \eqref{eq:low-weight-parity}, we have 
+\begin{equation}
+a(x)=1+x+x^3+\sum_{i=1}^{\beta}x^{7i}\left(x^{-5}+x^{-4}+x^{-3}+x^{-1}\right) + \sum_{j=1}^{\gamma}x^{7j}\left(x^{-1}+1+x+x^{3}\right)
+\label{eq:15/13-a(x)-weight3b}
+\end{equation}
+
+\begin{equation}
+a(x)=1+x+x^2+\sum_{i=1}^{\beta}x^{7i}\left(x^{-2}+x^{-1}+1+x^{2}\right) + \sum_{j=1}^{\gamma}x^{7j}\left(x^{-3}+x^{-2}+x^{-1}+x\right)
+\label{eq:15/13-a(x)-weight3c}
+\end{equation}
+Fixing \eqref{eq:15/13-a(x)-weight3a}, \eqref{eq:15/13-a(x)-weight3b} and  \eqref{eq:15/13-a(x)-weight3c}  into \eqref{eq:low-weight-parity}, we have 
 \begin{equation}
 \begin{split}
-h(x)&=1+x^2\left(1+\sum_{i=1}^{\beta}x^{3i}\left(x^{-1}+x^{-2}\right) + \sum_{j=1}^{\gamma}x^{3j}\left(1+x^{-1}\right)\right)\\
-&=1+x^2+\sum_{i=1}^{\beta}x^{3i}\left(x^{-2}+x^{-1}+1+x\right) + \sum_{j=1}^{\gamma}x^{3j}\left(x^{-1}+1+x+x^2\right)
+h(x)&=1+x^2+x^3\left(1+\sum_{i=1}^{\beta}x^{7i}\left(x^{-6}+x^{-5}+x^{-4}+x^{-2}\right) + \sum_{j=1}^{\gamma}x^{7j}\left(x^{-4}+x^{-3}+x^{-2}+1\right)\right)\\
+&=1+x^2+x^3+\sum_{i=1}^{\beta}x^{7i}\left(x^{-6}+x^{-5}+x^{-2}+x^{-1}+1+x\right) +\\ &\sum_{j=1}^{\gamma}x^{7j}\left(x^{-4}+x^{-3}+1+x+x^2+x^3\right)
 \end{split}
-\label{eq:5/7-h(x)-weight-3}
+\label{eq:5/7-h(x)-weight-3a}
 \end{equation}
-We observe that $h(x)$ has length 2 when $\alpha =\beta =0$ and when $\alpha,~\beta>0$, the length of $h(x)$ further increases by $2(\max(\alpha,\beta))$. Therefore
-$$w_H^{p(3)}=2\ell+2,~\ell=\max(\alpha,\beta)$$
+
+\begin{equation}
+\begin{split}
+h(x)&=1+x^2+x^3\left(1+x+x^3+\sum_{i=1}^{\beta}x^{7i}\left(x^{-5}+x^{-4}+x^{-3}+x^{-1}\right) + \sum_{j=1}^{\gamma}x^{7j}\left(x^{-1}+1+x+x^{3}\right)\right)\\
+&=1+x+x^2+x^3+x^4+x^5+x^6+\sum_{i=1}^{\beta}x^{7i}\left(x^{-5}+x^{-4}+x^{-1}+1+x+x^2\right) +\\ &\sum_{j=1}^{\gamma}x^{7j}\left(x^{-1}+1+x^3+x^4+x^5+x^6\right)
+\end{split}
+\label{eq:5/7-h(x)-weight-3b}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+h(x)&=1+x^2+x^3\left(1+x+x^2+\sum_{i=1}^{\beta}x^{7i}\left(x^{-2}+x^{-1}+1+x^{2}\right) + \sum_{j=1}^{\gamma}x^{7j}\left(x^{-3}+x^{-2}+x^{-1}+x\right)\right)\\
+&=1+x+x^5+\sum_{i=1}^{\beta}x^{7i}\left(x^{-2}+x^{-1}+x^{2}+x^3+x^4+x^5\right) +\\ &\sum_{j=1}^{\gamma}x^{7j}\left(x^{-3}+x^{-2}+x+x^2+x^3+x^4\right)
+\end{split}
+\label{eq:5/7-h(x)-weight-3c}
+\end{equation}
+Finally the parity weight equations are 
+$$
+w_H^p(h(x))=
+\begin{cases}
+4\ell+7,~1+x^{7\beta+2}+x^{7\gamma+6}\\
+4\ell+3,~\text{otherwise}
+\end{cases}
+$$
+
 
 \end{example}
 \end{document}
