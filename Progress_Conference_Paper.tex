@@ -14,9 +14,9 @@
 %\setCJKmainfont{SimSun}
 \begin{document}
 \title{
-A Novel Method for Obtaining the Pattern of Low-Weight Codeword Components of Recursive Systematic Convolutional Codes}
+A Novel Method for Obtaining the Pattern of Low-Weight Codewords of Recursive Systematic Convolutional Codes}
 \author{%
-  \IEEEauthorblockN{Bohulu~Kwame~Ackah~and~Chenggao~Han\\}four
+  \IEEEauthorblockN{Bohulu~Kwame~Ackah~and~Chenggao~Han\\}
   \IEEEauthorblockA{Graduate School of Informatics and Engineering,\\
    The University of Electro-Communications,\\
     1-5-1 Chofugaoka, Chofu-shi, Tokyo, 182--8585, Japan\\
@@ -33,27 +33,26 @@ A Novel Method for Obtaining the Pattern of Low-Weight Codeword Components of Re
 %Knowledge of the distance spectrum, as well as the structure of the message inputs that make up the distance spectrum for a specific recursive systematic convolutional (RSC) code is vital to the design of Turbo Code interleavers. Even though the distance spectrum of an RSC code can be obtained by calculating its transfer function, it does not provide any information about the structure of the message inputs. %and the complexity involved in calculating the transfer function increases with the number of states of the RSC code.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this paper, we present a novel low-complexity method for listing the patterns of the low-weight codeword components of any RSC code, which is essential for interleaver design. 
-For selected RSC codes and codeword weight up to $d_{\text{max}}$, we generate a low-weight codeword component pattern list and validate our method by comparing the simulation results to the bounds obtained via our novel method and the transfer function method. Results suggest that our method is accurate for most RSC codes and a slight adjustment to our method might yield more accurate results.
+In this paper,we present a novel low-complexity method for determining the distance spectrum of any RSC code that has the added benefit of revealing the pattern of the low-weight codewords. 
+Using our method, we list the partial distance spectrum for selected RSC codes up to a cut-off weight $d_{\text{max}}$ and compare the simulation results to the bounds obtained via our novel method and the transfer function method. 
 \end{abstract}
 \newpage
-\input{./ConfSources/Introduction}
+\input{./ConfSources/1_Introduction}
 \newpage
-\input{./ConfSources/Preliminaries}
+\input{./ConfSources/2_Preliminaries}
 \newpage
-\input{./ConfSources/RSCReview}
+\input{./ConfSources/3_RSCReview}
 \newpage
-%\input{./ConfSources/MergedExamples}
+%\input{./ConfSources/NovelMethod}
+\input{./ConfSources/4_NovelMethod}
+\newpage
+\input{./ConfSources/5_subUnionBound}
+\newpage
+\input{./ConfSources/6_SimulationResults}
 %\newpage
-\input{./ConfSources/NovelMethod}
-\newpage
-\input{./ConfSources/subUnionBound}
-\newpage
-\input{./ConfSources/SimulationResults}
-\newpage
-\input{./ConfSources/Conclusion}
-\newpage
-\input{./ConfSources/References}
+%\input{./ConfSources/7_Conclusion}
+%\newpage
+%\input{./ConfSources/8_References}
 
 
 
