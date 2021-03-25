@@ -12,21 +12,21 @@ Refering \eqref{eq:low-weight-parity}, we consider the solution of
 	\label{Eq:condition}
 \end{align}
 %
-We start from the simplest case $K=1$, \ie, $f(x) = f_0^{\gamma_0}(x)$. Then, we can see from \eqref{eq:low-weight-parity} that each root is also a root of $h(x)$. For the case $\gamma_0 = 1$, since all $\varphi_0^i$, $0 \leq i < \epsilon_0$, are distinct from each other, the condition
+We start from the simplest case $K=1$, \ie, $f(x) = f_0^{\gamma_0}(x)$. Then, we can see from \eqref{eq:low-weight-parity} that each root is also a root of $h(x)$. For the case $\gamma_0 = 1$, since all $\varphi_0^i$, $0 \leq i < \epsilon_0$, are distinct from each other, the equation
 \begin{align}
 	h(\varphi_0^i)=0,~~~ 0 \leq i < \epsilon_0
 	\label{Eq:rootcondition}
 \end{align}
-is necessary and sufficient to fulfil \eqref{Eq:condition}. For $\gamma_0 > 1$, on the other hand, \eqref{Eq:rootcondition} is necessary but not sufficient for \eqref{Eq:condition}. For this case, although we may derive some solutions by differential equations
+is a necessary and sufficient condition of \eqref{Eq:condition}. 
+
+For $\gamma_0 > 1$, on the other hand, \eqref{Eq:rootcondition} is necessary but not sufficient for \eqref{Eq:condition}. For this case, although we may derive some solutions by differential equations
 \begin{align}
 \left.\frac{d^{(j)}h(x)}{d x^j}\right|_{x=\varphi_0^i}=0,~~~0 \leq i < \epsilon_0,~1 \leq j < \gamma_0
 \label{Eq:differential}
 \end{align}
-we can not determine the patterns completely, since the operations on coefficients of the polynomial are performed on the terms $\bmod p$. Thus, we need to remove the ghost solutions 
-%{\bf (perhaps has accurate name)} 
-by careful confirmation.
+we can not determine the patterns completely, since the operations on coefficients of the polynomial are performed on the terms $\bmod p$. Thus, we need to remove possible ghost solutions at further confirmation step.
 
-By repeating the above discussion for the roots $\varphi_k$, $0 < k < K$, and taking the intersection of the results, we can easily extend to the case $K>1$.
+For the case $K>1$, we may repeat the above discussion for the roots $\varphi_k$, $0 < k < K$, and take the intersection of the results to determine the low-weight PC patterns.
 
 \subsection{The patterns of the weight-2 PCs}
 \label{sec:PC2}
@@ -59,14 +59,11 @@ Thus, $(\alpha,\beta)$ should satisfying the condition
 \varphi_0^{\alpha}+\varphi_0^{\beta}= 1
 \label{Eq:novelEq5b}
 \end{equation}
-Such pairs can be found by referring to the table of the extended field for GF$(2^M)$. 
-Let $(m,n)$ be such a pair, then it is obvious that all pairs $(\alpha,~\beta)$  that satisfy
-\begin{equation}
-X^m+X^n = 1,~ (m,n) \equiv (\alpha,~\beta) \bmod \epsilon_0%,~(\eta,~\zeta)\in \cZ
-\end{equation}
-also satisfy \eqref{Eq:novelEq5b}, where $(\alpha,~\beta) \bmod \epsilon_0$ is shorthand for the operation $(\alpha \bmod \epsilon_0,~\beta \bmod \epsilon_0)$. On the other hand, for a fixed $\alpha$, since $\alpha+i$, $0 \leq i < \epsilon_0$, are distinct from each other, any integer $\beta$ that satisfies \eqref{Eq:novelEq5b} must be such that $n\equiv \beta \mod \epsilon_0$.
+Such pairs can be found by referring to the table of the extended field for $\GF\left(2^M\right)$. 
+Let $(m,n)$ be such a pair, and we let $\cM=\epsilon_0 \ell+m$ and $\cN=\epsilon_0 \ell+n$, $\ell \geq 0$. Then it is obvious that each pair $(\alpha,~\beta) \in \cM \otimes \cN$ satisfies
+\eqref{Eq:novelEq5b}. For a fixed $\alpha$, on the other hand, since $\alpha+i$, $0 \leq i < \epsilon_0$, are distinct from each other, any integer $\beta$ that satisfies \eqref{Eq:novelEq5b} must be such that $n\equiv \beta \mod \epsilon_0$.
 
-Furthermore, let $\cM=\epsilon_0 \ell_0+m$ and $\cN=\epsilon_0 \ell_1+n,~\ell_0, \ell_1 \geq 0$. We denote the set of all pairs as $\cM \bar{\otimes} \cN$, where the elements of this set are formed using a tensor product approach. Then, $(\alpha,~\beta) \in \cM \bar{\otimes} \cN$
+%Furthermore, let  We denote the set of all pairs as $\cM \bar{\otimes} \cN$, where the elements of this set are formed using a tensor product approach. Then, $(\alpha,~\beta) \in \cM \bar{\otimes} \cN$
 \subsection{Examples}
 
 \begin{example}$f(x)=1+x+x^2$
@@ -98,12 +95,15 @@ $1+x+x^3+x^4+x^6+x^{7}+x^9+x^{10}$
  \end{tabular}
  \label{novelTab2}
 \end{table}
-We may write the weight-2 PCs in general form as $h(x)=1+x^{3\ell},~\ell>1$ and the corresponding $a(x)$ is given by 
+We may write the weight-2 PCs in general form as $h(x)=1+x^{3\ell}$, $\ell>1$, and the corresponding $a(x)$ is given by 
 \begin{equation*}
 a(x)=\sum_{i=0}^{\ell-1} x^{3i}(1+x)
 \end{equation*}
 
-\textbf{Weight-3 PCs}: The elements of GF$(2^2)$ are shown in Table \ref{novelTab7}.  From this table we have $(m,n)= (1,2)$ and consequently, $(\alpha,\beta) \in \{3\ell_0+1\}~ \bar{\otimes}~\{3\ell_1+2\},~\ell_0,\ell_1 \geq 0$.  The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab8} below for the first four valid values of $(\alpha,\beta)$.
+\textbf{Weight-3 PCs}: The elements of GF$(2^2)$ are shown in Table \ref{novelTab7}.  We can see from this table that $(m,n)= (1,2)$ and, consequently, let $\cM = \{3\ell+1\}_{\ell\geq 0}$ and $\cN = \{3\ell+2\}_{\ell\geq 0}$. Then, we have $(\alpha,\beta) \in \cM\otimes\cN$.  
+
+The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab8} below for the first four valid values of $(\alpha,\beta)$ and the weight-3 PCs can be written as $h(x)=1+x^{3\ell_0+1}+x^{3\ell_1+2},~\ell_0,~\ell_1 \geq 0$
+in general form. 
  \begin{table}[htbp]
  \caption{Non-zero Elements of $\GF \left(2^2\right)$ generated by $f(x)=1+x+x^2$}
 \centering
@@ -111,11 +111,11 @@ a(x)=\sum_{i=0}^{\ell-1} x^{3i}(1+x)
  \hline
  power representation & actual value \\ [0.5ex] 
  \hline\hline
-$X^0~=X^3=1$ & $1$\\
+$x^0~=x^3=1$ & $1$\\
 \hline
-$X$ & $x$\\
+$x$ & $x$\\
 \hline
-$X^2$ &  $1+x$\\
+$x^2$ &  $1+x$\\
 \hline
  \end{tabular}
  \label{novelTab7}
@@ -139,7 +139,6 @@ $1+x^2+x^3$ & $1+x+x^5$
  \label{novelTab8}
 \end{table}
 
-We may write the weight-3 PCs in general form as $h(x)=1+x^{3\ell_0+1}+x^{3\ell_1+2},~\ell_0,~\ell_1 \geq 0$ 
 
 \label{ex-1}
 \end{example}
@@ -150,7 +149,7 @@ We may write the weight-3 PCs in general form as $h(x)=1+x^{3\ell_0+1}+x^{3\ell_
 \begin{example}
 $f(x)=1+x+x^2+x^3+x^4$
 
-$f(x)$ is a prime but not primitive, and it can be confirmed that the order of $\varphi_0$ is $\epsilon_0=5$.
+For this polynomial, we can confirm the order of $\varphi_0$ is $\epsilon_0=5< 15$. Thus, $f(x)$ is a prime but not primitive polynomial.
 \newline
 \textbf{Weight-2 PCs}: 
 From \eqref{eq:wt2-alpha}, $\alpha$ should be a multiple of $5$. The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab3} with general forms for $\ell>1$
@@ -174,7 +173,7 @@ $1+x+x^5+x^6+x^{10}+x^{11}+x^{15}+x^{16}$ &$1+x^{20}$
 \end{table}
 \newpage
 \textbf{Weight-3 PCs}:
-We refer to Table \ref{novelTabWt3-2} and it is obvious that $(\alpha,~\beta)=\emptyset$ and therefore, there are no weight-3 PCs for $f(x)$
+We refer to Table \ref{novelTabWt3-2} and confirm that there is no pair $(m,~n)$ that satisfies $x^m+x^n \equiv 1$. Thus, there are no weight-3 PCs for $f(x)$
  \begin{table}[htbp]
  \caption{Non-zero Elements of $\GF (2^4)$ generated by $f(x)=1+x+x^2+x^3+x^4$}
 \centering
@@ -182,15 +181,15 @@ We refer to Table \ref{novelTabWt3-2} and it is obvious that $(\alpha,~\beta)=\e
  \hline
  power representation & polynomial representation \\ [0.5ex] 
  \hline\hline
-$X^0~=X^5~=X^{10}~=X^{15}$ & $1$\\
+$x^0~=x^5~=x^{10}~=x^{15}$ & $1$\\
 \hline
-$X~=X^6~=X^{11}$ & $x$\\
+$x~=x^6~=x^{11}$ & $x$\\
 \hline
-$X^2~=X^7~=X^{12}$ &  $x^2$\\
+$x^2~=x^7~=x^{12}$ &  $x^2$\\
 \hline
-$X^3~=X^8~=X^{13}$ &  $x^3$\\
+$x^3~=x^8~=x^{13}$ &  $x^3$\\
 \hline
-$X^4~=X^9~=X^{14}$ &  $1+x+x^2+x^3$\\
+$x^4~=x^9~=x^{14}$ &  $1+x+x^2+x^3$\\
 \hline
  \end{tabular}
  \label{novelTabWt3-2}
@@ -205,17 +204,17 @@ $X^4~=X^9~=X^{14}$ &  $1+x+x^2+x^3$\\
 	f(x)=(1+x)^2\]
 	and the order of the root $\varphi_0=1$ is $\epsilon_0=1$.
 	
-	\textbf{Weight-2 PCs}: Since 
-	We obtain from \eqref{Eq:rootcondition} and \eqref{Eq:differential}
+	\textbf{Weight-2 PCs}: We obtain from \eqref{Eq:rootcondition} and \eqref{Eq:differential}
 	\begin{align}
 		(\varphi_0)^{\alpha} = 1
 		\label{Eq:example31}
 	\end{align}
+	and
 	\begin{align}
 		\alpha(\varphi_0)^{(\alpha-1)} = 0
 		\label{Eq:example32}
 	\end{align}	
-	Although \eqref{Eq:example31} indicates $\alpha$ (from \eqref{eq:wt2-alpha}) can be any positive integer, we can see from \eqref{Eq:example32} that $\alpha$  should be an even number.
+	respectively. Although \eqref{Eq:example31} implies $\alpha$ in \eqref{eq:wt2-alpha} can be any positive integer, we can see from \eqref{Eq:example32} that $\alpha$  should be an even number.
 	The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab1} with general forms for $\ell>1$.
 	\begin{table}[htbp]
 		\renewcommand{\arraystretch}{1.3}
@@ -235,13 +234,11 @@ $X^4~=X^9~=X^{14}$ &  $1+x+x^2+x^3$\\
 	\end{table}
 	
 	\textbf{Weight-3 PCs}:
-	Given that there is a single non-zero element in GF(2) which is generated by $1+x$ we can conclude that there are no weight-3 PCs associated with $f(x)$.
+	With the same reason of Example \ref{ex-2}, there are no weight-3 PCs associated with $f(x)$.
 \label{ex-3}
 \end{example}
 
 
-
----------------------------
 %=====================Deleted Examples  =======================%
 %\begin{example}
 %$f(x)=1+x^2+x^3+x^4$\newline
@@ -298,14 +295,14 @@ $X^4~=X^9~=X^{14}$ &  $1+x+x^2+x^3$\\
 \begin{example}
 $f(x)=1+x^2+x^3+x^4+x^6$
 
-$f(x)$ can be written as 
+The given polynomial can be written as 
 $$f(x)=\prod_{k=0}^{1}f_k(x)$$
 where 
 $$f_0(x)=1+x+x^2,~f_1(x)=1+x+x^2+x^3+x^4$$ 
-From Example \ref{ex-1} and Example \ref{ex-2}, we know that $\alpha_0=3$ and $\alpha_1=5$.
+and we know from Example \ref{ex-1} and Example \ref{ex-2} that $\epsilon_0=3$ and $\epsilon_1=5$.
 
 \textbf{Weight-2 PCs}: 
-From \eqref{eq:wt2-alpha} , the valid values of $\alpha$ should be a multiple of the least common multiples of $\alpha_0$ and $\alpha_1$, which means $\alpha$ should be a multiple of $15$.
+From \eqref{eq:wt2-alpha} , the valid values of $\alpha$ should be a multiple of $\epsilon_0$ and $\epsilon_1$, hence, $\alpha$ should be a multiple of $\lcm(\epsilon_0,\epsilon_1)=15$.
 The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab1-c} with general forms for $\ell>1$.
 
 \begin{table}[htbp]
@@ -324,7 +321,7 @@ $1+x^2+x^3+x^6+x^7+x^9+x^{15}+x^{17}+x^{18}+x^{21}+x^{22}+x^{24}$ & $1+x^{30}$ \
 \end{table}
 
 \textbf{Weight-3 PCs}:
-Since $f(x)$ from Example \ref{ex-2} does not yield any weight-3 PC, there are no weight-3 PCs associated with $f(x)$.
+Since we have shown in Example \ref{ex-2} that $f_1(x)$ does not yield any weight-3 PC, there are no weight-3 PCs associated with $f(x)$.
 %We may write the weight-2 PCs in general form as $h(x)=1+x^{7\ell},~\ell>1$ and the corresponding $a(x)$ is given by 
 %\begin{equation*}
 %a(x)=\sum_{\ell=0}^{L-1} x^{7\ell}(1+x)
@@ -334,14 +331,14 @@ Since $f(x)$ from Example \ref{ex-2} does not yield any weight-3 PC, there are n
 \begin{example}
 $f(x)=1+x+x^5$
 
-$f(x)$ can be written as 
+The polynomial $f(x)$ can be written as 
 $$f(x)=\prod_{k=0}^{1}f_k(x)$$
 where 
 $$f_0(x)=1+x+x^2,~f_1(x)=1+x^2+x^3$$ 
-From Example \ref{ex-1}, we know that $\alpha_0=3$ and it can be confirmed that $\alpha_1=7$.
+We know from Example \ref{ex-1} that $\epsilon_0=3$ and it can be confirmed that $\epsilon_1=7$.
 
 \textbf{Weight-2 PCs}: 
-From \eqref{eq:wt2-alpha}, the valid values of $\alpha$ should be a multiple of the least common multiples of $\alpha_0$ and $\alpha_1$, which means $\alpha$ should be a multiple of $21$.
+The valid values of $\alpha$ in \eqref{eq:wt2-alpha} should be a multiple of $\lcm(\epsilon_0,\epsilon_1)=21$.
 The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab1-c} with general forms for $\ell>1$.
 
 \begin{table}[htbp]
@@ -359,44 +356,52 @@ $1+x^2+x^3+x^4+x^6+x^8+x^{4}+x^{6}+x^{8}+x^{11}+x^{12}+x^{16}$ & $1+x^{21}$\\
 \end{table}
 
 \textbf{Weight-3 PCs}:
-From Example \ref{ex-1}, we have $(\alpha_0,~\beta_0) \in \{3\ell_0+1\}~ \bar{\otimes}~\{3\ell_1+2\},~\ell_0,\ell_1 \geq 0$
-and Table \ref{novelTabWt3-5} indicates that, 
+We rewrite $\cM$ and $\cN$ in Example \ref{ex-1} as $\cM^0$ and $\cN^0$, respectively,
+and referring Table \ref{novelTabWt3-5} let
+\begin{align}
+	\cM_0^1 &:= \{7\ell + 1\}_{\ell \geq 0},~\cN_0^1 := \{7\ell + 5\}_{\ell \geq 0}\cr
+	\cM_1^1 &:= \{7\ell + 2\}_{\ell \geq 0},~\cN_1^1 := \{7\ell + 3\}_{\ell \geq 0}\cr
+	\cM_2^1 &:= \{7\ell + 4\}_{\ell \geq 0},~\cN_2^1 := \{7\ell + 6\}_{\ell \geq 0}
+\end{align}
+Then, we have
+\[
+(\alpha_0,~\beta_0) \in \cM^0\otimes\cN^0 
+\]
+and
 \begin{equation*}
 \begin{split}
-(\alpha_1,~\beta_1) \in &\{7\ell_2+1\} ~\bar{\otimes}~\{7\ell_3+5\}\\
-& \bigcup~ \{7\ell_2+2\} ~\bar{\otimes}~\{7\ell_3+3\} \\
-& \bigcup ~\{7\ell_2+4\} ~\bar{\otimes}~\{7\ell_3+6\} 
+(\alpha_1,~\beta_1) \in &\bigcup_{i=0}^2 \cM_i^1\otimes\cN_i^1 
 \end{split}
 \end{equation*}
-$\ell_2,\ell_3 \geq 0$. Therefore $(\alpha,\beta) \in (\alpha_0,~\beta_0)  ~\bigcap~ (\alpha_1,~\beta_1) $.
+Therefore, by taking intersection, we have $(\alpha,\beta) \in \left(\cM^0\otimes\cN^0\right)\bigcap\left(\bigcup_{i=0}^2 \cM_i^1\otimes\cN_i^1 \right) $.
 
 \begin{table}[htbp]
  \caption{Non-zero Elements of $\GF (2^3)$ generated by $1+x^2+x^3$}
 \centering
  \begin{tabular}{c c} 
  \hline
- power representation & actual value \\ [0.5ex] 
+ power representation & polynomial representation \\ [0.5ex] 
  \hline\hline
-$X^0~=X^7$ & $1$\\
+$x^0~=x^7$ & $1$\\
 \hline
-$X$ & $x$\\
+$x$ & $x$\\
 \hline
-$X^2$ &  $x^2$\\
+$x^2$ &  $x^2$\\
 \hline
-$X^3$ &  $1+x^2$\\
+$x^3$ &  $1+x^2$\\
 \hline
-$X^4$ &  $1+x+x^2$\\
+$x^4$ &  $1+x+x^2$\\
 \hline
-$X^5$ &  $1+x$\\
+$x^5$ &  $1+x$\\
 \hline
-$X^6$ &  $x+x^2$\\
+$x^6$ &  $x+x^2$\\
 \hline
  \end{tabular}
  \label{novelTabWt3-5}
 \end{table}
 
 The corresponding values for $a(x)$ and $h(x)$ are shown in Table \ref{novelTab8-b} below for the first three valid values of $(\alpha,\beta)$.
-Also, a visual for $(\alpha,~\beta)$ is shown in Fig. \ref{fig:example5-union}, where the union is in dicated by the pairs connected in  Fig. \ref{fig:example5-union}-(a) and  Fig. \ref{fig:example5-union}-(b).
+%Also, a visual for $(\alpha,~\beta)$ is shown in Fig. \ref{fig:example5-union}, where the union is in dicated by the pairs connected in  Fig. \ref{fig:example5-union}-(a) and  Fig. \ref{fig:example5-union}-(b).
 \begin{table}[htbp]
  \caption{$f(x)=1+x+x^5$}
 \centering
@@ -413,12 +418,12 @@ $1+x+x^2+x^3+x^4+x^{6}+x^{8}$ & $1+x^{11}+x^{13}$\\
  \label{novelTab8-b}
 \end{table}
 
-\begin{figure}[h]
-\centering
-		\includegraphics[width=0.45\textwidth]{./ConfSources/pair_union.png}
-		\caption{Visual representation of $(\alpha,~\beta)$ }
-		\label{fig:example5-union}
-		\end{figure}
+%\begin{figure}[h]
+%\centering
+%		\includegraphics[width=0.45\textwidth]{./ConfSources/pair_union.png}
+%		\caption{Visual representation of $(\alpha,~\beta)$ }
+%		\label{fig:example5-union}
+%		\end{figure}
 \end{example}
  
 
