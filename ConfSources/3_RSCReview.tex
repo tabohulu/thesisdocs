@@ -2,7 +2,7 @@
 \label{sec2}
 The outputs of an RSC code are determined by the input bit sequence $b(x)$, the states of the shift registers and the feedforward and feedback connections of shift registers that can be represented by a generator function. 
 
-As an instance,  the generator function of a rate $1/2$ RSC code may be written as  $$\left[1 ~\frac{f(x)}{g(x)}\right]$$ where $1$ yields the \textit{systematic  component} (SC) $b(x)$ while the \textit{parity-check component} (PC) $h(x)$ is associated with the feedforward and feedback connections of the shift registers, specified by $f(x)$ and $g(x)$, respectively. Each output $c(x)$ is a mixture of the SC and PC as
+For instance,  the generator function of a rate $1/2$ RSC code may be written as  $$\left[1 ~\frac{f(x)}{g(x)}\right]$$ where $1$ yields the \textit{systematic  component} (SC) $b(x)$ while the \textit{parity-check component} (PC) $h(x)$ is associated with the feedforward and feedback connections of the shift registers, specified by $f(x)$ and $g(x)$, respectively. Each output $c(x)$ is a mixture of the SC and PC as
 \begin{equation}
 c(x) = b(x^2)+xh(x^2)
 \label{codeword-comp}
@@ -17,14 +17,14 @@ From \eqref{codeword-comp}, it is trivial that
 w_H(c(x))=w_H(b(x)) + w_H(h(x))
 \label{eq:cw-weight}
 \end{equation}
-and hence, each low-weight codeword is a conjunction of two low-weight SC and PC.
+and hence, each low-weight codeword is a combination of a low-weight SC and PC.
 
-Under the assumption of large frame sizes, the presence of $g^{-1}(x)$  in \eqref{eq:parity-def} may involve a particular sequence of bits that is repeated a large number of times, hence a high-weight PC. A low-weight PC occurs if and only if
+Under the assumption of large frame sizes, the presence of $g^{-1}(x)$  in \eqref{eq:parity-def} may involve a particular sequence of bits that is repeated a large number of times, hence generating a high-weight PC. A low-weight PC occurs if and only if
 \begin{equation}
 b(x) \bmod g(x) \equiv 0
 \label{eq:rtz-input}
 \end{equation}
-The inputs $b(x)$ which meet the condition in \eqref{eq:rtz-input} is called a \textit{return-to-zero} (RTZ) input. Thus, every RTZ input can be factorized by  
+Any input $b(x)$ which meet the condition in \eqref{eq:rtz-input} is called a \textit{return-to-zero} (RTZ) input. Thus, every RTZ input can be factorized by  
 \begin{equation}
 b(x) =a(x)g(x)
 \label{eq:low-weight-msg}

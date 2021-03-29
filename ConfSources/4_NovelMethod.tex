@@ -6,7 +6,7 @@ f(x)&=\prod_{k=0}^{K-1}f_k^{\gamma_k}(x)
 \end{align}
 where $\gamma_0,\gamma_1,\cdots,\gamma_{K-1}$ are positive integers and we assume $\varphi_k$ is a root of $f_{k}(x)$ of order $\epsilon_k$.
 
-Refering \eqref{eq:low-weight-parity}, we consider the solution of
+Refering to \eqref{eq:low-weight-parity}, we consider the solution of
 \begin{align}
 	h(x) \mod f(x) \equiv 0
 	\label{Eq:condition}
@@ -24,29 +24,29 @@ For $\gamma_0 > 1$, on the other hand, \eqref{Eq:rootcondition} is necessary but
 \left.\frac{d^{(j)}h(x)}{d x^j}\right|_{x=\varphi_0^i}=0,~~~0 \leq i < \epsilon_0,~1 \leq j < \gamma_0
 \label{Eq:differential}
 \end{align}
-we can not determine the patterns completely, since the operations on coefficients of the polynomial are performed on the terms $\bmod p$. Thus, we need to remove possible ghost solutions at further confirmation step.
+we can not determine the patterns completely, since the operations on coefficients of the polynomial are performed on the terms $\bmod~ p$. Thus, we need to remove possible ghost solutions at further confirmation step.
 
-For the case $K>1$, we may repeat the above discussion for the roots $\varphi_k$, $0 < k < K$, and take the intersection of the results to determine the low-weight PC patterns.
+For the case where $K>1$, we may repeat the above discussion for the roots $\varphi_k$, $0 < k < K$, and take the intersection of the results to determine the low-weight PC patterns.
 
-\subsection{The patterns of the weight-2 PCs}
+\subsection{The pattern of the weight-2 PCs}
 \label{sec:PC2}
 Each weight-2 PC can be written as 
 \begin{equation}
 h(x)=1+x^{\alpha}
 \label{eq:wt2-gen-form}
 \end{equation}
-without loss of generality. Thus, we have from \eqref{Eq:rootcondition} that
+without loss of generality. Thus from \eqref{Eq:rootcondition}, we have 
 \begin{equation}
 (\varphi_0^i)^{\alpha} =1,~~~ 0 \leq i < \epsilon_0
 \label{novelEq5b}
 \end{equation}
-On the other hand, the order $\epsilon_0$ is the least integer satisfying $\varphi_0^{\epsilon_0} \equiv 1$, thus, $\alpha$ should satisfy the condition
+On the other hand, the order of $\varphi_0,~\epsilon_0$ is the least integer satisfying $\varphi_0^{\epsilon_0} \equiv 1$, thus, $\alpha$ should satisfy the condition
 \begin{equation}
 \alpha \bmod \epsilon_0  \equiv 0 
 \label{eq:wt2-alpha}
 \end{equation}
 
-\subsection{The patterns of the weight-3 PCs}
+\subsection{The pattern of the weight-3 PCs}
 
 Each weight-3 PC can be written as 
 \begin{equation}
@@ -54,7 +54,7 @@ h(x)=1+x^{\alpha}+x^{\beta},~\alpha < \beta
 \label{novelEqwt3}
 \end{equation}
 without loss of generality. 
-Thus, $(\alpha,\beta)$ should satisfying the condition
+Thus, $(\alpha,\beta)$ should satisfy the condition
 \begin{equation}
 \varphi_0^{\alpha}+\varphi_0^{\beta}= 1
 \label{Eq:novelEq5b}
@@ -109,7 +109,7 @@ in general form.
 \centering
  \begin{tabular}{c c} 
  \hline
- power representation & actual value \\ [0.5ex] 
+ power representation & polynomial representation \\ [0.5ex] 
  \hline\hline
 $x^0~=x^3=1$ & $1$\\
 \hline
@@ -171,7 +171,6 @@ $1+x+x^5+x^6+x^{10}+x^{11}+x^{15}+x^{16}$ &$1+x^{20}$
  \label{novelTab3}
 %}ll
 \end{table}
-\newpage
 \textbf{Weight-3 PCs}:
 We refer to Table \ref{novelTabWt3-2} and confirm that there is no pair $(m,~n)$ that satisfies $x^m+x^n \equiv 1$. Thus, there are no weight-3 PCs for $f(x)$
  \begin{table}[htbp]
@@ -202,7 +201,7 @@ $x^4~=x^9~=x^{14}$ &  $1+x+x^2+x^3$\\
 	We can write $f(x)$ as
 	\[
 	f(x)=(1+x)^2\]
-	and the order of the root $\varphi_0=1$ is $\epsilon_0=1$.
+	and the order of the root $\varphi_0$ is $\epsilon_0=1$.
 	
 	\textbf{Weight-2 PCs}: We obtain from \eqref{Eq:rootcondition} and \eqref{Eq:differential}
 	\begin{align}
@@ -299,7 +298,7 @@ The given polynomial can be written as
 $$f(x)=\prod_{k=0}^{1}f_k(x)$$
 where 
 $$f_0(x)=1+x+x^2,~f_1(x)=1+x+x^2+x^3+x^4$$ 
-and we know from Example \ref{ex-1} and Example \ref{ex-2} that $\epsilon_0=3$ and $\epsilon_1=5$.
+and we know from Example \ref{ex-1} and Example \ref{ex-2} that $\epsilon_0=3$ and $\epsilon_1=5$ respectively.
 
 \textbf{Weight-2 PCs}: 
 From \eqref{eq:wt2-alpha} , the valid values of $\alpha$ should be a multiple of $\epsilon_0$ and $\epsilon_1$, hence, $\alpha$ should be a multiple of $\lcm(\epsilon_0,\epsilon_1)=15$.
@@ -326,6 +325,7 @@ Since we have shown in Example \ref{ex-2} that $f_1(x)$ does not yield any weigh
 %\begin{equation*}
 %a(x)=\sum_{\ell=0}^{L-1} x^{7\ell}(1+x)
 %\end{equation*}
+\label{ex-4}
 \end{example}
 
 \begin{example}
@@ -424,6 +424,7 @@ $1+x+x^2+x^3+x^4+x^{6}+x^{8}$ & $1+x^{11}+x^{13}$\\
 %		\caption{Visual representation of $(\alpha,~\beta)$ }
 %		\label{fig:example5-union}
 %		\end{figure}
+\label{ex-5}
 \end{example}
  
 

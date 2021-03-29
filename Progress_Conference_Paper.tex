@@ -14,7 +14,7 @@
 %\setCJKmainfont{SimSun}
 \begin{document}
 \title{
-A Novel Method for Obtaining the Pattern of Low-Weight Codewords of Recursive Systematic Convolutional Codes}
+A Novel Method for Obtaining the Pattern of Low-Weight Codeword Components of Recursive Systematic Convolutional Codes}
 \author{%
   \IEEEauthorblockN{Bohulu~Kwame~Ackah~and~Chenggao~Han\\}
   \IEEEauthorblockA{Graduate School of Informatics and Engineering,\\
@@ -33,8 +33,8 @@ A Novel Method for Obtaining the Pattern of Low-Weight Codewords of Recursive Sy
 %Knowledge of the distance spectrum, as well as the structure of the message inputs that make up the distance spectrum for a specific recursive systematic convolutional (RSC) code is vital to the design of Turbo Code interleavers. Even though the distance spectrum of an RSC code can be obtained by calculating its transfer function, it does not provide any information about the structure of the message inputs. %and the complexity involved in calculating the transfer function increases with the number of states of the RSC code.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this paper,we present a novel low-complexity method for determining the structure of the components of a low weight codeword for a given RSC code, which is useful in interleaver design for turbo codes. 
-For selected RSC codes, we present a list of the low-weight codeword components up to a cut-off weight $d_{\text{max}}$ and compare the simulation results to the bounds obtained via our novel method and the transfer function method to validate our method. 
+In this paper, we present a novel low-complexity method for obtaining the pattern of low-weight codeword components for a given recursive systematic convolutional code. %Our proposed method makes it easy to determine which RSC codes
+We generate a low-weight codeword component pattern list for selected recursive systematic convolutional codes and validate our proposed method by obtaining a union bound, which we compare to simulation results and the union bound obtained via the transfer function method. From the results, we are able to determine which recursive systematic convolutional codes are best suited for use in turbo codes.
 \end{abstract}
 \newpage
 \input{./ConfSources/1_Introduction}
@@ -49,10 +49,10 @@ For selected RSC codes, we present a list of the low-weight codeword components 
 \input{./ConfSources/5_subUnionBound}
 \newpage
 %\input{./ConfSources/6_SimulationResults}
+\newpage
+\input{./ConfSources/7_Conclusion}
 %\newpage
-%\input{./ConfSources/7_Conclusion}
-%\newpage
-%\input{./ConfSources/8_References}
+\input{./ConfSources/8_References}
 
 
 

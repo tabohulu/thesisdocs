@@ -1,15 +1,4 @@
 \section{Conclusion}
 \label{sec6}
-%In this paper,we presented a novel low-complexity method for determining the distance spectrum of any RSC code which has the added benefit of revealing the structure of the Return-To-Zero (RTZ) inputs that make up the distance spectrum as well as their corresponding parity-check sequences. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%We then go a step further and present a method  for deriving a general polynomial representation for both RTZ inputs and parity-check sequences with a Hamming weight of up to $4$ for any RSC code.
- %%%%%%%%%%%%%%%%%%%%%%
- 
-% Combining these two methods, we list the partial distance spectrum for selected RSC codes up to a cut-off weight $d_{\text{max}}$ and compare simulation results to the bounds obtained via our novel method and the regular method.
-
-%In this paper, we presented a method for listing input message which produce codewords with low-weight parity bit sequences for a for a given $(n,k)$ RSC code. Compared to the Transfer function method, it has low complexity and provides more information about distance spectrum of the RSCC. Using a specially configured finite state machine, we can obtain a partial distance spectrum which we use to calculate an upper bound for the RSCC.  
-
-
-In this paper, we presented a method for  obtaining the systematic and parity check component patterns of an RSC codeword, given the RSC code and a cut-off weight, $d_{\text{max}}$.
-%by focusing first on codewords with systematic components such that $2 \leq w_H(b(x)) \leq 3$, and then codewords with parity check components such that $2 \leq w_H(h(x)) \leq 3$. 
-Compared to the transfer function method, it has low complexity and the knowledge of the pattern of the systematic and parity check components makes it a very useful for interleaver design. To validate our method, we compared the lower-bound obtained using our novel method with the lower-bound obtained via the transfer function as well as the simulation results for three RSC codes. Results show that whiles our method is sufficient for most RSC codes, considering codeword components with $w_H(b(x)), w_H(h(x)) =4$ in our approximation, might yield more accurate BER bounds.
+In this paper, we proposed a novel method for  obtaining the SCs and PCs ($2 \leq w_H(b(x)),w_H(h(x)) \leq 3$) of a low-weight RSC codeword, given the RSC code and a codeword cut-off weight, $d_{\text{max}}$.
+Compared to the transfer function method, it has low complexity and the knowledge of the SC and PC patterns makes it a very useful for interleaver design. To validate our method, we compared the union bound obtained using our novel method with the union bound obtained via the transfer function as well as the simulation results for three RSC codes. Results suggest that RSC codes that can be sufficiently characterized by our novel method are much more attractive for use in TCs due to lower complexity required in the deterministic interleaver design.
