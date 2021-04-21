@@ -1,0 +1,65 @@
+\documentclass[journal,draftcls,onecolumn,12pt,twoside]{IEEEtran}
+\newcommand{\folder}{/home/bohulu/Documents/texmf}
+%\newcommand{\folder}{/home/hanchenggao/Documents/texmf}
+\input{\folder/hfiles/epaper}
+%\renewcommand{\thesubsubsection}{\Alph{subsubsection}.}
+%\setcounter{secnumdepth}{3}
+%\usepackage[ruled,vlined]{algorithm2e}
+\usepackage {graphics}
+\usepackage{caption}
+\usepackage{tabularx}
+\renewcommand\tabularxcolumn[1]{m{#1}}
+%\usepackage {graphics}
+%\setCJKmainfont{SimSun}
+\begin{document}
+\begin{table}[htbp]
+		\caption{SCs and PCs not found by our novel method}
+		\centering
+		\begin{tabularx}{0.95\textwidth}{c|cXXX} 
+			\toprule
+			code & $w_H(c(x))$& $a(x)$ & $b(x)$ & $h(x)$ \\ %[0.5ex] 
+			\midrule
+			&&$1+x+x^2+x^3$ 		&$1+x+x^3+x^5$ 		& $1+x+x^4+x^5$\\
+			&&$1+x+x^2+x^4$ 		&$1+x^2+x^5+x^6$		& $1+x+x^3+x^6$\\
+			Code I&8&$1+x+x^3+x^5$ 		&$1+x^4+x^6+x^7$ 		& $1+x+x^2+x^7$\\
+			&&$1+x^2+x^3+x^4$ 	&$1+x+x^4+x^6$ 		& $1+x^3+x^5+x^6$\\
+			&&$1+x^2+x^3+x^5$ 	&$1+x+x^6+x^7$ 		& $1+x^3+x^4+x^7$\\
+			&&$1+x^2+x^4+x^5$ 	&$1+x+x^3+x^7$ 		& $1+x+x^6+x^7$\\
+			\cline{1-5}
+			&&$1+x^2$ 				&$1+x^2+x^4+x^6$ 		& $1+x+x^5+x^6$\\
+			&8&$1+x+x^4+x^6$ 		&$1+x+x^8+x^9$			& $1+x^4+x^5+x^9$\\
+			\cline{2-5}
+			&&$1+x+x^4$ 		&$1+x+x^5+x^8$ 		& $1+x^4+x^6+x^7+x^8$\\
+			Code II&&$1+x^2+x^4$ 		&$1+x^2+x^6+x^8$ 		& $1+x+x^4+x^7+x^8$\\
+			&9&$1+x^3+x^4$ 	&$1+x^3+x^7+x^8$ 		& $1+x+x^2+x^4+x^8$\\
+			&&$1+x+x^5$ 		&$1+x+x^4+x^9$ 		& $1+x^6+x^7+x^8+x^9$\\
+			&&$1+x^4+x^5$ 		&$1+x^5+x^8+x^9$ 		& $1+x+x^2+x^3+x^9$\\
+			\cline{1-5}
+			&&$1+x$ 						& $1+x+x^2+x^5$ 			& $1+x^2+x^4+x^5$\\
+			&8&$1+x+x^2+x^4$ 				& $1+x+x^7+x^8$ 			& $1+x^3+x^6+x^8$\\
+			&&$1+x+x^2+x^4+x^6+x^7$ 	& $1+x+x^6+x^{11}$ 			& $1+x^3+x^{10}+x^{11}$\\
+			\cline{2-5}
+			&&$1+x+x^2$ 					& $1+x+x^4+x^6$ 			& $1+x^{3}+x^{4}+x^5+x^6$\\
+			&9&$1+x+x^2+x^4+x^5$ 		& $1+x+x^5+x^9$ 			& $1+x^{3}+x^{5}+x^8+x^9$\\
+			
+			\cline{2-5}
+			&&$1+x^2$ 								& $1+x^3+x^5+x^6$ 					& $1+x+x^2+x^{3}+x^{4}+x^6$\\
+			&&$1+x+x^3$ 								& $1+x+x^2+x^4+x^5+x^6+x^7$ 	& $1+x+x^{3}+x^{7}$\\
+			&&$1+x+x^2+x^3$ 				& $1+x+x^3+x^4+x^5+x^7$ 			& $1+x^{5}+x^6+x^7$\\
+			&&$1+x^4$ 								& $1+x^2+x^3+x^6+x^7+x^8$ 		& $1+x+x^{5}+x^8$\\
+			&&$1+x^2+x^3+x^5$ 						& $1+x^5+x^8+x^9$ 					& $1+x+x^{2}+x^5+x^7+x^9$\\
+			Code III&&$1+x^2+x^4+x^5$ 						& $1+x^3+x^4+x^9$ 					& $1+x+x^{2}+x^3+x^8+x^9$\\
+			&10&$1+x^2+x^3+x^6$ 						& $1+x^6+x^7+x^8+x^9+x^{10}$ 	& $1+x+x^2+x^{10}$\\
+			&&$1+x+x^2+x^3+x^4+x^6$ 				& $1+x+x^3+x^5+x^9+x^{10}$ 		& $1+x^4+x^8+x^{10}$\\
+			&&$1+x^3+x^5+x^6$ 						& $1+x^2+x^4+x^{10}$ 				& $1+x+x^{3}+x^{5}+x^9+x^{10}$\\
+			&&$1+x+x^2+x^3+x^5+x^6$ 				& $1+x+x^3+x^4+x^6+x^{10}$ 		& $1+x^{6}+x^{9}+x^{10}$\\
+			&&$1+x^2+x^3+x^7$ 						& $1+x^9+x^{10}+x^{11}$ 			& $1+x+x^{2}+x^{6}+x^8+x^{11}$\\
+			&&$1+x^4+x^6+x^7$ 						& $1+x^2+x^3+x^{11}$ 				& $1+x+x^{5}+x^6+x^{10}+x^{11}$\\
+			&&$1+x^2+x^3+x^5+x^7+x^8$ 			& $1+x^5+x^7+x^{12}$ 				& $1+x+x^{2}+x^5+x^{11}+x^{12}$\\
+			&&$1+x^2+x^3+x^6+x^8+x^9$ 			& $1+x^6+x^7+x^{13}$ 				& $1+x+x^2+x^8+x^{12}+x^{13}$\\
+			&&$1+x+x^2+x^3+x^4+x^6+x^8+x^9$ 	& $1+x+x^3+x^5+x^8+x^{13}$ 		& $1+x^{4}+x^{12}+x^{13}$\\
+			\bottomrule
+		\end{tabularx}		
+		\label{code-tables-not-found}
+	\end{table}
+	\end{document}
