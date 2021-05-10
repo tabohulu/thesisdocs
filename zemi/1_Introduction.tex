@@ -1,0 +1,64 @@
+\section{Introduction}
+
+\begin{enumerate}
+\item The {\it turbo code} (TC) \cite{ref1}, introduced by Claude Berrou 
+\begin{itemize}
+\item Excellent  \textit{forward-error correcting} (FEC) code
+
+\item Applications include :LTE standard, IEEE 802.16 WiMAX (worldwide interoperability for microwave access) and DVB-RCS2 (2nd generation digital video broadcasting - return channel via satellite) standards \cite{ref7}.
+\end{itemize}
+
+
+ \item Construction of a TC 
+ \begin{itemize}
+ \item  Two {\it recursive systematic convolutional} (RSC) codes concatenated via an interleaver
+ 
+ \item Good performance of TC due to interleaver. 
+ \end{itemize}
+
+
+\item Good deterministic interleaver design requirements?
+\begin{itemize}
+\item complete knowledge of all the low-weight codeword component patterns in the RSC code
+
+\item missing even one of these patterns can create sub-par interleaver and TC
+
+\end{itemize}
+
+\item Interleaver Design Tools?
+\begin{itemize}
+\item The transfer function of an RSC code provides information about the distance spectrum.
+
+\item No information with regards to the pattern of the low-weight codeword components.
+
+\item Complexity increases with the number of states of RSC code.
+
+\item No interleaver design tool reveals distance spectrum and the low-weight codeword component patterns.
+
+\item As a result, many interleaver design methods completely ignoring certain important low-weight codewords, example \cite{ref5}. 
+\end{itemize}
+
+
+\item Acheivements of this research
+\begin{itemize}
+\item We propose a novel method for revealing the pattern of the low-weight codeword components. 
+
+\item  Excellent interleaver design tool
+
+\item Complexity independent of RSC code states
+\end{itemize}
+\end{enumerate}
+%We generate a low-weight codeword component pattern list for specific RSC codes and obtain union bounds using our proposed method. We then validate our method by comparing the proposed union bounds to simulation results and the union bounds obtained via the transfer function method.
+
+%The remainder of the research paper is organised as follows. Definitions used in the research paper are introduced in Section \ref{secPrelim}. In Section \ref{sec2}, we establish the theoretical foundations for our novel method by discussing the characteristics of the low-weight codewords. Then in Section \ref{sec3}, we present our novel method and use examples to clarify the workings of our proposed method. Validation of our proposed method for specific RSC codes as well as discussion related to turbo code interleaver design is done in Section \ref{sec4} and the paper concludes in Section \ref{sec6}.
+
+\subsection{Notations}
+\begin{enumerate}
+\item  least common multiple of integers $\alpha$ and $\beta$ : $\lcm(\alpha,\beta)$
+\item remainder $\alpha$ divided by $\beta,~\beta \neq 0$ : $\alpha \mod \beta$
+\item $\alpha$ is a divisor of $\beta$: $\alpha | \beta$ 
+\item shorthand for the operation $(\alpha \bmod \epsilon_0,~\beta \bmod \epsilon_0)$ : $(\alpha,~\beta) \bmod $, $(\alpha,~\beta)$ are integer pairs.
+\item tensor product that yields the set consisting of all pairs of $\cM$ and $\cN$ : $\cM \otimes \cN$, $\cM$ and $\cN$ are integer sets.
+\end{enumerate}
+
+

@@ -1,0 +1,52 @@
+\section{The characteristics of the low-weights codewords of RSC code}
+\label{sec2}
+\begin{enumerate}
+\item The outputs of an RSC code are determined by the input bit sequence $b(x)$, the states of the shift registers and the feedforward and feedback connections of the shift registers that can be represented by a generator function. 
+
+\item As an instance,  the generator function of a rate $1/2$ RSC code may be written as  $$\left[1 ~\frac{f(x)}{g(x)}\right]$$ where $1$ yields the \textit{systematic  component} (SC) $b(x)$ while the \textit{parity-check component} (PC) $h(x)$ is associated with the feedforward and feedback connections of the shift registers, specified by $f(x)$ and $g(x)$, respectively. 
+
+\item The outputs $c(x)$ are the mixture of the SC and PC as
+\begin{equation}
+c(x) = b(x^2)+xh(x^2)
+\label{codeword-comp}
+\end{equation}
+where 
+\begin{equation}
+h(x) =f(x)g^{-1}(x)b(x)
+\label{eq:parity-def}
+\end{equation}
+From \eqref{codeword-comp}, it is trivial that
+\begin{equation}
+w_H(c(x))=w_H(b(x)) + w_H(h(x))
+\label{eq:cw-weight}
+\end{equation}
+and hence, each low-weight codeword is combination of low-weight SC and PC.
+
+\item Under the assumption of large frame sizes, the presence of $g^{-1}(x)$  in \eqref{eq:parity-def} may involve a particular bit sequence that repeats a large number of times, hence yielding a high-weight PC. 
+
+\item Low-weight PCs occur if and only if
+\begin{equation}
+b(x) \bmod g(x) \equiv 0
+\label{eq:rtz-input}
+\end{equation}
+
+\item The SCs satisfying \eqref{eq:rtz-input} are called \textit{return-to-zero} (RTZ) inputs. Thus, every RTZ input can be factorized as  
+\begin{equation}
+b(x) =a(x)g(x)
+\label{eq:low-weight-msg}
+\end{equation}
+and, substituting (\ref{eq:low-weight-msg}) into \eqref{eq:parity-def}, we can characterize the low-weight PC as
+\begin{equation}
+\begin{split}
+h(x)&=f(x)\cdot g^{-1}(x)\cdot a(x)g(x)\\
+&=a(x)f(x)
+\end{split}
+\label{eq:low-weight-parity}
+\end{equation}
+
+\item Therefore, in this paper, we attempt to find $a(x)$s satisfying  \eqref{eq:low-weight-msg} and  \eqref{eq:low-weight-parity} simultaneously for low-weight $b(x)$ and $h(x)$, respectively. 
+%
+However, since there is no essential mathematical difference between the two equations, in the next section, we present a method for determining the low-weight PC patterns for $2 \leq w_H(h(x)) \leq 3$.
+\end{enumerate}
+
+

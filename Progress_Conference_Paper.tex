@@ -1,93 +1,33 @@
 
-%\documentclass[conference,letterpaper,10pt]{IEEEtran}
-\documentclass[journal,draftcls,onecolumn,12pt,twoside]{IEEEtran}
+\documentclass[conference,letterpaper,10pt,top=0.7in]{IEEEtran}
+%\documentclass[journal,draftcls,onecolumn,12pt,twoside]{IEEEtran}
 \newcommand{\folder}{/home/bohulu/Documents/texmf}
 %\newcommand{\folder}{/home/hanchenggao/Documents/texmf}
 \input{\folder/hfiles/epaper}
-%\renewcommand{\thesubsubsection}{\Alph{subsubsection}.}
-%\setcounter{secnumdepth}{3}
-%\usepackage[ruled,vlined]{algorithm2e}
 \usepackage {graphics}
 \usepackage{caption}
 \usepackage{tabularx}
-\renewcommand\tabularxcolumn[1]{m{#1}}
-%\usepackage {graphics}
-%\setCJKmainfont{SimSun}
 \begin{document}
 \title{
-A Novel Method for Obtaining the Pattern of Low-Weight Codeword Components of Recursive Systematic Convolutional Codes}
+A Method to Determine the Patterns of Low-Weight Codewords for Recursive Systematic Convolutional Codes}
 \author{%
-  \IEEEauthorblockN{Bohulu~Kwame~Ackah~and~Chenggao~Han\\}
+  \IEEEauthorblockN{Kwame~Ackah~Bohulu~and~Chenggao~Han\\}
   \IEEEauthorblockA{Graduate School of Informatics and Engineering,\\
    The University of Electro-Communications,\\
     1-5-1 Chofugaoka, Chofu-shi, Tokyo, 182--8585, Japan\\
                     Email: \{bohulu, han.ic\}@uec.ac.jp}
 }
-%\author{Bohulu~Kwame~Ackah~and~Chenggao~Han
-%\thanks{K. A. Bohulu and C. Han are with the Graduate School of Informatics and Engineering, The University of Electro-Communications, 1-5-1 Chofugaoka, Chofu-shi, Tokyo, 182--8585, Japan, Email: \{bohulu, han.ic\}@uec.ac.jp}}
-%\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
-%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
 
 
 \maketitle
 \begin{abstract}
-%Knowledge of the distance spectrum, as well as the structure of the message inputs that make up the distance spectrum for a specific recursive systematic convolutional (RSC) code is vital to the design of Turbo Code interleavers. Even though the distance spectrum of an RSC code can be obtained by calculating its transfer function, it does not provide any information about the structure of the message inputs. %and the complexity involved in calculating the transfer function increases with the number of states of the RSC code.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-In this paper, we present a novel low-complexity method for obtaining the pattern of low-weight codeword components for a given recursive systematic convolutional code. %Our proposed method makes it easy to determine which RSC codes
-We generate a low-weight codeword component pattern list for selected recursive systematic convolutional codes and validate our proposed method by obtaining a union bound, which we compare to simulation results and the union bound obtained via the transfer function method. From the results, we are able to determine which recursive systematic convolutional codes are best suited for use in turbo codes.
+For the turbo code (TC) consisting of  recursive systematic convolutional (RSC) codes, the complete knowledge of the low-weight codewords of the RSC code is very important for interleaver design in order to achieve good TC performance. In this paper, we present a method to determine the patterns of low-weight codewords for  RSC codes. For a given RSC code, we first identify the codewords with weight-$2$ and weight-$3$ parity-check components (PCs) based on the characteristic of the feed-forward polynomial. Similarly, we identify the codewords with low-weight systematic components (SCs) based on the feedback polynomial, and then establish the low-weight codewords from the identified codewords. To validate our proposed method, we obtain a union bound using the established low-weight codewords and compare it with that obtained via the transfer function method and the bit error rate (BER) curve drawn from simulation results.
 \end{abstract}
-\newpage
 \input{./ConfSources/1_Introduction}
-\newpage
 \input{./ConfSources/2_Preliminaries}
-\newpage
 \input{./ConfSources/3_RSCReview}
-\newpage
-%\input{./ConfSources/NovelMethod}
 \input{./ConfSources/4_NovelMethod}
-\newpage
 \input{./ConfSources/5_subUnionBound}
-\newpage
-%\input{./ConfSources/6_SimulationResults}
-\newpage
 \input{./ConfSources/7_Conclusion}
-%\newpage
-\input{./ConfSources/8_References}
-
-
-
-%\section{Upper Bound Comparison of both methods}
-%\label{sec5}
-
-%In order to confirm the validity of the proposed method, we compared the bit error rate (BER) upper bound the RSCC to results obtained through computer simulations. 
-
-%There are a number of equations used to calculate the upper bound for the BER of a CC and these equations also apply to RSCC. For the case where the code is BPSK modulated and soft Viterbi decoding algorithm is used, the probability of bit error $P_b$ can be calculated using the equation below [3].
-
-%\begin{equation}
-%P_b \leq \frac{1}{k} \sum_{d=d_{\text{free}}}^{d_{\text{max}}} u(d) Q\Bigg( \sqrt{\frac{2dE_c}{N_0}}\Bigg)
-%\label{eq5}
-%\end{equation}
-%where $u(d)=\sum_{w=1}^{\infty} w~ a(d,w)$,  $E_c/N_0$ is the Signal to Noise ratio for the transmitted codeword, $d_{\text{max}}$ is the largest value of $d$ used in the estimation of $P_b$ and $d_{\text{free}}$ is the free distance of the code. This equation require the knowledge of the distance spectrum of the RSCC and using the method described in the previous section,we obtain the partial distance spectrum for all input messages $b(x)$ of length $K=64$ which produce low-weight parity bits
-
-%$h(x)$ where $w_H(\textbf{h})=2 ~\text{and} ~ w_H(\textbf{h})=4$.  We then use those terms with $d_{\text{max}}=8$ to calculate the probability of bit error using (\ref{eq5}). 
-
-%For the simulation results we set $K=64$ and use a $5/7$ RSC encoder with tail-biting structure to encode the input messages. The codeword are BPSK modulated and transmitted over the AWGN channel. The soft Viterbi algorithm is used for the decoding and detection operation.
-
-%\begin{figure}[h]
-%\centering
-%		\includegraphics[width=0.45\textwidth]{paperg2.png}
-%		\caption{Simulation and Upper Bounds for $5/7$ RSCC}
-%		\label{fig3}
-%		\end{figure}
-		
-%		The simulation results are compared with the upper bound in Figure \ref{fig3}. 
-%	We deduce that it is possible to estimate the performance of the RSC code by the upper bound obtained using our novel method. The difference between the upper bound and the simulation results is $1.3730 \times 10^{-4}, 2.9960 \times 10^{-5},2.2800 \times 10^{-6}, 1.5668^{-7}$ for $E_b/N_0$ (dB) values of $4,5,6~\text{and}~7$ respectively. 
-%We observe that for $E_b/N_o$ value of  $6$ dB, the upper bound is x dB away from the simulation results whiles it is y dB from the simulation results at an $E_b/N_o$ value of  $6$ dB
-
-
-
-
-%\end{enumerate}
-
+\bibliography{\folder/reference/IEEEabrv,\folder/reference/References}
 \end{document}

@@ -1,0 +1,48 @@
+
+\documentclass[11pt, oneside, dvipdfmx]{book}
+\newcommand{\folder}{/home/bohulu/Documents/texmf}
+%\newcommand{\folder}{/home/hanchenggao/Documents/texmf}
+\input{\folder/hfiles/epaper}
+%\renewcommand{\thesubsubsection}{\Alph{subsubsection}.}
+%\setcounter{secnumdepth}{3}
+%\usepackage[ruled,vlined]{algorithm2e}
+\usepackage {graphics}
+\usepackage{caption}
+\usepackage{tabularx}
+%\usepackage {graphics}
+%\setCJKmainfont{SimSun}
+\begin{document}
+\title{
+A Novel Method for Obtaining the Pattern of Low-Weight Codeword Components of Recursive Systematic Convolutional Codes}
+\author{Kwame Ackah Bohulu}
+\date{\today}
+\maketitle
+\newpage
+%Knowledge of the distance spectrum, as well as the structure of the message inputs that make up the distance spectrum for a specific recursive systematic convolutional (RSC) code is vital to the design of Turbo Code interleavers. Even though the distance spectrum of an RSC code can be obtained by calculating its transfer function, it does not provide any information about the structure of the message inputs. %and the complexity involved in calculating the transfer function increases with the number of states of the RSC code.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Abstract}
+In this paper, we present a novel low-complexity method for obtaining the pattern of low-weight codeword components for a given recursive systematic convolutional code. %Our proposed method makes it easy to determine which RSC codes
+We generate a low-weight codeword component pattern list for selected recursive systematic convolutional codes and validate our proposed method by obtaining a union bound, which we compare to simulation results and the union bound obtained via the transfer function method. From the results, we are able to determine which recursive systematic convolutional codes are best suited for use in turbo codes.
+\newpage
+\input{./zemi/1_Introduction}
+\newpage
+\input{./zemi/2_Preliminaries}
+\newpage
+\input{./zemi/3_RSCReview}
+\newpage
+%\input{./ConfSources/NovelMethod}
+\input{./zemi/4_NovelMethod}
+\newpage
+\input{./zemi/5_subUnionBound}
+\newpage
+%\input{./ConfSources/6_SimulationResults}
+\newpage
+\input{./zemi/7_Conclusion}
+%\newpage
+\input{./zemi/8_References}
+
+
+
+
+
+\end{document}

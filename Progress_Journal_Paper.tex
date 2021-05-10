@@ -1,0 +1,35 @@
+
+%\documentclass[conference,letterpaper,10pt]{IEEEtran}
+\documentclass[journal,draftcls,onecolumn,12pt,twoside]{IEEEtran}
+\newcommand{\folder}{/home/bohulu/Documents/texmf}
+\input{\folder/hfiles/epaper}
+\usepackage {graphics}
+\usepackage{caption}
+\usepackage{tabularx}
+
+\begin{document}
+\title{
+A Method to Obtain Complete Information about Low-Weight Codewords of Recursive Systematic Convolutional Codes}
+\author{%
+  \IEEEauthorblockN{Bohulu~Kwame~Ackah~and~Chenggao~Han\\}
+  \IEEEauthorblockA{Graduate School of Informatics and Engineering,\\
+   The University of Electro-Communications,\\
+    1-5-1 Chofugaoka, Chofu-shi, Tokyo, 182--8585, Japan\\
+                    Email: \{bohulu, han.ic\}@uec.ac.jp}
+}
+
+
+\maketitle
+\begin{abstract}
+For the {\it turbo code} (TC) consisting of  {\it recursive systematic convolutional} (RSC) codes, the complete knowledge of the low-weight codewords of the component code is very important for interleaver design to achieve a good performance. In this paper, we present a method to obtain complete information about low-weight codewords for  RSC codes. For a given RSC code, we first identify the codewords with weight-$2$ and weight-$3$ {\it parity-check components} (PCs) based on the characteristic of the feed-forward polynomial and similarly, we identify the codewords with low-weight {\it systematic components} (SCs) based on the feedback polynomial. The low-weight codewords are established from the identified codewords. To validate our proposed method, we obtain a union bound using the established low-weight codewords and compare it with that obtained via the transfer function and the {\it bit error rate} (BER) curve drawn from simulation results.
+
+\end{abstract}
+
+\input{./JourSources/1_Introduction}
+\input{./JourSources/2_Preliminaries}
+\input{./JourSources/3_RSCReview}
+\input{./JourSources/4_NovelMethod}
+\input{./JourSources/5_subUnionBound}
+\input{./JourSources/7_Conclusion}
+\bibliography{\folder/reference/IEEEabrv,\folder/reference/References}
+\end{document}

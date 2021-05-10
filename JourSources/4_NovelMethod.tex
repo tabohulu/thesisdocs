@@ -45,7 +45,7 @@ without loss of generality. Thus, we have from \eqref{Eq:rootcondition} that
 (\varphi_0^i)^{\alpha} =1,~~~ 0 \leq i < \epsilon_0
 \label{novelEq5b}
 \end{equation}
-On the other hand, the order of $\varphi_0$ is the least positive integer satisfying $\varphi_0^{\epsilon_0} = 1$. Thus, $\alpha$ should satisfy the condition
+On the other hand, the order of $\varphi_0$ is the least integer satisfying $\varphi_0^{\epsilon_0} = 1$. Thus, $\alpha$ should satisfy the condition
 \begin{equation}
 \alpha \equiv 0 \mod \epsilon_0~~~\mathor~~~\epsilon_0|\alpha
 \label{eq:wt2-alpha}
@@ -64,9 +64,8 @@ and hence, $(\alpha,\beta)$ should satisfy the condition
 \label{Eq:novelEq5b}
 \end{equation}
 The pairs $(\alpha, \beta)$ satisfying \eqref{Eq:novelEq5b} can be found by referring to the table of the extended field for $\GF\left(2^M\right)$. 
-Let $(m,n)$ be such a pair and let $\bbM=\{\epsilon_0 \ell+m\}_{\ell \in \bbZ}$ and $\bbN=\{\epsilon_0 \ell+n\}_{\ell \in \bbZ}$, where $\bbZ$ represents the set of non-negative integers. 
-Then it is obvious that each pair $(\alpha,~\beta) \in \bbM \otimes \bbN$ satisfies
-\eqref{Eq:novelEq5b}, where $\bbM \otimes \bbN$  denotes  the tensor product that yields the set consisting of all pairs of $\bbM$ and $\bbN$ sorted in ascending order. For a fixed $\alpha$, on the other hand, since $\alpha+i$, $0 \leq i < \epsilon_0$, are distinct from each other, any integer $\beta$ that satisfies \eqref{Eq:novelEq5b} must be such that $n\equiv \beta \mod \epsilon_0$.
+Let $(m,n)$ be such a pair and let $\bbM=\{\epsilon_0 \ell+m\}_{\ell \in \bbZ}$ and $\bbN=\{\epsilon_0 \ell+n\}_{\ell \in \bbZ}$. Then it is obvious that each pair $(\alpha,~\beta) \in \bbM \otimes \bbN$ satisfies
+\eqref{Eq:novelEq5b}. For a fixed $\alpha$, on the other hand, since $\alpha+i$, $0 \leq i < \epsilon_0$, are distinct from each other, any integer $\beta$ that satisfies \eqref{Eq:novelEq5b} must be such that $n\equiv \beta \mod \epsilon_0$.
 
 %Furthermore, let  We denote the set of all pairs as $\bbM \bar{\otimes} \bbN$, where the elements of this set are formed using a tensor product approach. Then, $(\alpha,~\beta) \in \bbM \bar{\otimes} \bbN$
 \subsection{Examples}
@@ -77,7 +76,7 @@ In the following, we present some examples of the proposed method to determine w
 
 \begin{example}$f(x)=1+x+x^2$
 	
-Since $x^1=x$, $x^2 \equiv 1+x \mod f(x)$, and $x^3 \equiv 1 \bmod f(x)$, $f(x)$ is a primitive polynomial with a root of order $\epsilon_0=3$. Thus, $\alpha$ in the weight-2 PCs shown in \eqref{eq:wt2-gen-form} should be a multiple of $3$ as $h(x)=1+x^{3\ell}$, $\ell \in \bbZ^+$,where $\bbZ^+$ represents the set of positive integers, while the corresponding $a(x)$ can be expressed by 
+Since $x^1=x$, $x^2 \equiv 1+x \mod f(x)$, and $x^3 \equiv 1 \bmod f(x)$, $f(x)$ is a primitive polynomial with a root of order $\epsilon_0=3$. Thus, $\alpha$ in the weight-2 PCs shown in \eqref{eq:wt2-gen-form} should be a multiple of $3$ as $h(x)=1+x^{3\ell}$, $\ell \in \bbZ^+$, while the corresponding $a(x)$ can be expressed by 
 \begin{equation*}
 	a(x)=\sum_{i=0}^{\ell-1} x^{3i}(1+x)
 \end{equation*}
@@ -110,7 +109,7 @@ To determine the weight-3 PCs, we can see from Table \ref{novelTab7} that there 
 	while the corresponding $a(x)$ can be expressed as 
 	$$ a(x) = \sum_{i=0}^{\ell} x^{15i} \left(1 +x +x^2 +x^3+x^5+x^7+x^8+x^{11} \right)$$
 	
-	For the weight-3 PCs, it can be confirmed that there are 7 $(m,n)$ pairs which satisfy $x^m+x^n \equiv 1 \mod 15$. Thus, $(\alpha,~\beta) \in \bigcup_{i=0}^6 \bbM_i\otimes\bbN_i$ satisfies \eqref{novelEqwt3}, where
+	For the weight-3 PCs, we refer to Table \ref{GF-tables} and observe that there are 7 $(m,n)$ pairs which satisfy $x^m+x^n \equiv 1 \mod 15$. Thus, $(\alpha,~\beta) \in \bigcup_{i=0}^6 \bbM_i\otimes\bbN_i$ satisfies \eqref{novelEqwt3}, where
 	\begin{align}
 	\bbM_0 &:= \{15\ell + 1\}_{\ell \in \bbZ},~\bbN_0 := \{15\ell + 4\}_{\ell \in \bbZ}\cr
 	\bbM_1 &:= \{15\ell + 2\}_{\ell \in \bbZ},~\bbN_1 := \{15\ell + 8\}_{\ell \in \bbZ}\cr
@@ -124,10 +123,11 @@ To determine the weight-3 PCs, we can see from Table \ref{novelTab7} that there 
 \end{example}
 
 \subsubsection{$f(x)$ is a prime but not primitive polynomial}
+
 \begin{example}
 $f(x)=1+x+x^2+x^3+x^4$
 
-From \cite{Proakis08B}, since $x\equiv x^5 \mod f(x)$, $\epsilon_0=5< 15$ and the weight-2 PCs can be expressed as $h(x)=1+x^{5\ell}$, $\ell \in \bbZ^+$. For weight-3 PCs, on the other hand, there is no pair $(m,~n)$ satisfying $x^m+x^n \equiv 1$, and hence, the given $f(x)$ does not yield any weight-3 PCs.
+Since $x\equiv x^5 \mod f(x)$ as shown in Table \ref{GF-tables}, $\epsilon_0=5< 15$ and the weight-2 PCs can be expressed as $h(x)=1+x^{5\ell}$, $\ell \in \bbZ^+$. For weight-3 PCs, on the other hand, Table \ref{GF-tables} indicates that there is no pair $(m,~n)$ satisfying $x^m+x^n \equiv 1$, and hence, the given $f(x)$ does not yield any weight-3 PCs.
 \label{Ex:3}
 \end{example}
 
@@ -170,27 +170,21 @@ For this case, we write the feedforward polynomial as $f(x) =f_0(x)f_1(x)$ and g
 	Let $f_0(x)=1+x$ and $f_1(x)=1+x+x^3$. We know that the PCs  associated with $f(x)$ are intersection of those with $f_0(x)$ and with $f_1(x)$. 
 	Since $f_0(x)$ does not yields any weight-3 PCs as explained in the Example \ref{Ex:4}, there are no such PCs associated with $f(x)$.
 	
-	With respect to the weight-2 PCs, from Example \ref{Ex:4}, $\epsilon_0=1$ and $\epsilon_1=7$. We have the least common multiple of $\epsilon_0$ and $\epsilon_1$, denoted by $\lcm(\epsilon_0,\epsilon_1)=7$ and
+	With respect to the weight-2 PCs, from Example \ref{Ex:4}, $\epsilon_0=1$ and $\epsilon_1=7$. We have $\lcm(\epsilon_0,\epsilon_1)=7$ and
 	$h(x) =1+x^{7\ell}$
 	with the corresponding $a(x)$ given by
-	$$a(x) = \sum_{i=0}^{\ell - 1}x^{7i}(1+x^2+x^3)$$
-	
+	$$a(x) = \sum_{i=0}^{\ell-1} x^{7i}(1+x^2+x^3)$$
 	\label{Ex:5}	
 \end{example}
+
 \begin{example}
 $f(x)=(1+x+x^2)(1+x^2+x^3)=1+x+x^5$
 
-For this case, it is not difficult to see that $\epsilon_0=3$ and $\epsilon_1=7$ for $f_0(x)=1+x+x^2$ and $f_1(x)=1+x^2+x^3$, respectively. Thus, from $\lcm(\epsilon_0,\epsilon_1)=21$, the weight-2 PCs have the general form of $h(x)=1+x^{21\ell}$, $\ell \in \bbZ^+$, while the corresponding $a(x)$ can be expressed as
-\begin{equation*}
-\begin{split} 
-a(x)=\sum_{i=0}^{\ell-1} x^{21i}&(1+x^2+x^3+x^4+x^6+x^8\\
-&+x^{4}+x^{6}+x^{8}+x^{11}+x^{12}+x^{16})
-\end{split}
-\end{equation*}.
+For this case, it is not difficult to see that $\epsilon_0=3$ and $\epsilon_1=7$ for $f_0(x)=1+x+x^2$ and $f_1(x)=1+x^2+x^3$, respectively. Thus, from $\lcm(\epsilon_0,\epsilon_1)=21$, the weight-2 PCs have the general form of $h(x)=1+x^{21\ell}$, $\ell \in \bbZ^+$, while the corresponding $a(x)$ can be expressed as $$a(x)=\sum_{i=0}^{\ell-1} x^{21i}(1+x^2+x^3+x^4+x^6+x^8+x^{4}+x^{6}+x^{8}+x^{11}+x^{12}+x^{16})$$.
 
 
 In order to determine weight-3 PCs, we rewrite $\bbM$ and $\bbN$ in Example \ref{Ex:1} as $\bbM^0$ and $\bbN^0$, respectively,
-and referring to the $\GF(2^3)$ table, let
+and referring to Table \ref{GF-tables}, let
 \begin{align}
 	\bbM_0^1 &:= \{7\ell + 1\}_{\ell \in \bbZ},~\bbN_0^1 := \{7\ell + 5\}_{\ell \in \bbZ}\cr
 	\bbM_1^1 &:= \{7\ell + 2\}_{\ell \in \bbZ},~\bbN_1^1 := \{7\ell + 3\}_{\ell \in \bbZ}\cr
@@ -207,12 +201,12 @@ and
 (\alpha_1,~\beta_1) \in &\bigcup_{i=0}^2 \bbM_i^1\otimes\bbN_i^1 
 \end{split}
 \end{equation*}
-Therefore, by taking the intersection, we can identify \\$(\alpha,\beta) \in \left(\bbM^0\otimes\bbN^0\right)\bigcap\left(\bigcup_{i=0}^2 \bbM_i^1\otimes\bbN_i^1 \right) $.
+Therefore, by taking the intersection, we can identify $(\alpha,\beta) \in \left(\bbM^0\otimes\bbN^0\right)\bigcap\left(\bigcup_{i=0}^2 \bbM_i^1\otimes\bbN_i^1 \right) $.
 \label{Ex:6}
 \end{example}
 
 %=====Merged Example Tables =====
-\begin{table}[hbp]
+\begin{table}[htbp]
 \caption{$a(x)$ and $h(x)$ for various $f(x)$}
 \centering
 \begin{tabularx}{0.48\textwidth}{l|cXl} 
@@ -263,7 +257,6 @@ $1+x+x^5$&&$1$ & $1+x+x^{5}$\\
 \end{tabularx}
 \label{examples-table}
 \end{table}
-
 %=====End Of Merged Example Tables =====
 
 
@@ -272,35 +265,35 @@ $1+x+x^5$&&$1$ & $1+x+x^{5}$\\
 
 
 %===== Merged GF(2^M) tables=======
-%\begin{table}[htbp]
-%\caption{Galois Field Elements for various prime polynomials $f(x)$}
-%\centering
-%\begin{tabularx}{0.5\textwidth}{X|c|c|c} 
-%\toprule
-%\multicolumn{1}{c|}{Power Representation}&\multicolumn{3}{c}{polynomial representation}\\
-%\cmidrule(lr){1-4}
-%Generator polynomial &$1+x^2+x^3$&$1+x+x^2+x^3+x^4$&$1+x+x^4$\\
-%\cmidrule(lr){1-4}
-%$x^0$			&1				&1                                              &1\\
-%$x$			&$x$			&$x$                                                              &$x$\\
-%$x^{2}$		&$x^2$		&$x^2$                                                  	  &$x^2$\\
-%$x^{3}$		&$1+x^2$		&$x^3$                                                        &$x^3$\\
-%$x^{4}$ 		&$1+x+x^2$   &$1+x+x^2+x^3$ 					 	& $1+x$\\
-%$x^{5}$		&$1+x$		&                                                                   &$x+x^2$\\
-%$x^{6}$		&$x+x^2$		&                                                                   &$x^2+x^3$\\
-%$x^{7}$		&				&                								&$1+x+x^3$\\
-%$x^{8}$		&				&										&$1+x^2$\\
-%$x^{9}$		&				&										&$x+x^3$\\
-%$x^{10}$		&				&										&$1+x+x^2$\\
-%$x^{11}$		&				&										&$x+x^2+x^3$\\
-%$x^{12}$		&				&										&$1+x+x^2+x^3$\\
-%$x^{13}$		&				&										&$1+x+x^3$\\
-%$x^{14}$		&				&										&$1+x^3$\\
-%\bottomrule
-%\end{tabularx}
+\begin{table}[htbp]
+\caption{Galois Field Elements for various prime polynomials $f(x)$}
+\centering
+\begin{tabularx}{0.48\textwidth}{X|c|c|c} 
+\toprule
+\multicolumn{1}{c|}{Power Representation}&\multicolumn{3}{c}{polynomial representation}\\
+\cmidrule(lr){1-4}
+Generator polynomial &$1+x^2+x^3$&$1+x+x^2+x^3+x^4$&$1+x+x^4$\\
+\cmidrule(lr){1-4}
+$x^0$			&1				&1                                              &1\\
+$x$			&$x$			&$x$                                                              &$x$\\
+$x^{2}$		&$x^2$		&$x^2$                                                  	  &$x^2$\\
+$x^{3}$		&$1+x^2$		&$x^3$                                                        &$x^3$\\
+$x^{4}$ 		&$1+x+x^2$   &$1+x+x^2+x^3$ 					 	& $1+x$\\
+$x^{5}$		&$1+x$		&                                                                   &$x+x^2$\\
+$x^{6}$		&$x+x^2$		&                                                                   &$x^2+x^3$\\
+$x^{7}$		&				&                								&$1+x+x^3$\\
+$x^{8}$		&				&										&$1+x^2$\\
+$x^{9}$		&				&										&$x+x^3$\\
+$x^{10}$		&				&										&$1+x+x^2$\\
+$x^{11}$		&				&										&$x+x^2+x^3$\\
+$x^{12}$		&				&										&$1+x+x^2+x^3$\\
+$x^{13}$		&				&										&$1+x+x^3$\\
+$x^{14}$		&				&										&$1+x^3$\\
+\bottomrule
+\end{tabularx}
 
-%\label{GF-tables}
-%\end{table}
+\label{GF-tables}
+\end{table}
 
 %=====End of Merged GF(2^M) tables=======
  

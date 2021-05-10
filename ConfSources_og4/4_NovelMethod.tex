@@ -1,0 +1,306 @@
+\section{The patterns of the low-weight PCs}
+\label{sec3}
+We assume $f(x)$ can be factorized into $K$ prime polynomials as 
+\begin{align}
+f(x)&=\prod_{k=0}^{K-1}f_k^{\gamma_k}(x)
+\label{Eq:GeneralForm}
+\end{align}
+where $\gamma_0,\gamma_1,\cdots,\gamma_{K-1}$ are positive integers and let $\varphi_k$ be a root of $f_{k}(x)$ of order $\epsilon_k$. After that, refering to \eqref{eq:low-weight-parity}, we consider the solution of
+\begin{align}
+	h(x) \mod f(x) \equiv 0
+	\label{Eq:condition}
+\end{align}
+
+We start from the simplest case $K=1$, \ie, $f(x) = f_0^{\gamma_0}(x)$. Then, \eqref{eq:low-weight-parity} indicates that each root of $f(x)$ is also a root of $h(x)$ and we distinguish between the cases $\gamma_0 = 1$ and $\gamma_0 > 1$. For the former case, since all $\varphi_0^i$, $0 \leq i < \epsilon_0$, are distinct from each other, the equation
+\begin{align}
+	h(\varphi_0^i)=0,~~~ 0 \leq i < \epsilon_0
+	\label{Eq:rootcondition}
+\end{align}
+is a necessary and sufficient condition of \eqref{Eq:condition} while it is necessary but not sufficient for the latter case. Thus, for the case $\gamma_0 >1$, we obtain extra conditions using differential equations as
+\begin{align}
+\left.\frac{d^{(j)}h(x)}{d x^j}\right|_{x=\varphi_0^i}=0,~~~0 \leq i < \epsilon_0,~1 \leq j < \gamma_0
+\label{Eq:differential}
+\end{align}
+where the derivation is calculated using the {\it Hasse derivative} defined as
+\begin{align}
+\frac{d^{j}x^k}{dx^j}=
+	\begin{cases}
+	\left({}_kC_j\mod 2\right)x^{k-j}, & k \geq j\cr
+	0, & \mathotherwise
+	\end{cases}
+\end{align}
+for the bionomial coefficient ${}_kC_j$.
+
+For the case where $K>1$, we may repeat the above discussion for the roots $\varphi_k$, $0 < k < K$, and take the intersection of the results to determine the low-weight PCs.
+
+\subsection{The weight-2 PCs}
+\label{sec:PC2}
+Each weight-2 PC can be written as 
+\begin{equation}
+h(x)=1+x^{\alpha}
+\label{eq:wt2-gen-form}
+\end{equation}
+without loss of generality. Thus from \eqref{Eq:rootcondition}, we have 
+\begin{equation}
+(\varphi_0^i)^{\alpha} =1,~~~ 0 \leq i < \epsilon_0
+\label{novelEq5b}
+\end{equation}
+On the other hand, the order of $\varphi_0,~\epsilon_0$ is the least integer satisfying $\varphi_0^{\epsilon_0} = 1$, thus, $\alpha$ should satisfy the condition
+\begin{equation}
+\alpha \equiv 0 \mod \epsilon_0~~~\mathor~~~\epsilon_0|\alpha
+\label{eq:wt2-alpha}
+\end{equation}
+
+\subsection{The weight-3 PCs}
+
+Without loss of generality, the weight-3 PCs can be written as 
+\begin{equation}
+h(x)=1+x^{\alpha}+x^{\beta},~\alpha < \beta
+\label{novelEqwt3}
+\end{equation}
+and hence, $(\alpha,\beta)$ should satisfy the condition
+\begin{equation}
+\varphi_0^{\alpha}+\varphi_0^{\beta}= 1
+\label{Eq:novelEq5b}
+\end{equation}
+The pairs satisfying \eqref{Eq:novelEq5b} can be found by referring to the table of the extended field for $\GF\left(2^M\right)$. 
+Let $(m,n)$ be such a pair, and we let $\cM=\{\epsilon_0 \ell+m\}$ and $\cN=\{\epsilon_0 \ell+n\}$, $\ell \geq 0$. Then it is obvious that each pair $(\alpha,~\beta) \in \cM \otimes \cN$ satisfies
+\eqref{Eq:novelEq5b}. For a fixed $\alpha$, on the other hand, since $\alpha+i$, $0 \leq i < \epsilon_0$, are distinct from each other, any integer $\beta$ that satisfies \eqref{Eq:novelEq5b} must be such that $n\equiv \beta \mod \epsilon_0$.
+
+%Furthermore, let  We denote the set of all pairs as $\cM \bar{\otimes} \cN$, where the elements of this set are formed using a tensor product approach. Then, $(\alpha,~\beta) \in \cM \bar{\otimes} \cN$
+\subsection{Examples}
+
+In the following, we present some examples of the proposed method to determine weight-2 and weight-3 PCs for several feedfoward polynomials of form given in \eqref{Eq:GeneralForm}. For the case $K=1$, Examples \ref{Ex:1} and \ref{Ex:2} are two instances where $f(x)$ is primitive polynomial while an instance where $f(x)$ is prime but not a primitive polynomial is given in Example \ref{Ex:3}. Example \ref{Ex:4} demonstrate the case $\gamma_0 > 1$, and Examples \ref{Ex:5} and \ref{Ex:6} are two instances of the case $K=2$. For these polynomials, we also show some detail low-weight patterns of $a(x)$ and $h(x)$ in Table \ref{examples-table}.
+
+\subsubsection{$f(x)$ is a primitive polynomial}
+
+\begin{example}$f(x)=1+x+x^2$
+	
+Since $x^1=x$, $x^2 \equiv 1+x \mod f(x)$, and $x^3 \equiv 1 \bmod f(x)$, $f(x)$ is a primitive polynomial with root $\varphi_0$ of order $\epsilon_0=3$. Thus, $\alpha$ in the weight-2 PCs shown in \eqref{eq:wt2-gen-form} should be a multiple of $3$ as $h(x)=1+x^{3\ell}$, $\ell \in \bbZ^+$, while the corresponding $a(x)$ can be expressed by 
+\begin{equation*}
+	a(x)=\sum_{i=0}^{\ell-1} x^{3i}(1+x)
+\end{equation*}
+
+To determine the weight-3 PCs, we can see from Table \ref{novelTab7} that there is a pair $(1,2)$ satisfying $x^1+x^2 \equiv 1 \mod f(x)$. Thus, if we let $\cM = \{3\ell+1\}_{\ell\geq 0}$ and $\cN = \{3\ell+2\}_{\ell\geq 0}$, $x^\alpha+x^\beta \equiv 1 \mod f(x)$ for each pair $(\alpha,\beta) \in \cM\otimes\cN$.
+\label{Ex:1}
+\end{example}
+
+\begin{table}[htbp]
+	\caption{Non-zero Elements of $\GF \left(2^2\right)$ generated by $f(x)=1+x+x^2$}
+	\centering
+	\begin{tabular}{c c} 
+		\toprule
+		power representation & polynomial representation \\ [0.5ex] 
+		\midrule
+		$x^0~=x^3=1$ & $1$\\
+		\hline
+		$x$ & $x$\\
+		\hline
+		$x^2$ &  $1+x$\\
+		\bottomrule
+	\end{tabular}
+	\label{novelTab7}
+\end{table}
+
+\begin{example}	$f(x)= 1+x+x^4~$
+	
+	Since $f(x)$ is a primitive polynomial with a root of order $\epsilon_0=2^M-1=15$, the weight-2 PCs have the following general form
+	$$h(x)=1+x^{15\ell}$$
+	while the corresponding $a(x)$ can be expressed as 
+	$$ a(x) = \sum_{i=0}^{\ell} x^{15i} \left(1 +x +x^2 +x^3+x^5+x^7+x^8+x^{11} \right)$$
+	
+	For the weight-3 PCs, we refer to Table \ref{GF-tables} and observe that there are $7~(m,n)$ pairs which satisfy $x^m+x^n \equiv 1 \mod 15$. Thus, if we let
+	\begin{align}
+	\cM_0 &:= \{15\ell + 1\}_{\ell \geq 0},~\cN_0 := \{15\ell + 4\}_{\ell \geq 0}\cr
+	\cM_1 &:= \{15\ell + 2\}_{\ell \geq 0},~\cN_1 := \{15\ell + 8\}_{\ell \geq 0}\cr
+	\cM_2 &:= \{15\ell + 3\}_{\ell \geq 0},~\cN_2 := \{15\ell + 14\}_{\ell \geq 0}\cr
+	\cM_3 &:= \{15\ell + 5\}_{\ell \geq 0},~\cN_3 := \{15\ell + 10\}_{\ell \geq 0}\cr
+	\cM_4 &:= \{15\ell + 6\}_{\ell \geq 0},~\cN_4 := \{15\ell + 13\}_{\ell \geq 0}\cr
+	\cM_5 &:= \{15\ell + 7\}_{\ell \geq 0},~\cN_5 := \{15\ell + 9\}_{\ell \geq 0}\cr
+	\cM_6 &:= \{15\ell + 11\}_{\ell \geq 0},~\cN_6 := \{15\ell + 12\}_{\ell \geq 0}
+	\end{align}
+	each pair $(\alpha,~\beta) \in \bigcup_{i=0}^6 \cM_i\otimes\cN_i$ satisfies \eqref{novelEqwt3}.
+	\label{Ex:2}	
+\end{example}
+
+\subsubsection{$f(x)$ is a prime but primitive polynomial}
+
+\begin{example}
+$f(x)=1+x+x^2+x^3+x^4$
+
+Since $x\equiv x^5 \mod f(x)$ as shown in Table \ref{GF-tables}, $\epsilon_0=5< 15$ and the weight-2 PCs can be expressed as $h(x)=1+x^{5\ell}$, $\ell \in \bbZ^+$. For weight-3 PCs, on the other hand, Table \ref{GF-tables} indicates that there is no pair $(m,~n)$ satisfying $x^m+x^n \equiv 1$, and hence, the given $f(x)$ does not yield any weight-3 PCs.
+\label{Ex:3}
+\end{example}
+
+\subsubsection{$K=1$ and $\gamma_0 > 1$}
+\begin{example}
+	$f(x)=1+x^2$ and $f(x)=1+x^4$\newline
+	
+	If we rewrite the polynomials as $f(x)=(1+x)^2$ and $f(x)=(1+x)^4$,	the order of the root $\varphi_0$ is $\epsilon_0=1$. Since $\GF(2)$ has single non-zero element, it does not provide a pair $(m,~n)$ satisfying $x^m+x^n = 1$ and, consequently, there are no weight-3 PCs associated with $f(x)$.
+	
+	Regarding the weight-2 PCs, since $\epsilon_0 = 1$, each $\alpha \in \bbZ^+$ satisfies
+	\begin{align}
+		h(x) = 1+x^\alpha = 0
+	\end{align}
+	However, the following second order differential equation
+	\begin{align}
+	\frac{dh(x)}{dx} = (\alpha\mod 2) x^{\alpha-1} = 0
+	\end{align}
+	implies $\alpha$ should be even numbers. Thus, for the case $f(x) = 1+x^2$, we write the PCs as  $h(x)=1+x^{2\ell}$, $\ell \in \bbZ^+$.
+	
+
+	For the case $f(x) = 1+x^4$, from \eqref{Eq:differential}, we have
+	\begin{align}
+		\begin{cases}
+		\frac{d^2h(x)}{dx^2} = \left[\frac{\alpha(\alpha-1)}{2} \mod 2\right]x^{\alpha-2} = 0 \\
+		\frac{d^3h(x)}{dx^3} = \left[\frac{\alpha(\alpha-1)(\alpha-2)}{6} \mod 2\right]x^{\alpha-3} = 0
+		\end{cases}
+		\label{Eq:Ex3Diff}
+	\end{align}
+	and $\alpha \in 4\bbZ^+$ satisfies \eqref{Eq:Ex3Diff} simultaneously.
+\label{Ex:4}
+\end{example}
+
+\subsubsection{The case $K=2$}
+
+For this case, we write the feedforward polynomial as $f(x) =f_0(x)f_1(x)$ and give two examples.
+\begin{example}
+	$f(x)= (1+x)(1+x+x^3)=1+x^2+x^3+x^4$\newline
+	
+	Let $f_0(x)=1+x$ and $f_1(x)=1+x+x^3$. We know that the PCs  associated with $f(x)$ are intersection of those with $f_0(x)$ and with $f_1(x)$. 
+	On the other hand, since $f_0(x)$ does not yields any weight-3 PCs as explained in the Example \ref{Ex:4}, there are no such PCs associated with $f(x)$.
+	
+	With respect to the weight-2 PCs, from Example \ref{Ex:4}, $\epsilon_0=1$ and $\epsilon_1=7$. We have $\lcm(\epsilon_0,\epsilon_1)=7$ and
+	$$h(x) =1+x^{7\ell}$$
+	with the corresponding $a(x)$ given by
+	$$a(x) = \sum_{}^{}x^{7i}(1+x^2+x^3)$$
+	\label{Ex:5}	
+\end{example}
+
+\begin{example}
+$f(x)=(1+x+x^2)(1+x^2+x^3)=1+x+x^5$
+
+For this case, it is not difficult to see that $\epsilon_0=3$ and $\epsilon_1=7$ for $f_0(x)=1+x+x^2$ and $f_1(x)=1+x^2+x^3$, respectively. Thus, from $\lcm(\epsilon_0,\epsilon_1)=21$, the weight-2 PCs have the general form of $h(x)=1+x^{21\ell}$ while the corresponding $a(x)$ can be expressed as $$a(x)=\sum_{i=0}^{\ell-1} x^{21i}(1+x^2+x^3+x^4+x^6+x^8+x^{4}+x^{6}+x^{8}+x^{11}+x^{12}+x^{16})$$.
+
+
+In order to determine weight-3 PCs, we rewrite $\cM$ and $\cN$ in Example \ref{Ex:1} as $\cM^0$ and $\cN^0$, respectively,
+and referring to Table \ref{GF-tables}, let
+\begin{align}
+	\cM_0^1 &:= \{7\ell + 1\}_{\ell \geq 0},~\cN_0^1 := \{7\ell + 5\}_{\ell \geq 0}\cr
+	\cM_1^1 &:= \{7\ell + 2\}_{\ell \geq 0},~\cN_1^1 := \{7\ell + 3\}_{\ell \geq 0}\cr
+	\cM_2^1 &:= \{7\ell + 4\}_{\ell \geq 0},~\cN_2^1 := \{7\ell + 6\}_{\ell \geq 0}
+\end{align}
+
+Then, we have
+\[
+(\alpha_0,~\beta_0) \in \cM^0\otimes\cN^0 
+\]
+and
+\begin{equation*}
+\begin{split}
+(\alpha_1,~\beta_1) \in &\bigcup_{i=0}^2 \cM_i^1\otimes\cN_i^1 
+\end{split}
+\end{equation*}
+Therefore, by taking the intersection, we can identify $(\alpha,\beta) \in \left(\cM^0\otimes\cN^0\right)\bigcap\left(\bigcup_{i=0}^2 \cM_i^1\otimes\cN_i^1 \right) $.
+\label{Ex:6}
+\end{example}
+
+%=====Merged Example Tables =====
+\begin{table}[htbp]
+\caption{$a(x)$ and $h(x)$ for various $f(x)$}
+\centering
+\begin{tabularx}{0.7\textwidth}{l|cXl} 
+\toprule
+$f(x)$ & weight & $a(x)$ & $h(x)$\\
+\midrule
+ &  & $1+x$ & $1+x^{3}$ \\
+&  &$1+x+x^3+x^4$ & $1+x^{6}$  \\
+& 2 &$1+x+x^3+x^4+x^6+x^{7}$ &  $1+x^{9}$ \\
+$1+x+x^2$&& $1+x+x^3+x^4+x^6+x^{7}+x^9+x^{10}$&  $1+x^{12}$ \\
+\cline{2-4}
+(Ex. \ref{Ex:1})& &$1$ & $1+x+x^2$\\ 
+& 3&$1+x+x^2$ &  $1+x^2+x^4$\\
+& &$1+x+x^3$ & $1+x^4+x^5$\\
+& &$1+x^2+x^3$ & $1+x+x^5$ \\
+\cline{1-4}
+$1+x+x^4$&2& $1 +x +x^2 +x^3+x^5+x^7+x^8+x^{11}$&  $1+x^{15}$ \\
+\cline{2-4}
+(Ex. \ref{Ex:2})& &$1$ & $1+x+x^4$\\ 
+& 3&$1+x+x^4$ &  $1+x^2+x^8$\\
+& &$1+x+x^2+x^3+x^5$ & $1+x^7+x^9$\\
+& &$1+x+x^2+x^3+x^6$ & $1+x^5+x^{10}$ \\
+\cline{1-4}
+&&$1+x$ &$1+x^5$\\ 
+$1+x+x^2+x^3+x^4$&2&$1+x+x^5+x^6$ &$1+x^{10}$  \\
+(Ex. \ref{Ex:3})&&$1+x+x^5+x^6+x^{10}+x^{11}$ & $1+x^{15}$ \\
+&&$1+x+x^5+x^6+x^{10}+x^{11}+x^{15}+x^{16}$ &$1+x^{20}$  \\
+\cline{1-4}
+&&$1$ & $1+x^2$\\ 
+$1+x^2$&2&$1+x^2$ & $1+x^4$ \\
+(Ex. \ref{Ex:4})&&$1+x^2+x^4$ & $1+x^6$\\
+&&$1+x^2+x^4+x^6$ & $1+x^8$\\
+\cline{1-4}
+&&$1$ & $1+x^4$\\ 
+$1+x^4$&2&$1+x^4$ & $1+x^8$ \\
+(Ex. \ref{Ex:4})&&$1+x^4+x^8$ & $1+x^{12}$\\
+&&$1+x^4+x^8+x^12$ & $1+x^{16}$\\
+\cline{1-4}
+$1+x^2+x^3+x^4$&&$1+x+x^2$& $1+x^{7}$ \\
+(Ex. \ref{Ex:5})&2&$1+x^2+x^3+x^7+x^9+x^{10}$	& $1+x^{14}$ \\
+\cline{1-4}
+&2&$1+x^2+x^3+x^4+x^6+x^8+x^{4}+x^{6}+x^{8}+x^{11}+x^{12}+x^{16}$ &  $1+x^{21}$\\
+\cline{2-4}
+$1+x+x^5$&&$1$ & $1+x+x^{5}$\\ 
+(Ex. \ref{Ex:6})&3&$1+x+x^5$ &  $1+x^2+x^{10}$\\
+&&$1+x+x^2+x^3+x^4+x^{6}+x^{8}$ & $1+x^{11}+x^{13}$\\
+\bottomrule
+\end{tabularx}
+\label{examples-table}
+\end{table}
+%=====End Of Merged Example Tables =====
+
+
+
+
+
+
+%===== Merged GF(2^M) tables=======
+\begin{table}[htbp]
+\caption{Galois Field Elements for various prime polynomials $f(x)$}
+\centering
+\begin{tabularx}{0.7\textwidth}{X|c|c|c} 
+\toprule
+\multicolumn{1}{c|}{Power Representation}&\multicolumn{3}{c}{polynomial representation}\\
+\cmidrule(lr){1-4}
+Generator polynomial &$1+x^2+x^3$&$1+x+x^2+x^3+x^4$&$1+x+x^4$\\
+\cmidrule(lr){1-4}
+$x^0$			&1				&1                                              &1\\
+$x$			&$x$			&$x$                                                              &$x$\\
+$x^{2}$		&$x^2$		&$x^2$                                                  	  &$x^2$\\
+$x^{3}$		&$1+x^2$		&$x^3$                                                        &$x^3$\\
+$x^{4}$ 		&$1+x+x^2$   &$1+x+x^2+x^3$ 					 	& $1+x$\\
+$x^{5}$		&$1+x$		&                                                                   &$x+x^2$\\
+$x^{6}$		&$x+x^2$		&                                                                   &$x^2+x^3$\\
+$x^{7}$		&				&                								&$1+x+x^3$\\
+$x^{8}$		&				&										&$1+x^2$\\
+$x^{9}$		&				&										&$x+x^3$\\
+$x^{10}$		&				&										&$1+x+x^2$\\
+$x^{11}$		&				&										&$x+x^2+x^3$\\
+$x^{12}$		&				&										&$1+x+x^2+x^3$\\
+$x^{13}$		&				&										&$1+x+x^3$\\
+$x^{14}$		&				&										&$1+x^3$\\
+\bottomrule
+\end{tabularx}
+
+\label{GF-tables}
+\end{table}
+
+%=====End of Merged GF(2^M) tables=======
+ 
+
+
+
+
+
+
+
