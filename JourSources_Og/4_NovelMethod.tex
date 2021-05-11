@@ -11,7 +11,7 @@ where $\gamma_0,\gamma_1,\cdots,\gamma_{K-1}$ are positive integers and let $\va
 	\label{Eq:condition}
 \end{align}
 
-Starting from the simplest case $K=1$, \ie, $f(x) = f_0^{\gamma_0}(x)$, \eqref{eq:low-weight-parity} indicates that each root of $f(x)$ is also a root of $h(x)$ and we distinguish the cases $\gamma_0 = 1$ and $\gamma_0 > 1$. For the former case, since all $\varphi_0^i$, $0 \leq i < \epsilon_0$, are distinct from each other, the equation
+We start from the simplest case $K=1$, \ie, $f(x) = f_0^{\gamma_0}(x)$. Then, \eqref{eq:low-weight-parity} indicates that each root of $f(x)$ is also the root of $h(x)$ and we distinguish the cases $\gamma_0 = 1$ and $\gamma_0 > 1$. For the former case, since all $\varphi_0^i$, $0 \leq i < \epsilon_0$, are distinct from each other, the equation
 \begin{align}
 	h(\varphi_0^i)=0,~~~ 0 \leq i < \epsilon_0
 	\label{Eq:rootcondition}
@@ -29,7 +29,7 @@ where the derivation is calculated using the {\it Hasse derivative} defined as
 	0, & \mathotherwise
 	\end{cases}
 \end{align}
-for the binomial coefficient ${}_kC_j$.
+for the bionomial coefficient ${}_kC_j$.
 
 For the case where $K>1$, we may repeat the above discussion for the roots $\varphi_k$, $0 < k < K$, and take the intersection of the results to determine the low-weight PCs.
 
@@ -70,18 +70,18 @@ Let $(m,n)$ be such a pair and let $\bbM=\{\epsilon_0 \ell+m\}_{\ell \in \bbZ}$ 
 %Furthermore, let  We denote the set of all pairs as $\bbM \bar{\otimes} \bbN$, where the elements of this set are formed using a tensor product approach. Then, $(\alpha,~\beta) \in \bbM \bar{\otimes} \bbN$
 \subsection{Examples}
 
-In the following, we present some examples of the proposed method to determine weight-2 and weight-3 PCs for several feedfoward polynomials of form given in \eqref{Eq:GeneralForm}. For the case $K=1$, Examples \ref{Ex:1} and \ref{Ex:2} are two instances where $f(x)$s are primitive polynomials while an instance where $f(x)$ is prime but not a primitive polynomial is given in Example \ref{Ex:3}. Example \ref{Ex:4} demonstrate the case $\gamma_0 > 1$, and Examples \ref{Ex:5} and \ref{Ex:6} are two instances of the case $K=2$. For these polynomials, we also show some detail low-weight patterns of $a(x)$ and $h(x)$ in Table \ref{examples-table}.
+In the following, we present some examples of the proposed method to determine weight-2 and weight-3 PCs for several feedfoward polynomials of form given in \eqref{Eq:GeneralForm}. For the case $K=1$, Examples \ref{Ex:1} and \ref{Ex:2} are two instances where $f(x)$ is a primitive polynomial while an instance where $f(x)$ is prime but not a primitive polynomial is given in Example \ref{Ex:3}. Example \ref{Ex:4} demonstrate the case $\gamma_0 > 1$, and Examples \ref{Ex:5} and \ref{Ex:6} are two instances of the case $K=2$. Some weight-$2$ and weight-$3 ~ h(x)$ are compiled in Table \ref{examples-table} with their corresponding $a(x)$ for reference.
 
 \subsubsection{$f(x)$ is a primitive polynomial}
 
 \begin{example}$f(x)=1+x+x^2$
 	
-Since $x^1=x$, $x^2 \equiv 1+x \mod f(x)$, and $x^3 \equiv 1 \bmod f(x)$, $f(x)$ is a primitive polynomial with root $\varphi_0$ of order $\epsilon_0=3$. Thus, $\alpha$ in the weight-2 PCs shown in \eqref{eq:wt2-gen-form} should be a multiple of $3$ as $h(x)=1+x^{3\ell}$, $\ell \in \bbZ^+$, while the corresponding $a(x)$ can be expressed by 
+Since $x^1=x$, $x^2 \equiv 1+x \mod f(x)$, and $x^3 \equiv 1 \bmod f(x)$, $f(x)$ is a primitive polynomial with a root of order $\epsilon_0=3$. Thus, $\alpha$ in the weight-2 PCs shown in \eqref{eq:wt2-gen-form} should be a multiple of $3$ as $h(x)=1+x^{3\ell}$, $\ell \in \bbZ^+$, while the corresponding $a(x)$ can be expressed by 
 \begin{equation*}
 	a(x)=\sum_{i=0}^{\ell-1} x^{3i}(1+x)
 \end{equation*}
 
-To determine the weight-3 PCs, we can see from Table \ref{novelTab7} that there is a pair $(1,2)$ satisfying $x^1+x^2 \equiv 1 \mod f(x)$. Thus, if we let $\bbM = \{3\ell+1\}_{\ell \in \bbZ}$ and $\bbN = \{3\ell+2\}_{\ell \in \bbZ}$, $x^\alpha+x^\beta \equiv 1 \mod f(x)$ for each pair $(\alpha,\beta) \in \bbM\otimes\bbN$.
+To determine the weight-3 PCs, we can see from Table \ref{novelTab7} that there is a pair $(1,2)$ satisfying $x^1+x^2 \equiv 1 \mod f(x)$. Thus, let $\bbM = \{3\ell+1\}_{\ell \in \bbZ}$ and $\bbN = \{3\ell+2\}_{\ell \in \bbZ}$. Then, we have $x^\alpha+x^\beta \equiv 1 \mod f(x)$ for each $(\alpha,\beta) \in \bbM\otimes\bbN$.
 \label{Ex:1}
 \end{example}
 
@@ -104,12 +104,12 @@ To determine the weight-3 PCs, we can see from Table \ref{novelTab7} that there 
 
 \begin{example}	$f(x)= 1+x+x^4~$
 	
-	Since $f(x)$ is a primitive polynomial with a root of order $\epsilon_0=2^M-1=15$, the weight-2 PCs have the following general form
-	$$h(x)=1+x^{15\ell}$$
+	Since $f(x)$ is a primitive polynomial with a root of order $\epsilon_0=2^M-1=15$, the weight-2 PCs have the form
+	$h(x)=1+x^{15\ell}$
 	while the corresponding $a(x)$ can be expressed as 
 	$$ a(x) = \sum_{i=0}^{\ell} x^{15i} \left(1 +x +x^2 +x^3+x^5+x^7+x^8+x^{11} \right)$$
 	
-	For the weight-3 PCs, we refer to Table \ref{GF-tables} and observe that there are 7 pairs $(m,n)$ which satisfy $x^m+x^n \equiv 1 \mod 15$. Thus, if we let
+	For the weight-3 PCs, we refer to Table \ref{GF-tables} and observe that there are 7 $(m,n)$ pairs which satisfy $x^m+x^n \equiv 1 \mod 15$. Thus, $(\alpha,~\beta) \in \bigcup_{i=0}^6 \bbM_i\otimes\bbN_i$ satisfies \eqref{novelEqwt3}, where
 	\begin{align}
 	\bbM_0 &:= \{15\ell + 1\}_{\ell \in \bbZ},~\bbN_0 := \{15\ell + 4\}_{\ell \in \bbZ}\cr
 	\bbM_1 &:= \{15\ell + 2\}_{\ell \in \bbZ},~\bbN_1 := \{15\ell + 8\}_{\ell \in \bbZ}\cr
@@ -119,11 +119,10 @@ To determine the weight-3 PCs, we can see from Table \ref{novelTab7} that there 
 	\bbM_5 &:= \{15\ell + 7\}_{\ell \in \bbZ},~\bbN_5 := \{15\ell + 9\}_{\ell \in \bbZ}\cr
 	\bbM_6 &:= \{15\ell + 11\}_{\ell \in \bbZ},~\bbN_6 := \{15\ell + 12\}_{\ell \in \bbZ}
 	\end{align}
-	each pair $(\alpha,~\beta) \in \bigcup_{i=0}^6 \bbM_i\otimes\bbN_i$ satisfies \eqref{novelEqwt3}.
 	\label{Ex:2}	
 \end{example}
 
-\subsubsection{$f(x)$ is a prime but primitive polynomial}
+\subsubsection{$f(x)$ is a prime but not primitive polynomial}
 
 \begin{example}
 $f(x)=1+x+x^2+x^3+x^4$
@@ -136,9 +135,8 @@ Since $x\equiv x^5 \mod f(x)$ as shown in Table \ref{GF-tables}, $\epsilon_0=5< 
 \begin{example}
 	$f(x)=1+x^2$ and $f(x)=1+x^4$\newline
 	
-	If we rewrite the polynomials as $f(x)=(1+x)^2$ and $f(x)=(1+x)^4$,	the order of the root $\varphi_0$ is $\epsilon_0=1$. Since $\GF(2)$ has single non-zero element, it does not provide any pair $(m,~n)$ satisfying $x^m+x^n = 1$ and, consequently, there are no weight-3 PCs associated with $f(x)$.
-	
-	Regarding the weight-2 PCs, since $\epsilon_0 = 1$, each $\alpha \in \bbZ^+$ should satisfy
+	If we rewrite the polynomials as $f(x)=(1+x)^2$ and $f(x)=(1+x)^4$,	the order of the root $\varphi_0$ is $\epsilon_0=1$. 
+	Thus, each $\alpha \in \bbZ^+$ should satisfy
 	\begin{align}
 		h(x) = 1+x^\alpha = 0
 	\end{align}
@@ -146,7 +144,7 @@ Since $x\equiv x^5 \mod f(x)$ as shown in Table \ref{GF-tables}, $\epsilon_0=5< 
 	\begin{align}
 	\frac{dh(x)}{dx} = (\alpha\mod 2) x^{\alpha-1} = 0
 	\end{align}
-	implies $\alpha$ should be even numbers. Thus, for the case $f(x) = 1+x^2$, we may write the PCs as  $h(x)=1+x^{2\ell}$, $\ell \in \bbZ^+$.
+	implies $\alpha$ should be an even number. Therefore, for the case $f(x) = 1+x^2$, we write the PCs as  $h(x)=1+x^{2\ell}$, $\ell \in \bbZ^+$.
 	
 
 	For the case $f(x) = 1+x^4$, from \eqref{Eq:differential}, we have
@@ -158,6 +156,8 @@ Since $x\equiv x^5 \mod f(x)$ as shown in Table \ref{GF-tables}, $\epsilon_0=5< 
 		\label{Eq:Ex3Diff}
 	\end{align}
 	and $\alpha=4\ell$, $\ell \in \bbZ^+$, satisfies \eqref{Eq:Ex3Diff} simultaneously.
+	
+	Since $\GF(2)$ has single non-zero element, it does not provide a pair $(m,~n)$ satisfying $x^m+x^n = 1$ and, consequently, there are no weight-3 PCs associated with $f(x)$.
 \label{Ex:4}
 \end{example}
 
@@ -168,12 +168,12 @@ For this case, we write the feedforward polynomial as $f(x) =f_0(x)f_1(x)$ and g
 	$f(x)= (1+x)(1+x+x^3)=1+x^2+x^3+x^4$\newline
 	
 	Let $f_0(x)=1+x$ and $f_1(x)=1+x+x^3$. We know that the PCs  associated with $f(x)$ are intersection of those with $f_0(x)$ and with $f_1(x)$. 
-	On the other hand, since $f_0(x)$ does not yields any weight-3 PCs as explained in the Example \ref{Ex:4}, there are no such PCs associated with $f(x)$.
+	Since $f_0(x)$ does not yields any weight-3 PCs as explained in the Example \ref{Ex:4}, there are no such PCs associated with $f(x)$.
 	
 	With respect to the weight-2 PCs, from Example \ref{Ex:4}, $\epsilon_0=1$ and $\epsilon_1=7$. We have $\lcm(\epsilon_0,\epsilon_1)=7$ and
-	$$h(x) =1+x^{7\ell}$$
+	$h(x) =1+x^{7\ell}$
 	with the corresponding $a(x)$ given by
-	$$a(x) = \sum_{}^{}x^{7i}(1+x^2+x^3)$$
+	$$a(x) = \sum_{i=0}^{\ell-1} x^{7i}(1+x^2+x^3)$$
 	\label{Ex:5}	
 \end{example}
 
@@ -206,10 +206,10 @@ Therefore, by taking the intersection, we can identify $(\alpha,\beta) \in \left
 \end{example}
 
 %=====Merged Example Tables =====
-\begin{table*}[htbp]
+\begin{table}[htbp]
 \caption{$a(x)$ and $h(x)$ for various $f(x)$}
 \centering
-\begin{tabularx}{0.7\textwidth}{l|cXl} 
+\begin{tabularx}{0.48\textwidth}{l|cXl} 
 \toprule
 $f(x)$ & weight & $a(x)$ & $h(x)$\\
 \midrule
@@ -256,7 +256,7 @@ $1+x+x^5$&&$1$ & $1+x+x^{5}$\\
 \bottomrule
 \end{tabularx}
 \label{examples-table}
-\end{table*}
+\end{table}
 %=====End Of Merged Example Tables =====
 
 
@@ -265,10 +265,10 @@ $1+x+x^5$&&$1$ & $1+x+x^{5}$\\
 
 
 %===== Merged GF(2^M) tables=======
-\begin{table*}[htbp]
+\begin{table}[htbp]
 \caption{Galois Field Elements for various prime polynomials $f(x)$}
 \centering
-\begin{tabularx}{0.7\textwidth}{X|c|c|c} 
+\begin{tabularx}{0.48\textwidth}{X|c|c|c} 
 \toprule
 \multicolumn{1}{c|}{Power Representation}&\multicolumn{3}{c}{polynomial representation}\\
 \cmidrule(lr){1-4}
@@ -293,7 +293,7 @@ $x^{14}$		&				&										&$1+x^3$\\
 \end{tabularx}
 
 \label{GF-tables}
-\end{table*}
+\end{table}
 
 %=====End of Merged GF(2^M) tables=======
  

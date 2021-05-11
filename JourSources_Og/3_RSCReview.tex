@@ -2,7 +2,7 @@
 \label{sec2}
 The outputs of an RSC code are determined by the input bit sequence $b(x)$, states of the shift registers and feedforward and feedback connections of the shift registers that can be represented by a generator function. 
 
-As an instance,  the generator function of a rate $1/2$ RSC code may be written as  $$\left[1 ~\frac{f(x)}{g(x)}\right]$$ where $1$ yields the \textit{systematic  component} (SC) $b(x)$ while the \textit{parity-check component} (PC) $h(x)$ is associated with the feedforward and feedback connections of the shift registers, specified by $f(x)$ and $g(x)$, respectively. The outputs $c(x)$ are the mixture of the SC and PC as
+As an instance,  the generator function of a rate $1/2$ RSC code may be written as  $$\left[1 ~\frac{f(x)}{g(x)}\right]$$ where $1$ yields the \textit{systematic  component} (SC) $b(x)$ while the \textit{parity-check component} (PC) $h(x)$ is associated with the feedforward and feedback connections of the shift registers, specified by $f(x)$ and $g(x)$, respectively. The output $c(x)$ is the mixture of the SC and PC as
 \begin{equation}
 c(x) = b(x^2)+xh(x^2)
 \label{codeword-comp}
@@ -17,14 +17,14 @@ From \eqref{codeword-comp}, it is trivial that
 w_H(c(x))=w_H(b(x)) + w_H(h(x))
 \label{eq:cw-weight}
 \end{equation}
-and hence, each low-weight codeword is a combination of low-weight SC and PC.
+and hence, each low-weight codeword is combination of low-weight SC and PC.
 
-Under the assumption of large frame sizes, the presence of $g^{-1}(x)$  in \eqref{eq:parity-def} may involve a particular bit sequence that repeats a large number of times, hence yielding a high-weight PC. Low-weight PCs occur if and only if
+Under the assumption of large frame sizes, the presence of $g^{-1}(x)$  in \eqref{eq:parity-def} may involve a particular bit sequence that repeats a large number of times, hence yielding a high-weight PC. Therefore low-weight PCs occur if and only if
 \begin{equation}
 b(x) \bmod g(x) \equiv 0
 \label{eq:rtz-input}
 \end{equation}
-The bit sequence $b(x)$ satisfying \eqref{eq:rtz-input} is called a \textit{return-to-zero} (RTZ) input. Thus, every RTZ input can be factorized as  
+The bit sequences satisfying \eqref{eq:rtz-input} are called \textit{return-to-zero} (RTZ) input. Thus, every RTZ input can be factorized as  
 \begin{equation}
 b(x) =a(x)g(x)
 \label{eq:low-weight-msg}
@@ -37,6 +37,6 @@ h(x)&=f(x)\cdot g^{-1}(x)\cdot a(x)g(x)\\
 \end{split}
 \label{eq:low-weight-parity}
 \end{equation}
-In this paper, we attempt to find $a(x)$s satisfying  \eqref{eq:low-weight-msg} and  \eqref{eq:low-weight-parity} simultaneously for low-weight $b(x)$ and $h(x)$, respectively. 
+Therefore, in this paper, we attempt to find $a(x)$s satisfying  \eqref{eq:low-weight-msg} and  \eqref{eq:low-weight-parity} simultaneously for low-weight $b(x)$ and $h(x)$, respectively. 
 %
 However, since there is no essential mathematical difference between the two equations, in the next section, we present a method for determining the low-weight PC patterns for $w_H(h(x))= 2,3$.

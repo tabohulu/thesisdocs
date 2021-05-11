@@ -48,14 +48,14 @@ As examples, in Table \ref{code-tables-1},\ref{code-tables-2} and \ref{code-tabl
 
 \subsection{Numerical results}
 
-We obtained the approximated union bound by \eqref{novelEq7} using the codes listed in Table \ref{TB:Codes}. Since the codewords with the weights greater than $d_{\rm free+1}$ are neglected in our approximation, we also obtained the union bounds obtained using the codewords with weights up to $d_{\rm free+3}$ and compared them with that obtained using transfer function in Figures \ref{simFig1}-\ref{simFig3}.
+We obtained the approximated union bound by \eqref{novelEq7} for the codes listed in Table \ref{TB:Codes}. Since the codewords with the weights larger than $d_{\rm free+1}$ are neglected in our approximation, we also obtained the union bounds obtained using the codewords with weights up to $d_{\rm free+i}$, $0 \leq i \leq 3$, and compared them with that obtained using transfer function in Figures \ref{simFig1}-\ref{simFig3}.
 For reference purpose, the details of the PCs and SCs used for drawing the bound are listed in Tables \ref{code-tables-1} - \ref{code-tables-3} with the extra codewords found by computer search (labelled as `Not Found').
 In these figures, we also evaluated BER through computer simulations. To plot BER points, we assume each RSC code is BPSK modulated and transmitted over the AWGN channel with a frame with size of $N=64$. At the receiver, the Viterbi algorithm is used to recover the transmitted bits and we accumulated more than 1,000 bits errors for obtain each plot point.
 
-\begin{table*}[htbp]
+\begin{table}[htbp]
 		\caption{SCs and PCs for Code I}
 		\centering
-		\begin{tabularx}{0.88\textwidth}{|c|c|XXX} 
+		\begin{tabularx}{0.48\textwidth}{|c|c|XXX} 
 			\toprule
 			$w_H(c(x))$&~& $a(x)$ & $b(x)$ & $h(x)$ \\ %[0.5ex] 
 			\midrule
@@ -82,13 +82,13 @@ In these figures, we also evaluated BER through computer simulations. To plot BE
 			\bottomrule
 		\end{tabularx}		
 		\label{code-tables-1}
-	\end{table*}
+	\end{table}
 
 
-\begin{table*}[htbp]
+\begin{table}[htbp]
 		\caption{SCs and PCs for Code II}
 		\centering
-		\begin{tabularx}{0.88\textwidth}{|c|c|XXX} 
+		\begin{tabularx}{0.48\textwidth}{|c|c|XXX} 
 			\toprule
 			$w_H(c(x))$&~& $a(x)$ & $b(x)$ & $h(x)$ \\ %[0.5ex] 
 			\midrule
@@ -109,13 +109,13 @@ In these figures, we also evaluated BER through computer simulations. To plot BE
 			\bottomrule
 		\end{tabularx}		
 		\label{code-tables-2}
-	\end{table*}
+	\end{table}
 
 
-	\begin{table*}[htbp]
+	\begin{table}[htbp]
 		\caption{SCs and PCs for Code III}
 		\centering
-		\begin{tabularx}{0.98\textwidth}{|c|c|XXX} 
+		\begin{tabularx}{0.48\textwidth}{|c|c|XXX} 
 			\toprule
 			$w_H(c(x))$&~& $a(x)$ & $b(x)$ & $h(x)$ \\ %[0.5ex] 
 			\midrule
@@ -152,14 +152,14 @@ In these figures, we also evaluated BER through computer simulations. To plot BE
 			\bottomrule
 		\end{tabularx}		
 		\label{code-tables-3}
-	\end{table*}
+	\end{table}
 
 
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./Images/RSC_5_7_lower_weights3.eps}
-	\captionof{figure}{Bounds and Simulation Results for 5/7 RSC Code}
+	\captionof{figure}{Old Bound vs New Bound vs Simulation for 5/7 RSC Code}
 	\label{simFig1}
 \end{figure}
 
@@ -170,7 +170,7 @@ For the 37/21 RSC code, since the free distance of the code is 6, the counting o
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./Images/RSC_37_21_lower_weights3.eps}
-	\caption{Bounds and Simulation Results for 37/21 RSC Code}
+	\caption{Old Bound vs New Bound vs Simulation for 37/21 RSC Code}
 	\label{simFig2}
 \end{figure}
 
@@ -179,7 +179,7 @@ For the code III, the free distance is 7 and the proposed method identifies 2 co
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./Images/RSC_23_35_lower_weights3.eps}
-	\caption{Bounds and Simulation Results for 23/35 RSC Code}
+	\caption{Old Bound vs New Bound vs Simulation for 23/35 RSC Code}
 	\label{simFig3}
 \end{figure}
 
